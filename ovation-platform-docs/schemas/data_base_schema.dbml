@@ -1,0 +1,648 @@
+// ============================================================
+// Ovation Budget Platform — Database Schema
+// Generated for: dbdiagram.io
+// Database: Azure SQL (EF Core 8 code-first)
+// Last updated: June 2026
+//
+// Paste into dbdiagram.io to render the full ERD.
+// Export Azure SQL DDL via: Export > MS SQL Server
+//
+// Table groups:
+//   A. Identity & access      — users, roles, user_roles, project_users
+//   B. Project core           — projects, unit_mix, parking
+//   C. Budget versioning      — budget_levels, markups
+//   D. Line items             — divisions, line_items, budget_level_line_items
+//   E. Comparable / benchmarks— comparable_projects, comparable_project_costs
+//   F. Trade packages & bids  — trade_packages, bidders, proposals, proposal_line_items
+//   G. Takeoffs               — takeoffs, takeoff_configs, takeoff_plans
+//   H. Approvals & files      — budget_approvals, uploaded_files
+//   I. Notifications & audit  — notifications, audit_log
+// ============================================================
+
+
+// ============================================================
+// A. IDENTITY & ACCESS
+// ============================================================
+
+Table users {
+  id            uniqueidentifier [pk, default: `newid()`]
+  azure_oid     nvarchar(100)    [not null, unique, note: "Azure AD object ID"]
+  email         nvarchar(256)    [not null, unique]
+  name          nvarchar(200)    [not null]
+  department    nvarchar(50)     [note: "Development | Design | Purchasing | Finance | Entitlements | FieldOps"]
+  is_active     bit              [not null, default: 1]
+  created_at    datetime2        [not null, default: `getutcdate()`]
+  last_login_at datetime2
+
+  indexes {
+    azure_oid [unique, name: "UQ_users_oid"]
+    email     [unique, name: "UQ_users_email"]
+  }
+
+  note: "Azure AD–synced user records. is_active = 0 for deprovisioned accounts."
+}
+
+
+Table roles {
+  id   int          [pk, increment]
+  name nvarchar(50) [not null, unique, note: "Admin | Estimator | Reviewer | Viewer"]
+
+  note: "Permission roles. Seeded once."
+}
+
+
+Table user_roles {
+  id      uniqueidentifier [pk, default: `newid()`]
+  user_id uniqueidentifier [not null, ref: > users.id]
+  role_id int              [not null, ref: > roles.id]
+
+  indexes {
+    (user_id, role_id) [unique, name: "UQ_user_roles"]
+  }
+}
+
+
+Table project_users {
+  id         uniqueidentifier [pk, default: `newid()`]
+  project_id uniqueidentifier [not null, ref: > projects.id]
+  user_id    uniqueidentifier [not null, ref: > users.id]
+
+  indexes {
+    (project_id, user_id) [unique, name: "UQ_project_users"]
+  }
+
+  note: "Controls per-project access. Users without a row here cannot see the project."
+}
+
+
+// ============================================================
+// B. PROJECT CORE
+// ============================================================
+
+Table projects {
+  id                uniqueidentifier [pk, default: `newid()`]
+  name              nvarchar(200)    [not null]
+  address           nvarchar(500)
+  city              nvarchar(100)
+  state             nchar(2)         [note: "NV | CA"]
+  zip               nvarchar(10)
+  product_type      nvarchar(50)     [not null, note: "Affordable | Senior | Workforce | MarketRate"]
+  status            nvarchar(50)     [not null, default: "Active", note: "Active | OnHold | Closed"]
+
+  // Unit & building data
+  total_units       int
+  gross_sf          decimal(12,2)    [note: "Total gross SF"]
+  livable_sf        decimal(12,2)    [note: "Net livable SF"]
+  site_sf           decimal(12,2)
+  site_acres        decimal(8,4)
+  floors            smallint
+  buildings         smallint
+  efficiency_pct    decimal(5,4)     [note: "e.g. 0.8742 = 87.42%"]
+
+  // Schedule
+  start_date        date
+  timeline_months   smallint
+
+  // Metadata
+  prepared_by       nvarchar(200)
+  version           nvarchar(20)     [note: "e.g. v94 | 4.13.26"]
+
+  created_at        datetime2        [not null, default: `getutcdate()`]
+  updated_at        datetime2        [not null, default: `getutcdate()`]
+  created_by_user_id uniqueidentifier [not null, ref: > users.id]
+
+  indexes {
+    status         [name: "IX_projects_status"]
+    product_type   [name: "IX_projects_type"]
+  }
+
+  note: "One row per construction project."
+}
+
+
+Table unit_mix {
+  id         uniqueidentifier [pk, default: `newid()`]
+  project_id uniqueidentifier [not null, ref: > projects.id]
+  unit_type  nvarchar(50)     [not null, note: "Studio | 1BR-1BA | 2BR-1BA | 2BR-2BA | 3BR-2BA"]
+  count      int              [not null]
+  pct        decimal(5,4)     [note: "Computed: count / projects.total_units"]
+  sort_order smallint         [not null, default: 0]
+
+  indexes {
+    project_id [name: "IX_unit_mix_project"]
+  }
+}
+
+
+Table parking {
+  id                  uniqueidentifier [pk, default: `newid()`]
+  project_id          uniqueidentifier [not null, unique, ref: - projects.id, note: "1:1 with projects"]
+  covered             int              [not null, default: 0]
+  covered_accessible  int              [not null, default: 0]
+  open                int              [not null, default: 0]
+  open_accessible     int              [not null, default: 0]
+  waiver              int              [not null, default: 0]
+  ratio               decimal(5,3)     [note: "Total / projects.total_units — computed in app"]
+
+  indexes {
+    project_id [unique, name: "UQ_parking_project"]
+  }
+
+  note: "Total = covered + covered_accessible + open + open_accessible − waiver (computed in app)."
+}
+
+
+// ============================================================
+// C. BUDGET VERSIONING
+// ============================================================
+
+Table budget_levels {
+  id                    uniqueidentifier [pk, default: `newid()`]
+  project_id            uniqueidentifier [not null, ref: > projects.id]
+  level                 int              [not null, note: "0 | 1 | 2 | 3"]
+  sub_level             int              [not null, default: 1, note: "Revision within the level: 1, 2, 3…"]
+  display_name          nvarchar(100)    [note: "Optional label override e.g. Level 2.2 — Value Engineering Round. Null = auto Level {Level}.{SubLevel}"]
+  parent_budget_level_id uniqueidentifier [ref: > budget_levels.id, note: "Points to BudgetLevel this was copied from. NULL for L0.1 only."]
+  status                nvarchar(50)     [not null, default: "Draft", note: "Draft | Submitted | Approved | Locked | Rejected"]
+  submitted_at          datetime2
+  submitted_by_user_id  uniqueidentifier [ref: > users.id]
+  approved_at           datetime2
+  approved_by_user_id   uniqueidentifier [ref: > users.id]
+  rejection_comment     nvarchar(1000)
+  created_at            datetime2        [not null, default: `getutcdate()`]
+  updated_at            datetime2        [not null, default: `getutcdate()`]
+
+  indexes {
+    project_id                          [name: "IX_bl_project"]
+    status                              [name: "IX_bl_status"]
+    (project_id, level, sub_level)      [unique, name: "UQ_bl_project_level_sublevel"]
+  }
+
+  note: "Each row is an immutable budget snapshot. Only one sub-level per project+level may be Draft or Submitted at any time. Rejected sub-levels are locked forever. Promotion to next major level copies all line items and freezes BaselineAmount."
+}
+
+
+Table markups {
+  id                uniqueidentifier [pk, default: `newid()`]
+  budget_level_id   uniqueidentifier [not null, ref: > budget_levels.id]
+  kind              nvarchar(30)     [not null, note: "general_requirements | bid_risk | contingency | bonds | insurance | overhead | fee"]
+  label             nvarchar(100)    [not null, note: "Display name e.g. Construction Contingency"]
+  cost_code         nvarchar(10)     [not null, note: "01 | BR | 55 | 50 | 51 | 99 | 98"]
+  mode              nvarchar(10)     [not null, note: "pct | fixed"]
+  rate              decimal(8,6)     [note: "e.g. 0.060000 = 6%. NULL when mode=fixed"]
+  fixed_amount      decimal(18,2)    [note: "NULL when mode=pct"]
+  sort_order        smallint         [not null, default: 0]
+  is_active         bit              [not null, default: 1]
+  updated_at        datetime2        [not null, default: `getutcdate()`]
+  updated_by_user_id uniqueidentifier [not null, ref: > users.id]
+
+  indexes {
+    budget_level_id              [name: "IX_markups_level"]
+    (budget_level_id, kind)      [unique, name: "UQ_markups_level_kind"]
+  }
+
+  note: "One row per markup kind per budget level. Markup Base = Hard Cost + General Requirements (01). All markup pct kinds apply to Markup Base. GL Insurance may be fixed."
+}
+
+
+// ============================================================
+// D. LINE ITEMS
+// ============================================================
+
+Table divisions {
+  id             int          [pk, increment]
+  csi_code       nvarchar(10) [not null, unique, note: "01-49 hard cost | FFE | 50 Bonds | 51 Ins | 55 Contingency | 98 Fee | 99 OH | BR Bid Risk"]
+  name           nvarchar(100)[not null, note: "e.g. Div 3 — Concrete"]
+  is_markup      bit          [not null, default: 0, note: "True for 50,51,55,98,99,BR"]
+  is_ffe         bit          [not null, default: 0]
+  sort_order     int          [not null]
+
+  indexes {
+    csi_code [unique, name: "UQ_divisions_code"]
+  }
+
+  note: "Seeded once. Shared across all projects. Division 31 = Earthwork/Grading (not Div 29). Do not modify after deployment."
+}
+
+
+Table line_items {
+  id               int              [pk, increment]
+  division_id      int              [not null, ref: > divisions.id]
+  cost_code        nvarchar(20)     [not null, note: "e.g. 03-3101 | 06-1100"]
+  name             nvarchar(200)    [not null, note: "e.g. Framing | Slabs"]
+  default_category nvarchar(5)      [note: "S | A | RR | B — see Category enum"]
+  default_sub_job  nvarchar(30)     [note: "BUILDING | ON-SITE | OFFSITE | POOL AREA | POOL EQUIP | PUMPHOUSE | CARPORT | COMMON AREA | DUMPSTERS | OTHER SITE | WET UTIL | EV | FFE"]
+  default_uom      nvarchar(20)     [note: "SF | Unit | LF | LS | EA | SY | SQ | LBS | CY | GAL"]
+  default_source   nvarchar(100)    [note: "Allowance | Historical | N/A"]
+  group_key        nvarchar(100)    [note: "Links to trade_packages for bid mapping in L3"]
+  sort_order       int              [not null]
+  is_active        bit              [not null, default: 1]
+
+  indexes {
+    division_id [name: "IX_line_items_division"]
+    cost_code   [name: "IX_line_items_code"]
+  }
+
+  note: "Seeded master list. Not project-specific. Category: S=Standard | A=Allowance | RR=Repair-Replace | B=Bond | F=Fee | R=Risk."
+}
+
+
+Table budget_level_line_items {
+  id                  uniqueidentifier [pk, default: `newid()`]
+  budget_level_id     uniqueidentifier [not null, ref: > budget_levels.id]
+  line_item_id        int              [ref: > line_items.id, note: "NULL if is_custom=true"]
+
+  // Custom line item fields
+  is_custom           bit              [not null, default: 0]
+  custom_label        nvarchar(200)
+  custom_division_id  int              [ref: > divisions.id]
+
+  // Budget metadata
+  cost_code           nvarchar(20)     [note: "Copied from line_item or entered for custom"]
+  category            nvarchar(5)      [note: "S | A | RR | B | F | R"]
+  sub_job             nvarchar(30)
+  source              nvarchar(100)    [note: "Bruner | Durango | Torrey Pines | Pebble | Decatur | Flamingo | South Nellis | West Henderson | Allowance | Budget | Proposal | Soft Bid | Historical | N/A"]
+  unit_of_measure     nvarchar(100)
+
+  // Takeoff (all levels)
+  takeoff_quantity    decimal(18,4)
+  takeoff_unit_price  decimal(18,4)
+  escalation_pct      decimal(6,4)     [not null, default: 0, note: "e.g. 0.05 = 5%"]
+  takeoff_amount      decimal(18,2)    [note: "Stored — allows manual override of qty × UP"]
+
+  // Baseline (frozen at promotion — never changes after set)
+  baseline_amount     decimal(18,2)    [note: "Set once at promotion from parent level. Used for variance comparison only. NULL on L0.1."]
+
+  // Proposal / bid (L3 dual-track)
+  proposal_amount     decimal(18,2)
+  preferred_source    nvarchar(20)     [default: "takeoff", note: "takeoff | proposal — which value L3 budget uses"]
+
+  // Trade package link (L3)
+  group_key           nvarchar(100)    [note: "Matches trade_packages.trade_key for bid mapping"]
+  selected_proposal_id uniqueidentifier [ref: > proposals.id, note: "Per-group-key bidder override. NULL = use trade_packages.awarded_bidder_id."]
+
+  // Two-track adjustment (L3 only)
+  committed_adjustment_amount decimal(18,2) [note: "Approved adj shown in master budget (read-only after commit)"]
+  proposed_adjustment_amount  decimal(18,2) [note: "Working draft in Proposal L3 Budget tab (editable)"]
+  change_note         nvarchar(1000)   [note: "Explanation shown in Summary of Significant Changes tab when |adj| >= $50k"]
+
+  // Notes
+  assumption          nvarchar(500)
+  notes               nvarchar(1000)
+  section             nvarchar(30)     [note: "standard | alternate"]
+  is_locked           bit              [not null, default: 0]
+
+  created_at          datetime2        [not null, default: `getutcdate()`]
+  updated_at          datetime2        [not null, default: `getutcdate()`]
+
+  indexes {
+    budget_level_id  [name: "IX_blli_level"]
+    line_item_id     [name: "IX_blli_line_item"]
+    group_key        [name: "IX_blli_group_key"]
+  }
+
+  note: "Core data table — one row per line item per budget level. cost_code + sub_job disambiguates items that appear in multiple sub-jobs (e.g. 26-1001 appears as Building, Carports, Cabana, Pump House electrical). Only non-markup rows aggregate into Hard Cost."
+}
+
+
+// ============================================================
+// E. COMPARABLE / BENCHMARKS
+// ============================================================
+
+Table comparable_projects {
+  id            uniqueidentifier [pk, default: `newid()`]
+  name          nvarchar(200)    [not null, unique, note: "Bruner | Durango | Torrey Pines | Pebble | Decatur | Flamingo | South Nellis | West Henderson"]
+  total_units   int
+  total_gsf     decimal(12,2)
+  contract_date date
+  city          nvarchar(100)
+  state         nchar(2)
+  product_type  nvarchar(50)
+  is_active     bit              [not null, default: 1]
+  created_at    datetime2        [not null, default: `getutcdate()`]
+
+  note: "Reference projects used as cost source benchmarks. Seeded from Ovation project history."
+}
+
+
+Table comparable_project_costs {
+  id                    uniqueidentifier [pk, default: `newid()`]
+  comparable_project_id uniqueidentifier [not null, ref: > comparable_projects.id]
+  division_id           int              [not null, ref: > divisions.id]
+  total_amount          decimal(18,2)    [note: "Total cost for this division"]
+  cost_per_unit         decimal(18,2)    [note: "total_amount / comparable_projects.total_units"]
+  cost_per_gross_sf     decimal(18,4)    [note: "total_amount / comparable_projects.total_gsf"]
+  notes                 nvarchar(500)
+
+  indexes {
+    (comparable_project_id, division_id) [unique, name: "UQ_cpc_project_division"]
+    division_id                          [name: "IX_cpc_division"]
+  }
+
+  note: "Manually seeded per comparable project. Benchmark view queries cost_per_unit by division across all active comparable projects and renders them side-by-side against the current project."
+}
+
+
+// ============================================================
+// F. TRADE PACKAGES & BIDS
+// ============================================================
+
+Table trade_packages {
+  id                  uniqueidentifier [pk, default: `newid()`]
+  budget_level_id     uniqueidentifier [not null, ref: > budget_levels.id]
+  trade_key           nvarchar(100)    [not null, note: "e.g. framing | concrete-slab | electrical | wet-utilities"]
+  title               nvarchar(200)    [not null, note: "Display name e.g. Framing"]
+  estimated_cost_l2   decimal(18,2)    [note: "L2 baseline for variance tracking"]
+  status              nvarchar(20)     [not null, default: "Open", note: "Open | Proposed | Awarded"]
+  awarded_bidder_id   uniqueidentifier [ref: > bidders.id]
+  awarded_amount      decimal(18,2)
+  group_keys          nvarchar(max)    [note: "JSON array of budget_level_line_items.group_key values this trade covers"]
+  sort_order          smallint         [not null, default: 0]
+  notes               ntext
+
+  indexes {
+    budget_level_id                  [name: "IX_tp_level"]
+    (budget_level_id, trade_key)     [unique, name: "UQ_tp_level_key"]
+  }
+
+  note: "L3 only. Links to budget_level_line_items via group_key. One awarded_bidder_id per trade; individual line items may override via selected_proposal_id."
+}
+
+
+Table bidders {
+  id              uniqueidentifier [pk, default: `newid()`]
+  company_name    nvarchar(200)    [not null]
+  contact_name    nvarchar(200)
+  email           nvarchar(256)
+  phone           nvarchar(30)
+  license_number  nvarchar(100)
+  is_active       bit              [not null, default: 1]
+  created_at      datetime2        [not null, default: `getutcdate()`]
+
+  note: "Subcontractor / vendor company records. Shared reference — not per project."
+}
+
+
+Table proposals {
+  id               uniqueidentifier [pk, default: `newid()`]
+  trade_package_id uniqueidentifier [not null, ref: > trade_packages.id]
+  budget_level_id  uniqueidentifier [not null, ref: > budget_levels.id]
+  bidder_id        uniqueidentifier [not null, ref: > bidders.id]
+  base_bid         decimal(18,2)
+  leveled_bid      decimal(18,2)    [note: "Adjusted during leveling session"]
+  submitted_by     nvarchar(200)
+  revision_date    date
+  status           nvarchar(20)     [not null, default: "Submitted", note: "Submitted | Proposed | Awarded | Declined"]
+  is_selected      bit              [not null, default: 0]
+  awarded_amount   decimal(18,2)
+  notes            nvarchar(1000)
+  source_file_id   uniqueidentifier [ref: > uploaded_files.id]
+  created_at       datetime2        [not null, default: `getutcdate()`]
+  updated_at       datetime2        [not null, default: `getutcdate()`]
+
+  indexes {
+    trade_package_id [name: "IX_proposals_trade"]
+    budget_level_id  [name: "IX_proposals_level"]
+  }
+}
+
+
+Table proposal_line_items {
+  id          uniqueidentifier [pk, default: `newid()`]
+  proposal_id uniqueidentifier [not null, ref: > proposals.id]
+  label       nvarchar(300)    [not null]
+  section     nvarchar(30)     [not null, default: "LINE ITEMS", note: "LINE ITEMS | ADDITIONAL ITEMS | ALTERNATES"]
+  amount      decimal(18,2)
+  sort_order  smallint         [not null, default: 0]
+  notes       nvarchar(500)
+
+  indexes {
+    proposal_id [name: "IX_pli_proposal"]
+  }
+}
+
+
+// ============================================================
+// G. TAKEOFFS
+// ============================================================
+
+Table takeoffs {
+  id              uniqueidentifier [pk, default: `newid()`]
+  budget_level_id uniqueidentifier [not null, ref: > budget_levels.id]
+  trade_key       nvarchar(100)    [not null, note: "grading-pavings | wet-utilities | site-concrete | site-iron | masonry"]
+  description     nvarchar(300)    [not null]
+  uom             nvarchar(20)
+
+  // L2 baseline
+  quantity_l2     decimal(18,4)
+  unit_price_l2   decimal(18,4)
+  total_l2        decimal(18,2)    [note: "Stored: quantity_l2 × unit_price_l2"]
+
+  // L3 recommended
+  quantity_l3     decimal(18,4)
+  unit_price_l3   decimal(18,4)
+  total_l3        decimal(18,2)    [note: "Stored: quantity_l3 × unit_price_l3"]
+
+  sort_order      smallint         [not null, default: 0]
+  notes           nvarchar(500)
+
+  indexes {
+    (budget_level_id, trade_key) [name: "IX_takeoffs_level_trade"]
+  }
+
+  note: "Dual-track L2 vs L3 quantities for site work. Displayed side-by-side in the takeoff view."
+}
+
+
+Table takeoff_configs {
+  id              uniqueidentifier [pk, default: `newid()`]
+  budget_level_id uniqueidentifier [not null, ref: > budget_levels.id]
+  trade_key       nvarchar(100)    [not null]
+  has_l2          bit              [not null, default: 1]
+  has_l3          bit              [not null, default: 0]
+  layout_hint     nvarchar(100)    [note: "Optional UI layout metadata for the takeoff view"]
+  sort_order      smallint         [not null, default: 0]
+
+  indexes {
+    budget_level_id [name: "IX_tc_level"]
+  }
+}
+
+
+Table takeoff_plans {
+  id              uniqueidentifier [pk, default: `newid()`]
+  budget_level_id uniqueidentifier [not null, ref: > budget_levels.id]
+  trade_key       nvarchar(100)    [not null]
+  file_id         uniqueidentifier [not null, ref: > uploaded_files.id]
+  label           nvarchar(200)
+  sort_order      smallint         [not null, default: 0]
+
+  indexes {
+    budget_level_id [name: "IX_tpl_level"]
+  }
+}
+
+
+Table trade_historical_benchmarks {
+  id              uniqueidentifier [pk, default: `newid()`]
+  trade_key       nvarchar(100)    [not null]
+  label           nvarchar(200)    [not null]
+  region          nvarchar(100)
+  cost_per_unit   decimal(18,2)
+  cost_per_sf     decimal(18,4)
+  source_project  nvarchar(200)    [note: "Reference project name"]
+  effective_date  date
+  notes           nvarchar(500)
+
+  indexes {
+    trade_key [name: "IX_thb_trade"]
+  }
+
+  note: "Per-trade historical cost benchmarks used in leveling sheets for L3 bid comparison."
+}
+
+
+// ============================================================
+// H. APPROVALS & FILES
+// ============================================================
+
+Table budget_approvals {
+  id              uniqueidentifier [pk, default: `newid()`]
+  budget_level_id uniqueidentifier [not null, ref: > budget_levels.id]
+  approved_by     nvarchar(200)    [not null]
+  approved_at     datetime2        [not null, default: `getutcdate()`]
+  signature_data  nvarchar(max)    [note: "Base64-encoded canvas PNG"]
+  sha256_hash     nchar(64)        [not null, note: "SHA-256 of snapshot_json"]
+  snapshot_json   nvarchar(max)    [not null, note: "Full budget state at approval time"]
+  version         nvarchar(20)
+  notes           nvarchar(1000)
+
+  indexes {
+    budget_level_id [name: "IX_ba_level"]
+  }
+
+  note: "Immutable. Created when an authorized user signs off. Never update or delete."
+}
+
+
+Table uploaded_files {
+  id                  uniqueidentifier [pk, default: `newid()`]
+  budget_level_id     uniqueidentifier [not null, ref: > budget_levels.id]
+  original_name       nvarchar(500)    [not null]
+  blob_path           nvarchar(1000)   [not null]
+  file_type           nvarchar(10)     [not null, note: "xlsx | xls | csv | pdf"]
+  file_size_bytes     bigint           [not null]
+  status              nvarchar(50)     [not null, default: "Queued", note: "Queued | Processing | Complete | NeedsMapping | Error"]
+  rows_parsed         int
+  error_message       nvarchar(max)
+  uploaded_by_user_id uniqueidentifier [not null, ref: > users.id]
+  uploaded_at         datetime2        [not null, default: `getutcdate()`]
+  processed_at        datetime2
+
+  indexes {
+    budget_level_id [name: "IX_uf_level"]
+    status          [name: "IX_uf_status"]
+  }
+}
+
+
+// ============================================================
+// I. NOTIFICATIONS & AUDIT
+// ============================================================
+
+Table notifications {
+  id          uniqueidentifier [pk, default: `newid()`]
+  user_id     uniqueidentifier [not null, ref: > users.id]
+  type        nvarchar(100)    [not null, note: "BudgetSubmitted | BudgetApproved | BudgetRejected | FileParsed | FileNeedsMapping | TradeAwarded"]
+  title       nvarchar(200)    [not null]
+  body        nvarchar(500)    [not null]
+  is_read     bit              [not null, default: 0]
+  entity_type nvarchar(100)
+  entity_id   nvarchar(100)
+  created_at  datetime2        [not null, default: `getutcdate()`]
+  read_at     datetime2
+
+  indexes {
+    user_id    [name: "IX_notif_user"]
+    created_at [name: "IX_notif_time"]
+  }
+}
+
+
+Table audit_log {
+  id          bigint           [pk, increment]
+  user_id     uniqueidentifier [not null, ref: > users.id]
+  entity_type nvarchar(100)    [not null, note: "e.g. BudgetLevelLineItem"]
+  entity_id   nvarchar(100)    [not null, note: "GUID as string"]
+  field       nvarchar(100)    [not null, note: "e.g. TakeoffAmount"]
+  old_value   nvarchar(max)
+  new_value   nvarchar(max)
+  changed_at  datetime2        [not null, default: `getutcdate()`]
+  ip_address  nvarchar(45)
+
+  indexes {
+    (entity_type, entity_id) [name: "IX_audit_entity"]
+    user_id                  [name: "IX_audit_user"]
+    changed_at               [name: "IX_audit_time"]
+  }
+
+  note: "Append-only. Never update or delete rows. BIGINT PK for high-volume write performance."
+}
+
+
+// ============================================================
+// TABLE GROUPS (for dbdiagram.io visual organization)
+// ============================================================
+
+TableGroup identity_access {
+  users
+  roles
+  user_roles
+  project_users
+}
+
+TableGroup project_core {
+  projects
+  unit_mix
+  parking
+}
+
+TableGroup budget_versioning {
+  budget_levels
+  markups
+}
+
+TableGroup line_items_group {
+  divisions
+  line_items
+  budget_level_line_items
+}
+
+TableGroup comparable_benchmarks {
+  comparable_projects
+  comparable_project_costs
+}
+
+TableGroup trade_packages_bids {
+  trade_packages
+  bidders
+  proposals
+  proposal_line_items
+}
+
+TableGroup takeoffs_group {
+  takeoffs
+  takeoff_configs
+  takeoff_plans
+  trade_historical_benchmarks
+}
+
+TableGroup approvals_files {
+  budget_approvals
+  uploaded_files
+}
+
+TableGroup notifications_audit {
+  notifications
+  audit_log
+}
