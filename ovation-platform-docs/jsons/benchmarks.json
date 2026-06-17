@@ -1,0 +1,421 @@
+{
+  "subject": {
+    "units": 390,
+    "gsf": 423131,
+    "acres": 15.826,
+    "siteSF": 689380.56
+  },
+  "comparison_projects": [
+    {
+      "name": "Bruner",
+      "units": 194,
+      "gsf": 196289,
+      "acres": 4.9,
+      "siteSF": 213444
+    },
+    {
+      "name": "South Nellis",
+      "units": 50,
+      "gsf": 34388,
+      "acres": 1.3,
+      "siteSF": 56628
+    },
+    {
+      "name": "Torrey Pines",
+      "units": 190,
+      "gsf": 188825,
+      "acres": 5,
+      "siteSF": 217800
+    },
+    {
+      "name": "Decatur",
+      "units": 276,
+      "gsf": 258464,
+      "acres": 9.45,
+      "siteSF": 411642
+    },
+    {
+      "name": "Pebble",
+      "units": 195,
+      "gsf": 184108,
+      "acres": 5,
+      "siteSF": 217800
+    }
+  ],
+  "line_items": [
+    {
+      "description": "Framing",
+      "l2_cost": 7607430.0,
+      "uom": "SF",
+      "group_keys": [
+        "06-1100"
+      ],
+      "prev_unit_prices": [
+        18.68,
+        20.08,
+        19.92,
+        22.89,
+        19.01
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "Electrical",
+      "l2_cost": 4251708.1,
+      "uom": "SF (Bldg)",
+      "group_keys": [
+        "26-1001"
+      ],
+      "prev_unit_prices": [
+        10.06,
+        12.5,
+        9.27,
+        10.18,
+        12.13
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "HVAC Standard",
+      "l2_cost": 3851250.0,
+      "uom": "Unit",
+      "group_keys": [
+        "23-3001"
+      ],
+      "prev_unit_prices": [
+        9875,
+        10148.68,
+        9739.27,
+        10104.67,
+        9218.25
+      ],
+      "units_l2": 390,
+      "units_l3": 390
+    },
+    {
+      "description": "Drywall",
+      "l2_cost": 3233157.75,
+      "uom": "SF (Bldg)",
+      "group_keys": [
+        "09-2905"
+      ],
+      "prev_unit_prices": [
+        7.29,
+        7.74,
+        8.02,
+        7.36,
+        8.08
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "Plumbing",
+      "l2_cost": 4747533.5,
+      "uom": "1 Bath Unit",
+      "group_keys": [
+        "22-1001"
+      ],
+      "prev_unit_prices": [
+        10069,
+        10196.24,
+        10526.31,
+        11042.51,
+        10050.21
+      ],
+      "units_l2": 390,
+      "units_l3": 390
+    },
+    {
+      "description": "Site Landscaping",
+      "l2_cost": 3662724.77,
+      "uom": "Lands SF",
+      "group_keys": [
+        "32-9001-main"
+      ],
+      "prev_unit_prices": [
+        13.68,
+        10.5,
+        12.01,
+        13.48,
+        21.39
+      ],
+      "units_l2": 304972.92,
+      "units_l3": 304972.92
+    },
+    {
+      "description": "Slabs",
+      "l2_cost": 1672098.28,
+      "uom": "SF (Slab)",
+      "group_keys": [
+        "03-3101"
+      ],
+      "prev_unit_prices": [
+        11.11,
+        16.78,
+        11.99,
+        15.88,
+        16.06
+      ],
+      "units_l2": 145399.85,
+      "units_l3": 145399.85
+    },
+    {
+      "description": "Appliances",
+      "l2_cost": 1360515.0,
+      "uom": "Unit",
+      "group_keys": [
+        "11-3013"
+      ],
+      "prev_unit_prices": [
+        3170,
+        3064.49,
+        3488.5,
+        3454.48,
+        3201.5
+      ],
+      "units_l2": 390,
+      "units_l3": 390
+    },
+    {
+      "description": "Cabinets Units",
+      "l2_cost": 1179430.2,
+      "uom": "Unit",
+      "group_keys": [
+        "12-3531"
+      ],
+      "prev_unit_prices": [
+        4150.25,
+        1985.2,
+        3778.01,
+        3705.43,
+        3113.73
+      ],
+      "units_l2": 390,
+      "units_l3": 390
+    },
+    {
+      "description": "Finish Carpentry - Units",
+      "l2_cost": 1170454.0,
+      "uom": "Livable SF",
+      "group_keys": [
+        "06-2001-units"
+      ],
+      "prev_unit_prices": [
+        2607.15,
+        2710.9,
+        3210.04,
+        2983.36,
+        3081.23
+      ],
+      "units_l2": 329873,
+      "units_l3": 329873
+    },
+    {
+      "description": "Insulation",
+      "l2_cost": 1056587.5,
+      "uom": "SF (Bldg)",
+      "group_keys": [
+        "07-2101"
+      ],
+      "prev_unit_prices": [
+        2.5,
+        2.54,
+        2.7,
+        2.27,
+        2.5
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "Stucco",
+      "l2_cost": 1150552.6,
+      "uom": "SY (Bldg)",
+      "group_keys": [
+        "09-2423"
+      ],
+      "prev_unit_prices": [
+        39.84,
+        39.37,
+        40.82,
+        42.23,
+        46.69
+      ],
+      "units_l2": 28186,
+      "units_l3": 28186
+    },
+    {
+      "description": "Sprinkler System",
+      "l2_cost": 1119982.75,
+      "uom": "SF (Bldg)",
+      "group_keys": [
+        "21-1313"
+      ],
+      "prev_unit_prices": [
+        2.65,
+        3.21,
+        2.45,
+        2.94,
+        2.45
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "Roofing",
+      "l2_cost": 979716.27,
+      "uom": "Square",
+      "group_keys": [
+        "07-3001"
+      ],
+      "prev_unit_prices": [
+        596,
+        491.4,
+        603.4,
+        598.39,
+        535.74
+      ],
+      "units_l2": 1734.01,
+      "units_l3": 1734.01
+    },
+    {
+      "description": "Painting",
+      "l2_cost": 811459.2,
+      "uom": "SF (Bldg)",
+      "group_keys": [
+        "09-9101-main"
+      ],
+      "prev_unit_prices": [
+        1.58,
+        2.05,
+        1.84,
+        2.1,
+        1.93
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "Lightweight Concrete",
+      "l2_cost": 679394.69,
+      "uom": "SF",
+      "group_keys": [
+        "03-3116"
+      ],
+      "prev_unit_prices": [
+        2.8,
+        2.93,
+        2.94,
+        1.3,
+        1.1
+      ],
+      "units_l2": 261711,
+      "units_l3": 261711
+    },
+    {
+      "description": "Fire Alarm / Two Way Comm AOR",
+      "l2_cost": 950928.75,
+      "uom": "SF",
+      "group_keys": [
+        "28-4601"
+      ],
+      "prev_unit_prices": [
+        1.34,
+        1.98,
+        1.67,
+        1.94,
+        1.55
+      ],
+      "units_l2": 422635,
+      "units_l3": 423131
+    },
+    {
+      "description": "Flooring - Units",
+      "l2_cost": 597070.13,
+      "uom": "SY",
+      "group_keys": [
+        "09-6001"
+      ],
+      "prev_unit_prices": [
+        22.5,
+        24.63,
+        20.97,
+        18.75,
+        16.26
+      ],
+      "units_l2": 36652.56,
+      "units_l3": 36652.56
+    },
+    {
+      "description": "Counter Tops Units",
+      "l2_cost": 804222.02,
+      "uom": "Unit",
+      "group_keys": [
+        "12-3601"
+      ],
+      "prev_unit_prices": [
+        1868.44,
+        1100,
+        1724,
+        1551.73,
+        1600.25
+      ],
+      "units_l2": 390,
+      "units_l3": 390
+    },
+    {
+      "description": "Windows and Sliding Glass Doors",
+      "l2_cost": 573144.0,
+      "uom": "Unit",
+      "group_keys": [
+        "08-5301"
+      ],
+      "prev_unit_prices": [
+        1335.87,
+        1300.61,
+        1157.89,
+        1408.83,
+        739.27
+      ],
+      "units_l2": 390,
+      "units_l3": 390
+    },
+    {
+      "description": "Pools and Spas",
+      "l2_cost": 267940.0,
+      "uom": "LS",
+      "group_keys": [
+        "13-1113"
+      ],
+      "prev_unit_prices": [
+        249085,
+        null,
+        245000,
+        228710,
+        208310
+      ],
+      "units_l2": 1,
+      "units_l3": 1
+    },
+    {
+      "description": "Fire Pump",
+      "l2_cost": 160560.0,
+      "uom": "LS",
+      "group_keys": [
+        "21-3000"
+      ],
+      "prev_unit_prices": [
+        103700,
+        null,
+        133300,
+        160560,
+        120800
+      ],
+      "units_l2": 1,
+      "units_l3": 1
+    }
+  ]
+}

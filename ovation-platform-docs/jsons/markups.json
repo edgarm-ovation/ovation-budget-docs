@@ -1,0 +1,24 @@
+{
+  "project_id": "west-henderson-apartments",
+  "excluded_from_base": [
+    "01",
+    "50",
+    "51",
+    "55",
+    "98",
+    "99",
+    "BR"
+  ],
+  "defaults": {
+    "contingencyPct": 0.06,
+    "feePct": 0.06,
+    "ohPct": 0.02,
+    "insurancePct": 0.0106
+  },
+  "division_map": {
+    "contingency": "55",
+    "fee": "98",
+    "overhead": "99",
+    "insurance": "51"
+  }
+}

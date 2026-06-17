@@ -1,0 +1,34 @@
+[
+  {
+    "level": 0,
+    "name": "Pre-Schematic / Conceptual",
+    "stage": "Conceptual",
+    "objective": "Win project or support go/no-go decision",
+    "accuracy": "Order-of-magnitude; highest contingency; historical data only",
+    "color": "#C0652A"
+  },
+  {
+    "level": 1,
+    "name": "Schematic Design",
+    "stage": "Schematic Design",
+    "objective": "Quick estimate for project feasibility",
+    "accuracy": "Historical data, local market; no inflation/escalation/design contingency",
+    "color": "#536857"
+  },
+  {
+    "level": 2,
+    "name": "Design Development",
+    "stage": "Design Development",
+    "objective": "Update budget with new information and plans",
+    "accuracy": "Most recent costs for similar product; no inflation or design contingency",
+    "color": "#5B5B5B"
+  },
+  {
+    "level": 3,
+    "name": "Construction Documents (Permit Set)",
+    "stage": "Construction Documents",
+    "objective": "Finalize budget for bank and ownership",
+    "accuracy": "Full quantity take-offs; 3-deep sub coverage; proposal-based + takeoff/unit pricing",
+    "color": "#1A1A1A"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "role_id": "viewer",
+    "name": "Viewer",
+    "can_view": true,
+    "can_edit": false,
+    "can_approve": false
+  },
+  {
+    "role_id": "estimator",
+    "name": "Budgeting Staff / Estimator",
+    "can_view": true,
+    "can_edit": true,
+    "can_approve": false
+  },
+  {
+    "role_id": "reviewer",
+    "name": "Reviewer",
+    "can_view": true,
+    "can_edit": true,
+    "can_approve": false
+  },
+  {
+    "role_id": "approver",
+    "name": "Approver",
+    "can_view": true,
+    "can_edit": true,
+    "can_approve": true
+  }
+]

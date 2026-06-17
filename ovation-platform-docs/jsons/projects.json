@@ -1,0 +1,22 @@
+[
+  {
+    "project_id": "west-henderson-apartments",
+    "name": "West Henderson Apartments",
+    "type": "Affordable",
+    "address": "Henderson, NV",
+    "start_date": "2026-08-01",
+    "timeline_months": 26,
+    "product_class": "Level 3 Estimate",
+    "site_acres": 15.826,
+    "buildings": 4,
+    "floors": "2 & 3 Levels",
+    "efficiency": 0.78,
+    "bldg_sf": 423131,
+    "site_sf": 689380.56,
+    "total_units": 390,
+    "total_gsf": 426549,
+    "current_level": 3,
+    "status": "in_progress",
+    "locked": false
+  }
+]

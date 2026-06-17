@@ -1,0 +1,308 @@
+[
+  {
+    "division_id": "west-henderson-apartments__div-01",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "01",
+    "name": "General Requirements",
+    "section": "gc",
+    "division_total": 3849810.302916188
+  },
+  {
+    "division_id": "west-henderson-apartments__div-02",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "02",
+    "name": "Existing Conditions",
+    "section": "gc",
+    "division_total": 12000
+  },
+  {
+    "division_id": "west-henderson-apartments__div-03",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "03",
+    "name": "Concrete",
+    "section": "hard",
+    "division_total": 2546599.198062331
+  },
+  {
+    "division_id": "west-henderson-apartments__div-04",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "04",
+    "name": "Masonry",
+    "section": "hard",
+    "division_total": 275600
+  },
+  {
+    "division_id": "west-henderson-apartments__div-05",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "05",
+    "name": "Metals",
+    "section": "hard",
+    "division_total": 609026.9756
+  },
+  {
+    "division_id": "west-henderson-apartments__div-06",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "06",
+    "name": "Wood, Plastics, & Composites",
+    "section": "hard",
+    "division_total": 9324491.0
+  },
+  {
+    "division_id": "west-henderson-apartments__div-07",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "07",
+    "name": "Thermal & Moisture Protection",
+    "section": "hard",
+    "division_total": 2237303.7715
+  },
+  {
+    "division_id": "west-henderson-apartments__div-08",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "08",
+    "name": "Openings",
+    "section": "hard",
+    "division_total": 690619.0
+  },
+  {
+    "division_id": "west-henderson-apartments__div-09",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "09",
+    "name": "Finishes",
+    "section": "hard",
+    "division_total": 6934652.58164
+  },
+  {
+    "division_id": "west-henderson-apartments__div-10",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "10",
+    "name": "Specialties",
+    "section": "hard",
+    "division_total": 700376.2871794872
+  },
+  {
+    "division_id": "west-henderson-apartments__div-11",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "11",
+    "name": "Equipment",
+    "section": "hard",
+    "division_total": 1385515.0
+  },
+  {
+    "division_id": "west-henderson-apartments__div-12",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "12",
+    "name": "Furnishings",
+    "section": "hard",
+    "division_total": 2369433.4150845585
+  },
+  {
+    "division_id": "west-henderson-apartments__div-13",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "13",
+    "name": "Special Construction",
+    "section": "hard",
+    "division_total": 1134489
+  },
+  {
+    "division_id": "west-henderson-apartments__div-13-G",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "13-G",
+    "name": "Traffic",
+    "section": "hard",
+    "division_total": 0
+  },
+  {
+    "division_id": "west-henderson-apartments__div-14",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "14",
+    "name": "Conveying Equipment",
+    "section": "hard",
+    "division_total": 508000
+  },
+  {
+    "division_id": "west-henderson-apartments__div-21",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "21",
+    "name": "Fire Suppression",
+    "section": "hard",
+    "division_total": 1322806.25
+  },
+  {
+    "division_id": "west-henderson-apartments__div-22",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "22",
+    "name": "Plumbing",
+    "section": "hard",
+    "division_total": 4783145.5
+  },
+  {
+    "division_id": "west-henderson-apartments__div-23",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "23",
+    "name": "HVAC",
+    "section": "hard",
+    "division_total": 3866250
+  },
+  {
+    "division_id": "west-henderson-apartments__div-26",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "26",
+    "name": "Electrical",
+    "section": "hard",
+    "division_total": 5287886.100000001
+  },
+  {
+    "division_id": "west-henderson-apartments__div-27",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "27",
+    "name": "Communications",
+    "section": "hard",
+    "division_total": 253754.65
+  },
+  {
+    "division_id": "west-henderson-apartments__div-28",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "28",
+    "name": "Electronic Safety & Security",
+    "section": "hard",
+    "division_total": 1349898.75
+  },
+  {
+    "division_id": "west-henderson-apartments__div-31",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "31",
+    "name": "Earthwork",
+    "section": "hard",
+    "division_total": 1455055.4581000002
+  },
+  {
+    "division_id": "west-henderson-apartments__div-32",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "32",
+    "name": "Exterior Improvements",
+    "section": "hard",
+    "division_total": 7622826.891436744
+  },
+  {
+    "division_id": "west-henderson-apartments__div-33",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "33",
+    "name": "Utilities",
+    "section": "hard",
+    "division_total": 7092245.069999998
+  },
+  {
+    "division_id": "west-henderson-apartments__div-34",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "34",
+    "name": "Transportation",
+    "section": "gc",
+    "division_total": 15000
+  },
+  {
+    "division_id": "west-henderson-apartments__div-48",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "48",
+    "name": "Electrical Power Generation",
+    "section": "hard",
+    "division_total": 469750
+  },
+  {
+    "division_id": "west-henderson-apartments__div-49",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "49",
+    "name": "Field Surveys, Staking",
+    "section": "hard",
+    "division_total": 486632.15
+  },
+  {
+    "division_id": "west-henderson-apartments__div-FFE",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "FFE",
+    "name": "Furniture, Fixtures & Equipment",
+    "section": "hard",
+    "division_total": 1430148
+  },
+  {
+    "division_id": "west-henderson-apartments__div-55",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "55",
+    "name": "Construction Contingency",
+    "section": "gc",
+    "division_total": 3849810.302916188
+  },
+  {
+    "division_id": "west-henderson-apartments__div-BR",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "BR",
+    "name": "Bid Risk",
+    "section": null,
+    "division_total": 1254667.1409720625
+  },
+  {
+    "division_id": "west-henderson-apartments__div-50",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "50",
+    "name": "Sub Bonds",
+    "section": "gc",
+    "division_total": 705798.5555346344
+  },
+  {
+    "division_id": "west-henderson-apartments__div-51",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "51",
+    "name": "GL Insurance",
+    "section": null,
+    "division_total": 680000.0
+  },
+  {
+    "division_id": "west-henderson-apartments__div-98",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "98",
+    "name": "Contractor Fee",
+    "section": null,
+    "division_total": 4008238.244706589
+  },
+  {
+    "division_id": "west-henderson-apartments__div-99",
+    "project_id": "west-henderson-apartments",
+    "level": 3,
+    "code": "99",
+    "name": "Overhead",
+    "section": null,
+    "division_total": 1336079.4149021965
+  }
+]
