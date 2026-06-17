@@ -1,6 +1,10 @@
 # 10 — Budget Variance Summary
 
-**Sprint:** Weeks 5–6 | **Status:** Planned
+**Verdict:** 🟡 Add-on | **Sprint:** Week 6 | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** A simple L2-vs-L3 delta **table** is in scope (data already in `BaselineAmount`). The chart/waterfall is polish, and the Excel-export sheet referenced below is **out** (09 deferred) — variance is in-app only.
 
 ---
 
@@ -64,7 +68,7 @@ TOTAL                │  $4,210,000 │  $4,261,500 │   +$51,500  │  +1.2%
 
 - [05 — Bid Leveling](./05-bid-leveling.md) — awarded bids are the L3 side of the comparison
 - [03 — Budget Table Editing](./03-budget-editing.md) — L2 line item data is the other side
-- [09 — Excel Export](./09-excel-export.md) — variance included as a sheet in the export
+- [09 — Excel Export](../later/09-excel-export.md) — *deferred from H0; variance is in-app only in the demo*
 
 ---
 

@@ -11,36 +11,39 @@ NOW          Week 8         Month 3        Month 6        Year 2+
  │              │              │              │              │
  ▼              ▼              ▼              ▼              ▼
 Foundation  ──► Demo       ──► Growth     ──► Production ──► Scale
-2 projects      Owner         All active     Full team      Platform
-Auth + tables   presentation  projects       features       expansion
+2–3 projects    Owner         All active     Full team      Platform
+Seed + calc     presentation  projects       features       expansion
 ```
 
 ---
 
 ## Phase 1 — Foundation (Weeks 1–8)
 
-**Goal:** A working, demo-ready application that shows ownership the full vision.
+**Goal:** A real, data-backed application that **replaces the Excel budget workflow** for 2–3 seeded projects — and shows ownership the full vision. Confirmed scope 2026-06-17; see [roadmap-8-weeks.md](./roadmap-8-weeks.md) and [features/](../../features/) for the week-by-week detail.
 
-**In scope:**
+**In scope (built for real, persisted to Azure SQL):**
 - Next.js + .NET 8 scaffold deployed to Azure
-- Azure AD authentication with role-based access
-- Core bid leveling tables (expandable divisions, inline editing, bid picker)
-- File upload — Excel and CSV with auto field mapping + manual fallback
-- Markup formula engine (contingency, fee, OH, insurance, bonds)
-- Approval workflow (submit → approve → lock)
-- In-app and email notifications
-- Export to Excel
-- Budget variance chart
-- Two seed projects: West Henderson (L3) + Robindale 215 (L2)
+- Seed data for 2–3 projects (West Henderson L3 + Robindale 215 L2) — **the data source for the demo**
+- Cost-code / division structure and budget-level navigation (L0/L1 read-only)
+- Core bid leveling tables (expandable divisions, inline editing, `group_key` bid picker)
+- Markup formula engine (contingency, fee, OH, insurance, bonds) — **calculates the budget proposal amount**, server-side
+- Approval workflow (submit → approve → lock + SHA-256 snapshot)
+- In-app notifications (bell + feed)
+- Budget variance summary (L2 vs L3)
+- Foundation invariants in place (server = source of truth, append-only audit, `OrgId` hedge)
 
-**Not in scope for demo:**
+**Deferred from the 8-week build → Phase 2** (specs preserved in [features/later/](../../features/later/)):
+- **Real Azure AD / Entra ID authentication + role-based access** (demo uses a simple role switcher only)
+- **File import** — Excel/CSV with field mapping (data is seeded instead)
+- **Excel export** (ClosedXML) — browser-print of the approval view covers any demo need
+- **Email notifications** (Azure Communication Services) — in-app bell only for the demo
+
+**Also not in scope for demo (unchanged):**
 - L0 and L1 data entry flows (display only)
 - Real-time conflict resolution (SignalR sync yes, conflict UI no)
-- Cross-project reporting
-- Mobile optimization
-- Historical archive
+- Cross-project reporting · Mobile optimization · Historical archive
 
-**Demo target:** Present to Reinier Santana and ownership with live data from West Henderson and Robindale.
+**Demo target:** Present to Reinier Santana and ownership with live, persisted data from West Henderson and Robindale.
 
 ---
 
@@ -49,6 +52,9 @@ Auth + tables   presentation  projects       features       expansion
 **Goal:** Expand from 2 projects to all active Ovation projects. Full team onboarded.
 
 **Features:**
+- **Real Azure AD / Entra ID authentication + role-based access** (carried over from Phase 1 — replaces the demo role switcher)
+- **File import** — Excel/CSV with auto field mapping + manual fallback (carried over from Phase 1)
+- **Excel export** (ClosedXML) and **email notifications** (Azure Communication Services) (carried over from Phase 1)
 - All active Ovation projects migrated into the platform
 - L0 and L1 data entry flows (full budget level support)
 - Operations module — track construction progress against budget

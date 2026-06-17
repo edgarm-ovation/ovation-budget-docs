@@ -1,6 +1,10 @@
 # 06 — Markup Formula Engine
 
-**Sprint:** Weeks 3–4 | **Status:** Planned
+**Verdict:** 🟢 Core — calculates the budget proposal amount | **Sprint:** Weeks 4–5 | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** This is the "calculate the proposal amount" engine — server-side `FormulaService` is the source of truth. Per ratified architecture (target-architecture §7): keep all **7 markups**; **General Requirements + Bid Risk are computed read-only**, the other 5 are editable. The markup table below is illustrative — reconcile names to `docs/backend/formula-engine.md`.
 
 ---
 

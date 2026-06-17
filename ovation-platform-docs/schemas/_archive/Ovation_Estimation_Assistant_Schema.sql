@@ -351,6 +351,7 @@ CREATE INDEX idx_Scenarios_ProjectId ON Scenarios(ProjectId);
 -- ─────────────────────────────────────────────────────────────────────────────
 
 -- Comprehensive budget overview
+GO
 CREATE VIEW vw_BudgetOverview AS
 SELECT
   p.ProjectId,
@@ -374,6 +375,7 @@ LEFT JOIN BudgetSummary bs ON b.BudgetId = bs.BudgetId
 LEFT JOIN PropertyDetails pd ON b.BudgetId = pd.BudgetId;
 
 -- Line item detail with roll-up
+GO
 CREATE VIEW vw_LineItemDetail AS
 SELECT
   li.LineItemId,
@@ -393,6 +395,7 @@ GROUP BY li.LineItemId, li.BudgetId, li.LineItemCode, li.LineItemName,
          li.LineItemLevel, li.EstimatedAmount, li.Contingency, li.TotalAmount;
 
 -- Budget level comparison across project
+GO
 CREATE VIEW vw_BudgetLevelComparison AS
 SELECT
   p.ProjectId,

@@ -1,6 +1,10 @@
 # 09 — Excel Export
 
-**Sprint:** Weeks 5–6 | **Status:** Planned
+**Verdict:** ⛔ DEFERRED from H0 build | **Target:** Phase 2 | **Status:** Deferred 2026-06-17
+
+---
+
+> **H0 scope note:** Excel export (ClosedXML) is **deferred** from the 8-week build — it's plumbing that doesn't prove core value. If any "export" is shown in the demo, it's a **browser print** of the approval view (🔵 stretch). This spec is the **Phase 2 target**. See [roadmap-8-weeks.md](../../ovation-platform-docs/product/roadmap-8-weeks.md).
 
 ---
 
@@ -61,15 +65,15 @@ Sheet 3: Variance (if L2 vs L3 available)
 
 ## Dependencies
 
-- [03 — Budget Table Editing](./03-budget-editing.md) — export reflects the current saved state of the table
-- [06 — Markup Formula Engine](./06-markup-engine.md) — markup rows included in the export
-- [07 — Approval Workflow](./07-approval-workflow.md) — approval metadata appended to locked budget exports
+- [03 — Budget Table Editing](../in-scope/03-budget-editing.md) — export reflects the current saved state of the table
+- [06 — Markup Formula Engine](../in-scope/06-markup-engine.md) — markup rows included in the export
+- [07 — Approval Workflow](../in-scope/07-approval-workflow.md) — approval metadata appended to locked budget exports
 
 ---
 
 ## Related Features
 
-- [10 — Variance Summary](./10-variance-summary.md) — variance data optionally included as a third sheet
+- [10 — Variance Summary](../in-scope/10-variance-summary.md) — variance data optionally included as a third sheet
 
 ## Related Docs
 

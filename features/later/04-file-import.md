@@ -1,6 +1,10 @@
 # 04 — File Import (Excel / CSV)
 
-**Sprint:** Weeks 3–4 | **Status:** Planned
+**Verdict:** ⛔ DEFERRED from H0 build | **Target:** Phase 2 | **Status:** Deferred 2026-06-17
+
+---
+
+> **H0 scope note:** File import is the **highest-risk feature** in the plan and is **deferred from the 8-week build.** Data enters the app via **seed data (11)** instead. This spec is preserved as the **Phase 2 target** — do not build it during H0. See [roadmap-8-weeks.md](../../ovation-platform-docs/product/roadmap-8-weeks.md) and [deferred.md](../deferred.md).
 
 ---
 
@@ -64,15 +68,15 @@ Estimators upload a subcontractor's Excel or CSV file directly into the platform
 
 ## Dependencies
 
-- [02 — Project & Budget Navigation](./02-project-navigation.md) — import is scoped to a specific budget level
-- [03 — Budget Table Editing](./03-budget-editing.md) — import writes into the same table
+- [02 — Project & Budget Navigation](../in-scope/02-project-navigation.md) — import is scoped to a specific budget level
+- [03 — Budget Table Editing](../in-scope/03-budget-editing.md) — import writes into the same table
 - [01 — Authentication](./01-authentication.md) — Estimator role required
 
 ---
 
 ## Related Features
 
-- [05 — Bid Leveling](./05-bid-leveling.md) — uploaded proposals feed the bid leveling view
+- [05 — Bid Leveling](../in-scope/05-bid-leveling.md) — uploaded proposals feed the bid leveling view
 
 ## Related Docs
 

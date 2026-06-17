@@ -112,7 +112,7 @@ Use this doc when scoping future sprints, responding to stakeholder asks, or dec
 
 **Target:** Phase 3.
 
-**Related features:** [07 — Approval Workflow](./in-scope/07-approval-workflow.md), [09 — Excel Export](./in-scope/09-excel-export.md)
+**Related features:** [07 — Approval Workflow](./in-scope/07-approval-workflow.md), [09 — Excel Export](./later/09-excel-export.md)
 
 ---
 
@@ -124,7 +124,7 @@ Use this doc when scoping future sprints, responding to stakeholder asks, or dec
 
 **Target:** Phase 3.
 
-**Related features:** [01 — Authentication & Roles](./in-scope/01-authentication.md)
+**Related features:** [01 — Authentication & Roles](./later/01-authentication.md)
 
 ---
 
@@ -168,7 +168,7 @@ Use this doc when scoping future sprints, responding to stakeholder asks, or dec
 
 **Target:** Phase 3 (or ongoing, as new formats surface).
 
-**Related features:** [04 — File Import](./in-scope/04-file-import.md)
+**Related features:** [04 — File Import](./later/04-file-import.md)
 
 ---
 

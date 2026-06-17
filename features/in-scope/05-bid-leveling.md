@@ -1,6 +1,10 @@
 # 05 — Bid Leveling
 
-**Sprint:** Weeks 3–4 | **Status:** Planned
+**Verdict:** 🟢 Core | **Sprint:** Week 4 | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** Build the `group_key` proposal selection + awarded-bid persistence (the manager's signature workflow). Proposals are **seeded**, not loaded via import (04 deferred). Full summary-sheet richness (all bidder columns, winner markers) is a 🟡 add-on if time allows — see README.
 
 ---
 
@@ -68,9 +72,9 @@ TOTAL             │ $355,000   │ $353,500   │ $368,000
 
 ## Dependencies
 
-- [04 — File Import](./04-file-import.md) — proposals are loaded via file upload
+- [04 — File Import](../later/04-file-import.md) — *deferred from H0; proposals are seeded instead*
 - [03 — Budget Table Editing](./03-budget-editing.md) — awarded bid result flows back to the main table
-- [01 — Authentication](./01-authentication.md) — Estimator role required to award
+- [01 — Authentication](../later/01-authentication.md) — *deferred from H0*
 
 ---
 

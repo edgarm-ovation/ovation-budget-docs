@@ -15,7 +15,27 @@ Ovation's internal construction budget management platform replaces manually mai
 
 ---
 
+## ⚠️ Source of Truth (read this first)
+
+This repo is largely scaffolding — **most files are `[STUB]`**. When docs disagree, these are the authoritative ones:
+
+| Topic | Source of truth |
+|---|---|
+| **Data model / schema** | [`docs/database/schema.md`](./docs/database/schema.md) — Schema A, canonical per [ADR-005](./docs/architecture/decisions/ADR-005-canonical-data-model.md) |
+| **8-week build scope & goals** | [`product/roadmap-8-weeks.md`](./product/roadmap-8-weeks.md) |
+| **Feature scope (in-scope vs later)** | [`features/README.md`](../features/README.md) → [`in-scope/`](../features/in-scope/) · [`later/`](../features/later/) |
+| **Long-term architecture & invariants** | [`docs/architecture/target-architecture.md`](./docs/architecture/target-architecture.md) |
+| **Full product roadmap** | [`product/roadmap.md`](./product/roadmap.md) |
+| **Calculation rules** | [`docs/backend/formula-engine.md`](./docs/backend/formula-engine.md) |
+| **Seed data** | [`docs/database/seed-data.md`](./docs/database/seed-data.md) — ⚠️ **still a stub; Week-1 critical path** |
+
+> **Schema B is retired.** The old "Estimation Assistant" model now lives in [`schemas/_archive/`](./schemas/_archive/) — do not build against it (ADR-005).
+
+---
+
 ## Repository Map
+
+> **Note:** This map shows the *intended* structure. Many listed files are `[STUB]` or not yet created (e.g. some ADRs, sprint folders, and API docs). Treat the **Source of Truth** table above as what's real and authoritative today.
 
 ```
 ovation-platform-docs/

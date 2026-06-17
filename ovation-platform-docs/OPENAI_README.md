@@ -246,7 +246,7 @@ Before production rollout, confirm:
 - `product/manager-alignment-review.md` - current alignment and discrepancy review.
 - `docs/frontend/ui-patterns.md` - West Henderson UI reference.
 - `docs/database/schema.md` - Azure SQL schema.
-- `schemas/data_base_schema.dbml` - DBML schema reference.
+- `schemas/_archive/` - retired Schema B (Estimation Assistant); see `docs/database/schema.md` above for the canonical model (ADR-005).
 - `docs/architecture/system-overview.md` - system architecture.
 - `docs/backend/formula-engine.md` - calculation rules.
 

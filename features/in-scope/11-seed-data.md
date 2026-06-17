@@ -1,6 +1,10 @@
 # 11 — Seed Data
 
-**Sprint:** Weeks 7–8 | **Status:** Planned
+**Verdict:** 🟢 Core — **CRITICAL PATH** | **Sprint:** Weeks 1–2 (pulled forward) | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** Seed data is the **gating dependency** for the whole build — you cannot test the calculator without it. It moves from Weeks 7–8 to **Weeks 1–2**. Since file import (04) is deferred, seeding is also the *only* way data enters the app for the demo. `docs/database/seed-data.md` must be written first. Drop the "all features must work before seed" framing below — it's backwards now.
 
 ---
 
@@ -72,7 +76,7 @@ Realistic demo-ready data for the two pilot projects — West Henderson Apartmen
 
 All other in-scope features must be working before seed data can be validated end-to-end.
 
-- [01–10](./01-authentication.md) — all features must function correctly against the seed data
+- [All in-scope features](../README.md) — must function correctly against the seed data
 
 ## Related Docs
 

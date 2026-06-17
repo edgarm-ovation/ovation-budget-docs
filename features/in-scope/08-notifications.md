@@ -1,6 +1,10 @@
 # 08 — Notifications
 
-**Sprint:** Weeks 5–6 | **Status:** Planned
+**Verdict:** 🟡 Add-on — **in-app bell only** | **Sprint:** Week 7 | **Status:** Scoped down 2026-06-17
+
+---
+
+> **H0 scope note:** Only the **in-app notification bell + feed** is in scope. **Email via Azure Communication Services is deferred** (Phase 2) — the email column in the table below does not apply to H0. SignalR real-time push is optional; a simple fetch-on-load feed is acceptable for the demo. Import-completion notifications (04) don't apply since import is deferred.
 
 ---
 
@@ -54,9 +58,9 @@ Keeps all stakeholders in the loop without requiring them to constantly check th
 
 ## Dependencies
 
-- [01 — Authentication](./01-authentication.md) — notifications are per-user, auth required
+- [01 — Authentication](../later/01-authentication.md) — *deferred from H0; notifications keyed to the switcher user*
 - [07 — Approval Workflow](./07-approval-workflow.md) — approval events are the primary notification triggers
-- [04 — File Import](./04-file-import.md) — import completion/failure also triggers notifications
+- [04 — File Import](../later/04-file-import.md) — *deferred from H0; no import events in the demo*
 
 ---
 

@@ -1,6 +1,10 @@
 # 03 — Budget Table Editing
 
-**Sprint:** Weeks 3–4 | **Status:** Planned
+**Verdict:** 🟢 Core — the Excel-replacement spine | **Sprint:** Week 3 | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** This is the heart of the demo. Edits **persist to Azure SQL and survive reload** (real, not browser-only). Data is **seeded**, not imported (04 deferred). Server-side formula engine owns totals (06).
 
 ---
 
@@ -68,7 +72,7 @@ Project
 
 ## Related Features
 
-- [04 — File Import](./04-file-import.md) — import populates this table
+- [04 — File Import](../later/04-file-import.md) — *deferred from H0; this table is populated by seed data instead*
 - [05 — Bid Leveling](./05-bid-leveling.md) — awarded bid selection shown in the table
 
 ## Related Docs

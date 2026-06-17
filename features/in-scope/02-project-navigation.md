@@ -1,6 +1,10 @@
 # 02 — Project & Budget Navigation
 
-**Sprint:** Weeks 1–2 | **Status:** Planned
+**Verdict:** 🟢 Core | **Sprint:** Weeks 1–2 | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** L0/L1 are **read-only display** only. The notifications bell is in-app only (see 08). Project list is not role-filtered in H0 (no real auth — see 01); it shows all seeded projects.
 
 ---
 
@@ -48,7 +52,7 @@ The app shell and navigation layer — the skeleton every other feature lives in
 
 ## Dependencies
 
-- [01 — Authentication](./01-authentication.md) — project list is gated by role
+- [01 — Authentication](../later/01-authentication.md) — *deferred from H0; project list is not role-gated in the demo*
 
 ---
 

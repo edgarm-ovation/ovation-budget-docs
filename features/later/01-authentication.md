@@ -1,6 +1,10 @@
 # 01 — Authentication & Roles
 
-**Sprint:** Weeks 1–2 | **Status:** Planned
+**Verdict:** 🔵 Stretch — demo role switcher only | **Sprint:** if time allows | **Status:** Deferred from H0 build 2026-06-17
+
+---
+
+> **H0 scope note:** Real **Azure AD / Entra ID SSO and full role-based access are DEFERRED** to Phase 2 — it's a large time-sink that doesn't prove core value. For the demo, the most that's in scope is a **simple role/user switcher** (pick a user, no real login). Everything below describes the **Phase 2 target**, not the 8-week build. Other features must not assume a real auth gate exists yet.
 
 ---
 
@@ -58,8 +62,8 @@ Secure login via Azure AD (Ovation's existing M365 tenant) with four role tiers 
 
 ## Related Features
 
-- [02 — Project & Budget Navigation](./02-project-navigation.md) — project list is filtered by `ProjectUsers`
-- [07 — Approval Workflow](./07-approval-workflow.md) — approve/reject actions require Manager role
+- [02 — Project & Budget Navigation](../in-scope/02-project-navigation.md) — project list is filtered by `ProjectUsers`
+- [07 — Approval Workflow](../in-scope/07-approval-workflow.md) — approve/reject actions require Manager role
 
 ## Related Docs
 

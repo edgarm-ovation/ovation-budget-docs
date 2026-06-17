@@ -1,6 +1,10 @@
 # 07 — Approval Workflow
 
-**Sprint:** Weeks 5–6 | **Status:** Planned
+**Verdict:** 🟡 Add-on | **Sprint:** Week 7 | **Status:** Confirmed 2026-06-17
+
+---
+
+> **H0 scope note:** Build the state machine + lock + SHA-256 snapshot only. Signature block, certificate PDF, full-package print, and snapshot download are **deferred**. The submit/approve notification is **in-app only** (email deferred — see 08). Excel export of locked budgets (09) is **out**.
 
 ---
 
@@ -72,7 +76,7 @@ Formal sign-off process that moves a budget level from editable to locked. Estim
 
 ## Dependencies
 
-- [01 — Authentication](./01-authentication.md) — role-based gate on submit vs. approve
+- [01 — Authentication](../later/01-authentication.md) — *deferred from H0; demo uses a role switcher, not a real gate*
 - [06 — Markup Formula Engine](./06-markup-engine.md) — the markup-adjusted total is what gets approved
 - [08 — Notifications](./08-notifications.md) — submit and approve events trigger notifications
 
@@ -80,7 +84,7 @@ Formal sign-off process that moves a budget level from editable to locked. Estim
 
 ## Related Features
 
-- [09 — Excel Export](./09-excel-export.md) — locked budgets are commonly exported immediately after approval
+- [09 — Excel Export](../later/09-excel-export.md) — *deferred from H0; browser-print of the approval view is the only export (stretch)*
 - [03 — Budget Table Editing](./03-budget-editing.md) — editing is disabled once locked
 
 ## Related Docs
