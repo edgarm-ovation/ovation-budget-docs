@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ovation Budget Platform - 8 Week Demo Mockup</title>
+<style>
+  :root{
+    --green:#536857; --green-d:#3f4f43; --green-l:#e8ede9;
+    --bg:#F6F5ED; --ink:#1A1A1A; --red:#D0651E;
+    --clay:#9F4B4A; --sand:#E4B162; --grey:#5B5B5B; --lav:#798ABF;
+    --line:#e0ded2; --panel:#ffffff; --muted:#6b6b63;
+    --ok-bg:#e8ede9; --ok-tx:#3f4f43;
+    --warn-bg:#fbf0e2; --warn-tx:#9a4a14;
+    --info-bg:#eef0f7; --info-tx:#46568c;
+    --shadow:0 1px 2px rgba(26,26,26,.05),0 6px 18px rgba(26,26,26,.07);
+    --radius:10px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-.01em}
+  button,input,select,textarea{font-family:inherit}
+  a{color:var(--green);text-decoration:none;cursor:pointer}
+  .serif{font-family:Calluna,Georgia,'Times New Roman',serif}
+  .num{font-variant-numeric:tabular-nums}
+  .muted{color:var(--muted)}
+
+  .mockbar{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.4px;
+    padding:5px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+  .mockbar .tag{background:var(--sand);color:var(--ink);font-weight:700;padding:2px 8px;border-radius:5px;font-size:10px}
+  .mockbar .right{opacity:.8}
+
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:7px;border:1px solid var(--line);
+    background:#fff;color:var(--ink);font-size:13px;font-weight:600;cursor:pointer;transition:.12s;white-space:nowrap}
+  .btn:hover{border-color:var(--green);color:var(--green)}
+  .btn-primary{background:var(--green);border-color:var(--green);color:#fff}
+  .btn-primary:hover{background:var(--green-d);border-color:var(--green-d);color:#fff}
+  .btn-sm{padding:4px 10px;font-size:12px}
+  .btn-warn{background:var(--red);border-color:var(--red);color:#fff}
+  .btn-warn:hover{filter:brightness(.93);color:#fff}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+
+  .pill{display:inline-block;padding:2px 9px;border-radius:11px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .pill-l0{background:#eee;color:#555}
+  .pill-l1{background:var(--info-bg);color:var(--info-tx)}
+  .pill-l2{background:var(--warn-bg);color:var(--warn-tx)}
+  .pill-l3{background:var(--ok-bg);color:var(--ok-tx)}
+  .pill-draft{background:#f0eee2;color:var(--grey)}
+  .pill-submitted{background:var(--info-bg);color:var(--info-tx)}
+  .pill-approved{background:var(--ok-bg);color:var(--ok-tx)}
+  .pill-locked{background:var(--ink);color:#fff}
+  .pill-rejected{background:#fae3df;color:var(--clay)}
+  .pill-awarded{background:var(--warn-bg);color:var(--warn-tx);border:1px solid var(--sand)}
+  .pill-proposed{background:var(--info-bg);color:var(--info-tx)}
+  .pill-open{background:#f3f1e6;color:var(--grey)}
+  .pill-soon{background:#f3f1e6;color:#9a958a;border:1px dashed #cfcabb}
+  .pill-lowest{background:var(--ok-bg);color:var(--ok-tx)}
+
+  .login{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1200px 600px at 70% -10%,#e9ede8,transparent),var(--bg);padding:24px}
+  .loginbox{width:420px;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(26,26,26,.12);padding:38px 34px;text-align:center}
+  .loginbox .mark{width:54px;height:54px;border-radius:13px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .loginbox .mark svg{width:34px;height:34px}
+  .loginbox h1{margin:0 0 2px;font-size:21px;letter-spacing:.14em}
+  .loginbox .tagline{color:var(--muted);font-size:13px;margin-bottom:26px}
+  .ms-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:11px;padding:13px;border:1px solid var(--line);border-radius:9px;
+    background:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:.12s}
+  .ms-btn:hover{border-color:var(--green);box-shadow:var(--shadow)}
+  .ms-logo{width:18px;height:18px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .ms-logo i{display:block}
+  .login-note{margin-top:20px;font-size:11px;color:var(--muted);line-height:1.5;background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:10px 12px;text-align:left}
+
+  .app{display:none;min-height:100vh}
+  .app.show{display:block}
+  .topbar{display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line);
+    padding:0 22px;height:60px;position:sticky;top:0;z-index:40}
+  .brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+  .brand .mark{width:34px;height:34px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center}
+  .brand .mark svg{width:22px;height:22px}
+  .brand .word{font-weight:800;letter-spacing:.18em;font-size:15px;color:var(--ink)}
+  .brand .sub{font-size:10px;color:var(--muted);letter-spacing:.12em;margin-top:1px}
+  .topnav{display:flex;gap:4px;margin-left:26px}
+  .topnav a{padding:7px 12px;border-radius:7px;font-size:13px;font-weight:600;color:var(--grey)}
+  .topnav a:hover{background:var(--bg)}
+  .topnav a.active{background:var(--green-l);color:var(--green)}
+  .topright{display:flex;align-items:center;gap:14px}
+  .role-select{border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:12px;font-weight:600;color:var(--ink);background:#fff;cursor:pointer}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--lav);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .bell{position:relative;cursor:pointer;color:var(--grey);font-size:17px}
+  .bell .dot{position:absolute;top:-3px;right:-3px;min-width:15px;height:15px;border-radius:8px;background:var(--red);border:2px solid #fff;font-size:9px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 2px}
+
+  .notif{position:absolute;top:54px;right:64px;width:340px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 50px rgba(26,26,26,.18);z-index:60;display:none;overflow:hidden}
+  .notif.open{display:block}
+  .notif .nh{padding:12px 15px;border-bottom:1px solid var(--line);background:#fcfbf6;font-weight:700;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+  .notif .ni{display:flex;gap:10px;padding:11px 15px;border-bottom:1px solid var(--line);cursor:pointer}
+  .notif .ni:hover{background:#faf9f3}
+  .notif .ni.unread{background:#f3f6f2}
+  .notif .ic{width:30px;height:30px;border-radius:7px;background:var(--green-l);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+  .notif .tx{font-size:12.5px}
+  .notif .tx .t{font-weight:700}
+  .notif .tx .b{color:var(--muted);font-size:11.5px}
+  .notif .tx .tm{color:var(--muted);font-size:10px;margin-top:2px}
+
+  .wrap{max-width:1320px;margin:0 auto;padding:26px 22px 60px}
+  .pagehead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;gap:14px;flex-wrap:wrap}
+  .pagehead h2{margin:0;font-size:23px}
+  .pagehead .crumb{font-size:12px;color:var(--muted);margin-bottom:5px}
+  .pagehead .ctx{font-size:13px;color:var(--muted);margin-top:5px;max-width:720px}
+  .actions{display:flex;gap:9px;flex-wrap:wrap}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;box-shadow:var(--shadow)}
+  .card .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .card .val{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .card .sub{font-size:12px;color:var(--muted);margin-top:4px}
+  .card.accent-green{border-top:3px solid var(--green)}
+  .card.accent-sand{border-top:3px solid var(--sand)}
+  .card.accent-lav{border-top:3px solid var(--lav)}
+  .card.accent-red{border-top:3px solid var(--red)}
+  .card.accent-clay{border-top:3px solid var(--clay)}
+  .up{color:var(--red);font-weight:700}
+  .down{color:var(--green);font-weight:700}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:22px;overflow:hidden}
+  .panel-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#fcfbf6;gap:10px;flex-wrap:wrap}
+  .panel-head h3{margin:0;font-size:15px}
+  .panel-head .muted{font-size:12px;color:var(--muted)}
+  .panel-body{padding:16px 18px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;background:#fcfbf6}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tbody tr:hover td{background:#faf9f3}
+  .totrow td{background:var(--green-l);font-weight:800;border-top:2px solid var(--green)}
+  .cc{font-family:'Courier New',monospace;color:var(--green);font-weight:600}
+  .computed{background:var(--warn-bg);color:var(--warn-tx);font-size:9px;padding:1px 6px;border-radius:9px;font-weight:700;letter-spacing:.03em}
+  .winner-col{background:var(--green-l)!important}
+
+  .projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+  .projcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:.14s}
+  .projcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(83,104,87,.16);border-color:var(--green)}
+  .projcard .ph{height:104px;background:linear-gradient(135deg,var(--green),var(--green-d));position:relative;display:flex;align-items:flex-end;padding:14px}
+  .projcard .ph.alt{background:linear-gradient(135deg,#7a6f54,var(--clay))}
+  .projcard .ph .lvl{position:absolute;top:12px;right:12px}
+  .projcard .ph .nm{color:#fff;font-weight:800;font-size:17px;text-shadow:0 1px 4px rgba(0,0,0,.25)}
+  .projcard .pb{padding:14px 16px}
+  .projcard .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:9px}
+  .projcard .bigval{font-size:21px;font-weight:800}
+  .projbar{height:7px;border-radius:4px;background:#eceadf;margin-top:11px;overflow:hidden}
+  .projbar > i{display:block;height:100%;background:var(--green);border-radius:4px}
+
+  .proj-shell{display:grid;grid-template-columns:236px 1fr;gap:0;align-items:start}
+  .side{position:sticky;top:60px;align-self:start;border-right:1px solid var(--line);min-height:calc(100vh - 60px);background:#fcfbf6;padding:18px 12px}
+  .side .lvlsel{margin-bottom:14px}
+  .side .lvlsel .t{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:0 6px 6px}
+  .lvltabs{display:flex;gap:4px}
+  .lvltabs button{flex:1;padding:7px 0;border:1px solid var(--line);background:#fff;border-radius:7px;font-weight:700;font-size:12px;cursor:pointer;color:var(--grey)}
+  .lvltabs button.active{background:var(--green);border-color:var(--green);color:#fff}
+  .lvltabs button.locked{opacity:.45;cursor:not-allowed}
+  .navsec{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;padding:14px 8px 4px}
+  .navitem{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--grey);cursor:pointer}
+  .navitem:hover{background:var(--green-l)}
+  .navitem.active{background:var(--green);color:#fff}
+  .navitem .gate{font-size:9px}
+  .navitem.gated{opacity:.5;cursor:not-allowed}
+  .navitem .nb{background:var(--red);color:#fff;font-size:9px;border-radius:8px;padding:1px 6px;font-weight:700}
+  .proj-main{padding:24px 26px 60px;min-width:0}
+
+  .feature-note{font-size:11px;color:var(--muted);background:#fcfbf6;border:1px dashed var(--line);border-radius:8px;padding:10px 12px;margin-top:14px}
+  .ro-note{font-size:12px;color:var(--warn-tx);background:var(--warn-bg);border:1px solid var(--sand);border-radius:8px;padding:9px 13px;margin-bottom:16px;display:flex;gap:8px;align-items:center}
+  .banner{border-radius:10px;padding:13px 16px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .banner.amber{background:var(--warn-bg);border:1px solid var(--sand)}
+  .banner.green{background:var(--green-l);border:1px solid var(--green)}
+  .banner.locked{background:#2a2a2a;color:#fff;border:1px solid #000}
+  .banner.clay{background:#fae3df;border:1px solid var(--clay)}
+  .coverbar{height:10px;border-radius:6px;background:#eceadf;overflow:hidden;margin-top:8px}
+  .coverbar > i{display:block;height:100%;background:var(--green)}
+  .hashbox{background:var(--ink);color:#7fe0a0;font-family:'Courier New',monospace;font-size:11px;word-break:break-all;padding:11px 13px;border-radius:8px;margin-top:8px}
+  .stepper{display:flex;gap:0;margin-bottom:18px;flex-wrap:wrap}
+  .stepper .st{flex:1;min-width:120px;text-align:center;padding:11px 8px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:600;color:var(--muted);position:relative}
+  .stepper .st:first-child{border-radius:8px 0 0 8px}
+  .stepper .st:last-child{border-radius:0 8px 8px 0}
+  .stepper .st.done{background:var(--green-l);color:var(--green-d)}
+  .stepper .st.cur{background:var(--green);color:#fff;border-color:var(--green)}
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .check-grid label{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-size:13px}
+  .barlist{display:grid;gap:10px}
+  .barrow{display:grid;grid-template-columns:140px minmax(120px,1fr) 90px;align-items:center;gap:10px;font-size:12px}
+  .bartrack{height:24px;background:#eceadf;border-radius:5px;overflow:hidden}
+  .bartrack i{display:block;height:100%;background:var(--green)}
+  .bartrack i.over{background:var(--red)}
+  .bartrack i.lav{background:var(--lav)}
+  @media(max-width:960px){.topnav{display:none}.proj-shell{grid-template-columns:1fr}.side{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--line)}.check-grid{grid-template-columns:1fr}.barrow{grid-template-columns:1fr}.topbar{height:auto;min-height:60px;gap:12px;padding:10px 14px;flex-wrap:wrap}.topright{flex-wrap:wrap}.notif{right:12px;top:68px;width:calc(100vw - 24px)}}
+</style>
+</head>
+<body>
+<div class="mockbar">
+  <span><span class="tag">CLICKABLE MOCKUP</span> &nbsp;Ovation Budget Platform - visual prototype of the confirmed <strong>8-week demo build</strong>. Reference UI style preserved.</span>
+  <span class="right">v0.3 - OpenAI 8-week scope refresh</span>
+</div>
+
+<div id="login" class="login">
+  <div class="loginbox">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="34" r="28" fill="none" stroke="#fff" stroke-width="3"/><path d="M 18 46 L 32 22 L 42 36 L 50 26 L 62 46" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><line x1="10" y1="74" x2="70" y2="74" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+    </div>
+    <h1>OVATION</h1>
+    <div class="tagline serif">Construction Budget Platform</div>
+    <button class="ms-btn" onclick="signIn()">
+      <span class="ms-logo"><i style="background:#f25022"></i><i style="background:#7fba00"></i><i style="background:#00a4ef"></i><i style="background:#ffb900"></i></span>
+      Sign in with Microsoft
+    </button>
+    <div class="login-note">
+      <strong>Mockup note:</strong> The real 8-week build uses a demo role/user switcher rather than full SSO. This screen keeps the look leadership liked, while the scope below stays aligned to the confirmed H0 plan: seed data, budget editing, bid leveling, markups, variance, approval lock, and in-app notifications.
+    </div>
+  </div>
+</div>
+
+<div id="app" class="app">
+  <div class="topbar">
+    <div style="display:flex;align-items:center">
+      <div class="brand" onclick="go('projects')">
+        <div class="mark"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="34" r="28" fill="none" stroke="#fff" stroke-width="3.2"/><path d="M 18 46 L 32 22 L 42 36 L 50 26 L 62 46" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/><line x1="10" y1="74" x2="70" y2="74" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/></svg></div>
+        <div><div class="word">OVATION</div><div class="sub">BUDGET PLATFORM</div></div>
+      </div>
+      <div class="topnav" id="topnav">
+        <a id="t-projects" onclick="go('projects')">Projects</a>
+        <a id="t-project" onclick="openProject(currentProject || 'west')">Project Workspace</a>
+        <a id="t-scope" onclick="go('scope')">8-Week Scope</a>
+      </div>
+    </div>
+    <div class="topright">
+      <select id="role" class="role-select" onchange="changeRole(this.value)">
+        <option>Estimator</option>
+        <option>Manager</option>
+        <option>Admin</option>
+        <option>Viewer</option>
+      </select>
+      <div class="bell" onclick="toggleNotif()">Alerts <span class="dot" id="notif-count">3</span></div>
+      <button class="btn btn-primary" onclick="saveMock()">Save Mock Changes</button>
+      <div class="avatar">EM</div>
+    </div>
+    <div id="notif" class="notif"></div>
+  </div>
+  <div id="root"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v||0);
+const pct=v=>new Intl.NumberFormat('en-US',{style:'percent',maximumFractionDigits:1}).format(v||0);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+const METRICS={divisionCount:34,lineItemCount:268,tradeCount:26,bidCount:88,divisionTotal:79847909.01055098,hardCost:64136505.04860312,selectedBids:24,awardedBids:2};
+const PROJECTS={
+  west:{id:'west',name:'West Henderson Apartments',loc:'Henderson, NV',type:'Affordable',level:'L3',sub:'L3.1',status:'Draft',units:390,gsf:426549,budget:79847909.01055098,progress:72,data:'JSON-backed',alt:false},
+  robindale:{id:'robindale',name:'Robindale 215',loc:'Las Vegas, NV',type:'Design Development',level:'L2',sub:'L2.1',status:'Submitted',units:215,gsf:231000,budget:null,progress:42,data:'Week 7 seed planned',alt:true}
+};
+const LEVELS=[
+  ['L0','Conceptual','Read-only display'],
+  ['L1','Schematic','Read-only display'],
+  ['L2','Design Development','Baseline / submitted budget'],
+  ['L3','Permit Set','Bid-based working budget']
+];
+const DIVISIONS=[
+  ['06','Wood, Plastics, & Composites','hard',9324491],
+  ['32','Exterior Improvements','hard',7622826.891436744],
+  ['33','Utilities','hard',7092245.069999998],
+  ['09','Finishes','hard',6934652.58164],
+  ['26','Electrical','hard',5287886.100000001],
+  ['22','Plumbing','hard',4783145.5],
+  ['98','Contractor Fee','markup',4008238.244706589],
+  ['23','HVAC','hard',3866250],
+  ['01','General Requirements','gc',3849810.302916188],
+  ['55','Construction Contingency','gc',3849810.302916188]
+];
+const LINES=[
+  ['06','Framing','06-1100','Proposals','SF',422635,18,7607430,'06-1100'],
+  ['26','Electrical','26-1001','Bruner','SF',422635,10.06,4251708.1,'26-1001-electrical'],
+  ['23','HVAC Standard','23-3001','Bruner','Unit',390,9875,3851250,'23-3001'],
+  ['01','General Requirements','01','Seed','Mo',26,148069.63,3849810.3,'01'],
+  ['32','Site Landscaping','32-9001','Torrey Pines','SF',304972.92,12.01,3662724.77,'32-9001-main'],
+  ['09','Drywall','09-2905','Proposal','SF',422635,7.65,3233157.75,'09-2905'],
+  ['22','2 Bathroom Unit','22-1001','1.5 x 1 Bath','Count',163,15103.5,2461870.5,'22-1001'],
+  ['33','Off Site Water','33-1001','Budget','LS',1,2362698.4,2362698.4,'33-1001-offwater'],
+  ['22','1 Bathroom Unit','22-1001','Bruner','Count',227,10069,2285663,'22-1001'],
+  ['03','Slabs','03-3101','Torrey Pines','SF',145399.85,11.5,1672098.28,'03-3101']
+];
+const TRADES=[
+  ['1: Grading & Paving','31',2869419,'America United Construction',1797300],
+  ['1.02: Wet Utilities','33',5338519,'Capriati Construction Corp',3103047],
+  ['1.03: Concrete - Slabs','03',1689598,'NRC Concrete',1332040],
+  ['1.04: Wood Framing','06',7607430,'Empire Framers',7053263],
+  ['1.05: Plumbing','22',4783146,'MODERN PLUMBING OF NV, LLC',4712570],
+  ['1.06: Electrical','26',4443023,'Northstar Electric, Inc.',4790901],
+  ['1.07: Mechanical','23',3866250,'Allstate Service Group',3956000],
+  ['1.08: Finished Carpentry','06',1838461,'Rystin Construction, Inc.',1616227.63]
+];
+const CONCRETE_BIDS=[
+  ['NRC Concrete',1351565,1332040,'Revision #1, December 22, 2025',true],
+  ['MJC Construction',1859547.34,1859547.34,'Original Proposal, September 18, 2025',false],
+  ['Rocky Mountain Grading',1985086,1985086,'Original Proposal, December 20, 2025',false],
+  ['Largo Concrete, Inc.',3329258,3329258,'Original Proposal, September 5, 2025',false]
+];
+const MARKUPS=[
+  ['01','General Requirements','Computed','26 months',3849810.3],
+  ['55','Construction Contingency','Editable','6.0%',3849810.3],
+  ['BR','Bid Risk','Computed','L2 hard number',1254667.14],
+  ['50','Sub Bonds','Computed','1.1%',705798.56],
+  ['51','GL Insurance','Computed','1.06%',680000],
+  ['98','Contractor Fee','Editable','6.0%',4008238.24],
+  ['99','Overhead','Editable','2.0%',1336079.41]
+];
+const VARIANCE=[
+  ['Framing',7607430,7053263,-554167],
+  ['Electrical',4251708.1,4790901,539192.9],
+  ['Mechanical',3866250,3956000,89750],
+  ['Slabs',1689598,1332040,-357558],
+  ['Landscaping',2592270,2326356.65,-265913.35],
+  ['Plumbing',4783146,4712570,-70576]
+];
+const ROADMAP=[
+  ['Weeks 1-2','Seed Data + Navigation','Core','Azure-hosted shell, seeded West Henderson, project list, L0-L3 tabs.'],
+  ['Week 3','Budget Table Editing','Core','Cost-code rows, inline edits, totals, persisted line item changes.'],
+  ['Week 4','Bid Leveling','Core','Compare bidder proposals and write awarded bid by group key.'],
+  ['Weeks 4-5','Markup Formula Engine','Core','Server FormulaService calculates proposal amount and markup rows.'],
+  ['Week 6','Variance Summary','Add-on','L2 vs L3 deltas by division and total project movement.'],
+  ['Week 7','Approval Workflow','Add-on','Submit, approve/reject, lock, and SHA-256 approval snapshot.'],
+  ['Week 7','Notifications','Add-on','In-app bell and feed for submit, approve, reject, and award events.'],
+  ['Week 8','Demo Polish','Owner-ready','Dry run, known limitations, discrepancy review, second project seeded.']
+];
+const DEFERRED=['Real Entra ID SSO and full RBAC','File import / spreadsheet parser','Excel export with ClosedXML','Email notifications through Azure Communication Services','Historical project migration','Subcontractor portal','Full real-time collaboration and conflict resolution'];
+
+let currentProject=null,currentTab='overview',currentLevel='L3',currentRole='Estimator',changed=0,saved=0,awarded='NRC Concrete';
+let audit=[
+  ['Seed data loaded','West Henderson L3 imported from repository JSON seed set.','System','Week 1'],
+  ['Proposal selected','NRC Concrete is awarded for Concrete - Slabs.','Estimator','Week 4']
+];
+let notifs=[
+  ['Budget submitted','Robindale 215 L2 is waiting for manager approval.','Week 7 demo event',true],
+  ['Bid awarded','NRC Concrete selected for Concrete - Slabs.','West Henderson L3',true],
+  ['Variance updated','Electrical is trending $539k over L2 baseline.','Week 6 add-on',true]
+];
+
+function signIn(){ $('login').style.display='none'; $('app').classList.add('show'); go('projects'); }
+function setTop(t){ document.querySelectorAll('.topnav a').forEach(a=>a.classList.remove('active')); const e=$('t-'+t); if(e)e.classList.add('active'); }
+function go(v){ closeNotif(); if(v==='projects'){currentProject=null;renderProjects();setTop('projects');} if(v==='scope'){currentProject=null;renderScopePage();setTop('scope');} }
+function openProject(id){ currentProject=id; currentLevel=PROJECTS[id].level; currentTab='overview'; closeNotif(); renderProject(); setTop('project'); }
+function changeRole(v){ currentRole=v; addAudit('Role switched','Demo role changed to '+v+'.'); render(); }
+function render(){ currentProject ? renderProject() : renderProjects(); }
+function can(action){
+  if(currentRole==='Viewer') return false;
+  if(action==='approve'||action==='reject') return currentRole==='Manager'||currentRole==='Admin';
+  if(action==='edit'||action==='submit'||action==='award') return currentRole==='Estimator'||currentRole==='Admin'||currentRole==='Manager';
+  return true;
+}
+function statusPill(status){
+  const cls={Draft:'pill-draft',Submitted:'pill-submitted',Approved:'pill-approved',Locked:'pill-locked',Rejected:'pill-rejected'}[status]||'pill-open';
+  return `<span class="pill ${cls}">${esc(status)}</span>`;
+}
+function levelPill(level){return `<span class="pill pill-${String(level).toLowerCase()}">${level}</span>`}
+function addAudit(a,d){audit.unshift([a,d,currentRole,'Now']);}
+function pushNotif(t,b){notifs.unshift([t,b,'Now',true]);renderNotif();}
+function toggleNotif(){renderNotif();$('notif').classList.toggle('open');}
+function closeNotif(){const n=$('notif'); if(n)n.classList.remove('open');}
+function renderNotif(){
+  $('notif-count').textContent=notifs.filter(n=>n[3]).length;
+  $('notif').innerHTML=`<div class="nh"><span>Notifications</span><button class="btn btn-sm" onclick="markRead()">Mark all read</button></div>`+
+    notifs.map(n=>`<div class="ni ${n[3]?'unread':''}"><div class="ic">!</div><div class="tx"><div class="t">${esc(n[0])}</div><div class="b">${esc(n[1])}</div><div class="tm">${esc(n[2])}</div></div></div>`).join('')+
+    `<div style="padding:9px 15px;font-size:11px;color:var(--muted);background:#fcfbf6">H0 scope: in-app bell only. Email is deferred.</div>`;
+}
+function markRead(){notifs=notifs.map(n=>[n[0],n[1],n[2],false]);renderNotif();}
+function saveMock(){ if(changed){saved+=changed;addAudit('Changes saved',changed+' mock change(s) committed to simulated Azure SQL.');changed=0;} else addAudit('Save clicked','No unsaved changes to persist.'); render(); }
+
+function renderProjects(){
+  const list=Object.values(PROJECTS);
+  $('root').innerHTML=`<div class="wrap">
+    <div class="pagehead">
+      <div><div class="crumb">Ovation / Development & OCI</div><h2>Projects</h2>
+        <div class="ctx">Same dashboard style as the reference mockup, updated to the confirmed 8-week scope and current repository JSON data.</div></div>
+      <div class="actions"><button class="btn" onclick="go('scope')">View 8-Week Scope</button><button class="btn btn-primary" onclick="openProject('west')">Open West Henderson</button></div>
+    </div>
+    <div class="cards">
+      <div class="card accent-green"><div class="lbl">Active Seed Projects</div><div class="val num">${list.length}</div><div class="sub">West data-backed, Robindale planned</div></div>
+      <div class="card accent-lav"><div class="lbl">West L3 Total</div><div class="val num">${money(METRICS.divisionTotal)}</div><div class="sub">${METRICS.divisionCount} divisions / ${METRICS.lineItemCount} rows</div></div>
+      <div class="card accent-sand"><div class="lbl">Proposal Coverage</div><div class="val num">${pct(METRICS.selectedBids/METRICS.tradeCount)}</div><div class="sub">${METRICS.selectedBids} selected of ${METRICS.tradeCount} trades</div></div>
+      <div class="card accent-red"><div class="lbl">Bid Packages</div><div class="val num">${METRICS.bidCount}</div><div class="sub">${METRICS.awardedBids} already awarded in seed data</div></div>
+    </div>
+    <div class="projgrid">
+      ${list.map(p=>projectCard(p)).join('')}
+      <div class="projcard" style="border-style:dashed;display:flex;align-items:center;justify-content:center;color:var(--muted);min-height:230px" onclick="alert('Future phase: add all active Ovation projects after the 8-week demo.')">
+        <div style="text-align:center"><div style="font-size:34px">+</div><div style="font-weight:700;margin-top:6px">Add a project</div><div class="sub">Phase 2: broader rollout</div></div>
+      </div>
+    </div>
+  </div>`;
+}
+function projectCard(p){
+  return `<div class="projcard" onclick="openProject('${p.id}')">
+    <div class="ph ${p.alt?'alt':''}"><span class="lvl">${levelPill(p.level)}</span><div class="nm">${esc(p.name)}</div></div>
+    <div class="pb">
+      <div class="meta"><span>${esc(p.loc)}</span><span>${statusPill(p.status)}</span></div>
+      <div class="bigval">${p.budget?money(p.budget):'Budget TBD'}</div>
+      <div class="meta" style="margin-top:6px"><span>${p.units} units / ${p.gsf.toLocaleString()} GSF</span><span>${esc(p.data)}</span></div>
+      <div class="projbar"><i style="width:${p.progress}%"></i></div>
+    </div>
+  </div>`;
+}
+
+const NAV=[
+  {sec:'Workspace'},
+  {id:'overview',label:'Overview'},
+  {id:'budget',label:'Master Budget'},
+  {id:'bids',label:'Trades & Bid Leveling',min:'L3'},
+  {id:'markups',label:'Markups'},
+  {id:'variance',label:'Variance'},
+  {id:'approval',label:'Approval & Lock'},
+  {sec:'Planning'},
+  {id:'scope',label:'8-Week Scope'},
+  {id:'audit',label:'Audit + Notifications',nb:true}
+];
+function gated(min){return min==='L3' && currentLevel!=='L3'}
+function setTab(t){currentTab=t;renderProject();}
+function renderProject(){
+  const p=PROJECTS[currentProject];
+  const sidenav=NAV.map(it=>{
+    if(it.sec) return `<div class="navsec">${it.sec}</div>`;
+    const g=gated(it.min);
+    return `<div class="navitem ${currentTab===it.id?'active':''} ${g?'gated':''}" onclick="${g?`alert('${it.label} unlocks at ${it.min}. ${p.name} is at ${currentLevel}.')`:`setTab('${it.id}')`}">
+      <span>${it.label}</span>${it.nb?'<span class="nb">'+notifs.filter(n=>n[3]).length+'</span>':g?'<span class="gate">'+it.min+'</span>':''}</div>`;
+  }).join('');
+  $('root').innerHTML=`<div class="proj-shell">
+    <aside class="side">
+      <div class="lvlsel">
+        <div class="t">Budget Level</div>
+        <div class="lvltabs">${LEVELS.map(l=>`<button class="${currentLevel===l[0]?'active':''} ${l[0]==='L0'||l[0]==='L1'?'locked':''}" onclick="switchLevel('${l[0]}')">${l[0]}</button>`).join('')}</div>
+      </div>
+      ${sidenav}
+      <div class="feature-note">Sidebar gates by budget level. Robindale L2 hides L3 bid leveling; West Henderson L3 shows the full demo path.</div>
+    </aside>
+    <main class="proj-main">
+      <div class="pagehead">
+        <div><div class="crumb"><a onclick="go('projects')">Projects</a> / ${esc(p.name)} / ${esc(p.sub)}</div>
+          <h2>${esc(p.name)}</h2><div class="ctx">${esc(p.loc)} / ${esc(p.type)} / ${levelPill(currentLevel)} ${statusPill(p.status)}</div></div>
+        <div class="actions"><button class="btn" onclick="go('projects')">Back to Projects</button><button class="btn btn-primary" onclick="saveMock()">Save Mock Changes (${changed})</button></div>
+      </div>
+      ${tabHtml(currentTab,p)}
+    </main>
+  </div>`;
+}
+function switchLevel(l){ currentLevel=l; addAudit('Budget level viewed','Opened '+l+' for '+PROJECTS[currentProject].name+'.'); if(gated((NAV.find(x=>x.id===currentTab)||{}).min)) currentTab='overview'; renderProject(); }
+function tabHtml(tab,p){
+  if(tab==='overview') return tabOverview(p);
+  if(tab==='budget') return tabBudget(p);
+  if(tab==='bids') return tabBids(p);
+  if(tab==='markups') return tabMarkups(p);
+  if(tab==='variance') return tabVariance(p);
+  if(tab==='approval') return tabApproval(p);
+  if(tab==='scope') return scopePanels(false);
+  if(tab==='audit') return tabAudit();
+  return tabOverview(p);
+}
+function tabOverview(p){
+  return `<div class="cards">
+    <div class="card accent-green"><div class="lbl">Current Level</div><div class="val">${currentLevel}</div><div class="sub">${LEVELS.find(l=>l[0]===currentLevel)[1]}</div></div>
+    <div class="card accent-lav"><div class="lbl">Project Size</div><div class="val num">${p.units}</div><div class="sub">${p.gsf.toLocaleString()} GSF</div></div>
+    <div class="card accent-sand"><div class="lbl">Budget Total</div><div class="val num">${p.budget?money(p.budget):'Pending'}</div><div class="sub">${esc(p.data)}</div></div>
+    <div class="card accent-red"><div class="lbl">Workflow State</div><div class="val">${p.status}</div><div class="sub">Role: ${currentRole}</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>Budget Level Roadmap</h3><span class="muted">L0/L1 read-only in H0</span></div>
+    <div class="panel-body"><div style="display:flex;gap:8px;flex-wrap:wrap">${LEVELS.map(l=>`<div style="flex:1;min-width:160px;border:1px solid ${currentLevel===l[0]?'var(--green)':'var(--line)'};background:${currentLevel===l[0]?'var(--green-l)':'#fff'};border-radius:9px;padding:13px"><strong>${l[0]} - ${l[1]}</strong><div class="muted" style="font-size:12px;margin-top:5px">${l[2]}</div></div>`).join('')}</div></div></div>
+  <div class="panel"><div class="panel-head"><h3>Largest Divisions</h3><span class="muted">Loaded from current seed JSON</span></div><div class="panel-body" style="padding:0;overflow:auto">${divisionTable()}</div></div>`;
+}
+function divisionTable(){
+  return `<table><thead><tr><th>Code</th><th>Division</th><th>Section</th><th class="num">Total</th></tr></thead><tbody>${DIVISIONS.map(d=>`<tr><td class="cc">${d[0]}</td><td>${esc(d[1])}</td><td><span class="pill ${d[2]==='hard'?'pill-l3':'pill-proposed'}">${esc(d[2])}</span></td><td class="num">${money(d[3])}</td></tr>`).join('')}</tbody></table>`;
+}
+function tabBudget(p){
+  if(p.id!=='west') return planned('Robindale L2 budget rows are planned for the second seed. This screen will use the same table once those rows exist.');
+  const locked=p.status==='Locked'||currentRole==='Viewer';
+  return `<div class="cards">
+    <div class="card accent-green"><div class="lbl">Rows Loaded</div><div class="val num">${METRICS.lineItemCount}</div><div class="sub">Current JSON line items</div></div>
+    <div class="card accent-lav"><div class="lbl">Hard Cost</div><div class="val num">${money(METRICS.hardCost)}</div><div class="sub">Excluded markup divisions</div></div>
+    <div class="card accent-sand"><div class="lbl">Unsaved Mock Edits</div><div class="val num">${changed}</div><div class="sub">Click Save Mock Changes</div></div>
+    <div class="card accent-red"><div class="lbl">Saved Commits</div><div class="val num">${saved}</div><div class="sub">Simulated Azure SQL saves</div></div>
+  </div>
+  ${locked?'<div class="ro-note">This role/state is read-only. Switch to Estimator/Manager or reset approval to edit.</div>':''}
+  <div class="panel"><div class="panel-head"><h3>Master Budget</h3><span class="muted">Inline unit cost edits / group key preserved</span></div>
+    <div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Div</th><th>Description</th><th>Cost Code</th><th>Source</th><th class="num">Qty</th><th>UOM</th><th class="num">Unit Cost</th><th class="num">Total</th><th>Group Key</th></tr></thead><tbody>
+      ${LINES.map((r,i)=>`<tr><td class="cc">${r[0]}</td><td>${esc(r[1])}</td><td>${r[2]}</td><td>${esc(r[3])}</td><td class="num">${Number(r[5]).toLocaleString()}</td><td>${r[4]}</td><td class="num">${locked?money(r[6]):`<input value="${r[6]}" onchange="editLine(${i},this.value)" style="width:80px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:5px 7px">`}</td><td class="num">${money(r[7])}</td><td>${r[8]}</td></tr>`).join('')}
+    </tbody></table></div></div>
+  <div class="actions"><button class="btn" onclick="addRow()" ${locked?'disabled':''}>Add Custom Row</button><button class="btn" onclick="addAudit('Reload verified','Saved values remained after simulated reload.');renderProject()">Simulate Reload</button></div>`;
+}
+function editLine(i,v){const old=LINES[i][6];LINES[i][6]=Number(v)||0;LINES[i][7]=LINES[i][5]*LINES[i][6];changed++;addAudit('Line item edited',LINES[i][1]+': unit cost changed from '+money(old)+' to '+money(LINES[i][6])+'.');renderProject();}
+function addRow(){LINES.unshift(['99','Owner Demo Allowance','99-DEMO','Manual','LS',1,50000,50000,'manual-demo']);changed++;addAudit('Custom row added','Owner Demo Allowance added to show Week 3 inline entry behavior.');renderProject();}
+function tabBids(p){
+  if(p.id!=='west') return planned('Bid leveling is an L3 workflow. Robindale is L2 in the demo, so this tab is gated until a project reaches L3.');
+  const lowest=Math.min(...CONCRETE_BIDS.map(b=>b[2]));
+  return `<div class="cards">
+    <div class="card accent-green"><div class="lbl">Trade Packages</div><div class="val num">${METRICS.tradeCount}</div><div class="sub">proposal_trades.json</div></div>
+    <div class="card accent-lav"><div class="lbl">Bid Proposals</div><div class="val num">${METRICS.bidCount}</div><div class="sub">proposal_bids.json</div></div>
+    <div class="card accent-sand"><div class="lbl">Selected Bids</div><div class="val num">${METRICS.selectedBids}</div><div class="sub">Proposed L3 coverage</div></div>
+    <div class="card accent-red"><div class="lbl">Awarded Company</div><div class="val" style="font-size:18px">${esc(awarded)}</div><div class="sub">Concrete - Slabs</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>Trade Package Queue</h3><span class="muted">Lowest bid vs estimate</span></div><div class="panel-body" style="padding:0;overflow:auto">
+    <table><thead><tr><th>Trade</th><th>Div</th><th class="num">Estimate</th><th>Lowest Bidder</th><th class="num">Lowest Bid</th><th class="num">Delta</th></tr></thead><tbody>
+    ${TRADES.map(t=>`<tr><td>${esc(t[0])}</td><td class="cc">${t[1]}</td><td class="num">${money(t[2])}</td><td>${esc(t[3])}</td><td class="num">${money(t[4])}</td><td class="num ${t[4]-t[2]>0?'up':'down'}">${money(t[4]-t[2])}</td></tr>`).join('')}
+    </tbody></table></div></div>
+  <div class="panel"><div class="panel-head"><h3>Concrete - Slabs Leveling Summary</h3><span class="muted">Award writes back by group key</span></div><div class="panel-body" style="padding:0;overflow:auto">
+    <table><thead><tr><th>Bidder</th><th class="num">Base</th><th class="num">Leveled</th><th class="num">Vs Low</th><th>Status</th><th>Action</th></tr></thead><tbody>
+    ${CONCRETE_BIDS.map(b=>`<tr><td><strong>${esc(b[0])}</strong><div class="muted" style="font-size:11px">${esc(b[3])}</div></td><td class="num">${money(b[1])}</td><td class="num">${money(b[2])}</td><td class="num">${money(b[2]-lowest)}</td><td>${awarded===b[0]?'<span class="pill pill-awarded">Awarded</span>':'<span class="pill pill-open">Open</span>'}</td><td><button class="btn btn-sm" onclick="awardBid('${esc(b[0])}')" ${!can('award')||PROJECTS[currentProject].status==='Locked'?'disabled':''}>Award</button></td></tr>`).join('')}
+    </tbody></table></div></div>`;
+}
+function awardBid(c){awarded=c;changed++;addAudit('Bid awarded',c+' selected for Concrete - Slabs.');pushNotif('Bid awarded',c+' selected for Concrete - Slabs.');renderProject();}
+function tabMarkups(p){
+  const total=MARKUPS.reduce((s,m)=>s+m[4],0),proposal=METRICS.hardCost+total;
+  return `<div class="cards">
+    <div class="card accent-green"><div class="lbl">Base Cost</div><div class="val num">${money(METRICS.hardCost)}</div><div class="sub">Hard cost subtotal</div></div>
+    <div class="card accent-lav"><div class="lbl">Markup Rows</div><div class="val num">${MARKUPS.length}</div><div class="sub">All H0 markup types</div></div>
+    <div class="card accent-sand"><div class="lbl">Markup Total</div><div class="val num">${money(total)}</div><div class="sub">Computed + editable</div></div>
+    <div class="card accent-red"><div class="lbl">Proposal Amount</div><div class="val num">${money(proposal)}</div><div class="sub">Server canonical total</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>Project Markups</h3><span class="muted">FormulaService is source of truth</span></div><div class="panel-body" style="padding:0;overflow:auto">
+    <table><thead><tr><th>Code</th><th>Markup</th><th>Behavior</th><th>Rate / Basis</th><th class="num">Amount</th><th>H0 UI</th></tr></thead><tbody>
+    ${MARKUPS.map(m=>`<tr><td class="cc">${m[0]}</td><td><strong>${m[1]}</strong></td><td>${m[2]==='Computed'?'<span class="computed">COMPUTED</span>':'<span class="pill pill-l3">Editable</span>'}</td><td>${m[3]}</td><td class="num">${money(m[4])}</td><td>${m[2]==='Editable'&&can('edit')?`<button class="btn btn-sm" onclick="adjustMarkup('${m[1]}')">Adjust</button>`:'Read-only'}</td></tr>`).join('')}
+    <tr class="totrow"><td colspan="4">Total Markups</td><td class="num">${money(total)}</td><td></td></tr></tbody></table></div></div>
+  <div class="feature-note">Confirmed H0 scope: keep all 7 markup types. General Requirements and Bid Risk are computed/read-only; the real backend owns the final calculation.</div>`;
+}
+function adjustMarkup(name){changed++;addAudit('Markup adjusted',name+' changed in mock preview.');renderProject();}
+function tabVariance(p){
+  const total=VARIANCE.reduce((s,v)=>s+v[3],0),max=Math.max(...VARIANCE.map(v=>Math.abs(v[3])));
+  return `<div class="cards">
+    <div class="card ${total>0?'accent-red':'accent-green'}"><div class="lbl">Total Variance</div><div class="val num ${total>0?'up':'down'}">${money(total)}</div><div class="sub">L3 selected vs L2 baseline</div></div>
+    <div class="card accent-red"><div class="lbl">Over Budget</div><div class="val num">${VARIANCE.filter(v=>v[3]>0).length}</div><div class="sub">Trades above baseline</div></div>
+    <div class="card accent-green"><div class="lbl">Under Budget</div><div class="val num">${VARIANCE.filter(v=>v[3]<0).length}</div><div class="sub">Trades below baseline</div></div>
+    <div class="card accent-lav"><div class="lbl">Source</div><div class="val">Benchmarks</div><div class="sub">Baseline-style JSON data</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>L2 vs L3 Detail</h3><span class="muted">Week 6 add-on</span></div><div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Area</th><th class="num">L2 Baseline</th><th class="num">L3 Selected</th><th class="num">Delta</th><th class="num">Percent</th></tr></thead><tbody>
+    ${VARIANCE.map(v=>`<tr><td>${v[0]}</td><td class="num">${money(v[1])}</td><td class="num">${money(v[2])}</td><td class="num ${v[3]>0?'up':'down'}">${money(v[3])}</td><td class="num">${pct(v[3]/v[1])}</td></tr>`).join('')}
+  </tbody></table></div></div>
+  <div class="panel"><div class="panel-head"><h3>Leadership Variance Chart</h3><span class="muted">Visual read for owner discussion</span></div><div class="panel-body"><div class="barlist">
+    ${VARIANCE.map(v=>`<div class="barrow"><span>${v[0]}</span><div class="bartrack"><i class="${v[3]>0?'over':''}" style="width:${Math.max(5,Math.abs(v[3])/max*100)}%"></i></div><strong class="${v[3]>0?'up':'down'}">${money(v[3])}</strong></div>`).join('')}
+  </div></div></div>`;
+}
+function tabApproval(p){
+  const manager=can('approve'), estimator=can('submit'), idx=p.status==='Locked'?2:p.status==='Submitted'?1:0;
+  const hash=p.status==='Locked'?'7d4f6a9c1e73b0a827cf91d0b45f018ac6f6c2bd2a70b8e01a8914ff2d6c884a':'Generated after approval lock';
+  return `<div class="panel"><div class="panel-head"><h3>Budget Approval & Lock - ${esc(p.sub)}</h3><span class="muted">${statusPill(p.status)}</span></div><div class="panel-body">
+    <div class="stepper">${['Draft','Submitted','Approved & Locked'].map((s,i)=>`<div class="st ${i<idx?'done':''} ${i===idx?'cur':''}">${i+1}. ${s}</div>`).join('')}</div>
+    ${currentRole==='Viewer'?'<div class="ro-note">Viewers can read the approval record but cannot submit, approve, or reject.</div>':''}
+    ${p.status==='Locked'?'<div class="banner locked"><div><strong>Locked budget.</strong> All edit and award controls are disabled.</div><button class="btn" onclick="resetApproval()">Reset Demo</button></div>':''}
+    <div class="check-grid">${['Project Details','Budget Rows','Selected Bids','Markup Rates','Variance Summary','Approval Notes'].map(s=>`<label><input type="checkbox" checked> <span>${s}</span></label>`).join('')}</div>
+    <div style="margin-top:18px"><div class="lbl">SHA-256 snapshot hash</div><div class="hashbox">${hash}</div></div>
+    <div class="actions" style="margin-top:18px">
+      <button class="btn btn-primary" onclick="submitBudget()" ${!estimator||p.status==='Locked'?'disabled':''}>Submit for Approval</button>
+      <button class="btn btn-primary" onclick="approveBudget()" ${!manager||p.status!=='Submitted'?'disabled':''}>Approve & Lock</button>
+      <button class="btn btn-warn" onclick="rejectBudget()" ${!manager||p.status!=='Submitted'?'disabled':''}>Reject</button>
+    </div>
+  </div></div>
+  <div class="feature-note">H0 includes the state machine, lock, and SHA-256 snapshot. Signature block, certificate PDF, and export package are deferred.</div>`;
+}
+function submitBudget(){PROJECTS[currentProject].status='Submitted';addAudit('Budget submitted',PROJECTS[currentProject].name+' sent to manager review.');pushNotif('Budget submitted',PROJECTS[currentProject].name+' is ready for manager review.');renderProject();}
+function approveBudget(){PROJECTS[currentProject].status='Locked';addAudit('Budget approved and locked',PROJECTS[currentProject].name+' snapshot hash generated.');pushNotif('Budget approved',PROJECTS[currentProject].name+' is now locked.');renderProject();}
+function rejectBudget(){PROJECTS[currentProject].status='Draft';addAudit('Budget rejected','Manager returned budget to Draft with review notes.');pushNotif('Budget rejected',PROJECTS[currentProject].name+' returned to Draft.');renderProject();}
+function resetApproval(){PROJECTS[currentProject].status='Draft';addAudit('Approval demo reset','Budget returned to editable Draft.');renderProject();}
+function tabAudit(){
+  return `<div class="cards"><div class="card accent-sand"><div class="lbl">Unsaved Changes</div><div class="val num">${changed}</div></div><div class="card accent-green"><div class="lbl">Saved Commits</div><div class="val num">${saved}</div></div><div class="card accent-red"><div class="lbl">Unread Alerts</div><div class="val num">${notifs.filter(n=>n[3]).length}</div></div></div>
+  <div class="panel"><div class="panel-head"><h3>Append-only Audit Trail</h3><span class="muted">Cheap if built from day 1</span></div><div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Action</th><th>Detail</th><th>User</th><th>Time</th></tr></thead><tbody>${audit.map(a=>`<tr><td><strong>${esc(a[0])}</strong></td><td>${esc(a[1])}</td><td>${esc(a[2])}</td><td>${esc(a[3])}</td></tr>`).join('')}</tbody></table></div></div>
+  <div class="panel"><div class="panel-head"><h3>In-app Notifications</h3><span class="muted">Email deferred</span></div><div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Event</th><th>Message</th><th>Time</th><th>Status</th></tr></thead><tbody>${notifs.map(n=>`<tr><td>${esc(n[0])}</td><td>${esc(n[1])}</td><td>${esc(n[2])}</td><td>${n[3]?'<span class="pill pill-awarded">Unread</span>':'<span class="pill pill-open">Read</span>'}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+function renderScopePage(){ $('root').innerHTML=`<div class="wrap"><div class="pagehead"><div><div class="crumb">Ovation / Planning</div><h2>8-Week Scope</h2><div class="ctx">Confirmed H0 demo plan, styled to match the original OpenAI mockup.</div></div><div class="actions"><button class="btn btn-primary" onclick="openProject('west')">Try West Henderson Workflow</button></div></div>${scopePanels(true)}</div>`; }
+function scopePanels(standalone){
+  return `<div class="panel"><div class="panel-head"><h3>Build Order</h3><span class="muted">In order for the 8-week demo</span></div><div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Weeks</th><th>Feature</th><th>Status</th><th>Outcome</th></tr></thead><tbody>
+    ${ROADMAP.map(r=>`<tr><td>${r[0]}</td><td><strong>${r[1]}</strong></td><td><span class="pill ${r[2]==='Core'?'pill-l3':r[2]==='Add-on'?'pill-l2':'pill-proposed'}">${r[2]}</span></td><td>${r[3]}</td></tr>`).join('')}
+  </tbody></table></div></div>
+  <div class="cards">
+    <div class="card accent-green"><div class="lbl">What To Promise</div><div class="val" style="font-size:18px">Working vertical slice</div><div class="sub">Open project, edit budget, award bids, calculate markups, compare variance, submit, approve, and lock.</div></div>
+    <div class="card accent-red"><div class="lbl">Do Not Promise</div><div class="val" style="font-size:18px">Production platform</div><div class="sub">The 8-week demo proves the workflow, not every future integration.</div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>Deferred On Purpose</h3><span class="muted">Future phase, not forgotten</span></div><div class="panel-body">${DEFERRED.map(d=>`<span class="pill pill-soon" style="margin:0 6px 8px 0">${esc(d)}</span>`).join('')}</div></div>`;
+}
+function planned(text){return `<div class="panel"><div class="panel-head"><h3>Planned Seed Area</h3><span class="muted">${esc(PROJECTS[currentProject].name)}</span></div><div class="panel-body"><p>${esc(text)}</p><button class="btn btn-primary" onclick="openProject('west')">Switch to West Henderson</button></div></div>`}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNotif();});
+renderNotif();
+</script>
+</body>
+</html>
