@@ -132,6 +132,18 @@
   th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;background:#fcfbf6}
   td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
   tbody tr:hover td{background:#faf9f3}
+  .divrow{cursor:pointer;font-weight:700}
+  .divrow td{background:#f7f6ee;border-top:1px solid #d7d4c7}
+  .divrow td:first-child::before{content:"\25be ";color:var(--muted);font-size:11px}
+  .divrow.closed td:first-child::before{content:"\25b8 "}
+  .lineitem td{background:#fff}
+  .lineitem td:first-child{padding-left:34px}
+  .lineitem .item-name{font-weight:700;color:var(--ink)}
+  .lineitem .item-note{font-size:11px;color:var(--muted);margin-top:2px}
+  .amount-strong{font-weight:800;color:var(--green-d)}
+  .field-chip{display:inline-flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;font-size:11px;font-weight:700;color:var(--grey)}
+  .budget-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .budget-tools .keys{display:flex;gap:6px;flex-wrap:wrap}
   .totrow td{background:var(--green-l);font-weight:800;border-top:2px solid var(--green)}
   .cc{font-family:'Courier New',monospace;color:var(--green);font-weight:600}
   .computed{background:var(--warn-bg);color:var(--warn-tx);font-size:9px;padding:1px 6px;border-radius:9px;font-weight:700;letter-spacing:.03em}

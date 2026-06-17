@@ -1,0 +1,37 @@
+[
+  {
+    "project_id": "west-henderson",
+    "unit_type": "Studios",
+    "count": 0,
+    "pct": 0,
+    "sort_order": 0
+  },
+  {
+    "project_id": "west-henderson",
+    "unit_type": "1 Br - 1 Ba",
+    "count": 178,
+    "pct": 0.45641,
+    "sort_order": 1
+  },
+  {
+    "project_id": "west-henderson",
+    "unit_type": "2 Br - 1 Ba",
+    "count": 49,
+    "pct": 0.125641,
+    "sort_order": 2
+  },
+  {
+    "project_id": "west-henderson",
+    "unit_type": "2 Br - 2 Ba",
+    "count": 115,
+    "pct": 0.294872,
+    "sort_order": 3
+  },
+  {
+    "project_id": "west-henderson",
+    "unit_type": "3 Br - 2 Ba",
+    "count": 48,
+    "pct": 0.123077,
+    "sort_order": 4
+  }
+]

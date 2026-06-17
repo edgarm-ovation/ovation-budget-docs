@@ -1,0 +1,233 @@
+[
+  {
+    "code": "01",
+    "name": "General Requirements",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 0
+  },
+  {
+    "code": "02",
+    "name": "Existing Conditions",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 1
+  },
+  {
+    "code": "03",
+    "name": "Concrete",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 2
+  },
+  {
+    "code": "04",
+    "name": "Masonry",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 3
+  },
+  {
+    "code": "05",
+    "name": "Metals",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 4
+  },
+  {
+    "code": "06",
+    "name": "Wood, Plastics, & Composites",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 5
+  },
+  {
+    "code": "07",
+    "name": "Thermal & Moisture Protection",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 6
+  },
+  {
+    "code": "08",
+    "name": "Openings",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 7
+  },
+  {
+    "code": "09",
+    "name": "Finishes",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 8
+  },
+  {
+    "code": "10",
+    "name": "Specialties",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 9
+  },
+  {
+    "code": "11",
+    "name": "Equipment",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 10
+  },
+  {
+    "code": "12",
+    "name": "Furnishings",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 11
+  },
+  {
+    "code": "13",
+    "name": "Special Construction",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 12
+  },
+  {
+    "code": "14",
+    "name": "Conveying Equipment",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 13
+  },
+  {
+    "code": "21",
+    "name": "Fire Suppression",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 14
+  },
+  {
+    "code": "22",
+    "name": "Plumbing",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 15
+  },
+  {
+    "code": "23",
+    "name": "HVAC",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 16
+  },
+  {
+    "code": "26",
+    "name": "Electrical",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 17
+  },
+  {
+    "code": "27",
+    "name": "Communications",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 18
+  },
+  {
+    "code": "28",
+    "name": "Electronic Safety & Security",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 19
+  },
+  {
+    "code": "31",
+    "name": "Earthwork",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 20
+  },
+  {
+    "code": "32",
+    "name": "Exterior Improvements",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 21
+  },
+  {
+    "code": "33",
+    "name": "Utilities",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 22
+  },
+  {
+    "code": "34",
+    "name": "Transportation",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 23
+  },
+  {
+    "code": "48",
+    "name": "Electrical Power Generation",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 24
+  },
+  {
+    "code": "49",
+    "name": "Field Surveys, Staking",
+    "is_markup": false,
+    "is_ffe": false,
+    "sort_order": 25
+  },
+  {
+    "code": "50",
+    "name": "Sub Bonds",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 26
+  },
+  {
+    "code": "51",
+    "name": "GL Insurance",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 27
+  },
+  {
+    "code": "55",
+    "name": "Construction Contingency",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 28
+  },
+  {
+    "code": "98",
+    "name": "Contractor Fee",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 29
+  },
+  {
+    "code": "99",
+    "name": "Overhead",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 30
+  },
+  {
+    "code": "BR",
+    "name": "Bid Risk",
+    "is_markup": true,
+    "is_ffe": false,
+    "sort_order": 31
+  },
+  {
+    "code": "FFE",
+    "name": "FFE",
+    "is_markup": false,
+    "is_ffe": true,
+    "sort_order": 32
+  }
+]

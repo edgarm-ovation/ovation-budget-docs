@@ -1,0 +1,79 @@
+[
+  {
+    "kind": "general_requirements",
+    "label": "General Requirements",
+    "cost_code": "01",
+    "mode": "pct",
+    "rate": 0.06,
+    "fixed_amount": null,
+    "amount": 3857213.7,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 0
+  },
+  {
+    "kind": "bid_risk",
+    "label": "Bid Risk",
+    "cost_code": "BR",
+    "mode": "pct",
+    "rate": 0.01,
+    "fixed_amount": null,
+    "amount": 632953.91,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 1
+  },
+  {
+    "kind": "contingency",
+    "label": "Construction Contingency",
+    "cost_code": "55",
+    "mode": "pct",
+    "rate": 0.05,
+    "fixed_amount": null,
+    "amount": 3389277.91,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 2
+  },
+  {
+    "kind": "bonds",
+    "label": "Sub Bonds",
+    "cost_code": "50",
+    "mode": "pct",
+    "rate": 0.010517828618950701,
+    "fixed_amount": null,
+    "amount": 358550.35,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 3
+  },
+  {
+    "kind": "insurance",
+    "label": "GL Insurance",
+    "cost_code": "51",
+    "mode": "fixed",
+    "rate": null,
+    "fixed_amount": 648527.58,
+    "amount": 648527.58,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 4
+  },
+  {
+    "kind": "overhead",
+    "label": "Overhead",
+    "cost_code": "99",
+    "mode": "pct",
+    "rate": 0.02,
+    "fixed_amount": null,
+    "amount": 1298708.45,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 5
+  },
+  {
+    "kind": "fee",
+    "label": "Contractor Fee",
+    "cost_code": "98",
+    "mode": "pct",
+    "rate": 0.06,
+    "fixed_amount": null,
+    "amount": 3896125.35,
+    "budget_level_id": "west-henderson-l3",
+    "sort_order": 6
+  }
+]

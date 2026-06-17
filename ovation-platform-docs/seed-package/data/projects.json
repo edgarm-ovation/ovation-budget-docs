@@ -1,0 +1,22 @@
+[
+  {
+    "project_id": "west-henderson",
+    "name": "West Henderson Apartments",
+    "product_type": "Affordable",
+    "status": "Active",
+    "current_level": 3,
+    "city": "Henderson",
+    "state": "NV",
+    "floors_label": "2 & 3 Levels",
+    "buildings": 4,
+    "timeline_months": 26,
+    "livable_sf": 422635.0,
+    "site_sf": 689380.56,
+    "site_acres": 15.826,
+    "total_units": 390,
+    "updated": "2025-12-29",
+    "total_cost": 77376747.91649443,
+    "cost_per_unit": 198401.9177346011,
+    "cost_per_gsf": 183.08173226659986
+  }
+]
