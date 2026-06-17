@@ -178,6 +178,7 @@ Table Proposals {
   ProposalId      nvarchar(36)   [pk, default: `NEWID()`]
   BudgetId        nvarchar(36)   [not null, ref: > Budgets.BudgetId]
   VendorId        nvarchar(36)
+  lineItemCode    nvarchar(50)   [note: "CSI code e.g. '03 00 00', '05 01 00'"]
   VendorName      nvarchar(255)
   TradeScope      nvarchar(100)  [note: "'Framing' | 'HVAC' | 'Electrical' | 'Drywall' | 'Roofing'"]
   ProposalAmount  decimal(14,2)
