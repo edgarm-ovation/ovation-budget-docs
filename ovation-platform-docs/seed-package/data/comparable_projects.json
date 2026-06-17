@@ -1,0 +1,68 @@
+[
+  {
+    "name": "West Henderson",
+    "total_units": 390,
+    "total_gsf": 422635.0,
+    "site_acres": 15.9,
+    "product_type": "Affordable",
+    "city": "Las Vegas",
+    "state": "NV",
+    "is_active": true,
+    "source_sheet": "Normalize"
+  },
+  {
+    "name": "Bruner",
+    "total_units": null,
+    "total_gsf": null,
+    "site_acres": null,
+    "product_type": "Affordable",
+    "city": "Las Vegas",
+    "state": "NV",
+    "is_active": true,
+    "source_sheet": "Normalize"
+  },
+  {
+    "name": "Torrey Pines",
+    "total_units": 190,
+    "total_gsf": null,
+    "site_acres": 5.0,
+    "product_type": "Affordable",
+    "city": "Las Vegas",
+    "state": "NV",
+    "is_active": true,
+    "source_sheet": "Normalize"
+  },
+  {
+    "name": "Decatur / Rome",
+    "total_units": 276,
+    "total_gsf": null,
+    "site_acres": 9.45,
+    "product_type": "Affordable",
+    "city": "Las Vegas",
+    "state": "NV",
+    "is_active": true,
+    "source_sheet": "Normalize"
+  },
+  {
+    "name": "Pebble",
+    "total_units": 195,
+    "total_gsf": null,
+    "site_acres": 5.0,
+    "product_type": "Affordable",
+    "city": "Las Vegas",
+    "state": "NV",
+    "is_active": true,
+    "source_sheet": "Offsite Comp"
+  },
+  {
+    "name": "Russell IV",
+    "total_units": 208,
+    "total_gsf": null,
+    "site_acres": 5.0,
+    "product_type": "Affordable",
+    "city": "Las Vegas",
+    "state": "NV",
+    "is_active": true,
+    "source_sheet": "Offsite Comp"
+  }
+]

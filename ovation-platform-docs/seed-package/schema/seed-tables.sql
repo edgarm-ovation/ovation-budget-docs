@@ -142,3 +142,126 @@ CREATE TABLE Markups (
   UpdatedByUserId UNIQUEIDENTIFIER  NOT NULL REFERENCES Users(Id),
   CONSTRAINT UQ_Markups_LevelKind UNIQUE (BudgetLevelId, Kind)
 );
+
+-- ============================================================================
+-- EXPANSION TABLES (added 2026-06-17 with the full-workbook extraction)
+-- Populated by extract_full.py. Create AFTER Projects/Divisions/BudgetLevels
+-- exist (they carry the FKs these tables resolve against).
+-- A couple of columns (SiteAcres, SourceSheet, CsiLabel) are seed-provenance
+-- additions beyond schema.md — kept so no extracted data is dropped at load.
+-- ============================================================================
+
+CREATE TABLE ComparableProjects (
+  Id            UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  Name          NVARCHAR(200)     NOT NULL UNIQUE,
+  -- 'West Henderson'|'Bruner'|'Torrey Pines'|'Decatur / Rome'|'Pebble'|'Russell IV'
+  TotalUnits    INT               NULL,
+  TotalGsf      DECIMAL(12,2)     NULL,
+  SiteAcres     DECIMAL(8,4)      NULL,   -- seed addition (not in schema.md)
+  ContractDate  DATE              NULL,
+  City          NVARCHAR(100)     NULL,
+  State         NCHAR(2)          NULL,
+  ProductType   NVARCHAR(50)      NULL,
+  SourceSheet   NVARCHAR(50)      NULL,   -- provenance: 'Normalize'|'Offsite Comp'
+  IsActive      BIT               NOT NULL DEFAULT 1,
+  CreatedAt     DATETIME2         NOT NULL DEFAULT GETUTCDATE()
+);
+
+CREATE TABLE ComparableProjectCosts (
+  Id                    UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ComparableProjectId   UNIQUEIDENTIFIER  NOT NULL REFERENCES ComparableProjects(Id) ON DELETE CASCADE,
+  DivisionId            INT               NOT NULL REFERENCES Divisions(Id),
+  CsiLabel              NVARCHAR(200)     NULL,   -- division label as it appeared on the sheet
+  TotalAmount           DECIMAL(18,2)     NULL,
+  CostPerUnit           DECIMAL(18,2)     NULL,   -- computed later
+  CostPerGrossSF        DECIMAL(18,4)     NULL,   -- computed later
+  SourceSheet           NVARCHAR(50)      NULL,
+  Notes                 NVARCHAR(500)     NULL,
+  CONSTRAINT UQ_ComparableProjectCosts UNIQUE (ComparableProjectId, DivisionId)
+);
+
+CREATE TABLE ComparableTradeCosts (
+  Id                    UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ComparableProjectId   UNIQUEIDENTIFIER  NOT NULL REFERENCES ComparableProjects(Id) ON DELETE CASCADE,
+  Trade                 NVARCHAR(200)     NOT NULL,   -- 'Slabs'|'Framing'|'Water'|...
+  Section               NVARCHAR(30)      NULL,        -- 'Building'|'Offsite'
+  TotalAmount           DECIMAL(18,2)     NULL,
+  CostPerUnit           DECIMAL(18,2)     NULL,
+  SourceSheet           NVARCHAR(50)      NULL
+);
+
+CREATE TABLE TradeBenchmarks (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  Trade           NVARCHAR(200)     NOT NULL,
+  Uom             NVARCHAR(30)      NULL,
+  Quantity        DECIMAL(18,4)     NULL,
+  CurrentCost     DECIMAL(18,2)     NULL,   -- this project's budgeted cost for the trade
+  CurrentPerUnit  DECIMAL(18,4)     NULL,
+  ProposalLow     DECIMAL(18,4)     NULL,
+  Proposal2nd     DECIMAL(18,4)     NULL,
+  Proposal3rd     DECIMAL(18,4)     NULL,
+  ProposalAvg     DECIMAL(18,4)     NULL
+);
+
+CREATE TABLE MenuPricingOptions (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  Category        NVARCHAR(100)     NOT NULL,   -- 'Lightweight Flooring'|'Unit Cabinets'
+  Product         NVARCHAR(200)     NOT NULL,
+  Spec            NVARCHAR(200)     NULL,
+  UnitPrice       DECIMAL(18,4)     NULL,        -- per SF or per box
+  Budget          DECIMAL(18,2)     NULL,
+  Delta           DECIMAL(18,2)     NULL,        -- cost above the base ("$0") tier
+  CostPerUnit     DECIMAL(18,2)     NULL,
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+);
+
+CREATE TABLE InsuranceBondDetail (
+  Id                          UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  BudgetLevelId               UNIQUEIDENTIFIER  NOT NULL REFERENCES BudgetLevels(Id) ON DELETE CASCADE,
+  GlRatePer1000               DECIMAL(10,4)     NULL,   -- e.g. 3.7395
+  GcContract                  DECIMAL(18,2)     NULL,   -- base = total hard costs
+  AnnualInflationPct          DECIMAL(6,4)      NULL,   -- e.g. 0.10
+  TotalGlInsurancePreInfl     DECIMAL(18,2)     NULL,
+  TotalGlInsurancePostInfl    DECIMAL(18,2)     NULL,   -- = Markups.insurance FixedAmount
+  PpBond                      DECIMAL(18,2)     NULL,   -- P&P bond (excluded from budget)
+  SubBonds                    DECIMAL(18,2)     NULL,   -- = Markups.bonds
+  Notes                       NVARCHAR(1000)    NULL
+);
+
+CREATE TABLE RiskItems (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  Category        NVARCHAR(50)      NOT NULL,   -- 'Utilities'|'Unfavorable Bid'|'Favorable Bid'
+  Item            NVARCHAR(200)     NOT NULL,
+  Amount          DECIMAL(18,2)     NULL,        -- utility-risk rows
+  Budget          DECIMAL(18,2)     NULL,        -- bid-risk rows
+  Proposal        DECIMAL(18,2)     NULL,
+  Deficit         DECIMAL(18,2)     NULL,        -- Budget − Proposal (neg = over budget)
+  Subcontractor   NVARCHAR(200)     NULL,
+  Note            NVARCHAR(500)     NULL,
+  HasRefError     BIT               NOT NULL DEFAULT 0,   -- TRUE where source cell was #REF!
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+);
+
+CREATE TABLE ValueEngineeringItems (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  VeNo            INT               NULL,
+  Item            NVARCHAR(200)     NOT NULL,
+  BudgetAmount    DECIMAL(18,2)     NULL,
+  ReductionPct    DECIMAL(6,4)      NULL,
+  UpdatedBudget   DECIMAL(18,2)     NULL,
+  Savings         DECIMAL(18,2)     NULL,
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+);
+
+CREATE TABLE ParkingOptions (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  OptionLabel     NVARCHAR(100)     NOT NULL,   -- 'Option 1'..'Option 4'
+  TotalProposal   DECIMAL(18,2)     NULL,
+  ScopeJson       NVARCHAR(MAX)     NULL,        -- JSON array of {description, amount}
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+);

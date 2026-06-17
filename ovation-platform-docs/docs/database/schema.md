@@ -20,6 +20,13 @@
 | [Markups](#markups) | Per-budget-level markup rows (one row per kind) |
 | [ComparableProjects](#comparableprojects) | Reference projects used as cost sources |
 | [ComparableProjectCosts](#comparableprojectcosts) | Per-division cost data for each comparable project |
+| [ComparableTradeCosts](#comparabletradecosts) | Per-trade cost data for each comparable project (offsite/trade view) |
+| [TradeBenchmarks](#tradebenchmarks) | Per-trade $/UOM benchmark vs proposal Low/2nd/3rd/Avg |
+| [MenuPricingOptions](#menupricingoptions) | Tiered alternate/upgrade pricing (flooring, cabinets) |
+| [InsuranceBondDetail](#insurancebonddetail) | GL insurance / bond computation backing the markup rows |
+| [RiskItems](#riskitems) | Project risk register (utility + bid risk) |
+| [ValueEngineeringItems](#valueengineeringitems) | Value-engineering / savings recommendations |
+| [ParkingOptions](#parkingoptions) | Parking / site landscape option scenarios |
 | [TradePackages](#tradepackages) | L3 subcontractor trade scopes |
 | [Bidders](#bidders) | Subcontractor / vendor companies |
 | [Proposals](#proposals) | Subcontractor bid proposals per trade |
@@ -692,6 +699,176 @@ CREATE TABLE Notifications (
   EntityId    NVARCHAR(100)     NULL,
   CreatedAt   DATETIME2         NOT NULL DEFAULT GETUTCDATE(),
   ReadAt      DATETIME2         NULL
+)
+```
+
+---
+
+## ComparableTradeCosts
+
+Per-**trade** cost data for each comparable project. Complements `ComparableProjectCosts`
+(which is per-CSI-division). Source: the workbook's `Offsite Comp` sheet, which compares
+West Henderson against Torrey Pines / Decatur / Pebble / Russell IV at the trade level
+(Slabs, Framing, Drywall, …) plus an offsite-utilities section. Trade granularity does not
+map cleanly to CSI divisions, so it is stored separately rather than forced into
+`ComparableProjectCosts`.
+
+```sql
+CREATE TABLE ComparableTradeCosts (
+  Id                    UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ComparableProjectId   UNIQUEIDENTIFIER  NOT NULL REFERENCES ComparableProjects(Id) ON DELETE CASCADE,
+  Trade                 NVARCHAR(200)     NOT NULL,   -- 'Slabs' | 'Framing' | 'Water' | ...
+  Section               NVARCHAR(30)      NULL,       -- 'Building' | 'Offsite'
+  TotalAmount           DECIMAL(18,2)     NULL,
+  CostPerUnit           DECIMAL(18,2)     NULL,
+  SourceSheet           NVARCHAR(50)      NULL,       -- provenance, e.g. 'Offsite Comp'
+
+  INDEX IX_ComparableTradeCosts_ProjectId (ComparableProjectId)
+)
+```
+
+---
+
+## TradeBenchmarks
+
+Per-trade unit-cost benchmark for the *current* project against the spread of subcontractor
+proposals (Low / 2nd / 3rd / Average). Source: the workbook's `Comparison to Other` sheet.
+Distinct from `TradeHistoricalBenchmarks` (historical leveling sheets) — this is the
+budget-vs-market view. One row per trade per project.
+
+```sql
+CREATE TABLE TradeBenchmarks (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  Trade           NVARCHAR(200)     NOT NULL,   -- 'Framing' | 'Electrical' | 'HVAC Standard' | ...
+  Uom             NVARCHAR(30)      NULL,        -- 'SF' | 'SF (Bldg)' | 'Unit' | 'LS' | ...
+  Quantity        DECIMAL(18,4)     NULL,
+  CurrentCost     DECIMAL(18,2)     NULL,        -- this project's budgeted cost for the trade
+  CurrentPerUnit  DECIMAL(18,4)     NULL,        -- CurrentCost ÷ Quantity (per UOM)
+  ProposalLow     DECIMAL(18,4)     NULL,        -- per-UOM proposal pricing
+  Proposal2nd     DECIMAL(18,4)     NULL,
+  Proposal3rd     DECIMAL(18,4)     NULL,
+  ProposalAvg     DECIMAL(18,4)     NULL,
+
+  INDEX IX_TradeBenchmarks_ProjectId (ProjectId)
+)
+```
+
+---
+
+## MenuPricingOptions
+
+Tiered alternate / upgrade pricing presented to ownership (e.g. flooring sound-mat tiers,
+cabinet finish tiers). Source: `Menu Pricing` sheet. Each row is one option within a
+category; `Delta` is the cost above the `"$0"` base tier. Related to
+`BudgetLevelLineItems.Section = 'alternate'` but kept as its own catalog because options
+carry their own per-unit/per-SF pricing and are presented as a menu, not committed lines.
+
+```sql
+CREATE TABLE MenuPricingOptions (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  Category        NVARCHAR(100)     NOT NULL,    -- 'Lightweight Flooring' | 'Unit Cabinets'
+  Product         NVARCHAR(200)     NOT NULL,    -- e.g. 'Standard (+$313,567)'
+  Spec            NVARCHAR(200)     NULL,        -- e.g. '1" concrete / 1/4 sound mat'
+  UnitPrice       DECIMAL(18,4)     NULL,        -- price per SF or per box
+  Budget          DECIMAL(18,2)     NULL,        -- extended budget at this tier
+  Delta           DECIMAL(18,2)     NULL,        -- cost above the base ("$0") tier
+  CostPerUnit     DECIMAL(18,2)     NULL,
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+)
+```
+
+---
+
+## InsuranceBondDetail
+
+Supporting computation behind the `insurance` and `bonds` markup rows. Source:
+`Insurance_Bonds` sheet. One row per budget level (or per project at L3). Stores the inputs
+(rate per $1,000, GC contract base, annual inflation) and the resolved amounts. The
+authoritative markup amounts still live in `Markups`; this table explains how they were
+derived and powers a drill-down.
+
+```sql
+CREATE TABLE InsuranceBondDetail (
+  Id                          UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  BudgetLevelId               UNIQUEIDENTIFIER  NOT NULL REFERENCES BudgetLevels(Id) ON DELETE CASCADE,
+  GlRatePer1000               DECIMAL(10,4)     NULL,   -- e.g. 3.7395
+  GcContract                  DECIMAL(18,2)     NULL,   -- base = total hard costs
+  AnnualInflationPct          DECIMAL(6,4)      NULL,   -- e.g. 0.10
+  TotalGlInsurancePreInfl     DECIMAL(18,2)     NULL,
+  TotalGlInsurancePostInfl    DECIMAL(18,2)     NULL,   -- = Markups.insurance FixedAmount
+  PpBond                      DECIMAL(18,2)     NULL,   -- P&P bond (excluded from budget)
+  SubBonds                    DECIMAL(18,2)     NULL,   -- = Markups.bonds
+  Notes                       NVARCHAR(1000)    NULL
+)
+```
+
+---
+
+## RiskItems
+
+Project risk register. Source: `Risk` sheet — utility-sequencing cost risks plus a
+budget-vs-proposal deficit/surplus table by trade (unfavorable and favorable bids).
+
+> ⚠️ **Data quality:** the source `Risk` sheet contains live `#REF!` formula errors
+> (Electrical budget, Net Risk total). These are extracted as `NULL` with
+> `HasRefError = 1` so the broken cells are visible, not silently zeroed. Re-source from
+> a clean bid-tab before relying on risk totals.
+
+```sql
+CREATE TABLE RiskItems (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  Category        NVARCHAR(50)      NOT NULL,   -- 'Utilities' | 'Unfavorable Bid' | 'Favorable Bid'
+  Item            NVARCHAR(200)     NOT NULL,   -- 'Offsite Water' | 'Electrical' | ...
+  Amount          DECIMAL(18,2)     NULL,       -- for utility-risk rows
+  Budget          DECIMAL(18,2)     NULL,       -- for bid-risk rows
+  Proposal        DECIMAL(18,2)     NULL,
+  Deficit         DECIMAL(18,2)     NULL,       -- Budget − Proposal (negative = over budget)
+  Subcontractor   NVARCHAR(200)     NULL,
+  Note            NVARCHAR(500)     NULL,
+  HasRefError     BIT               NOT NULL DEFAULT 0,
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+)
+```
+
+---
+
+## ValueEngineeringItems
+
+Value-engineering / cost-savings recommendations with the estimated reduction and resulting
+savings. Source: `Savings Recomendations` sheet.
+
+```sql
+CREATE TABLE ValueEngineeringItems (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  VeNo            INT               NULL,        -- author's line number
+  Item            NVARCHAR(200)     NOT NULL,    -- 'Tower Elevations' | 'Carports' | ...
+  BudgetAmount    DECIMAL(18,2)     NULL,        -- current budgeted cost of the scope
+  ReductionPct    DECIMAL(6,4)      NULL,        -- fraction of scope removed
+  UpdatedBudget   DECIMAL(18,2)     NULL,        -- budget after VE
+  Savings         DECIMAL(18,2)     NULL,        -- BudgetAmount − UpdatedBudget
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
+)
+```
+
+---
+
+## ParkingOptions
+
+Parking / site-landscape option scenarios priced by a vendor (e.g. Gothic). Source:
+`Park Options` sheet. Each option carries a total proposal amount and a scope breakdown.
+
+```sql
+CREATE TABLE ParkingOptions (
+  Id              UNIQUEIDENTIFIER  PRIMARY KEY DEFAULT NEWID(),
+  ProjectId       UNIQUEIDENTIFIER  NOT NULL REFERENCES Projects(Id) ON DELETE CASCADE,
+  OptionLabel     NVARCHAR(100)     NOT NULL,    -- 'Option 1' .. 'Option 4'
+  TotalProposal   DECIMAL(18,2)     NULL,
+  ScopeJson       NVARCHAR(MAX)     NULL,        -- JSON array of {description, amount} scope lines
+  SortOrder       SMALLINT          NOT NULL DEFAULT 0
 )
 ```
 

@@ -139,7 +139,7 @@
   .lineitem td{background:#fff}
   .lineitem td:first-child{padding-left:34px}
   .lineitem .item-name{font-weight:700;color:var(--ink)}
-  .lineitem .item-note{font-size:11px;color:var(--muted);margin-top:2px}
+  .item-note{font-size:11px;color:var(--muted);margin-top:2px;font-weight:500}
   .amount-strong{font-weight:800;color:var(--green-d)}
   .field-chip{display:inline-flex;align-items:center;gap:5px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;font-size:11px;font-weight:700;color:var(--grey)}
   .budget-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
@@ -203,7 +203,34 @@
   .bartrack i{display:block;height:100%;background:var(--green)}
   .bartrack i.over{background:var(--red)}
   .bartrack i.lav{background:var(--lav)}
-  @media(max-width:960px){.topnav{display:none}.proj-shell{grid-template-columns:1fr}.side{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--line)}.check-grid{grid-template-columns:1fr}.barrow{grid-template-columns:1fr}.topbar{height:auto;min-height:60px;gap:12px;padding:10px 14px;flex-wrap:wrap}.topright{flex-wrap:wrap}.notif{right:12px;top:68px;width:calc(100vw - 24px)}}
+
+  .intake-shell{display:grid;grid-template-columns:minmax(0,1.35fr) 340px;gap:18px;align-items:start}
+  .form-stack{display:grid;gap:18px}
+  .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .form-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .field{display:grid;gap:6px}
+  .field label{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:800}
+  .field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:8px;padding:10px 11px;font-size:13px;color:var(--ink);outline:none;transition:.12s}
+  .field textarea{min-height:84px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--green-l)}
+  .field .hint{font-size:11px;color:var(--muted)}
+  .intake-summary{position:sticky;top:78px;display:grid;gap:12px}
+  .summary-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+  .summary-card h3{font-size:15px;margin:0 0 11px}
+  .summary-list{display:grid;gap:9px}
+  .summary-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px;font-size:12px}
+  .summary-row:last-child{border-bottom:none;padding-bottom:0}
+  .summary-row span{color:var(--muted)}
+  .summary-row strong{text-align:right}
+  .budget-entry-table input,.budget-entry-table select{width:100%;min-width:88px;border:1px solid transparent;background:transparent;border-radius:6px;padding:6px 7px;font-size:12.5px;color:var(--ink)}
+  .budget-entry-table input:focus,.budget-entry-table select:focus{background:#fff;border-color:var(--green);outline:none;box-shadow:0 0 0 2px var(--green-l)}
+  .budget-entry-table th,.budget-entry-table td{vertical-align:middle}
+  .budget-entry-table .mini{min-width:58px}
+  .budget-entry-table .wide{min-width:160px}
+  .empty-add-card{min-height:230px;border:1px dashed var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--muted);box-shadow:var(--shadow);border-radius:var(--radius);cursor:pointer;transition:.14s}
+  .empty-add-card:hover{border-color:var(--green);color:var(--green);transform:translateY(-3px);box-shadow:0 10px 26px rgba(83,104,87,.16)}
+  .add-symbol{width:42px;height:42px;border-radius:50%;background:var(--green-l);color:var(--green);display:inline-flex;align-items:center;justify-content:center;font-size:30px;font-weight:500;margin-bottom:9px}
+  @media(max-width:960px){.topnav{display:none}.proj-shell{grid-template-columns:1fr}.side{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--line)}.check-grid{grid-template-columns:1fr}.barrow{grid-template-columns:1fr}.topbar{height:auto;min-height:60px;gap:12px;padding:10px 14px;flex-wrap:wrap}.topright{flex-wrap:wrap}.notif{right:12px;top:68px;width:calc(100vw - 24px)}.intake-shell{grid-template-columns:1fr}.intake-summary{position:static}.form-grid,.form-grid.three{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -238,6 +265,7 @@
       </div>
       <div class="topnav" id="topnav">
         <a id="t-projects" onclick="go('projects')">Projects</a>
+        <a id="t-newproject" onclick="go('newproject')">New Project</a>
         <a id="t-project" onclick="openProject(currentProject || 'west')">Project Workspace</a>
         <a id="t-scope" onclick="go('scope')">8-Week Scope</a>
       </div>
@@ -343,8 +371,31 @@ const ROADMAP=[
   ['Week 8','Demo Polish','Owner-ready','Dry run, known limitations, discrepancy review, second project seeded.']
 ];
 const DEFERRED=['Real Entra ID SSO and full RBAC','File import / spreadsheet parser','Excel export with ClosedXML','Email notifications through Azure Communication Services','Historical project migration','Subcontractor portal','Full real-time collaboration and conflict resolution'];
+const INTAKE_TEMPLATE={
+  name:'New Ovation Project',
+  loc:'Las Vegas, NV',
+  type:'Affordable',
+  level:'L2',
+  status:'Draft',
+  sub:'L2.1',
+  units:180,
+  gsf:205000,
+  start:'2026-08-01',
+  delivery:'2028-02-01',
+  notes:'Manual project intake for early estimating, before the full budget is imported or bid-leveled.'
+};
+const INTAKE_ROWS_TEMPLATE=[
+  {division:'03',item:'Concrete allowance',costCode:'03-0001',qty:1,uom:'LS',unitCost:1650000,source:'Manual'},
+  {division:'06',item:'Framing allowance',costCode:'06-0001',qty:205000,uom:'SF',unitCost:17.5,source:'Manual'},
+  {division:'22',item:'Plumbing allowance',costCode:'22-0001',qty:180,uom:'Unit',unitCost:11800,source:'Manual'},
+  {division:'26',item:'Electrical allowance',costCode:'26-0001',qty:205000,uom:'SF',unitCost:10.25,source:'Manual'}
+];
 
-let currentProject=null,currentTab='overview',currentLevel='L3',currentRole='Estimator',changed=0,saved=0,awarded='NRC Concrete';
+let currentProject=null,currentView='projects',currentTab='overview',currentLevel='L3',currentRole='Estimator',changed=0,saved=0,awarded='NRC Concrete';
+let projectDraft={...INTAKE_TEMPLATE};
+let intakeRows=INTAKE_ROWS_TEMPLATE.map(r=>({...r}));
+const MANUAL_BUDGETS={};
+let budgetOpenDivs=new Set(['06','26','23','01','32','09','22','33','03']);
 let audit=[
   ['Seed data loaded','West Henderson L3 imported from repository JSON seed set.','System','Week 1'],
   ['Proposal selected','NRC Concrete is awarded for Concrete - Slabs.','Estimator','Week 4']
@@ -357,10 +408,10 @@ let notifs=[
 
 function signIn(){ $('login').style.display='none'; $('app').classList.add('show'); go('projects'); }
 function setTop(t){ document.querySelectorAll('.topnav a').forEach(a=>a.classList.remove('active')); const e=$('t-'+t); if(e)e.classList.add('active'); }
-function go(v){ closeNotif(); if(v==='projects'){currentProject=null;renderProjects();setTop('projects');} if(v==='scope'){currentProject=null;renderScopePage();setTop('scope');} }
-function openProject(id){ currentProject=id; currentLevel=PROJECTS[id].level; currentTab='overview'; closeNotif(); renderProject(); setTop('project'); }
+function go(v){ closeNotif(); currentView=v; if(v==='projects'){currentProject=null;renderProjects();setTop('projects');} if(v==='newproject'){currentProject=null;renderNewProject();setTop('newproject');} if(v==='scope'){currentProject=null;renderScopePage();setTop('scope');} }
+function openProject(id){ currentProject=id; currentView='project'; currentLevel=PROJECTS[id].level; currentTab='overview'; closeNotif(); renderProject(); setTop('project'); }
 function changeRole(v){ currentRole=v; addAudit('Role switched','Demo role changed to '+v+'.'); render(); }
-function render(){ currentProject ? renderProject() : renderProjects(); }
+function render(){ currentProject ? renderProject() : currentView==='newproject' ? renderNewProject() : currentView==='scope' ? renderScopePage() : renderProjects(); }
 function can(action){
   if(currentRole==='Viewer') return false;
   if(action==='approve'||action==='reject') return currentRole==='Manager'||currentRole==='Admin';
@@ -391,7 +442,7 @@ function renderProjects(){
     <div class="pagehead">
       <div><div class="crumb">Ovation / Development & OCI</div><h2>Projects</h2>
         <div class="ctx">Same dashboard style as the reference mockup, updated to the confirmed 8-week scope and current repository JSON data.</div></div>
-      <div class="actions"><button class="btn" onclick="go('scope')">View 8-Week Scope</button><button class="btn btn-primary" onclick="openProject('west')">Open West Henderson</button></div>
+      <div class="actions"><button class="btn" onclick="go('scope')">View 8-Week Scope</button><button class="btn btn-primary" onclick="go('newproject')">Create New Project</button></div>
     </div>
     <div class="cards">
       <div class="card accent-green"><div class="lbl">Active Seed Projects</div><div class="val num">${list.length}</div><div class="sub">West data-backed, Robindale planned</div></div>
@@ -401,8 +452,8 @@ function renderProjects(){
     </div>
     <div class="projgrid">
       ${list.map(p=>projectCard(p)).join('')}
-      <div class="projcard" style="border-style:dashed;display:flex;align-items:center;justify-content:center;color:var(--muted);min-height:230px" onclick="alert('Future phase: add all active Ovation projects after the 8-week demo.')">
-        <div style="text-align:center"><div style="font-size:34px">+</div><div style="font-weight:700;margin-top:6px">Add a project</div><div class="sub">Phase 2: broader rollout</div></div>
+      <div class="empty-add-card" onclick="go('newproject')">
+        <div style="text-align:center"><div class="add-symbol">+</div><div style="font-weight:800;margin-top:6px">Add a project manually</div><div class="sub">Clean intake form + starter budget rows</div></div>
       </div>
     </div>
   </div>`;
@@ -415,6 +466,162 @@ function projectCard(p){
       <div class="bigval">${p.budget?money(p.budget):'Budget TBD'}</div>
       <div class="meta" style="margin-top:6px"><span>${p.units} units / ${p.gsf.toLocaleString()} GSF</span><span>${esc(p.data)}</span></div>
       <div class="projbar"><i style="width:${p.progress}%"></i></div>
+    </div>
+  </div>`;
+}
+function draftBudgetTotal(){return intakeRows.reduce((s,r)=>s+(Number(r.qty)||0)*(Number(r.unitCost)||0),0);}
+function rowAmount(r){return (Number(r.qty)||0)*(Number(r.unitCost)||0);}
+function updateDraft(field,value){
+  projectDraft[field]=field==='units'||field==='gsf'?Number(value)||0:value;
+  if(field==='level') projectDraft.sub=value+'.1';
+  refreshIntakeSummary();
+}
+function updateIntakeRow(index,field,value){
+  const numeric=field==='qty'||field==='unitCost';
+  intakeRows[index][field]=numeric?Number(value)||0:value;
+  refreshBudgetRow(index);
+  refreshIntakeSummary();
+}
+function refreshBudgetRow(index){
+  const cell=$('intake-row-total-'+index);
+  if(cell) cell.textContent=money(rowAmount(intakeRows[index]));
+}
+function refreshIntakeSummary(){
+  const map={
+    'intake-project-name':projectDraft.name||'Untitled project',
+    'intake-location':projectDraft.loc||'Location TBD',
+    'intake-level':projectDraft.level,
+    'intake-units':(Number(projectDraft.units)||0).toLocaleString(),
+    'intake-gsf':(Number(projectDraft.gsf)||0).toLocaleString(),
+    'intake-row-count':intakeRows.length,
+    'intake-total':money(draftBudgetTotal()),
+    'intake-total-foot':money(draftBudgetTotal())
+  };
+  Object.keys(map).forEach(id=>{const el=$(id); if(el) el.textContent=map[id];});
+}
+function addIntakeRow(){
+  intakeRows.push({division:'99',item:'New manual allowance',costCode:'99-0001',qty:1,uom:'LS',unitCost:0,source:'Manual'});
+  renderNewProject();
+}
+function removeIntakeRow(index){
+  if(intakeRows.length===1){alert('Keep at least one starter row for the manual budget preview.');return;}
+  intakeRows.splice(index,1);
+  renderNewProject();
+}
+function resetIntake(){
+  projectDraft={...INTAKE_TEMPLATE};
+  intakeRows=INTAKE_ROWS_TEMPLATE.map(r=>({...r}));
+  renderNewProject();
+}
+function createProjectFromDraft(){
+  const name=(projectDraft.name||'').trim();
+  if(!name){alert('Project name is required.');return;}
+  const id=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'-'+Date.now().toString().slice(-4);
+  const budget=draftBudgetTotal();
+  PROJECTS[id]={
+    id,
+    name,
+    loc:projectDraft.loc||'Location TBD',
+    type:projectDraft.type||'Manual Intake',
+    level:projectDraft.level||'L2',
+    sub:projectDraft.sub||((projectDraft.level||'L2')+'.1'),
+    status:projectDraft.status||'Draft',
+    units:Number(projectDraft.units)||0,
+    gsf:Number(projectDraft.gsf)||0,
+    budget:budget||null,
+    progress:14,
+    data:'Manual intake',
+    alt:Object.keys(PROJECTS).length%2===1,
+    manual:true,
+    notes:projectDraft.notes||''
+  };
+  MANUAL_BUDGETS[id]=intakeRows.map(r=>({...r}));
+  changed++;
+  addAudit('Manual project created',name+' created from guided intake with '+intakeRows.length+' starter budget row(s).');
+  pushNotif('Manual project created',name+' is ready for budget entry.');
+  projectDraft={...INTAKE_TEMPLATE};
+  intakeRows=INTAKE_ROWS_TEMPLATE.map(r=>({...r}));
+  openProject(id);
+}
+function intakeBudgetRows(){
+  return intakeRows.map((r,i)=>`<tr>
+    <td><input class="mini" value="${esc(r.division)}" oninput="updateIntakeRow(${i},'division',this.value)"></td>
+    <td><input class="wide" value="${esc(r.item)}" oninput="updateIntakeRow(${i},'item',this.value)"></td>
+    <td><input value="${esc(r.costCode)}" oninput="updateIntakeRow(${i},'costCode',this.value)"></td>
+    <td><input value="${esc(r.source)}" oninput="updateIntakeRow(${i},'source',this.value)"></td>
+    <td><input class="mini num" type="number" value="${esc(r.qty)}" oninput="updateIntakeRow(${i},'qty',this.value)"></td>
+    <td><input class="mini" value="${esc(r.uom)}" oninput="updateIntakeRow(${i},'uom',this.value)"></td>
+    <td><input class="num" type="number" value="${esc(r.unitCost)}" oninput="updateIntakeRow(${i},'unitCost',this.value)"></td>
+    <td class="num amount-strong" id="intake-row-total-${i}">${money(rowAmount(r))}</td>
+    <td><button class="btn btn-sm" onclick="removeIntakeRow(${i})">Remove</button></td>
+  </tr>`).join('');
+}
+function renderNewProject(){
+  const total=draftBudgetTotal();
+  $('root').innerHTML=`<div class="wrap">
+    <div class="pagehead">
+      <div><div class="crumb"><a onclick="go('projects')">Projects</a> / Manual Intake</div><h2>Create New Project</h2>
+        <div class="ctx">A cleaner alternative to starting in Excel: guided project fields, starter budget rows, and a live review summary before the project is created.</div></div>
+      <div class="actions"><button class="btn" onclick="go('projects')">Back to Projects</button><button class="btn btn-primary" onclick="createProjectFromDraft()">Create Project</button></div>
+    </div>
+    <div class="intake-shell">
+      <div class="form-stack">
+        <div class="panel"><div class="panel-head"><h3>Project Information</h3><span class="muted">Core setup fields</span></div><div class="panel-body">
+          <div class="form-grid">
+            <div class="field"><label>Project Name</label><input value="${esc(projectDraft.name)}" oninput="updateDraft('name',this.value)" placeholder="Project name"></div>
+            <div class="field"><label>Location</label><input value="${esc(projectDraft.loc)}" oninput="updateDraft('loc',this.value)" placeholder="City, State"></div>
+            <div class="field"><label>Project Type</label><select onchange="updateDraft('type',this.value)">
+              ${['Affordable','Market Rate','Mixed Use','Senior Living','Hospitality','Commercial'].map(v=>`<option ${projectDraft.type===v?'selected':''}>${v}</option>`).join('')}
+            </select></div>
+            <div class="field"><label>Budget Level</label><select onchange="updateDraft('level',this.value)">
+              ${LEVELS.map(l=>`<option value="${l[0]}" ${projectDraft.level===l[0]?'selected':''}>${l[0]} - ${l[1]}</option>`).join('')}
+            </select></div>
+          </div>
+        </div></div>
+        <div class="panel"><div class="panel-head"><h3>Development Metrics</h3><span class="muted">Numbers leadership expects to see</span></div><div class="panel-body">
+          <div class="form-grid three">
+            <div class="field"><label>Units</label><input type="number" value="${esc(projectDraft.units)}" oninput="updateDraft('units',this.value)"></div>
+            <div class="field"><label>Gross SF</label><input type="number" value="${esc(projectDraft.gsf)}" oninput="updateDraft('gsf',this.value)"></div>
+            <div class="field"><label>Status</label><select onchange="updateDraft('status',this.value)">
+              ${['Draft','Submitted','Approved'].map(v=>`<option ${projectDraft.status===v?'selected':''}>${v}</option>`).join('')}
+            </select></div>
+            <div class="field"><label>Start Date</label><input type="date" value="${esc(projectDraft.start)}" oninput="updateDraft('start',this.value)"></div>
+            <div class="field"><label>Delivery Date</label><input type="date" value="${esc(projectDraft.delivery)}" oninput="updateDraft('delivery',this.value)"></div>
+            <div class="field"><label>Source</label><input value="Manual intake" disabled><div class="hint">Later this can support imports, templates, or copied historical budgets.</div></div>
+          </div>
+        </div></div>
+        <div class="panel"><div class="panel-head"><h3>Starter Budget Rows</h3><span class="muted">Clean table entry instead of spreadsheet setup</span></div>
+          <div class="panel-body" style="padding:0;overflow:auto"><table class="budget-entry-table"><thead><tr><th>Div</th><th>Line Item</th><th>Cost Code</th><th>Source</th><th class="num">Qty</th><th>UOM</th><th class="num">Unit Cost</th><th class="num">Amount</th><th></th></tr></thead><tbody>${intakeBudgetRows()}</tbody>
+          <tfoot><tr class="totrow"><td colspan="7">Starter Budget Total</td><td class="num" id="intake-total-foot">${money(total)}</td><td></td></tr></tfoot></table></div>
+          <div class="panel-body" style="border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+            <div class="muted">Rows can start as allowances, then become full cost-code detail as the estimate matures.</div>
+            <div class="actions"><button class="btn" onclick="addIntakeRow()">Add Row</button><button class="btn" onclick="resetIntake()">Reset Form</button></div>
+          </div>
+        </div>
+        <div class="panel"><div class="panel-head"><h3>Notes</h3><span class="muted">Optional context</span></div><div class="panel-body">
+          <div class="field"><label>Project Notes</label><textarea oninput="updateDraft('notes',this.value)">${esc(projectDraft.notes)}</textarea></div>
+        </div></div>
+      </div>
+      <aside class="intake-summary">
+        <div class="summary-card">
+          <h3>Live Project Preview</h3>
+          <div class="summary-list">
+            <div class="summary-row"><span>Name</span><strong id="intake-project-name">${esc(projectDraft.name)}</strong></div>
+            <div class="summary-row"><span>Location</span><strong id="intake-location">${esc(projectDraft.loc)}</strong></div>
+            <div class="summary-row"><span>Level</span><strong id="intake-level">${esc(projectDraft.level)}</strong></div>
+            <div class="summary-row"><span>Units</span><strong id="intake-units">${(Number(projectDraft.units)||0).toLocaleString()}</strong></div>
+            <div class="summary-row"><span>Gross SF</span><strong id="intake-gsf">${(Number(projectDraft.gsf)||0).toLocaleString()}</strong></div>
+            <div class="summary-row"><span>Budget Rows</span><strong id="intake-row-count">${intakeRows.length}</strong></div>
+            <div class="summary-row"><span>Starter Total</span><strong id="intake-total">${money(total)}</strong></div>
+          </div>
+        </div>
+        <div class="summary-card">
+          <h3>Manual Entry Flow</h3>
+          <div class="stepper" style="margin-bottom:0"><div class="st done">1. Setup</div><div class="st cur">2. Budget Rows</div><div class="st">3. Review</div></div>
+          <div class="feature-note">This mockup shows how Ovation can capture project data directly, then save it into a structured budget workspace instead of starting from a raw spreadsheet.</div>
+        </div>
+        <button class="btn btn-primary" style="justify-content:center" onclick="createProjectFromDraft()">Create Project</button>
+      </aside>
     </div>
   </div>`;
 }
@@ -473,6 +680,7 @@ function tabHtml(tab,p){
   return tabOverview(p);
 }
 function tabOverview(p){
+  if(p.manual) return tabManualOverview(p);
   return `<div class="cards">
     <div class="card accent-green"><div class="lbl">Current Level</div><div class="val">${currentLevel}</div><div class="sub">${LEVELS.find(l=>l[0]===currentLevel)[1]}</div></div>
     <div class="card accent-lav"><div class="lbl">Project Size</div><div class="val num">${p.units}</div><div class="sub">${p.gsf.toLocaleString()} GSF</div></div>
@@ -483,27 +691,163 @@ function tabOverview(p){
     <div class="panel-body"><div style="display:flex;gap:8px;flex-wrap:wrap">${LEVELS.map(l=>`<div style="flex:1;min-width:160px;border:1px solid ${currentLevel===l[0]?'var(--green)':'var(--line)'};background:${currentLevel===l[0]?'var(--green-l)':'#fff'};border-radius:9px;padding:13px"><strong>${l[0]} - ${l[1]}</strong><div class="muted" style="font-size:12px;margin-top:5px">${l[2]}</div></div>`).join('')}</div></div></div>
   <div class="panel"><div class="panel-head"><h3>Largest Divisions</h3><span class="muted">Loaded from current seed JSON</span></div><div class="panel-body" style="padding:0;overflow:auto">${divisionTable()}</div></div>`;
 }
-function divisionTable(){
-  return `<table><thead><tr><th>Code</th><th>Division</th><th>Section</th><th class="num">Total</th></tr></thead><tbody>${DIVISIONS.map(d=>`<tr><td class="cc">${d[0]}</td><td>${esc(d[1])}</td><td><span class="pill ${d[2]==='hard'?'pill-l3':'pill-proposed'}">${esc(d[2])}</span></td><td class="num">${money(d[3])}</td></tr>`).join('')}</tbody></table>`;
-}
-function tabBudget(p){
-  if(p.id!=='west') return planned('Robindale L2 budget rows are planned for the second seed. This screen will use the same table once those rows exist.');
-  const locked=p.status==='Locked'||currentRole==='Viewer';
+function tabManualOverview(p){
+  const rows=MANUAL_BUDGETS[p.id]||[];
+  const total=manualBudgetTotal(p.id);
   return `<div class="cards">
-    <div class="card accent-green"><div class="lbl">Rows Loaded</div><div class="val num">${METRICS.lineItemCount}</div><div class="sub">Current JSON line items</div></div>
-    <div class="card accent-lav"><div class="lbl">Hard Cost</div><div class="val num">${money(METRICS.hardCost)}</div><div class="sub">Excluded markup divisions</div></div>
-    <div class="card accent-sand"><div class="lbl">Unsaved Mock Edits</div><div class="val num">${changed}</div><div class="sub">Click Save Mock Changes</div></div>
+    <div class="card accent-green"><div class="lbl">Current Level</div><div class="val">${currentLevel}</div><div class="sub">${LEVELS.find(l=>l[0]===currentLevel)[1]}</div></div>
+    <div class="card accent-lav"><div class="lbl">Project Size</div><div class="val num">${p.units}</div><div class="sub">${p.gsf.toLocaleString()} GSF</div></div>
+    <div class="card accent-sand"><div class="lbl">Manual Budget</div><div class="val num">${money(total)}</div><div class="sub">${rows.length} starter rows</div></div>
+    <div class="card accent-red"><div class="lbl">Workflow State</div><div class="val">${p.status}</div><div class="sub">Role: ${currentRole}</div></div>
+  </div>
+  <div class="banner green"><div><strong>Manual intake project.</strong> This project was created from the guided form and can be refined directly in the Master Budget tab.</div><button class="btn" onclick="setTab('budget')">Edit Budget Rows</button></div>
+  <div class="panel"><div class="panel-head"><h3>Project Notes</h3><span class="muted">Captured during intake</span></div><div class="panel-body">${esc(p.notes||'No notes added yet.')}</div></div>
+  <div class="panel"><div class="panel-head"><h3>Starter Budget Preview</h3><span class="muted">Manual rows grouped by division</span></div><div class="panel-body" style="padding:0;overflow:auto">${manualBudgetPreviewTable(p.id)}</div></div>`;
+}
+function divisionTable(){
+  return `<table><thead><tr><th>Division</th><th>Line Items</th><th>Level</th><th>Section</th><th class="num">Amount</th></tr></thead><tbody>${DIVISIONS.map(d=>`<tr><td class="cc">${d[0]}</td><td>${esc(d[1])}</td><td>${levelPill(currentLevel)}</td><td><span class="pill ${d[2]==='hard'?'pill-l3':'pill-proposed'}">${esc(d[2])}</span></td><td class="num">${money(d[3])}</td></tr>`).join('')}</tbody></table>`;
+}
+function divisionMeta(code){
+  const found=DIVISIONS.find(d=>d[0]===code);
+  const names={'03':'Concrete','31':'Earthwork','99':'Owner / Manual'};
+  if(found) return {code:found[0],name:found[1],section:found[2],amount:found[3],seed:true};
+  return {code,name:names[code]||'Unmapped Division',section:'line-item',amount:LINES.filter(r=>r[0]===code).reduce((s,r)=>s+r[7],0),seed:false};
+}
+function budgetGroups(){
+  const codes=[...new Set([...DIVISIONS.map(d=>d[0]),...LINES.map(r=>r[0])])];
+  return codes.map(divisionMeta).sort((a,b)=>b.amount-a.amount);
+}
+function toggleBudgetDivision(code){
+  budgetOpenDivs.has(code) ? budgetOpenDivs.delete(code) : budgetOpenDivs.add(code);
+  renderProject();
+}
+function setBudgetDivisions(open){
+  budgetOpenDivs=open?new Set(budgetGroups().map(g=>g.code)):new Set();
+  renderProject();
+}
+function budgetLineRows(locked){
+  return budgetGroups().map(g=>{
+    const items=LINES.map((line,index)=>({line,index})).filter(x=>x.line[0]===g.code);
+    const open=budgetOpenDivs.has(g.code);
+    const label=g.seed?'Seed division total':'Displayed line total';
+    const divRow=`<tr class="divrow ${open?'':'closed'}" onclick="toggleBudgetDivision('${g.code}')">
+      <td class="cc">${g.code}</td>
+      <td><strong>Division ${g.code} - ${esc(g.name)}</strong><div class="item-note">${items.length} displayed line item${items.length===1?'':'s'} under this division</div></td>
+      <td><span class="field-chip">Division</span></td>
+      <td>${levelPill(currentLevel)}</td>
+      <td colspan="4" class="muted">${label}</td>
+      <td class="num amount-strong">${money(g.amount)}</td>
+      <td class="cc">${g.code}</td>
+    </tr>`;
+    const itemRows=open?items.map(({line:r,index:i})=>`<tr class="lineitem">
+      <td></td>
+      <td><div class="item-name">${esc(r[1])}</div><div class="item-note">Line item from ${esc(r[3])}</div></td>
+      <td class="cc">${esc(r[2])}</td>
+      <td>${levelPill(currentLevel)}</td>
+      <td>${esc(r[3])}</td>
+      <td class="num">${Number(r[5]).toLocaleString()}</td>
+      <td>${esc(r[4])}</td>
+      <td class="num">${locked?money(r[6]):`<input value="${r[6]}" onchange="editLine(${i},this.value)" style="width:80px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:5px 7px;background:#fffdf2">`}</td>
+      <td class="num amount-strong">${money(r[7])}</td>
+      <td class="cc">${esc(r[8])}</td>
+    </tr>`).join(''):'';
+    return divRow+itemRows;
+  }).join('');
+}
+function manualBudgetTotal(projectId){
+  return (MANUAL_BUDGETS[projectId]||[]).reduce((s,r)=>s+rowAmount(r),0);
+}
+function manualBudgetPreviewTable(projectId){
+  const rows=MANUAL_BUDGETS[projectId]||[];
+  if(!rows.length) return `<div class="panel-body">No manual budget rows yet.</div>`;
+  return `<table><thead><tr><th>Division</th><th>Line Item</th><th>Cost Code</th><th>Source</th><th class="num">Qty</th><th>UOM</th><th class="num">Unit Cost</th><th class="num">Amount</th></tr></thead><tbody>
+    ${rows.map(r=>`<tr><td class="cc">${esc(r.division)}</td><td><strong>${esc(r.item)}</strong></td><td>${esc(r.costCode)}</td><td>${esc(r.source)}</td><td class="num">${Number(r.qty||0).toLocaleString()}</td><td>${esc(r.uom)}</td><td class="num">${money(r.unitCost)}</td><td class="num amount-strong">${money(rowAmount(r))}</td></tr>`).join('')}
+    <tr class="totrow"><td colspan="7">Manual Budget Total</td><td class="num">${money(manualBudgetTotal(projectId))}</td></tr>
+  </tbody></table>`;
+}
+function manualBudgetRows(projectId,locked){
+  const rows=MANUAL_BUDGETS[projectId]||[];
+  return rows.map((r,i)=>`<tr>
+    <td>${locked?`<span class="cc">${esc(r.division)}</span>`:`<input class="mini" value="${esc(r.division)}" onchange="editManualRow('${projectId}',${i},'division',this.value)">`}</td>
+    <td>${locked?esc(r.item):`<input class="wide" value="${esc(r.item)}" onchange="editManualRow('${projectId}',${i},'item',this.value)">`}</td>
+    <td>${locked?esc(r.costCode):`<input value="${esc(r.costCode)}" onchange="editManualRow('${projectId}',${i},'costCode',this.value)">`}</td>
+    <td>${locked?esc(r.source):`<input value="${esc(r.source)}" onchange="editManualRow('${projectId}',${i},'source',this.value)">`}</td>
+    <td>${locked?Number(r.qty||0).toLocaleString():`<input class="mini num" type="number" value="${esc(r.qty)}" onchange="editManualRow('${projectId}',${i},'qty',this.value)">`}</td>
+    <td>${locked?esc(r.uom):`<input class="mini" value="${esc(r.uom)}" onchange="editManualRow('${projectId}',${i},'uom',this.value)">`}</td>
+    <td class="num">${locked?money(r.unitCost):`<input class="num" type="number" value="${esc(r.unitCost)}" onchange="editManualRow('${projectId}',${i},'unitCost',this.value)">`}</td>
+    <td class="num amount-strong">${money(rowAmount(r))}</td>
+    <td>${locked?'Read-only':`<button class="btn btn-sm" onclick="removeManualRow('${projectId}',${i})">Remove</button>`}</td>
+  </tr>`).join('');
+}
+function tabManualBudget(p){
+  const locked=p.status==='Locked'||currentRole==='Viewer';
+  const rows=MANUAL_BUDGETS[p.id]||[];
+  return `<div class="cards">
+    <div class="card accent-green"><div class="lbl">Manual Rows</div><div class="val num">${rows.length}</div><div class="sub">Entered from guided form</div></div>
+    <div class="card accent-lav"><div class="lbl">Budget Total</div><div class="val num">${money(manualBudgetTotal(p.id))}</div><div class="sub">Live from manual rows</div></div>
+    <div class="card accent-sand"><div class="lbl">Project Size</div><div class="val num">${p.units}</div><div class="sub">${p.gsf.toLocaleString()} GSF</div></div>
     <div class="card accent-red"><div class="lbl">Saved Commits</div><div class="val num">${saved}</div><div class="sub">Simulated Azure SQL saves</div></div>
   </div>
   ${locked?'<div class="ro-note">This role/state is read-only. Switch to Estimator/Manager or reset approval to edit.</div>':''}
-  <div class="panel"><div class="panel-head"><h3>Master Budget</h3><span class="muted">Inline unit cost edits / group key preserved</span></div>
-    <div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Div</th><th>Description</th><th>Cost Code</th><th>Source</th><th class="num">Qty</th><th>UOM</th><th class="num">Unit Cost</th><th class="num">Total</th><th>Group Key</th></tr></thead><tbody>
-      ${LINES.map((r,i)=>`<tr><td class="cc">${r[0]}</td><td>${esc(r[1])}</td><td>${r[2]}</td><td>${esc(r[3])}</td><td class="num">${Number(r[5]).toLocaleString()}</td><td>${r[4]}</td><td class="num">${locked?money(r[6]):`<input value="${r[6]}" onchange="editLine(${i},this.value)" style="width:80px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:5px 7px">`}</td><td class="num">${money(r[7])}</td><td>${r[8]}</td></tr>`).join('')}
+  <div class="budget-tools">
+    <div class="keys"><span class="field-chip">Manual Entry</span><span class="field-chip">Cost Code</span><span class="field-chip">Qty</span><span class="field-chip">Amount</span></div>
+    <div class="actions"><button class="btn btn-sm" onclick="addManualRow('${p.id}')" ${locked?'disabled':''}>Add Row</button></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>Manual Master Budget</h3><span class="muted">Structured entry for early estimates, allowances, and owner-created rows</span></div>
+    <div class="panel-body" style="padding:0;overflow:auto"><table class="budget-entry-table"><thead><tr><th>Div</th><th>Line Item</th><th>Cost Code</th><th>Source</th><th class="num">Qty</th><th>UOM</th><th class="num">Unit Cost</th><th class="num">Amount</th><th></th></tr></thead><tbody>
+      ${manualBudgetRows(p.id,locked)}
+      <tr class="totrow"><td colspan="7">Manual Budget Total</td><td class="num">${money(manualBudgetTotal(p.id))}</td><td></td></tr>
+    </tbody></table></div></div>
+  <div class="feature-note">This is the clean-form direction for replacing first-pass Excel entry. Later phases can add templates, validation rules, import, and approval-ready required fields.</div>`;
+}
+function editManualRow(projectId,index,field,value){
+  const rows=MANUAL_BUDGETS[projectId]||[];
+  if(!rows[index]) return;
+  rows[index][field]=field==='qty'||field==='unitCost'?Number(value)||0:value;
+  PROJECTS[projectId].budget=manualBudgetTotal(projectId)||null;
+  changed++;
+  addAudit('Manual budget edited',PROJECTS[projectId].name+' row '+(index+1)+' updated.');
+  renderProject();
+}
+function addManualRow(projectId){
+  (MANUAL_BUDGETS[projectId]||(MANUAL_BUDGETS[projectId]=[])).push({division:'99',item:'New manual allowance',costCode:'99-0001',qty:1,uom:'LS',unitCost:0,source:'Manual'});
+  changed++;
+  addAudit('Manual row added',PROJECTS[projectId].name+' received a new starter budget row.');
+  renderProject();
+}
+function removeManualRow(projectId,index){
+  const rows=MANUAL_BUDGETS[projectId]||[];
+  if(rows.length===1){alert('Keep at least one budget row in the manual project.');return;}
+  rows.splice(index,1);
+  PROJECTS[projectId].budget=manualBudgetTotal(projectId)||null;
+  changed++;
+  addAudit('Manual row removed',PROJECTS[projectId].name+' manual budget row removed.');
+  renderProject();
+}
+function tabBudget(p){
+  if(p.manual) return tabManualBudget(p);
+  if(p.id!=='west') return planned('Robindale L2 budget rows are planned for the second seed. This screen will use the same table once those rows exist.');
+  const locked=p.status==='Locked'||currentRole==='Viewer';
+  const displayedAmount=LINES.reduce((s,r)=>s+r[7],0);
+  return `<div class="cards">
+    <div class="card accent-green"><div class="lbl">Rows Loaded</div><div class="val num">${METRICS.lineItemCount}</div><div class="sub">Current JSON line items</div></div>
+    <div class="card accent-lav"><div class="lbl">Hard Cost</div><div class="val num">${money(METRICS.hardCost)}</div><div class="sub">Excluded markup divisions</div></div>
+    <div class="card accent-sand"><div class="lbl">Displayed Line Items</div><div class="val num">${money(displayedAmount)}</div><div class="sub">Visible sample rows beneath divisions</div></div>
+    <div class="card accent-red"><div class="lbl">Saved Commits</div><div class="val num">${saved}</div><div class="sub">Simulated Azure SQL saves</div></div>
+  </div>
+  ${locked?'<div class="ro-note">This role/state is read-only. Switch to Estimator/Manager or reset approval to edit.</div>':''}
+  <div class="budget-tools">
+    <div class="keys"><span class="field-chip">Division</span><span class="field-chip">Line Items</span><span class="field-chip">Cost Code</span><span class="field-chip">Level</span><span class="field-chip">Amount</span></div>
+    <div class="actions"><button class="btn btn-sm" onclick="setBudgetDivisions(true)">Expand all</button><button class="btn btn-sm" onclick="setBudgetDivisions(false)">Collapse all</button></div>
+  </div>
+  <div class="panel"><div class="panel-head"><h3>Master Budget</h3><span class="muted">Division rows expand into Excel-style line items / cost code / level / amount</span></div>
+    <div class="panel-body" style="padding:0;overflow:auto"><table><thead><tr><th>Division</th><th>Line Items</th><th>Cost Code</th><th>Level</th><th>Source</th><th class="num">Qty</th><th>UOM</th><th class="num">Unit Cost</th><th class="num">Amount</th><th>Group Key</th></tr></thead><tbody>
+      ${budgetLineRows(locked)}
     </tbody></table></div></div>
   <div class="actions"><button class="btn" onclick="addRow()" ${locked?'disabled':''}>Add Custom Row</button><button class="btn" onclick="addAudit('Reload verified','Saved values remained after simulated reload.');renderProject()">Simulate Reload</button></div>`;
 }
 function editLine(i,v){const old=LINES[i][6];LINES[i][6]=Number(v)||0;LINES[i][7]=LINES[i][5]*LINES[i][6];changed++;addAudit('Line item edited',LINES[i][1]+': unit cost changed from '+money(old)+' to '+money(LINES[i][6])+'.');renderProject();}
-function addRow(){LINES.unshift(['99','Owner Demo Allowance','99-DEMO','Manual','LS',1,50000,50000,'manual-demo']);changed++;addAudit('Custom row added','Owner Demo Allowance added to show Week 3 inline entry behavior.');renderProject();}
+function addRow(){LINES.unshift(['99','Owner Demo Allowance','99-DEMO','Manual','LS',1,50000,50000,'manual-demo']);budgetOpenDivs.add('99');changed++;addAudit('Custom row added','Owner Demo Allowance added to show Week 3 inline entry behavior.');renderProject();}
 function tabBids(p){
   if(p.id!=='west') return planned('Bid leveling is an L3 workflow. Robindale is L2 in the demo, so this tab is gated until a project reaches L3.');
   const lowest=Math.min(...CONCRETE_BIDS.map(b=>b[2]));

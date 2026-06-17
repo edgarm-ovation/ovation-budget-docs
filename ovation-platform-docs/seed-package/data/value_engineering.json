@@ -1,0 +1,72 @@
+[
+  {
+    "project_id": "west-henderson",
+    "ve_no": 1,
+    "item": "Tower Elevations",
+    "budget_amount": 858859.125,
+    "reduction_pct": 0.5,
+    "updated_budget": 429429.5625,
+    "savings": 429429.5625,
+    "source_sheet": "Savings Recomendations"
+  },
+  {
+    "project_id": "west-henderson",
+    "ve_no": 3,
+    "item": "Lightweight Concrete",
+    "budget_amount": 679394.6900000001,
+    "reduction_pct": 0.25,
+    "updated_budget": 509546.0175000001,
+    "savings": 169848.6725,
+    "source_sheet": "Savings Recomendations"
+  },
+  {
+    "project_id": "west-henderson",
+    "ve_no": 4,
+    "item": "Iron Railings",
+    "budget_amount": 300204.0,
+    "reduction_pct": 0.75,
+    "updated_budget": 75051.0,
+    "savings": 225153.0,
+    "source_sheet": "Savings Recomendations"
+  },
+  {
+    "project_id": "west-henderson",
+    "ve_no": 5,
+    "item": "Window Awnings Small",
+    "budget_amount": 174000.0,
+    "reduction_pct": 1.0,
+    "updated_budget": 0.0,
+    "savings": 174000.0,
+    "source_sheet": "Savings Recomendations"
+  },
+  {
+    "project_id": "west-henderson",
+    "ve_no": 6,
+    "item": "Window Awnings Large",
+    "budget_amount": 93000.0,
+    "reduction_pct": 0.5,
+    "updated_budget": 46500.0,
+    "savings": 46500.0,
+    "source_sheet": "Savings Recomendations"
+  },
+  {
+    "project_id": "west-henderson",
+    "ve_no": 8,
+    "item": "Carports",
+    "budget_amount": 843750.0,
+    "reduction_pct": 0.25,
+    "updated_budget": 632812.5,
+    "savings": 210937.5,
+    "source_sheet": "Savings Recomendations"
+  },
+  {
+    "project_id": "west-henderson",
+    "ve_no": 10,
+    "item": "Landscaping",
+    "budget_amount": 1590795.5992,
+    "reduction_pct": 0.35,
+    "updated_budget": 1034017.1394800001,
+    "savings": 556778.4597199999,
+    "source_sheet": "Savings Recomendations"
+  }
+]

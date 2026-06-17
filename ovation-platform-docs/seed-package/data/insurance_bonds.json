@@ -1,0 +1,14 @@
+[
+  {
+    "project_id": "west-henderson",
+    "gl_rate_per_1000": 3.7395000000000005,
+    "gc_contract": 77376747.9164944,
+    "total_gl_insurance_post_inflation": 648527.6,
+    "total_gl_insurance_pre_inflation": 639524.3,
+    "pp_bond": 487390.2,
+    "sub_bonds": 358550.4,
+    "annual_inflation_pct": 0.1,
+    "source_sheet": "Insurance_Bonds",
+    "note": "GL insurance allocated by % built per construction year + 10% annual inflation; P&P bond excluded from budget, Sub Bonds + GL Insurance included."
+  }
+]

@@ -1,0 +1,758 @@
+[
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "02",
+    "csi_label": "Existing Conditions",
+    "total_amount": 12000.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "02",
+    "csi_label": "Existing Conditions",
+    "total_amount": 3500.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "02",
+    "csi_label": "Existing Conditions",
+    "total_amount": 6740.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "02",
+    "csi_label": "Existing Conditions",
+    "total_amount": 17194.23,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "03",
+    "csi_label": "Concrete",
+    "total_amount": 2270799.5,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "03",
+    "csi_label": "Concrete",
+    "total_amount": 998310.8,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "03",
+    "csi_label": "Concrete",
+    "total_amount": 1050870.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "03",
+    "csi_label": "Concrete",
+    "total_amount": 2283062.07,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "04",
+    "csi_label": "Masonry",
+    "total_amount": 314000.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "04",
+    "csi_label": "Masonry",
+    "total_amount": 127094.12,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "04",
+    "csi_label": "Masonry",
+    "total_amount": 116340.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "04",
+    "csi_label": "Masonry",
+    "total_amount": 292794.54,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "05",
+    "csi_label": "Metals",
+    "total_amount": 609026.98,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "05",
+    "csi_label": "Metals",
+    "total_amount": 350274.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "05",
+    "csi_label": "Metals",
+    "total_amount": 287257.48,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "05",
+    "csi_label": "Metals",
+    "total_amount": 413079.72,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "06",
+    "csi_label": "Wood & Finished Carpentry",
+    "total_amount": 9324491.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "06",
+    "csi_label": "Wood & Finished Carpentry",
+    "total_amount": 4464715.2,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "06",
+    "csi_label": "Wood & Finished Carpentry",
+    "total_amount": 4493089.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "06",
+    "csi_label": "Wood & Finished Carpentry",
+    "total_amount": 7107517.48,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "07",
+    "csi_label": "Thermal & Moisture Protection",
+    "total_amount": 2237303.77,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "07",
+    "csi_label": "Thermal & Moisture Protection",
+    "total_amount": 877917.57,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "07",
+    "csi_label": "Thermal & Moisture Protection",
+    "total_amount": 926610.18,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "07",
+    "csi_label": "Thermal & Moisture Protection",
+    "total_amount": 1647502.14,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "08",
+    "csi_label": "Openings",
+    "total_amount": 690619.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "08",
+    "csi_label": "Openings",
+    "total_amount": 279109.58,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "08",
+    "csi_label": "Openings",
+    "total_amount": 511248.22,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "08",
+    "csi_label": "Openings",
+    "total_amount": 774755.2,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "09",
+    "csi_label": "Finishes",
+    "total_amount": 6934652.58,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "09",
+    "csi_label": "Finishes",
+    "total_amount": 3265446.12,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "09",
+    "csi_label": "Finishes",
+    "total_amount": 3628093.79,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "09",
+    "csi_label": "Finishes",
+    "total_amount": 5099725.8,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "10",
+    "csi_label": "Specialties",
+    "total_amount": 700376.29,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "10",
+    "csi_label": "Specialties",
+    "total_amount": 253490.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "10",
+    "csi_label": "Specialties",
+    "total_amount": 224942.8,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "10",
+    "csi_label": "Specialties",
+    "total_amount": 365155.03,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "11",
+    "csi_label": "Equipment",
+    "total_amount": 1385515.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "11",
+    "csi_label": "Equipment",
+    "total_amount": 621090.5,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "11",
+    "csi_label": "Equipment",
+    "total_amount": 653362.71,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "11",
+    "csi_label": "Equipment",
+    "total_amount": 1100398.21,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "12",
+    "csi_label": "Cabinets, Countertops & Blinds",
+    "total_amount": 2369433.42,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "12",
+    "csi_label": "Cabinets, Countertops & Blinds",
+    "total_amount": 1046615.36,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "12",
+    "csi_label": "Cabinets, Countertops & Blinds",
+    "total_amount": 1264203.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "12",
+    "csi_label": "Cabinets, Countertops & Blinds",
+    "total_amount": 1927564.66,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "13",
+    "csi_label": "Special Construction",
+    "total_amount": 1134489.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "13",
+    "csi_label": "Special Construction",
+    "total_amount": 572485.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "13",
+    "csi_label": "Special Construction",
+    "total_amount": 551167.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "13",
+    "csi_label": "Special Construction",
+    "total_amount": 730483.45,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "14",
+    "csi_label": "Conveying Equipment",
+    "total_amount": 508000.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "14",
+    "csi_label": "Conveying Equipment",
+    "total_amount": 323200.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "14",
+    "csi_label": "Conveying Equipment",
+    "total_amount": 329746.5,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "14",
+    "csi_label": "Conveying Equipment",
+    "total_amount": 525110.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "21",
+    "csi_label": "Fire Suppression",
+    "total_amount": 1322806.25,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "21",
+    "csi_label": "Fire Suppression",
+    "total_amount": 623908.05,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "21",
+    "csi_label": "Fire Suppression",
+    "total_amount": 601160.09,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "21",
+    "csi_label": "Fire Suppression",
+    "total_amount": 811547.36,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "22",
+    "csi_label": "Plumbing",
+    "total_amount": 4783145.5,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "22",
+    "csi_label": "Plumbing",
+    "total_amount": 1959385.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "22",
+    "csi_label": "Plumbing",
+    "total_amount": 2137239.91,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "22",
+    "csi_label": "Plumbing",
+    "total_amount": 3167447.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "23",
+    "csi_label": "HVAC",
+    "total_amount": 3866250.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "23",
+    "csi_label": "HVAC",
+    "total_amount": 1910000.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "23",
+    "csi_label": "HVAC",
+    "total_amount": 1899184.46,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "23",
+    "csi_label": "HVAC",
+    "total_amount": 3291703.8,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "26",
+    "csi_label": "Electrical",
+    "total_amount": 5287886.1,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "26",
+    "csi_label": "Electrical",
+    "total_amount": 2256970.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "26",
+    "csi_label": "Electrical",
+    "total_amount": 2406298.27,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "26",
+    "csi_label": "Electrical",
+    "total_amount": 5071014.12,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "27",
+    "csi_label": "Communications",
+    "total_amount": 253754.65,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "27",
+    "csi_label": "Communications",
+    "total_amount": 137610.51,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "27",
+    "csi_label": "Communications",
+    "total_amount": 113869.66,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "27",
+    "csi_label": "Communications",
+    "total_amount": 140980.82,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "28",
+    "csi_label": "Electronic Safety & Security",
+    "total_amount": 1349898.75,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "28",
+    "csi_label": "Electronic Safety & Security",
+    "total_amount": 521084.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "28",
+    "csi_label": "Electronic Safety & Security",
+    "total_amount": 444169.91,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "28",
+    "csi_label": "Electronic Safety & Security",
+    "total_amount": 868805.82,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "31",
+    "csi_label": "Earthwork",
+    "total_amount": 1455055.46,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "31",
+    "csi_label": "Earthwork",
+    "total_amount": 360909.21,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "31",
+    "csi_label": "Earthwork",
+    "total_amount": 337649.75,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "31",
+    "csi_label": "Earthwork",
+    "total_amount": 918655.63,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "32",
+    "csi_label": "Exterior Improvements",
+    "total_amount": 7622826.89,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "32",
+    "csi_label": "Exterior Improvements",
+    "total_amount": 1902352.69,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "32",
+    "csi_label": "Exterior Improvements",
+    "total_amount": 1907272.36,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "32",
+    "csi_label": "Exterior Improvements",
+    "total_amount": 4251061.53,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "33",
+    "csi_label": "Utilities",
+    "total_amount": 7092245.07,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "33",
+    "csi_label": "Utilities",
+    "total_amount": 1553254.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "33",
+    "csi_label": "Utilities",
+    "total_amount": 1480810.61,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "33",
+    "csi_label": "Utilities",
+    "total_amount": 2345568.87,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "34",
+    "csi_label": "Transportation",
+    "total_amount": 15000.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "34",
+    "csi_label": "Transportation",
+    "total_amount": 7500.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "34",
+    "csi_label": "Transportation",
+    "total_amount": 7500.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "34",
+    "csi_label": "Transportation",
+    "total_amount": 231856.96,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "48",
+    "csi_label": "Electrical Power Generation",
+    "total_amount": 469750.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "48",
+    "csi_label": "Electrical Power Generation",
+    "total_amount": 392850.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "48",
+    "csi_label": "Electrical Power Generation",
+    "total_amount": 1031659.94,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "48",
+    "csi_label": "Electrical Power Generation",
+    "total_amount": 178738.2,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "49",
+    "csi_label": "Field Surveys & Staking",
+    "total_amount": 486632.15,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "49",
+    "csi_label": "Field Surveys & Staking",
+    "total_amount": 217538.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "49",
+    "csi_label": "Field Surveys & Staking",
+    "total_amount": 192895.5,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "49",
+    "csi_label": "Field Surveys & Staking",
+    "total_amount": 497020.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "FFE",
+    "csi_label": "FF&E",
+    "total_amount": 1430148.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "FFE",
+    "csi_label": "FF&E",
+    "total_amount": 671024.09,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "FFE",
+    "csi_label": "FF&E",
+    "total_amount": 1144920.92,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "FFE",
+    "csi_label": "FF&E",
+    "total_amount": 548971.84,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "West Henderson",
+    "division_code": "57",
+    "csi_label": "Refundable Deposits",
+    "total_amount": 0.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Bruner",
+    "division_code": "57",
+    "csi_label": "Refundable Deposits",
+    "total_amount": 0.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Torrey Pines",
+    "division_code": "57",
+    "csi_label": "Refundable Deposits",
+    "total_amount": 0.0,
+    "source_sheet": "Normalize"
+  },
+  {
+    "comparable_project": "Decatur / Rome",
+    "division_code": "57",
+    "csi_label": "Refundable Deposits",
+    "total_amount": 0.0,
+    "source_sheet": "Normalize"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "project_id": "west-henderson",
+    "category": "Lightweight Flooring",
+    "product": "Basic \"$0\"",
+    "spec": "3/4\"",
+    "price_per_sf": 1.4,
+    "budget": 365827.91,
+    "delta": 0.0,
+    "source_sheet": "Menu Pricing"
+  },
+  {
+    "project_id": "west-henderson",
+    "category": "Lightweight Flooring",
+    "product": "Basic + (+$1156,783)",
+    "spec": "3/4\"",
+    "price_per_sf": 2.0,
+    "budget": 522611.3,
+    "delta": 156783.39,
+    "source_sheet": "Menu Pricing"
+  },
+  {
+    "project_id": "west-henderson",
+    "category": "Lightweight Flooring",
+    "product": "Standard (+$313,567)",
+    "spec": "1\"",
+    "price_per_sf": 2.6,
+    "budget": 679394.6900000001,
+    "delta": 313566.7800000001,
+    "source_sheet": "Menu Pricing"
+  },
+  {
+    "project_id": "west-henderson",
+    "category": "Unit Cabinets",
+    "product": "Thermafoil White \"$0\"",
+    "spec": null,
+    "price_per_box": 137.8,
+    "budget": 1179430.2000000002,
+    "delta": 0.0,
+    "cost_per_unit": 3024.1800000000003,
+    "source_sheet": "Menu Pricing"
+  },
+  {
+    "project_id": "west-henderson",
+    "category": "Unit Cabinets",
+    "product": "Morning Dew (+$188,298)",
+    "spec": null,
+    "price_per_box": 159.8,
+    "budget": 1367728.2000000002,
+    "delta": 188298.0,
+    "cost_per_unit": 3507.0,
+    "source_sheet": "Menu Pricing"
+  }
+]

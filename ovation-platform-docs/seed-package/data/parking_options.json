@@ -1,0 +1,86 @@
+[
+  {
+    "project_id": "west-henderson",
+    "option": "Option 1",
+    "total_proposal": 39687.0,
+    "scope": [
+      {
+        "description": "\u00be\u201d rock entire area.",
+        "amount": null
+      }
+    ],
+    "source_sheet": "Park Options"
+  },
+  {
+    "project_id": "west-henderson",
+    "option": "Option 2",
+    "total_proposal": 111323.75,
+    "scope": [
+      {
+        "description": "\u00be\u201d rock entire area.",
+        "amount": null
+      },
+      {
+        "description": "Sidewalk around perimeter.",
+        "amount": 71636.75
+      },
+      {
+        "description": "Benches periodically at sidewalk.",
+        "amount": null
+      }
+    ],
+    "source_sheet": "Park Options"
+  },
+  {
+    "project_id": "west-henderson",
+    "option": "Option 3",
+    "total_proposal": 388195.75,
+    "scope": [
+      {
+        "description": "\u00be\u201d rock entire area.",
+        "amount": null
+      },
+      {
+        "description": "Sidewalk around perimeter.",
+        "amount": null
+      },
+      {
+        "description": "Benches periodically at sidewalk.",
+        "amount": null
+      },
+      {
+        "description": "Large turf area in the middle.",
+        "amount": 276872.0
+      }
+    ],
+    "source_sheet": "Park Options"
+  },
+  {
+    "project_id": "west-henderson",
+    "option": "Option 4",
+    "total_proposal": 557842.75,
+    "scope": [
+      {
+        "description": "\u00be\u201d rock entire area.",
+        "amount": null
+      },
+      {
+        "description": "Sidewalk around perimeter.",
+        "amount": null
+      },
+      {
+        "description": "Benches periodically at sidewalk.",
+        "amount": null
+      },
+      {
+        "description": "Large turf area in the middle.",
+        "amount": null
+      },
+      {
+        "description": "Playground area.",
+        "amount": 169647.0
+      }
+    ],
+    "source_sheet": "Park Options"
+  }
+]

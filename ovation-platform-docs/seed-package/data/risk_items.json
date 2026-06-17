@@ -1,0 +1,97 @@
+[
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-001",
+    "category": "Utilities",
+    "item": "Offsite Water",
+    "amount": -166650.0,
+    "note": "If Ovation goes first then POC is 660 LF on Gilespie",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-002",
+    "category": "Utilities",
+    "item": "Offsite Sewer",
+    "amount": -215200.0,
+    "note": "If Ovation goes first then POC is 660 LF on Gilespie",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-003",
+    "category": "Unfavorable Bid",
+    "item": "Electrical",
+    "budget": null,
+    "proposal": 5127920.0,
+    "deficit": null,
+    "subcontractor": "Northstar",
+    "has_ref_error": true
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-004",
+    "category": "Unfavorable Bid",
+    "item": "Plumbing",
+    "budget": 4869550.0,
+    "proposal": 4903804.0,
+    "deficit": -34254.0,
+    "subcontractor": "JMAC",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-005",
+    "category": "Favorable Bid",
+    "item": "Concrete",
+    "budget": 1672098.0,
+    "proposal": 1351565.0,
+    "deficit": 320533.0,
+    "subcontractor": "NRC Concrete",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-006",
+    "category": "Favorable Bid",
+    "item": "Framing",
+    "budget": 7607430.0,
+    "proposal": 7335100.0,
+    "deficit": 272330.0,
+    "subcontractor": "Gilmore Construction",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-007",
+    "category": "Favorable Bid",
+    "item": "Finished Carpentry",
+    "budget": 1838461.0,
+    "proposal": 1649856.29,
+    "deficit": 188604.70999999996,
+    "subcontractor": "Rystin Construction, Inc.",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-008",
+    "category": "Favorable Bid",
+    "item": "Windows",
+    "budget": 573144.0,
+    "proposal": 418876.43,
+    "deficit": 154267.57,
+    "subcontractor": "Solar Industries, Inc.",
+    "has_ref_error": false
+  },
+  {
+    "project_id": "west-henderson",
+    "risk_id": "risk-009",
+    "category": "Favorable Bid",
+    "item": "Landscape",
+    "budget": 3662725.0,
+    "proposal": 2571080.15,
+    "deficit": 1091644.85,
+    "subcontractor": "Alpha Landscapes",
+    "has_ref_error": false
+  }
+]

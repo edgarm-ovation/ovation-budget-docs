@@ -1,11 +1,77 @@
 [
   {
+    "budget_level_id": "west-henderson-l1-1",
+    "project_id": "west-henderson",
+    "level": 1,
+    "sub_level": 1,
+    "display_name": "Level 1",
+    "status": "Locked",
+    "parent_budget_level_id": null,
+    "updated": "2024-12-04",
+    "total_cost": 84590981.35,
+    "cost_per_unit": 216899.95,
+    "cost_per_gsf": 195.85,
+    "buildings": 5,
+    "livable_sf": 431911.0
+  },
+  {
+    "budget_level_id": "west-henderson-l1-2",
+    "project_id": "west-henderson",
+    "level": 1,
+    "sub_level": 2,
+    "display_name": "Level 1.1 \u2014 Update A",
+    "status": "Locked",
+    "parent_budget_level_id": "west-henderson-l1-1",
+    "updated": "2025-04-01",
+    "total_cost": 82551538.37,
+    "cost_per_unit": 211670.61,
+    "cost_per_gsf": 193.53,
+    "buildings": 4,
+    "livable_sf": 426549.0
+  },
+  {
+    "budget_level_id": "west-henderson-l1-3",
+    "project_id": "west-henderson",
+    "level": 1,
+    "sub_level": 3,
+    "display_name": "Level 1.1 \u2014 Update B",
+    "status": "Locked",
+    "parent_budget_level_id": "west-henderson-l1-2",
+    "updated": "2025-04-01",
+    "total_cost": 78131623.01,
+    "cost_per_unit": 200337.49,
+    "cost_per_gsf": 183.17,
+    "buildings": 4,
+    "livable_sf": 426549.0
+  },
+  {
+    "budget_level_id": "west-henderson-l2-1",
+    "project_id": "west-henderson",
+    "level": 2,
+    "sub_level": 1,
+    "display_name": "Level 2 \u2014 Transmitted",
+    "status": "Locked",
+    "parent_budget_level_id": "west-henderson-l1-3",
+    "updated": "2025-08-15",
+    "total_cost": 79847909.01,
+    "cost_per_unit": 204738.23,
+    "cost_per_gsf": 188.93,
+    "buildings": 4,
+    "livable_sf": 422635.0
+  },
+  {
     "budget_level_id": "west-henderson-l3",
     "project_id": "west-henderson",
     "level": 3,
     "sub_level": 1,
     "display_name": "Level 3 \u2014 Construction Documents",
     "status": "Draft",
-    "parent_budget_level_id": null
+    "parent_budget_level_id": "west-henderson-l2-1",
+    "updated": "2025-12-29",
+    "total_cost": 77376747.92,
+    "cost_per_unit": 198401.92,
+    "cost_per_gsf": 183.08,
+    "buildings": 4,
+    "livable_sf": 422635.0
   }
 ]

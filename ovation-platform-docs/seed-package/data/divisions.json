@@ -1,182 +1,182 @@
 [
   {
     "code": "01",
-    "name": "General Requirements",
+    "name": "Div 1 \u2014 General Requirements",
     "is_markup": true,
     "is_ffe": false,
     "sort_order": 0
   },
   {
     "code": "02",
-    "name": "Existing Conditions",
+    "name": "Div 2 \u2014 Existing Conditions",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 1
   },
   {
     "code": "03",
-    "name": "Concrete",
+    "name": "Div 3 \u2014 Concrete",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 2
   },
   {
     "code": "04",
-    "name": "Masonry",
+    "name": "Div 4 \u2014 Masonry",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 3
   },
   {
     "code": "05",
-    "name": "Metals",
+    "name": "Div 5 \u2014 Metals",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 4
   },
   {
     "code": "06",
-    "name": "Wood, Plastics, & Composites",
+    "name": "Div 6 \u2014 Wood, Plastics & Composites",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 5
   },
   {
     "code": "07",
-    "name": "Thermal & Moisture Protection",
+    "name": "Div 7 \u2014 Thermal & Moisture",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 6
   },
   {
     "code": "08",
-    "name": "Openings",
+    "name": "Div 8 \u2014 Openings",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 7
   },
   {
     "code": "09",
-    "name": "Finishes",
+    "name": "Div 9 \u2014 Finishes",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 8
   },
   {
     "code": "10",
-    "name": "Specialties",
+    "name": "Div 10 \u2014 Specialties",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 9
   },
   {
     "code": "11",
-    "name": "Equipment",
+    "name": "Div 11 \u2014 Equipment",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 10
   },
   {
     "code": "12",
-    "name": "Furnishings",
+    "name": "Div 12 \u2014 Furnishings",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 11
   },
   {
     "code": "13",
-    "name": "Special Construction",
+    "name": "Div 13 \u2014 Special Construction",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 12
   },
   {
     "code": "14",
-    "name": "Conveying Equipment",
+    "name": "Div 14 \u2014 Conveying Equipment",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 13
   },
   {
     "code": "21",
-    "name": "Fire Suppression",
+    "name": "Div 21 \u2014 Fire Suppression",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 14
   },
   {
     "code": "22",
-    "name": "Plumbing",
+    "name": "Div 22 \u2014 Plumbing",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 15
   },
   {
     "code": "23",
-    "name": "HVAC",
+    "name": "Div 23 \u2014 HVAC",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 16
   },
   {
     "code": "26",
-    "name": "Electrical",
+    "name": "Div 26 \u2014 Electrical",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 17
   },
   {
     "code": "27",
-    "name": "Communications",
+    "name": "Div 27 \u2014 Communications",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 18
   },
   {
     "code": "28",
-    "name": "Electronic Safety & Security",
+    "name": "Div 28 \u2014 Electronic Safety & Security",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 19
   },
   {
     "code": "31",
-    "name": "Earthwork",
+    "name": "Div 31 \u2014 Earthwork",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 20
   },
   {
     "code": "32",
-    "name": "Exterior Improvements",
+    "name": "Div 32 \u2014 Exterior Improvements",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 21
   },
   {
     "code": "33",
-    "name": "Utilities",
+    "name": "Div 33 \u2014 Utilities",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 22
   },
   {
     "code": "34",
-    "name": "Transportation",
+    "name": "Div 34 \u2014 Transportation",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 23
   },
   {
     "code": "48",
-    "name": "Electrical Power Generation",
+    "name": "Div 48 \u2014 Electrical Power Generation",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 24
   },
   {
     "code": "49",
-    "name": "Field Surveys, Staking",
+    "name": "Div 49 \u2014 Field Surveys & Staking",
     "is_markup": false,
     "is_ffe": false,
     "sort_order": 25
@@ -225,7 +225,7 @@
   },
   {
     "code": "FFE",
-    "name": "FFE",
+    "name": "FF&E \u2014 Furniture, Fixtures & Equipment",
     "is_markup": false,
     "is_ffe": true,
     "sort_order": 32
