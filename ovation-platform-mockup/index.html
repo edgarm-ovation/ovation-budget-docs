@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ovation Budget Platform — Demo Mockup</title>
+<style>
+  /* ===== Ovation Brand Defaults ===== */
+  :root{
+    --green:#536857; --green-d:#3f4f43; --green-l:#e8ede9;
+    --bg:#F6F5ED; --ink:#1A1A1A; --red:#D0651E;
+    --clay:#9F4B4A; --sand:#E4B162; --grey:#5B5B5B; --lav:#798ABF;
+    --line:#e0ded2; --panel:#ffffff; --muted:#6b6b63;
+    --ok-bg:#e8ede9; --ok-tx:#3f4f43;
+    --warn-bg:#fbf0e2; --warn-tx:#9a4a14;
+    --info-bg:#eef0f7; --info-tx:#46568c;
+    --shadow:0 1px 2px rgba(26,26,26,.05),0 6px 18px rgba(26,26,26,.07);
+    --radius:10px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-weight:700;letter-spacing:-.01em}
+  .serif{font-family:Calluna,Georgia,'Times New Roman',serif}
+  a{color:var(--green);text-decoration:none;cursor:pointer}
+  button{font-family:inherit}
+  .num{font-variant-numeric:tabular-nums}
+
+  .mockbar{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.4px;
+    padding:5px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+  .mockbar .tag{background:var(--sand);color:var(--ink);font-weight:700;padding:2px 8px;border-radius:5px;font-size:10px}
+  .mockbar .right{opacity:.8}
+
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:7px;border:1px solid var(--line);
+    background:#fff;color:var(--ink);font-size:13px;font-weight:600;cursor:pointer;transition:.12s;white-space:nowrap}
+  .btn:hover{border-color:var(--green);color:var(--green)}
+  .btn-primary{background:var(--green);border-color:var(--green);color:#fff}
+  .btn-primary:hover{background:var(--green-d);border-color:var(--green-d);color:#fff}
+  .btn-sm{padding:4px 10px;font-size:12px}
+  .btn-warn{background:var(--red);border-color:var(--red);color:#fff}
+  .btn-warn:hover{filter:brightness(.93);color:#fff}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+
+  .pill{display:inline-block;padding:2px 9px;border-radius:11px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .pill-l0{background:#eee;color:#555}
+  .pill-l1{background:var(--info-bg);color:var(--info-tx)}
+  .pill-l2{background:var(--warn-bg);color:var(--warn-tx)}
+  .pill-l3{background:var(--ok-bg);color:var(--ok-tx)}
+  .pill-draft{background:#f0eee2;color:var(--grey)}
+  .pill-submitted{background:var(--info-bg);color:var(--info-tx)}
+  .pill-approved{background:var(--ok-bg);color:var(--ok-tx)}
+  .pill-locked{background:var(--ink);color:#fff}
+  .pill-rejected{background:#fae3df;color:var(--clay)}
+  .pill-awarded{background:var(--warn-bg);color:var(--warn-tx);border:1px solid var(--sand)}
+  .pill-proposed{background:var(--info-bg);color:var(--info-tx)}
+  .pill-open{background:#f3f1e6;color:var(--grey)}
+  .pill-soon{background:#f3f1e6;color:#9a958a;border:1px dashed #cfcabb}
+  .pill-lowest{background:var(--ok-bg);color:var(--ok-tx)}
+
+  .app{display:none;min-height:100vh}
+  .app.show{display:block}
+  .topbar{display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line);
+    padding:0 22px;height:60px;position:sticky;top:0;z-index:40}
+  .brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+  .brand .mark{width:34px;height:34px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center}
+  .brand .mark svg{width:22px;height:22px}
+  .brand .word{font-weight:800;letter-spacing:.18em;font-size:15px;color:var(--ink)}
+  .brand .sub{font-size:10px;color:var(--muted);letter-spacing:.12em;margin-top:1px}
+  .topnav{display:flex;gap:4px;margin-left:26px}
+  .topnav a{padding:7px 12px;border-radius:7px;font-size:13px;font-weight:600;color:var(--grey)}
+  .topnav a:hover{background:var(--bg)}
+  .topnav a.active{background:var(--green-l);color:var(--green)}
+  .topright{display:flex;align-items:center;gap:14px}
+  .role-select{border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:12px;font-weight:600;color:var(--ink);background:#fff;cursor:pointer}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--lav);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .bell{position:relative;cursor:pointer;color:var(--grey);font-size:17px}
+  .bell .dot{position:absolute;top:-3px;right:-3px;min-width:15px;height:15px;border-radius:8px;background:var(--red);border:2px solid #fff;font-size:9px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 2px}
+
+  /* notifications dropdown */
+  .notif{position:absolute;top:54px;right:64px;width:340px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 50px rgba(26,26,26,.18);z-index:60;display:none;overflow:hidden}
+  .notif.open{display:block}
+  .notif .nh{padding:12px 15px;border-bottom:1px solid var(--line);background:#fcfbf6;font-weight:700;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+  .notif .ni{display:flex;gap:10px;padding:11px 15px;border-bottom:1px solid var(--line);cursor:pointer}
+  .notif .ni:hover{background:#faf9f3}
+  .notif .ni.unread{background:#f3f6f2}
+  .notif .ni .ic{width:30px;height:30px;border-radius:7px;background:var(--green-l);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+  .notif .ni .tx{font-size:12.5px}
+  .notif .ni .tx .t{font-weight:700}
+  .notif .ni .tx .b{color:var(--muted);font-size:11.5px}
+  .notif .ni .tx .tm{color:var(--muted);font-size:10px;margin-top:2px}
+
+  .wrap{max-width:1320px;margin:0 auto;padding:26px 22px 60px}
+  .pagehead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;gap:14px;flex-wrap:wrap}
+  .pagehead h2{margin:0;font-size:23px}
+  .pagehead .crumb{font-size:12px;color:var(--muted);margin-bottom:5px}
+  .pagehead .ctx{font-size:13px;color:var(--muted);margin-top:5px;max-width:720px}
+  .actions{display:flex;gap:9px;flex-wrap:wrap}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:22px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;box-shadow:var(--shadow)}
+  .card .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .card .val{font-size:24px;font-weight:800;letter-spacing:-.02em}
+  .card .sub{font-size:12px;color:var(--muted);margin-top:4px}
+  .card.accent-green{border-top:3px solid var(--green)}
+  .card.accent-sand{border-top:3px solid var(--sand)}
+  .card.accent-lav{border-top:3px solid var(--lav)}
+  .card.accent-red{border-top:3px solid var(--red)}
+  .card.accent-clay{border-top:3px solid var(--clay)}
+  .up{color:var(--red);font-weight:700}
+  .down{color:var(--green);font-weight:700}
+
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:22px;overflow:hidden}
+  .panel-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#fcfbf6;gap:10px;flex-wrap:wrap}
+  .panel-head h3{margin:0;font-size:15px}
+  .panel-head .muted{font-size:12px;color:var(--muted)}
+  .panel-body{padding:16px 18px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700;background:#fcfbf6}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tbody tr:hover td{background:#faf9f3}
+  .divrow{cursor:pointer;font-weight:600}
+  .divrow td:first-child::before{content:"▸ ";color:var(--muted)}
+  .divrow.open td:first-child::before{content:"▾ "}
+  .subrow td{background:#faf9f3;font-size:12.5px}
+  .subrow td:first-child{padding-left:34px;color:var(--grey)}
+  .hide{display:none!important}
+  .totrow td{background:var(--green-l);font-weight:800;border-top:2px solid var(--green)}
+  .cc{font-family:'Courier New',monospace;color:var(--green);font-weight:600}
+  .computed{background:var(--warn-bg);color:var(--warn-tx);font-size:9px;padding:1px 6px;border-radius:9px;font-weight:700;letter-spacing:.03em}
+  .winner-col{background:var(--green-l)!important}
+
+  .projgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+  .projcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:.14s}
+  .projcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(83,104,87,.16);border-color:var(--green)}
+  .projcard .ph{height:104px;background:linear-gradient(135deg,var(--green),var(--green-d));position:relative;display:flex;align-items:flex-end;padding:14px}
+  .projcard .ph.alt{background:linear-gradient(135deg,#7a6f54,var(--clay))}
+  .projcard .ph .lvl{position:absolute;top:12px;right:12px}
+  .projcard .ph .nm{color:#fff;font-weight:800;font-size:17px;text-shadow:0 1px 4px rgba(0,0,0,.25)}
+  .projcard .pb{padding:14px 16px}
+  .projcard .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:9px}
+  .projcard .bigval{font-size:21px;font-weight:800}
+  .projbar{height:7px;border-radius:4px;background:#eceadf;margin-top:11px;overflow:hidden}
+  .projbar > i{display:block;height:100%;background:var(--green);border-radius:4px}
+
+  .login{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(1200px 600px at 70% -10%,#e9ede8,transparent),var(--bg);padding:24px}
+  .loginbox{width:420px;max-width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(26,26,26,.12);padding:38px 34px;text-align:center}
+  .loginbox .mark{width:54px;height:54px;border-radius:13px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .loginbox .mark svg{width:34px;height:34px}
+  .loginbox h1{margin:0 0 2px;font-size:21px;letter-spacing:.14em}
+  .loginbox .tagline{color:var(--muted);font-size:13px;margin-bottom:26px}
+  .ms-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:11px;padding:13px;border:1px solid var(--line);border-radius:9px;
+    background:#fff;font-weight:600;font-size:14px;cursor:pointer;transition:.12s}
+  .ms-btn:hover{border-color:var(--green);box-shadow:var(--shadow)}
+  .ms-logo{width:18px;height:18px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+  .ms-logo i{display:block}
+  .login-note{margin-top:20px;font-size:11px;color:var(--muted);line-height:1.5;background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:10px 12px;text-align:left}
+
+  .modal-bg{position:fixed;inset:0;background:rgba(26,26,26,.5);display:none;align-items:center;justify-content:center;z-index:100;padding:24px}
+  .modal-bg.open{display:flex}
+  .modal{background:#fff;border-radius:14px;max-width:720px;width:100%;max-height:90vh;overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+  .modal.wide{max-width:880px}
+  .modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line);background:#fcfbf6}
+  .modal-head h3{margin:0;font-size:16px}
+  .modal-x{background:transparent;border:none;font-size:22px;cursor:pointer;color:var(--grey)}
+  .modal-body{padding:18px 20px}
+  .modal-foot{padding:14px 20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:9px;background:#fcfbf6;flex-wrap:wrap}
+  .pick-row{display:flex;align-items:center;gap:12px;padding:11px 13px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px;cursor:pointer}
+  .pick-row:hover{background:var(--bg)}
+  .pick-row.sel{border-color:var(--green);background:var(--green-l)}
+  .pick-row .who{flex:1}
+  .pick-row .amt{font-weight:800;color:var(--green)}
+  .seg{display:flex;gap:6px;margin-bottom:14px}
+  .seg label{flex:1;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px}
+  .seg label.sel{border-color:var(--green);background:var(--green-l);color:var(--green)}
+
+  .proj-shell{display:grid;grid-template-columns:236px 1fr;gap:0;align-items:start}
+  .side{position:sticky;top:60px;align-self:start;border-right:1px solid var(--line);min-height:calc(100vh - 60px);background:#fcfbf6;padding:18px 12px}
+  .side .lvlsel{margin-bottom:14px}
+  .side .lvlsel .t{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:0 6px 6px}
+  .lvltabs{display:flex;gap:4px}
+  .lvltabs button{flex:1;padding:7px 0;border:1px solid var(--line);background:#fff;border-radius:7px;font-weight:700;font-size:12px;cursor:pointer;color:var(--grey)}
+  .lvltabs button.active{background:var(--green);border-color:var(--green);color:#fff}
+  .lvltabs button.locked{opacity:.45;cursor:not-allowed}
+  .navsec{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;padding:14px 8px 4px}
+  .navitem{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--grey);cursor:pointer}
+  .navitem:hover{background:var(--green-l)}
+  .navitem.active{background:var(--green);color:#fff}
+  .navitem .gate{font-size:9px}
+  .navitem.gated{opacity:.5;cursor:not-allowed}
+  .navitem .nb{background:var(--red);color:#fff;font-size:9px;border-radius:8px;padding:1px 6px;font-weight:700}
+  .proj-main{padding:24px 26px 60px;min-width:0}
+
+  .dropzone{border:2px dashed var(--green);border-radius:12px;background:var(--green-l);padding:40px;text-align:center;color:var(--green-d);cursor:pointer}
+  .dropzone:hover{background:#e0e8e1}
+  .dropzone .big{font-size:34px}
+  .map-grid{display:grid;grid-template-columns:1fr 30px 1fr;gap:8px 12px;align-items:center}
+  .map-grid .col{background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 11px;font-size:13px}
+  .map-grid .arr{text-align:center;color:var(--muted)}
+  .map-grid select{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:7px;background:#fff;font-size:13px}
+  .progress{height:8px;border-radius:5px;background:#eceadf;overflow:hidden;margin-top:14px}
+  .progress > i{display:block;height:100%;background:var(--green);border-radius:5px;transition:width .4s}
+
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .check-grid label{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-size:13px}
+  .hashbox{background:var(--ink);color:#7fe0a0;font-family:'Courier New',monospace;font-size:11px;word-break:break-all;padding:11px 13px;border-radius:8px;margin-top:8px}
+  .sigpad{border:2px dashed var(--line);border-radius:9px;background:#fff;width:100%;height:130px;cursor:crosshair;display:block}
+  .sigpad.signed{border-color:var(--green)}
+  .stepper{display:flex;gap:0;margin-bottom:18px;flex-wrap:wrap}
+  .stepper .st{flex:1;min-width:120px;text-align:center;padding:11px 8px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:600;color:var(--muted);position:relative}
+  .stepper .st:first-child{border-radius:8px 0 0 8px}
+  .stepper .st:last-child{border-radius:0 8px 8px 0}
+  .stepper .st.done{background:var(--green-l);color:var(--green-d)}
+  .stepper .st.cur{background:var(--green);color:#fff;border-color:var(--green)}
+
+  .barchart{display:flex;align-items:flex-end;gap:14px;height:210px;padding:10px 6px 0;border-bottom:1px solid var(--line)}
+  .barchart .grp{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%}
+  .barchart .bars{display:flex;gap:5px;align-items:flex-end;height:100%}
+  .barchart .bars i{width:18px;border-radius:4px 4px 0 0;display:block}
+  .barchart .l2{background:var(--lav)}
+  .barchart .l3{background:var(--green)}
+  .barchart .cap{font-size:10px;color:var(--muted);text-align:center}
+  .legend{display:flex;gap:18px;font-size:12px;color:var(--muted);margin-top:10px}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+  .feature-note{font-size:11px;color:var(--muted);background:#fcfbf6;border:1px dashed var(--line);border-radius:8px;padding:10px 12px;margin-top:14px}
+  .ro-note{font-size:12px;color:var(--warn-tx);background:var(--warn-bg);border:1px solid var(--sand);border-radius:8px;padding:9px 13px;margin-bottom:16px;display:flex;gap:8px;align-items:center}
+  .banner{border-radius:10px;padding:13px 16px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .banner.amber{background:var(--warn-bg);border:1px solid var(--sand)}
+  .banner.green{background:var(--green-l);border:1px solid var(--green)}
+  .banner.locked{background:#2a2a2a;color:#fff;border:1px solid #000}
+  .banner.clay{background:#fae3df;border:1px solid var(--clay)}
+  .coverbar{height:10px;border-radius:6px;background:#eceadf;overflow:hidden;margin-top:8px}
+  .coverbar > i{display:block;height:100%;background:var(--green)}
+  @media(max-width:960px){.proj-shell{grid-template-columns:1fr}.side{position:static;min-height:auto;border-right:none;border-bottom:1px solid var(--line)}.check-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="mockbar">
+  <span><span class="tag">CLICKABLE MOCKUP</span> &nbsp;Ovation Budget Platform — visual prototype of the <strong>8-week demo build</strong>. Data is illustrative. No live backend.</span>
+  <span class="right">v0.2 · built from product docs + DB schema + West Henderson L3 prototype</span>
+</div>
+
+<!-- =================== LOGIN =================== -->
+<div id="login" class="login">
+  <div class="loginbox">
+    <div class="mark">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="34" r="28" fill="none" stroke="#fff" stroke-width="3"/><path d="M 18 46 L 32 22 L 42 36 L 50 26 L 62 46" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><line x1="10" y1="74" x2="70" y2="74" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+    </div>
+    <h1>OVATION</h1>
+    <div class="tagline serif">Construction Budget Platform</div>
+    <button class="ms-btn" onclick="signIn()">
+      <span class="ms-logo"><i style="background:#f25022"></i><i style="background:#7fba00"></i><i style="background:#00a4ef"></i><i style="background:#ffb900"></i></span>
+      Sign in with Microsoft
+    </button>
+    <div class="login-note">
+      <strong>Mockup note:</strong> In the real build this is <strong>Azure AD single sign-on</strong> against Ovation's M365 tenant, with role-based access (Estimator / Manager / Admin / Viewer). The button here enters the demo — use the role switcher in the top bar to see how the screen changes per role.
+    </div>
+  </div>
+</div>
+
+<!-- =================== APP =================== -->
+<div id="app" class="app">
+  <div class="topbar">
+    <div style="display:flex;align-items:center">
+      <div class="brand" onclick="go('projects')">
+        <div class="mark"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="34" r="28" fill="none" stroke="#fff" stroke-width="3.2"/><path d="M 18 46 L 32 22 L 42 36 L 50 26 L 62 46" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/><line x1="10" y1="74" x2="70" y2="74" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/></svg></div>
+        <div><div class="word">OVATION</div><div class="sub">BUDGET PLATFORM</div></div>
+      </div>
+      <div class="topnav" id="topnav">
+        <a id="t-projects" onclick="go('projects')">Projects</a>
+        <a id="t-project" onclick="openProject(currentProject||'wh')">Project Workspace</a>
+      </div>
+    </div>
+    <div class="topright">
+      <select class="role-select" id="role" onchange="changeRole(this.value)">
+        <option value="Estimator">Role: Estimator</option>
+        <option value="Manager">Role: Manager</option>
+        <option value="Admin">Role: Admin</option>
+        <option value="Viewer">Role: Viewer</option>
+      </select>
+      <div class="bell" onclick="toggleNotif(event)" title="Notifications">🔔<span class="dot" id="notif-count">3</span></div>
+      <div class="avatar" id="avatar" title="Edgar M.">EM</div>
+    </div>
+  </div>
+  <div id="notif" class="notif"></div>
+  <div id="view"></div>
+</div>
+
+<div id="modal-host"></div>
+
+<script>
+/* ============ ROLE ============ */
+let currentRole='Estimator';
+const ROLE_DESC={
+  Estimator:'Build & maintain line items, upload files, submit for approval',
+  Manager:'Review, approve / reject, lock, unlock to new revision',
+  Admin:'Everything, plus user & project setup',
+  Viewer:'Read-only — Asset Mgmt / Finance reporting',
+};
+function can(action){
+  if(currentRole==='Admin') return true;
+  if(currentRole==='Viewer') return false;
+  if(action==='submit'||action==='edit'||action==='import'||action==='award') return currentRole==='Estimator'||currentRole==='Manager';
+  if(action==='approve'||action==='reject'||action==='unlock') return currentRole==='Manager';
+  return false;
+}
+function changeRole(r){
+  currentRole=r;
+  $('avatar').textContent = r==='Viewer'?'AM':(r==='Manager'?'JM':(r==='Admin'?'AD':'EM'));
+  render();
+}
+
+/* ============ DEMO DATA ============ */
+const PROJECTS = {
+  wh: {
+    id:'wh', name:'West Henderson Apartments', address:'Henderson, NV',
+    level:'L3', levelName:'Construction Documents', accuracy:'±5%',
+    units:390, gsf:423131, acres:15.83, buildings:4, type:'Affordable / Workforce',
+    l2:79847908, l3:79121540, bid:77930400, awarded:5647941,
+    sub:'L3.1', status:'Submitted', tradesBid:26, awardedCount:2, accent:'',
+  },
+  rb: {
+    id:'rb', name:'Robindale 215', address:'Las Vegas, NV',
+    level:'L2', levelName:'Design Development', accuracy:'±10–15%',
+    units:215, gsf:198640, acres:6.2, buildings:3, type:'Affordable / Senior',
+    l2:48320000, l3:null, bid:null, awarded:0,
+    sub:'L2.1', status:'Draft', tradesBid:0, awardedCount:0, accent:'alt',
+  }
+};
+
+const DIVISIONS = [
+  {code:'03', name:'Concrete', l2:2546599, items:[
+     {label:'Slabs', cc:'03-3101', l2:1672098, bid:1332040, status:'awarded', who:'NRC Concrete', trade:'concrete-slab'},
+     {label:'Lightweight Concrete', cc:'03-3116', l2:679395, bid:627820, status:'proposed', who:'NV Gypsum'},
+     {label:'Trash Enclosure Concrete', cc:'03-3102', l2:77000, bid:null, status:null, who:''},
+  ]},
+  {code:'06', name:'Wood, Plastics & Composites', l2:9324491, items:[
+     {label:'Framing', cc:'06-1100', l2:7607430, bid:7053263, status:'proposed', who:'Empire Framers', trade:'framing'},
+     {label:'Finish Carpentry — Units', cc:'06-2001', l2:1170454, bid:1008376, status:'proposed', who:'Rystin Construction'},
+     {label:'Closet Shelving', cc:'10-5723', l2:166000, bid:166172, status:'proposed', who:'Rystin Construction'},
+  ]},
+  {code:'22', name:'Plumbing', l2:4783146, items:[
+     {label:'Plumbing (1 & 2 Bath Units)', cc:'22-1001', l2:4747534, bid:4712570, status:'proposed', who:'Modern Plumbing of NV'},
+  ]},
+  {code:'23', name:'HVAC', l2:3866250, items:[
+     {label:'HVAC Standard + Pump House', cc:'23-3001', l2:3866250, bid:3956000, status:'proposed', who:'Allstate Service Group'},
+  ]},
+  {code:'26', name:'Electrical', l2:5287886, items:[
+     {label:'Electrical (Building + Site)', cc:'26-1001', l2:4251708, bid:4047456, status:'awarded', who:'Northstar Electric', trade:'electrical'},
+     {label:'Electrical Fixtures', cc:'26-5001', l2:273000, bid:null, status:null, who:''},
+  ]},
+  {code:'32', name:'Exterior Improvements', l2:7622827, items:[
+     {label:'Site Landscaping', cc:'32-9001', l2:3662725, bid:2326357, status:'proposed', who:'Alpha Landscapes'},
+     {label:'Site Concrete (On/Offsite)', cc:'32-1623', l2:467393, bid:838513, status:'proposed', who:'NRC Concrete'},
+     {label:'Site Masonry Walls', cc:'32-3201', l2:312393, bid:213808, status:'proposed', who:'Integrity Masonry'},
+  ]},
+];
+
+// 7 markups per data model (5 leadership-facing + GR & Bid Risk computed)
+const MARKUPS = [
+  {k:'gr',        label:'General Requirements', cc:'01', rate:6.00, amt:3849810, computed:true},
+  {k:'bidrisk',   label:'Bid Risk',            cc:'BR', rate:1.57, amt:1254667, computed:true},
+  {k:'bonds',     label:'Sub Bonds',           cc:'50', rate:1.10, amt:705799},
+  {k:'insurance', label:'GL Insurance',        cc:'51', rate:1.06, amt:680000},
+  {k:'cont',      label:'Construction Contingency', cc:'55', rate:6.00, amt:3849810},
+  {k:'fee',       label:'Contractor Fee',      cc:'98', rate:6.00, amt:4008238},
+  {k:'oh',        label:'Overhead',            cc:'99', rate:2.00, amt:1336079},
+];
+
+// Trade packages (L3 only)
+const TRADES = [
+  {key:'concrete-slab', title:'Concrete — Slabs', cc:'03-3101', est:1672098, status:'Awarded', award:1332040, winner:'NRC Concrete',
+   bidders:[{c:'NRC Concrete',a:1332040,by:'Broc Goddard',rev:'Rev #1 · Dec 22'},{c:'MJC Construction',a:1842669,by:'Jason Gresham'},{c:'Rocky Mountain',a:1985086,by:'Ben Williams'},{c:'Largo Concrete',a:3329258,by:'V. Alvarez'}],
+   hist:[{p:'Torrey Pines',y:2024,co:'NRC',v:11.99},{p:'Bruner',y:2025,co:'NRC',v:11.10},{p:'West Henderson',y:2026,co:'NRC',v:9.16,cur:true}],
+   scope:[{l:'Building 1',v:[683560,528315,747913,812065]},{l:'Building 2',v:[138033,106995,140838,166908]},{l:'Building 3',v:[711838,594505,812491,826333]},{l:'Building 4',v:[138667,102225,141426,166908]}]},
+  {key:'framing', title:'Wood Framing', cc:'06-1100', est:7607430, status:'Proposed', award:7053263, winner:'Empire Framers',
+   bidders:[{c:'Empire Framers',a:7053263,by:'R. Gutierrez',rev:'Original · Feb 25'},{c:'Focus Framing',a:7106971,by:'Juan Becerra'},{c:'Gilmore Construction',a:7575950,by:'D. Betancourt'},{c:'National Builders',a:7808239,by:'Jim Payne'}],
+   hist:[{p:'Decatur',y:2024,co:'Gilmore',v:22.9},{p:'Bruner',y:2025,co:'Focus',v:18.7},{p:'West Henderson',y:2026,co:'Empire',v:16.69,cur:true}],
+   scope:[{l:'Lumber',v:[null,2173118,2213195,3096607]},{l:'Trusses',v:[null,1458740,1463125,2245040]},{l:'Labor',v:[null,3405564,3414211,2012795]}]},
+  {key:'electrical', title:'Electrical', cc:'26-1001', est:4443023, status:'Awarded', award:4315901, winner:'Northstar Electric',
+   bidders:[{c:'Northstar Electric',a:4315901,by:'Ron Sabellano',rev:'Rev #1 · Jan 16'},{c:'Silverado Electric',a:4885000,by:'V. Alvarez'},{c:'Sigma Companies',a:4954263,by:'O. Moattar'},{c:'Power Design',a:6100000,by:'V. Alvarez'}],
+   hist:[{p:'South Nellis',y:2024,co:'Northstar',v:12.50},{p:'Bruner',y:2025,co:'Sigma',v:10.06},{p:'West Henderson',y:2026,co:'Northstar',v:10.20,cur:true}],
+   scope:[{l:'Building',v:[4251708,4047456,4954263,6100000]},{l:'Site / Carports',v:[181315,177504,'Incl.','Incl.']}]},
+  {key:'plumbing', title:'Plumbing', cc:'22-1001', est:4747534, status:'Proposed', award:4712570, winner:'Modern Plumbing of NV',
+   bidders:[{c:'Modern Plumbing of NV',a:4712570,by:'Andy Dick',rev:'Rev #1 · Jan 21'},{c:'JMAC Plumbing',a:4819464,by:'A. Carducci'},{c:'Focus Plumbing',a:5240097,by:'J. Connally'}],
+   hist:[{p:'Durango',y:2026,co:'JMAC',v:12357},{p:'West Henderson',y:2026,co:'Modern',v:12084,cur:true}],
+   scope:[{l:'Buildings 1–4',v:[4747534,4712570,4819464,5240097]}]},
+  {key:'landscaping', title:'Site Landscaping', cc:'32-9001', est:2592270, status:'Proposed', award:2326357, winner:'Alpha Landscapes',
+   bidders:[{c:'Alpha Landscapes',a:2326357,by:'Tony Polish',rev:'Original · Sep 16'},{c:'Silver Lands',a:2066905,by:'Edgar Cano'},{c:'Gothic Landscape',a:2429875,by:'N. Pena'},{c:'BrightView / GTI',a:2474333,by:'Alan King'}],
+   hist:[],
+   scope:[{l:'Full site landscaping & irrigation',v:[2592270,2326357,2066905,2429875]}]},
+  {key:'mechanical', title:'HVAC (Mechanical)', cc:'23-3001', est:3866250, status:'Proposed', award:3956000, winner:'Allstate Service Group',
+   bidders:[{c:'Allstate Service Group',a:3956000,by:'A. Harutyunyan',rev:'Rev #1 · Jan 15'},{c:'Enix Mechanical',a:3976974,by:'O. Djia'},{c:'Atlas Mechanical',a:5900000,by:'K. Hellweg'}],
+   hist:[{p:'Bruner',y:2025,co:'Allstate',v:9845},{p:'West Henderson',y:2026,co:'Enix',v:10167,cur:true}],
+   scope:[{l:'Building',v:[3851250,3956000,3964962,5843500]},{l:'Pump House',v:[15000,'Incl.',12012,56500]}]},
+];
+
+// Takeoffs (L2 vs L3) — for West Henderson L3 and conceptually for L2
+const TAKEOFFS = {
+  'grading-paving':{title:'Grading & Paving', sections:[
+    {name:'Grading', rows:[
+      {d:'Excavation', uom:'CY', l2q:76569, l2u:8, l3q:57695, l3u:5},
+      {d:'Pad Finish', uom:'SF', l2q:167478, l2u:.25, l3q:156092, l3u:.25},
+      {d:'Hard Dig', uom:'LS', l2q:1, l2u:200000, l3q:1, l3u:200000},
+      {d:'Net Export', uom:'CY', l2q:18000, l2u:7, l3q:15000, l3u:10},
+    ]},
+    {name:'Onsite Paving', rows:[
+      {d:'2" AC / 4" Type II', uom:'SF', l2q:256408, l2u:2.55, l3q:243609, l3u:2.50},
+      {d:'Street Prep', uom:'SF', l2q:256408, l2u:.30, l3q:243609, l3u:.15},
+    ]},
+  ]},
+  'site-concrete':{title:'Site Concrete', sections:[
+    {name:'Onsite', rows:[
+      {d:'A Curb', uom:'LF', l2q:11070, l2u:18, l3q:12644, l3u:18},
+      {d:'4\' Sidewalk', uom:'SF', l2q:22381, l2u:6.75, l3q:20545, l3u:7.00},
+      {d:'Trash Bins & Aprons', uom:'EA', l2q:14, l2u:5500, l3q:14, l3u:5500},
+    ]},
+  ]},
+};
+
+// Benchmark comparables (cost / unit illustrative)
+const BENCHMARK = {
+  rows:[
+    {d:'Framing', uom:'$/GSF', l3:16.69, comps:[18.68,20.08,19.92,22.89,19.01]},
+    {d:'Electrical', uom:'$/GSF', l3:10.20, comps:[10.06,12.50,9.27,10.18,12.13]},
+    {d:'Plumbing', uom:'$/Unit', l3:12084, comps:[10069,10196,10526,11042,10050]},
+    {d:'HVAC', uom:'$/Unit', l3:10167, comps:[9875,10148,9739,10104,9218]},
+    {d:'Slabs', uom:'$/SF', l3:9.16, comps:[11.11,16.78,11.99,15.88,16.06]},
+  ],
+  comps:['Bruner','South Nellis','Torrey Pines','Decatur','Pebble'],
+};
+
+// Notifications (per docs notification types)
+let NOTIFS = [
+  {ic:'📤', t:'Budget submitted', b:'West Henderson L3.1 submitted for approval by Edgar M.', tm:'10 min ago', unread:true},
+  {ic:'🏆', t:'Trade awarded', b:'Electrical awarded to Northstar Electric — $4,315,901', tm:'2 hr ago', unread:true},
+  {ic:'📄', t:'File parsed', b:'Empire Framers proposal.xlsx — 142 rows imported', tm:'Yesterday', unread:true},
+  {ic:'✅', t:'Budget approved', b:'West Henderson L2.4 approved & locked by Jess Molasky', tm:'3 days ago', unread:false},
+];
+
+let currentProject=null, currentLevel='L3', currentTab='overview', currentTrade=null;
+let importDone=false, sigDrawn=false, importPct=0;
+
+/* ============ HELPERS ============ */
+const $=id=>document.getElementById(id);
+function money(n,d){ if(n==null) return '—'; return '$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:d||0,maximumFractionDigits:d||0}); }
+function num(v){ return v==null?'—':Number(v).toLocaleString('en-US'); }
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function pillLevel(l){return `<span class="pill pill-${l.toLowerCase()}">${l}</span>`;}
+function statusPill(s){
+  const map={Awarded:'awarded',Proposed:'proposed',Open:'open',Draft:'draft',Submitted:'submitted',Approved:'approved',Locked:'locked',Rejected:'rejected',awarded:'awarded',proposed:'proposed'};
+  const k=map[s]||'draft';
+  const icon=k==='locked'?'🔒 ':'';
+  return `<span class="pill pill-${k}">${icon}${esc(s)}</span>`;
+}
+
+/* ============ NAV ============ */
+function signIn(){ $('login').style.display='none'; $('app').classList.add('show'); go('projects'); }
+function go(v){ currentTab=null; currentTrade=null; closeNotif(); if(v==='projects'){renderProjects();setTop('projects');} }
+function setTop(t){ document.querySelectorAll('.topnav a').forEach(a=>a.classList.remove('active')); const e=$('t-'+t); if(e)e.classList.add('active'); }
+function openProject(id){ currentProject=id; currentLevel=PROJECTS[id].level; currentTab='overview'; currentTrade=null; setTop('project'); renderProject(); }
+function setTab(t){ currentTab=t; currentTrade=null; renderProject(); }
+function render(){ if(currentProject) renderProject(); else renderProjects(); }
+
+/* ============ NOTIFICATIONS ============ */
+function toggleNotif(e){ e.stopPropagation(); const n=$('notif'); const open=n.classList.toggle('open'); if(open) renderNotif(); }
+function closeNotif(){ $('notif').classList.remove('open'); }
+function renderNotif(){
+  const unread=NOTIFS.filter(x=>x.unread).length;
+  $('notif-count').textContent=unread; $('notif-count').style.display=unread?'flex':'none';
+  $('notif').innerHTML=`
+    <div class="nh">Notifications <a onclick="markAllRead()" style="font-size:11px">Mark all read</a></div>
+    ${NOTIFS.map(x=>`<div class="ni ${x.unread?'unread':''}">
+      <div class="ic">${x.ic}</div>
+      <div class="tx"><div class="t">${esc(x.t)}</div><div class="b">${esc(x.b)}</div><div class="tm">${esc(x.tm)}</div></div>
+    </div>`).join('')}
+    <div style="padding:9px 15px;font-size:11px;color:var(--muted);background:#fcfbf6">In-app + email. Types: BudgetSubmitted · BudgetApproved · BudgetRejected · FileParsed · TradeAwarded</div>`;
+}
+function markAllRead(){ NOTIFS.forEach(x=>x.unread=false); renderNotif(); }
+document.addEventListener('click',()=>closeNotif());
+
+/* ============ PROJECTS DASHBOARD ============ */
+function renderProjects(){
+  const list=Object.values(PROJECTS);
+  const totalL2=list.reduce((s,p)=>s+(p.l2||0),0);
+  const totalAwarded=list.reduce((s,p)=>s+(p.awarded||0),0);
+  $('view').innerHTML=`
+  <div class="wrap">
+    <div class="pagehead">
+      <div><div class="crumb">Ovation · Development & OCI</div><h2>Projects</h2>
+        <div class="ctx">Every active budget in one place — replaces individual Excel workbooks scattered across drives. Pick a project to open its workspace.</div></div>
+      <div class="actions"><button class="btn btn-primary" ${can('edit')?'':'disabled'} onclick="alert('Mockup: project creation wizard is a future screen.')">+ New Project</button></div>
+    </div>
+    <div class="cards">
+      <div class="card accent-green"><div class="lbl">Active Projects</div><div class="val num">${list.length}</div><div class="sub">L2–L3 in flight</div></div>
+      <div class="card accent-lav"><div class="lbl">Combined L2 Budget</div><div class="val num">${money(totalL2)}</div><div class="sub">across all projects</div></div>
+      <div class="card accent-sand"><div class="lbl">Awarded to Date</div><div class="val num">${money(totalAwarded)}</div><div class="sub">contracts signed</div></div>
+      <div class="card accent-red"><div class="lbl">Pending Approvals</div><div class="val num">1</div><div class="sub">West Henderson L3.1</div></div>
+    </div>
+    <div class="projgrid">
+      ${list.map(p=>{
+        const pctAward=p.l2?Math.min(100,Math.round((p.awarded/p.l2)*100)):0;
+        return `<div class="projcard" onclick="openProject('${p.id}')">
+          <div class="ph ${p.accent}"><div class="lvl">${pillLevel(p.level)}</div><div class="nm">${esc(p.name)}</div></div>
+          <div class="pb">
+            <div class="meta"><span>${esc(p.address)}</span><span>${statusPill(p.status)}</span></div>
+            <div class="meta"><span>${num(p.units)} units · ${num(p.gsf)} GSF</span><span>${p.levelName}</span></div>
+            <div class="lbl" style="margin:10px 0 2px">${p.level==='L3'?'L3 Working Budget':'L2 Budget'}</div>
+            <div class="bigval num">${money(p.level==='L3'?p.l3:p.l2)}</div>
+            <div class="projbar"><i style="width:${pctAward}%"></i></div>
+            <div class="sub" style="margin-top:6px">${p.awardedCount} trades awarded · ${pctAward}% of budget committed</div>
+          </div>
+        </div>`;
+      }).join('')}
+      <div class="projcard" style="border-style:dashed;display:flex;align-items:center;justify-content:center;color:var(--muted);min-height:230px" onclick="alert('Mockup: project creation wizard is a future screen.')">
+        <div style="text-align:center"><div style="font-size:34px">＋</div><div style="font-weight:700;margin-top:6px">Add a project</div><div class="sub">Phase 2: all active Ovation projects</div></div>
+      </div>
+    </div>
+    <div class="feature-note">Project status uses the real workflow enums — <strong>Draft · Submitted · Approved · Locked · Rejected</strong>. West Henderson is currently <em>Submitted</em> (awaiting a Manager). Switch your role to <em>Manager</em> in the top bar, then open it and go to Approval & Lock to approve or reject.</div>
+  </div>`;
+}
+
+/* ============ PROJECT WORKSPACE ============ */
+const NAV=[
+  {sec:'Budget'},
+  {id:'overview', label:'Overview', icon:'▦', min:'L0'},
+  {id:'master',   label:'Master Budget', icon:'≣', min:'L0'},
+  {id:'proposal', label:'Proposal L3 (Adjustments)', icon:'✎', min:'L3'},
+  {id:'trades',   label:'Trades & Bid Leveling', icon:'⚖', min:'L3'},
+  {id:'markups',  label:'Markups', icon:'%', min:'L0'},
+  {id:'import',   label:'File Import', icon:'⤓', min:'L0'},
+  {sec:'Analyze'},
+  {id:'takeoffs', label:'Takeoffs (L2 vs L3)', icon:'📐', min:'L2'},
+  {id:'benchmark',label:'Benchmark', icon:'📊', min:'L2'},
+  {id:'changes',  label:'Significant Changes', icon:'⚠', min:'L3'},
+  {id:'variance', label:'Variance', icon:'▤', min:'L2'},
+  {sec:'Sign-off'},
+  {id:'approval', label:'Approval & Lock', icon:'✔', min:'L2', badge:'wh'},
+];
+const LVLRANK={L0:0,L1:1,L2:2,L3:3};
+function gated(min){ return LVLRANK[currentLevel] < LVLRANK[min]; }
+
+function renderProject(){
+  const p=PROJECTS[currentProject];
+  if(!currentTab) currentTab='overview';
+  closeNotif();
+  setTop('project');
+  const sidenav=NAV.map(it=>{
+    if(it.sec) return `<div class="navsec">${it.sec}</div>`;
+    const g=gated(it.min);
+    const badge=(it.badge==='wh' && p.id==='wh' && p.status==='Submitted')?'<span class="nb">1</span>':'';
+    return `<div class="navitem ${currentTab===it.id?'active':''} ${g?'gated':''}" onclick="${g?`alert('${it.label} unlocks at ${it.min}. ${esc(p.name)} is at ${currentLevel}.')`:`setTab('${it.id}')`}">
+      <span>${it.icon} &nbsp;${it.label}</span>${g?`<span class="gate">🔒 ${it.min}</span>`:badge}</div>`;
+  }).join('');
+
+  const lvltabs=['L0','L1','L2','L3'].map(l=>{
+    const reachable=LVLRANK[l]<=LVLRANK[p.level];
+    return `<button class="${currentLevel===l?'active':''} ${reachable?'':'locked'}" onclick="${reachable?`currentLevel='${l}';renderProject()`:`alert('${esc(p.name)} has not reached ${l} yet.')`}">${l}</button>`;
+  }).join('');
+
+  const body = currentTrade ? tabTradeDetail(p) : tabBody(currentTab,p);
+
+  $('view').innerHTML=`
+  <div class="proj-shell">
+    <aside class="side">
+      <div class="lvlsel"><div class="t">Budget Level · ${p.accuracy}</div><div class="lvltabs">${lvltabs}</div></div>
+      ${sidenav}
+      <div class="feature-note">Sidebar gates by budget level. Robindale (L2) hides Trades, Proposal L3 & Significant Changes; West Henderson (L3) shows everything.</div>
+    </aside>
+    <main class="proj-main">
+      <div class="pagehead">
+        <div><div class="crumb"><a onclick="go('projects')">Projects</a> › ${esc(p.name)} · ${p.sub}</div>
+          <h2>${esc(p.name)} &nbsp;${pillLevel(currentLevel)} &nbsp;${statusPill(p.status)}</h2>
+          <div class="ctx">${esc(p.address)} · ${num(p.units)} units · ${num(p.gsf)} GSF · ${esc(p.type)} · ${p.levelName}</div></div>
+      </div>
+      ${currentRole==='Viewer'?'<div class="ro-note">👁 Read-only — you are signed in as a <strong>Viewer</strong> (Asset Mgmt / Finance). Edit, import, submit and approve actions are hidden.</div>':''}
+      ${body}
+    </main>
+  </div>`;
+  if(currentTab==='master') bindMaster();
+  if(currentTab==='approval') initSigPad();
+}
+
+function tabBody(tab,p){
+  if(gated((NAV.find(x=>x.id===tab)||{}).min||'L0')) tab='overview';
+  switch(tab){
+    case 'overview': return tabOverview(p);
+    case 'master':   return tabMaster(p);
+    case 'proposal': return tabProposal(p);
+    case 'trades':   return tabTrades(p);
+    case 'markups':  return tabMarkups(p);
+    case 'import':   return tabImport(p);
+    case 'takeoffs': return tabTakeoffs(p);
+    case 'benchmark':return tabBenchmark(p);
+    case 'changes':  return tabChanges(p);
+    case 'variance': return tabVariance(p);
+    case 'approval': return tabApproval(p);
+    default: return tabOverview(p);
+  }
+}
+
+/* ---- Overview ---- */
+function tabOverview(p){
+  const isL3=currentLevel==='L3';
+  const variance=isL3?(p.l3-p.l2):0;
+  const coverage=isL3?62:0;
+  return `
+  <div class="cards">
+    <div class="card accent-lav"><div class="lbl">Level 2 Budget (Locked)</div><div class="val num">${money(p.l2)}</div><div class="sub">${money(p.l2/p.units)}/unit</div></div>
+    <div class="card accent-green"><div class="lbl">${isL3?'L3 Working Budget':'Current Budget'}</div><div class="val num">${money(isL3?p.l3:p.l2)}</div><div class="sub">${isL3?`<span class="down">${money(variance)}</span> vs L2`:'baseline'}</div></div>
+    <div class="card accent-sand"><div class="lbl">Selected Bids</div><div class="val num">${isL3?money(p.bid):'—'}</div><div class="sub">${isL3?p.tradesBid+' trade packages':'L3 only'}</div></div>
+    <div class="card accent-red"><div class="lbl">Awarded</div><div class="val num">${money(p.awarded)}</div><div class="sub">${p.awardedCount} trades signed</div></div>
+  </div>
+  ${isL3?`<div class="panel"><div class="panel-head"><h3>Proposal Coverage</h3><span class="muted">% of L2 hard cost backed by an actual subcontractor bid</span></div>
+    <div class="panel-body"><div style="display:flex;justify-content:space-between;font-size:13px"><strong>${coverage}% covered by proposals</strong><span class="muted">remainder uses takeoff backup</span></div>
+    <div class="coverbar"><i style="width:${coverage}%"></i></div></div></div>`:''}
+  <div class="panel">
+    <div class="panel-head"><h3>Project Snapshot</h3><span class="muted">${statusPill(p.status)} · revision ${p.sub}</span></div>
+    <div class="panel-body">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+        ${[['Type',p.type],['Buildings',num(p.buildings)],['Site',num(p.acres)+' acres'],['Units',num(p.units)],['Building GSF',num(p.gsf)],['Accuracy',p.accuracy],['Budget Level',p.level+' — '+p.levelName]]
+          .map(([l,v])=>`<div><div class="lbl">${l}</div><div style="font-weight:700;font-size:15px">${v}</div></div>`).join('')}
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h3>Budget Level History</h3><span class="muted">Every level is a versioned snapshot — never overwritten</span></div>
+    <div class="panel-body" style="display:flex;gap:0;flex-wrap:wrap">
+      ${['L0','L1','L2','L3'].map(l=>{
+        const reached=LVLRANK[l]<=LVLRANK[p.level];
+        const cur=l===p.level;
+        return `<div style="flex:1;min-width:120px;text-align:center;padding:14px 8px;border-radius:9px;margin:4px;border:1px solid ${cur?'var(--green)':'var(--line)'};background:${reached?'#fff':'#faf9f3'}">
+          <div style="font-weight:800;font-size:16px;color:${reached?'var(--ink)':'var(--muted)'}">${l}</div>
+          <div class="sub">${({L0:'Conceptual ROM',L1:'Schematic',L2:'Design Dev',L3:'Construction Docs'})[l]}</div>
+          <div class="sub" style="font-size:10px">${({L0:'±30–40%',L1:'±20–30%',L2:'±10–15%',L3:'±5%'})[l]}</div>
+          <div style="margin-top:6px">${reached?(cur?'<span class="pill pill-submitted">Current</span>':'<span class="pill pill-approved">Done</span>'):'<span class="pill pill-soon">Not started</span>'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+/* ---- Master Budget ---- */
+function tabMaster(p){
+  const rows=DIVISIONS.map((d,di)=>{
+    const items=d.items.map(it=>`
+      <tr class="subrow hide" data-d="${di}">
+        <td>${esc(it.label)}</td>
+        <td class="cc">${it.cc}</td>
+        <td class="num">${money(it.l2)}</td>
+        <td class="num">${it.bid!=null?`<a onclick="${it.trade?`openTrade('${it.trade}')`:`alert('Bid picker opens here.')`}">${money(it.bid)} ⌄</a>`:'—'}</td>
+        <td class="num ${it.bid!=null?(it.bid-it.l2>0?'up':'down'):''}">${it.bid!=null?((it.bid-it.l2>0?'+':'')+money(it.bid-it.l2)):'—'}</td>
+        <td>${it.who?esc(it.who)+' '+(it.status?statusPill(it.status):''):'<span class="muted">no bid yet</span>'}</td>
+      </tr>`).join('');
+    const dbid=d.items.reduce((s,it)=>s+(it.bid||0),0);
+    return `<tr class="divrow" data-toggle="${di}">
+        <td><strong>${d.code} — ${esc(d.name)}</strong> <span class="muted" style="font-weight:400">(${d.items.length} lines)</span></td>
+        <td class="muted" style="text-align:center">—</td>
+        <td class="num"><strong>${money(d.l2)}</strong></td>
+        <td class="num">${dbid?money(dbid):'—'}</td>
+        <td class="num muted">—</td><td class="muted">—</td>
+      </tr>${items}`;
+  }).join('');
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Master Budget — ${currentLevel} (Locked snapshot)</h3>
+      <span class="muted">${currentLevel==='L3'?'L2 locked baseline vs. selected L3 bids — read-only here':'Editable division & line-item budget'}</span></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table id="mtbl">
+        <thead><tr><th style="min-width:260px">Division / Line Item</th><th style="text-align:center">Cost Code</th>
+          <th class="num">L2 Budget</th><th class="num">Selected Bid</th><th class="num">Variance</th><th>Bidder / Status</th></tr></thead>
+        <tbody>${rows}
+          <tr class="totrow"><td>Hard-cost subtotal (shown divisions)</td><td></td>
+            <td class="num">${money(DIVISIONS.reduce((s,d)=>s+d.l2,0))}</td>
+            <td class="num">${money(DIVISIONS.reduce((s,d)=>s+d.items.reduce((a,i)=>a+(i.bid||0),0),0))}</td>
+            <td class="num"></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="feature-note">Click a division to expand its line items. The L2 column is the locked baseline; the bid column links to the trade's bid picker. Recommended adjustments are made on the <strong>Proposal L3</strong> tab, then committed back here. This view shows 6 of 30+ divisions.</div>`;
+}
+function bindMaster(){
+  document.querySelectorAll('[data-toggle]').forEach(r=>{
+    r.addEventListener('click',(e)=>{
+      if(e.target.closest('a')) return;
+      const di=r.dataset.toggle, open=r.classList.toggle('open');
+      document.querySelectorAll(`.subrow[data-d="${di}"]`).forEach(s=>s.classList.toggle('hide',!open));
+    });
+  });
+}
+
+/* ---- Proposal L3 (adjustments draft) ---- */
+function tabProposal(p){
+  const lines=DIVISIONS.flatMap(d=>d.items.filter(i=>i.bid!=null).map(i=>({...i,div:d.code})));
+  const rows=lines.map(it=>{
+    const v=it.bid-it.l2;
+    return `<tr><td>${esc(it.label)}</td><td class="cc">${it.cc}</td>
+      <td class="num">${money(it.l2)}</td><td class="num">${money(it.bid)}</td>
+      <td class="num ${v>0?'up':'down'}">${(v>0?'+':'')+money(v)}</td>
+      <td class="num"><input value="${v!==0?v:''}" placeholder="0" ${can('edit')?'':'disabled'} style="width:96px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:5px 7px"></td>
+      <td class="num"><strong>${money(it.l2+v)}</strong></td></tr>`;
+  }).join('');
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Proposal Level 3 Budget — working draft</h3>
+      <div class="actions">
+        <button class="btn btn-sm" ${can('edit')?'':'disabled'} onclick="alert('Mockup: sets every Recommended Adj. = Bid − L2.')">Accept all bids</button>
+        <button class="btn btn-sm btn-primary" ${can('edit')?'':'disabled'} onclick="alert('Mockup: pushes draft adjustments to the Master Budget.')">↑ Apply to Master</button>
+      </div></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table><thead><tr><th>Line Item</th><th>Cost Code</th><th class="num">L2 Budget</th><th class="num">Selected Bid</th>
+        <th class="num">Variance</th><th class="num">Recommended Adj.</th><th class="num">L3 Budget</th></tr></thead>
+        <tbody>${rows}</tbody></table>
+    </div>
+  </div>
+  <div class="feature-note">Two-track design: this is the <strong>editable working draft</strong>. The Master Budget holds the <strong>committed</strong> numbers. You tweak adjustments here, then "Apply to Master" promotes them. Markups recompute live as adjustments change.</div>`;
+}
+
+/* ---- Trades list ---- */
+function tabTrades(p){
+  const rows=TRADES.map(t=>{
+    const v=t.award-t.est;
+    return `<tr>
+      <td><a onclick="openTrade('${t.key}')"><strong>${esc(t.title)}</strong></a><div class="muted" style="font-size:11px"><span class="cc">${t.cc}</span></div></td>
+      <td>${statusPill(t.status)}</td>
+      <td class="num">${t.bidders.length}</td>
+      <td class="num">${money(t.est)}</td>
+      <td class="num">${money(t.award)}</td>
+      <td class="num ${v>0?'up':'down'}">${(v>0?'+':'')+money(v)}</td>
+      <td>${esc(t.winner)}</td>
+      <td><button class="btn btn-sm" onclick="openTrade('${t.key}')">Level →</button></td>
+    </tr>`;
+  }).join('');
+  const awarded=TRADES.filter(t=>t.status==='Awarded').length;
+  return `
+  <div class="cards">
+    <div class="card accent-lav"><div class="lbl">Trade Packages</div><div class="val num">${TRADES.length}</div><div class="sub">with proposals</div></div>
+    <div class="card accent-sand"><div class="lbl">Awarded</div><div class="val num">${awarded}</div><div class="sub">${TRADES.length-awarded} proposed</div></div>
+    <div class="card accent-green"><div class="lbl">Selected Total</div><div class="val num">${money(TRADES.reduce((s,t)=>s+t.award,0))}</div></div>
+    <div class="card accent-red"><div class="lbl">Net vs Estimate</div><div class="val num down">${money(TRADES.reduce((s,t)=>s+(t.award-t.est),0))}</div></div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h3>Trade Packages (L3)</h3><span class="muted">Click a trade to open its leveling summary sheet</span></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table><thead><tr><th>Trade</th><th>Status</th><th class="num">Bidders</th><th class="num">L2 Est.</th>
+        <th class="num">Selected</th><th class="num">Variance</th><th>Awarded / Proposed</th><th></th></tr></thead>
+        <tbody>${rows}</tbody></table>
+    </div>
+  </div>
+  <div class="feature-note">Each trade compares 2–4 subcontractor proposals against the L2 estimate and Ovation's historical per-unit costs. The winning column is highlighted. Awarding a trade pushes its amount into every cost code it covers.</div>`;
+}
+function openTrade(key){ currentTrade=key; renderProject(); }
+
+/* ---- Trade detail / Summary Sheet ---- */
+function tabTradeDetail(p){
+  const t=TRADES.find(x=>x.key===currentTrade);
+  if(!t) return tabTrades(p);
+  const v=t.award-t.est;
+  const cols=['Budget',...t.bidders.map(b=>b.c)];
+  const winIdx=t.bidders.findIndex(b=>b.c===t.winner)+1;
+  const histHead=t.hist.length?`<table style="margin-bottom:18px"><thead><tr><th>Historical Project</th><th>Year</th><th>Company</th><th class="num">Unit Cost</th></tr></thead>
+    <tbody>${t.hist.map(h=>`<tr style="${h.cur?'background:var(--green-l);font-weight:700':''}"><td>${esc(h.p)}</td><td>${h.y}</td><td>${esc(h.co)}</td><td class="num">${h.v>=100?money(h.v):'$'+h.v.toFixed(2)}</td></tr>`).join('')}</tbody></table>`:'';
+  const scopeRows=t.scope.map(r=>`<tr><td>${esc(r.l)}</td>${r.v.map((val,i)=>`<td class="num ${i+1===winIdx?'winner-col':''}">${typeof val==='string'?val:(val==null?'—':money(val))}</td>`).join('')}</tr>`).join('');
+  const totals=cols.slice(1).map((c,i)=>{
+    if(i===0){const sum=t.scope.reduce((s,r)=>{const x=r.v[0];return s+(typeof x==='number'?x:0);},0);return `<td class="num">${money(t.est)}</td>`;}
+    const b=t.bidders[i-1];return `<td class="num ${i===winIdx?'winner-col':''}"><strong>${money(b.a)}</strong></td>`;
+  }).join('');
+  return `
+  <div class="banner ${t.status==='Awarded'?'green':'amber'}">
+    <div><strong>${t.status==='Awarded'?'🏆 Awarded to':'Proposed selection:'} ${esc(t.winner)} · ${money(t.award)}</strong>
+      <div class="sub">Allocated to <span class="cc">${t.cc}</span> · ${t.status==='Awarded'?'contract signed':'not yet awarded'}</div></div>
+    <div class="actions">
+      <button class="btn btn-sm" onclick="setTab('trades')">← All trades</button>
+      ${t.status!=='Awarded'?`<button class="btn btn-sm btn-primary" ${can('award')?'':'disabled'} onclick="alert('Mockup: awards this trade & updates the budget.')">Award ${esc(t.winner)}</button>`:''}
+    </div>
+  </div>
+  <div class="cards">
+    <div class="card accent-lav"><div class="lbl">L2 Estimate</div><div class="val num">${money(t.est)}</div></div>
+    <div class="card accent-green"><div class="lbl">Selected Bid</div><div class="val num">${money(t.award)}</div></div>
+    <div class="card accent-sand"><div class="lbl">Bidders</div><div class="val num">${t.bidders.length}</div></div>
+    <div class="card accent-red"><div class="lbl">vs Estimate</div><div class="val num ${v>0?'up':'down'}">${(v>0?'+':'')+money(v)}</div></div>
+  </div>
+  ${t.hist.length?`<div class="panel"><div class="panel-head"><h3>Historical Benchmark</h3><span class="muted">Ovation's per-unit cost on comparable projects</span></div><div class="panel-body" style="overflow-x:auto;padding:0">${histHead}</div></div>`:''}
+  <div class="panel">
+    <div class="panel-head"><h3>Leveling Summary Sheet</h3><span class="muted">Scope rows × bidder columns · winner highlighted</span></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table>
+        <thead><tr><th>Scope of Work</th>${cols.map((c,i)=>`<th class="num ${i===winIdx?'winner-col':''}">${esc(c)}</th>`).join('')}</tr></thead>
+        <tbody>${scopeRows}
+          <tr class="totrow"><td>Total Proposal</td>${totals}</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>`;
+}
+
+/* ---- Markups ---- */
+function tabMarkups(p){
+  const rows=MARKUPS.map(m=>`<tr>
+     <td><strong>${m.label}</strong> <span class="cc">${m.cc}</span> ${m.computed?'<span class="computed">COMPUTED</span>':''}</td>
+     <td class="num">${m.computed?`<span class="muted">${m.rate.toFixed(2)}%</span>`:`<input value="${m.rate.toFixed(2)}" ${can('edit')?'':'disabled'} style="width:60px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:5px 7px" onchange="this.blur()"> %`}</td>
+     <td class="num">${money(m.amt)}</td></tr>`).join('');
+  const tot=MARKUPS.reduce((s,m)=>s+m.amt,0);
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Project Markups</h3><span class="muted">7 markup kinds · each applies its rate to its own base · server recomputes live</span></div>
+    <div class="panel-body" style="padding:0">
+      <table><thead><tr><th>Markup · Cost Code</th><th class="num">Rate / Mode</th><th class="num">Computed Amount</th></tr></thead>
+        <tbody>${rows}<tr class="totrow"><td>Total Markups</td><td></td><td class="num">${money(tot)}</td></tr></tbody></table>
+    </div>
+  </div>
+  <div class="feature-note">The data model has <strong>7 markup kinds</strong>. General Requirements (01) and Bid Risk (BR) are computed automatically; the other five (Bonds, GL Insurance, Contingency, Fee, Overhead) are the leadership-facing rates you edit. Each can be a % of base or a fixed $.</div>`;
+}
+
+/* ---- File Import ---- */
+function tabImport(p){
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Import Subcontractor / Estimator File</h3><span class="muted">Excel (.xlsx/.xls) or CSV · parsed as a background job</span></div>
+    <div class="panel-body">
+      <div class="dropzone" onclick="${can('import')?'mockUpload()':"alert('Viewers cannot import.')"}"><div class="big">⤓</div>
+        <div style="font-weight:700;margin-top:8px">Drag a budget file here, or click to browse</div>
+        <div class="sub" style="margin-top:4px">We auto-detect columns; you confirm the mapping below.</div></div>
+      <div id="import-prog" class="hide"><div class="progress"><i id="import-bar" style="width:0%"></i></div>
+        <div class="sub" style="margin-top:6px" id="import-status">Uploading…</div></div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h3>Column Mapping</h3><span class="muted">Auto-detected — adjust any row · file status: <span class="pill pill-submitted">NeedsMapping</span></span></div>
+    <div class="panel-body">
+      <div class="map-grid">
+        <div style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase">File Column</div><div></div>
+        <div style="font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase">Maps To</div>
+        ${[['Description','Line Item'],['Cost Code','CSI Cost Code'],['Sub-Job','Sub-Job (BUILDING / ON-SITE …)'],['Qty','Takeoff Quantity'],['Unit $','Takeoff Unit Price'],['Total','Line Total'],['Notes','Notes']].map(([f,t])=>`
+          <div class="col">${f}</div><div class="arr">→</div>
+          <div><select ${can('import')?'':'disabled'}><option selected>${t}</option><option>— ignore —</option><option>Source</option><option>Escalation %</option></select></div>`).join('')}
+      </div>
+      <div style="margin-top:16px;display:flex;justify-content:flex-end"><button class="btn btn-primary" ${can('import')?'':'disabled'} onclick="alert('Mockup: 142 rows would parse in the background, then a FileParsed notification appears.')">Import 142 rows</button></div>
+    </div>
+  </div>
+  <div class="feature-note">Old subcontractor files have inconsistent columns. Auto-mapping handles common cases; this manual mapper handles the rest. File statuses: Queued → Processing → NeedsMapping → Complete (or Error).</div>`;
+}
+function mockUpload(){
+  $('import-prog').classList.remove('hide'); importPct=0;
+  const bar=$('import-bar'),st=$('import-status');
+  const iv=setInterval(()=>{ importPct+=12; if(importPct>=100){importPct=100;clearInterval(iv);st.innerHTML='✅ Parsed 142 rows · status <span class="pill pill-approved">Complete</span>';NOTIFS.unshift({ic:'📄',t:'File parsed',b:'Imported file — 142 rows',tm:'just now',unread:true});renderNotif();}
+    bar.style.width=importPct+'%'; if(importPct<100)st.textContent='Parsing… '+importPct+'%'; },180);
+}
+
+/* ---- Takeoffs (L2 vs L3) ---- */
+function tabTakeoffs(p){
+  const sel=Object.keys(TAKEOFFS);
+  const cur=window._toKey||sel[0]; window._toKey=cur;
+  const t=TAKEOFFS[cur];
+  let l2sum=0,l3sum=0;
+  const secHtml=t.sections.map(s=>{
+    const rows=s.rows.map(r=>{const l2=r.l2q*r.l2u,l3=r.l3q*r.l3u;l2sum+=l2;l3sum+=l3;const v=l3-l2;
+      return `<tr><td>${esc(r.d)}</td><td style="text-align:center">${r.uom}</td>
+        <td class="num">${num(r.l2q)}</td><td class="num">${money(r.l2u,2)}</td><td class="num">${money(l2)}</td>
+        <td class="num">${num(r.l3q)}</td><td class="num"><input value="${r.l3u}" ${can('edit')&&currentLevel==='L3'?'':'disabled'} style="width:64px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:4px 6px;background:#fffdf2"></td><td class="num">${money(l3)}</td>
+        <td class="num ${v>0?'up':'down'}">${(v>0?'+':'')+money(v)}</td></tr>`;
+    }).join('');
+    return `<tr style="background:var(--info-bg);font-weight:700"><td colspan="9">${esc(s.name)}</td></tr>${rows}`;
+  }).join('');
+  const tabs=sel.map(k=>`<button class="btn btn-sm ${k===cur?'btn-primary':''}" onclick="window._toKey='${k}';renderProject()">${esc(TAKEOFFS[k].title)}</button>`).join(' ');
+  return `
+  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">${tabs}</div>
+  <div class="cards">
+    <div class="card accent-lav"><div class="lbl">L2 Subtotal</div><div class="val num">${money(l2sum)}</div></div>
+    <div class="card accent-green"><div class="lbl">L3 Subtotal</div><div class="val num">${money(l3sum)}</div></div>
+    <div class="card ${l3sum-l2sum>0?'accent-red':'accent-green'}"><div class="lbl">Variance (L3 − L2)</div><div class="val num ${l3sum-l2sum>0?'up':'down'}">${(l3sum-l2sum>0?'+':'')+money(l3sum-l2sum)}</div></div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h3>${esc(t.title)} — Takeoff</h3><span class="muted">L2 (90% set) vs L3 (permit set) side-by-side · L3 unit costs editable</span></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table>
+        <thead><tr><th rowspan="2" style="vertical-align:bottom">Line Item</th><th rowspan="2" style="text-align:center;vertical-align:bottom">UOM</th>
+          <th colspan="3" style="text-align:center;background:var(--info-bg);color:var(--info-tx)">Level 2</th>
+          <th colspan="3" style="text-align:center;background:var(--green-l);color:var(--green-d)">Level 3 (editable)</th>
+          <th rowspan="2" class="num" style="vertical-align:bottom">Variance</th></tr>
+        <tr><th class="num">Qty</th><th class="num">Unit</th><th class="num">Total</th><th class="num">Qty</th><th class="num">Unit</th><th class="num">Total</th></tr></thead>
+        <tbody>${secHtml}</tbody>
+      </table>
+    </div>
+  </div>
+  <div class="feature-note">Dual-track quantities: L2 takeoffs from the 90% set, L3 from the permit set. Editing an L3 unit cost recomputes the line live. The plans library (PDF viewer) attaches to each takeoff in the full build.</div>`;
+}
+
+/* ---- Benchmark ---- */
+function tabBenchmark(p){
+  const rows=BENCHMARK.rows.map(r=>{
+    const cells=BENCHMARK.comps.map(()=>0);
+    return `<tr><td><strong>${esc(r.d)}</strong></td><td style="text-align:center">${r.uom}</td>
+      <td class="num winner-col"><strong>${r.l3>=100?money(r.l3):'$'+r.l3.toFixed(2)}</strong></td>
+      ${r.comps.map(c=>{const diff=(c-r.l3)/r.l3;const cls=Math.abs(diff)<0.05?'':(c>r.l3?'down':'up');return `<td class="num ${cls}" title="${(diff*100).toFixed(0)}% vs WH">${c>=100?money(c):'$'+c.toFixed(2)}</td>`;}).join('')}
+    </tr>`;
+  }).join('');
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Benchmark — West Henderson L3 vs Comparable Ovation Projects</h3><span class="muted">Per-unit cost · green = WH cheaper · orange = WH more expensive</span></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table><thead><tr><th>Line Item</th><th style="text-align:center">UOM</th><th class="num winner-col">West Henderson</th>${BENCHMARK.comps.map(c=>`<th class="num">${esc(c)}</th>`).join('')}</tr></thead>
+        <tbody>${rows}</tbody></table>
+    </div>
+  </div>
+  <div class="feature-note">Validates the L3 number against history before sign-off. Comparables (Bruner, South Nellis, Torrey Pines, Decatur, Pebble) are seeded per division. WH framing at $16.69/GSF is below every comparable — a good sign for leadership.</div>`;
+}
+
+/* ---- Significant Changes ---- */
+function tabChanges(p){
+  const lines=DIVISIONS.flatMap(d=>d.items.filter(i=>i.bid!=null).map(i=>({...i,adj:i.bid-i.l2})))
+    .filter(i=>Math.abs(i.adj)>=50000).sort((a,b)=>Math.abs(b.adj)-Math.abs(a.adj));
+  const rows=lines.map(it=>`<tr><td>${esc(it.label)}</td><td class="cc">${it.cc}</td>
+    <td class="num">${money(it.l2)}</td><td class="num ${it.adj>0?'up':'down'}"><strong>${(it.adj>0?'+':'')+money(it.adj)}</strong></td>
+    <td><input placeholder="Why did this change?" ${can('edit')?'':'disabled'} style="width:100%;border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:12px"></td></tr>`).join('');
+  const tot=lines.reduce((s,i)=>s+i.adj,0);
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Summary of Significant Changes</h3>
+      <span class="muted">Threshold: $50,000 · ${lines.length} line items · sorted by absolute change</span></div>
+    <div class="panel-body" style="overflow-x:auto;padding:0">
+      <table><thead><tr><th>Line Item</th><th>Cost Code</th><th class="num">L2 Budget</th><th class="num">Change (Bid − L2)</th><th>Note / Rationale</th></tr></thead>
+        <tbody>${rows}<tr class="totrow"><td colspan="3">Total explained changes</td><td class="num ${tot>0?'up':'down'}">${(tot>0?'+':'')+money(tot)}</td><td></td></tr></tbody></table>
+    </div>
+  </div>
+  <div class="feature-note">Auto-surfaces every line that moved more than the threshold so leadership sees the story in one place. Notes are captured per line and travel into the approval certificate. Exportable to CSV.</div>`;
+}
+
+/* ---- Variance ---- */
+function tabVariance(p){
+  const data=DIVISIONS.map(d=>({name:d.code,l2:d.l2,l3:d.items.reduce((s,i)=>s+(i.bid||i.l2),0)}));
+  const max=Math.max(...data.map(d=>Math.max(d.l2,d.l3)));
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Budget Variance — L2 vs L3 by Division</h3><span class="muted">Illustrative · Recharts in the real build</span></div>
+    <div class="panel-body">
+      <div class="barchart">
+        ${data.map(d=>`<div class="grp"><div class="bars">
+          <i class="l2" style="height:${Math.round(d.l2/max*100)}%" title="L2 ${money(d.l2)}"></i>
+          <i class="l3" style="height:${Math.round(d.l3/max*100)}%" title="L3 ${money(d.l3)}"></i></div>
+          <div class="cap">Div ${d.name}</div></div>`).join('')}
+      </div>
+      <div class="legend"><span><i class="l2"></i>L2 Locked Budget</span><span><i class="l3"></i>L3 Selected Bids</span></div>
+    </div>
+  </div>
+  <div class="feature-note">Cross-division read at a glance — the visibility that didn't exist in the Excel workflow.</div>`;
+}
+
+/* ---- Approval & Lock (state machine) ---- */
+function tabApproval(p){
+  const sections=['Project Details','Level 2 Budget (Locked)','Recommended L3 Budget','Selected Bids & Awards','Markup Rates','Trade Leveling Sheets','Benchmark','Notes / Rationale'];
+  const stepIdx={Draft:0,Submitted:1,Locked:2,Approved:2,Rejected:1}[p.status];
+  const stepper=['Draft','Submitted','Approved & Locked'].map((s,i)=>`<div class="st ${i<stepIdx?'done':''} ${i===stepIdx?'cur':''}">${i+1}. ${s}</div>`).join('');
+
+  let actionHtml='';
+  if(currentRole==='Viewer'){
+    actionHtml=`<div class="ro-note">Viewers can read the approval record but cannot submit, approve, or reject.</div>`;
+  } else if(p.status==='Locked'){
+    actionHtml=`<div class="banner locked"><div><strong>🔒 ${p.sub} is locked.</strong> <span style="opacity:.8">Signed by Jess Molasky — COO. All edits disabled.</span></div>
+      <div class="actions"><button class="btn">📄 Certificate PDF</button><button class="btn">💾 Snapshot JSON</button>
+      ${can('unlock')?`<button class="btn btn-warn" onclick="unlockBudget('${p.id}')">Unlock to new revision</button>`:''}</div></div>`;
+  } else if(p.status==='Rejected'){
+    actionHtml=`<div class="banner clay"><div><strong>Rejected.</strong> A new draft revision was created automatically.</div></div>`;
+  } else {
+    // Draft or Submitted
+    const canSubmit=can('submit') && p.status==='Draft';
+    const canApprove=can('approve') && p.status==='Submitted';
+    actionHtml=`
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px">
+      <div>
+        <div class="lbl">Signer</div>
+        <select class="role-select" style="width:100%;margin:5px 0 14px;padding:9px"><option>Jess Molasky — COO</option><option>Lloyd Hoppel — Director of Construction</option><option>Reinier Santana — CEO</option></select>
+        <div class="lbl">SHA-256 tamper seal (live)</div>
+        <div class="hashbox">a3f9c1${'…'}7e2b8d04 &nbsp;<span style="color:#fff;opacity:.5">(recomputes on every edit)</span></div>
+      </div>
+      <div>
+        <div class="lbl">Signature ${canApprove?'<span style="color:var(--red)">— required to approve</span>':''}</div>
+        <canvas id="sigpad" class="sigpad ${sigDrawn?'signed':''}"></canvas>
+        <div style="display:flex;gap:8px;margin-top:6px"><button class="btn btn-sm" onclick="clearSig()">Clear</button><span class="muted" style="font-size:11px;align-self:center">Draw with mouse / touch</span></div>
+      </div>
+    </div>
+    <div style="margin-top:20px;display:flex;justify-content:${p.status==='Submitted'?'space-between':'flex-end'};gap:9px;flex-wrap:wrap">
+      ${p.status==='Submitted' && can('reject')?`<button class="btn btn-warn" onclick="rejectBudget('${p.id}')">Reject (creates next revision)</button>`:'<span></span>'}
+      <div class="actions">
+        ${canSubmit?`<button class="btn btn-primary" onclick="submitBudget('${p.id}')">Submit for Review →</button>`:''}
+        ${p.status==='Submitted' && !can('approve')?`<span class="muted" style="align-self:center;font-size:12px">Awaiting a Manager — switch your role to <strong>Manager</strong> to approve.</span>`:''}
+        ${canApprove?`<button class="btn btn-primary" onclick="approveBudget('${p.id}')">✔ Approve & Lock</button>`:''}
+      </div>
+    </div>`;
+  }
+
+  return `
+  <div class="panel">
+    <div class="panel-head"><h3>Budget Approval & Lock — ${p.sub}</h3><span class="muted">${statusPill(p.status)}</span></div>
+    <div class="panel-body">
+      <div class="stepper">${stepper}</div>
+      <div class="lbl">Include in the locked snapshot</div>
+      <div class="check-grid" style="margin:8px 0 18px">
+        ${sections.map(s=>`<label><input type="checkbox" checked> <span>${s}</span></label>`).join('')}
+      </div>
+      ${actionHtml}
+    </div>
+  </div>
+  <div class="feature-note">Workflow enums: Draft → Submitted → Approved → <strong>Locked</strong> (or Rejected → auto-creates the next revision). Approving freezes a SHA-256 fingerprint over the checked sections, plus the signature and a printable certificate. Change one number later and the fingerprint no longer matches.</div>`;
+}
+
+function initSigPad(){
+  const c=$('sigpad'); if(!c) return;
+  const dpr=window.devicePixelRatio||1;
+  c.width=c.clientWidth*dpr; c.height=c.clientHeight*dpr;
+  const ctx=c.getContext('2d'); ctx.scale(dpr,dpr); ctx.lineWidth=2.2; ctx.lineCap='round'; ctx.strokeStyle='#3f4f43';
+  let drawing=false,lx=0,ly=0;
+  function pos(e){const r=c.getBoundingClientRect();const t=e.touches&&e.touches[0];return t?[t.clientX-r.left,t.clientY-r.top]:[e.clientX-r.left,e.clientY-r.top];}
+  function start(e){drawing=true;[lx,ly]=pos(e);sigDrawn=true;c.classList.add('signed');e.preventDefault();}
+  function move(e){if(!drawing)return;const[x,y]=pos(e);ctx.beginPath();ctx.moveTo(lx,ly);ctx.lineTo(x,y);ctx.stroke();[lx,ly]=[x,y];e.preventDefault();}
+  function end(){drawing=false;}
+  c.addEventListener('mousedown',start);c.addEventListener('mousemove',move);c.addEventListener('mouseup',end);c.addEventListener('mouseleave',end);
+  c.addEventListener('touchstart',start,{passive:false});c.addEventListener('touchmove',move,{passive:false});c.addEventListener('touchend',end);
+}
+function clearSig(){const c=$('sigpad');if(c){c.getContext('2d').clearRect(0,0,c.width,c.height);}sigDrawn=false;if(c)c.classList.remove('signed');}
+
+function submitBudget(id){ PROJECTS[id].status='Submitted'; NOTIFS.unshift({ic:'📤',t:'Budget submitted',b:PROJECTS[id].name+' '+PROJECTS[id].sub+' submitted for approval',tm:'just now',unread:true}); alert('Submitted for review. A Manager can now approve or reject (switch role in the top bar).'); renderProject(); }
+function approveBudget(id){
+  if(!sigDrawn){ alert('Draw a signature before approving & locking.'); return; }
+  PROJECTS[id].status='Locked';
+  NOTIFS.unshift({ic:'✅',t:'Budget approved',b:PROJECTS[id].name+' '+PROJECTS[id].sub+' approved & locked',tm:'just now',unread:true});
+  alert('Approved & locked. SHA-256 fingerprint stored, certificate available.'); renderProject();
+}
+function rejectBudget(id){
+  const reason=prompt('Rejection comment (the estimator will see this):','Revisit landscaping scope — Silver Lands is $260k lower.');
+  if(reason===null) return;
+  const cur=PROJECTS[id].sub; const next=cur.replace(/(\d+)$/,(m)=>String(+m+1));
+  PROJECTS[id].sub=next; PROJECTS[id].status='Draft'; sigDrawn=false;
+  NOTIFS.unshift({ic:'↩️',t:'Budget rejected',b:PROJECTS[id].name+' '+cur+' rejected — '+next+' draft created',tm:'just now',unread:true});
+  alert('Rejected. '+cur+' is now immutable; '+next+' was created as a fresh Draft.'); renderProject();
+}
+function unlockBudget(id){
+  const cur=PROJECTS[id].sub; const next=cur.replace(/(\d+)$/,(m)=>String(+m+1));
+  PROJECTS[id].sub=next; PROJECTS[id].status='Draft'; sigDrawn=false;
+  alert('Unlocked. '+cur+' stays locked & immutable; '+next+' opened as a new editable revision.'); renderProject();
+}
+
+function closeModal(){ $('modal-host').innerHTML=''; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeModal();closeNotif();} });
+</script>
+</body>
+</html>

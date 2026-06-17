@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ovation Budget Platform - 8 Week Owner Demo Mockup</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --panel2: #f4f6fa;
+    --border: #e2e6ee;
+    --text: #1a2236;
+    --muted: #6b7585;
+    --accent: #0066cc;
+    --ok: #047857;
+    --over: #b91c1c;
+    --under: #047857;
+    --navy: #0a2540;
+    --navy2: #0f3460;
+    --teal: #00c2a8;
+    --blue: #0066cc;
+    --amberBg: #fffbeb;
+    --amberBorder: #f59e0b;
+    --amberText: #92400e;
+    --greenBg: #ecfdf5;
+    --greenBorder: #10b981;
+    --greenText: #065f46;
+    --blueBg: #eff6ff;
+    --blueBorder: #0066cc;
+    --blueText: #1e3a8a;
+    --redBg: #fef2f2;
+    --redBorder: #ef4444;
+    --redText: #991b1b;
+    --shadow: 0 1px 2px rgba(15,23,42,0.05), 0 4px 12px rgba(15,23,42,0.06);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  button, input, select { font: inherit; }
+  .app {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    height: 100vh;
+  }
+  .sidebar {
+    background: linear-gradient(180deg, var(--navy), var(--navy2));
+    color: #d6e4f5;
+    overflow-y: auto;
+    padding: 14px 0;
+  }
+  .brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 16px 16px;
+    margin: 0 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+  }
+  .logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--teal), var(--blue));
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 800;
+  }
+  .brand .name {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    color: white;
+  }
+  .brand .sub {
+    margin-top: 2px;
+    font-size: 10px;
+    color: #9dbce0;
+  }
+  .nav-section {
+    padding: 14px 18px 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #7da2ce;
+    font-weight: 700;
+  }
+  .nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    color: #d6e4f5;
+    font-size: 13px;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.06); }
+  .nav-item.active {
+    border-left-color: var(--teal);
+    background: rgba(0,194,168,0.15);
+    color: white;
+  }
+  .nav-pill {
+    font-size: 10px;
+    color: #9dbce0;
+  }
+  .main {
+    overflow-y: auto;
+    padding: 24px 32px 42px;
+    background: var(--bg);
+  }
+  .mock-note {
+    background: var(--amberBg);
+    border: 1px solid var(--amberBorder);
+    color: var(--amberText);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .page-header h1, .page-header h2 {
+    margin: 0;
+    font-size: 23px;
+  }
+  .ctx {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+    max-width: 760px;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+  .btn-primary:hover { color: white; background: #0052a3; }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .card .label {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+  .card .value {
+    font-size: 25px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .card .sub {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 4px;
+  }
+  .hi-green { background: var(--greenBg); border-color: var(--greenBorder); }
+  .hi-green .label, .hi-green .value, .hi-green .sub { color: var(--greenText); }
+  .hi-blue { background: var(--blueBg); border-color: var(--blueBorder); }
+  .hi-blue .label, .hi-blue .value, .hi-blue .sub { color: var(--blueText); }
+  .hi-amber { background: var(--amberBg); border-color: var(--amberBorder); }
+  .hi-amber .label, .hi-amber .value, .hi-amber .sub { color: var(--amberText); }
+  .hi-red { background: var(--redBg); border-color: var(--redBorder); }
+  .hi-red .label, .hi-red .value, .hi-red .sub { color: var(--redText); }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .panel-head {
+    background: var(--panel2);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+  .panel-head h3 { margin: 0; font-size: 14px; }
+  .panel-body { padding: 14px 16px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  th {
+    background: var(--panel2);
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-weight: 800;
+  }
+  td.num, th.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  tr:hover td { background: rgba(0,102,204,0.04); }
+  .over { color: var(--over); font-weight: 700; }
+  .under { color: var(--under); font-weight: 700; }
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 800;
+    border: 1px solid;
+  }
+  .award { background: var(--amberBg); color: var(--amberText); border-color: var(--amberBorder); }
+  .prop { background: var(--blueBg); color: var(--blueText); border-color: var(--blueBorder); }
+  .good { background: var(--greenBg); color: var(--greenText); border-color: var(--greenBorder); }
+  .risk { background: var(--redBg); color: var(--redText); border-color: var(--redBorder); }
+  .bid-cell {
+    border: 1px dashed var(--border);
+    background: white;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .bid-cell:hover {
+    background: var(--blueBg);
+    border-color: var(--accent);
+    color: var(--blueText);
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(110px, 1fr));
+    gap: 10px;
+  }
+  .week {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+    min-height: 154px;
+  }
+  .week .w {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 800;
+  }
+  .week h4 {
+    margin: 5px 0 8px;
+    font-size: 13px;
+  }
+  .week ul {
+    padding-left: 17px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .scope-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+  .scope-box {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    background: white;
+  }
+  .scope-box h4 { margin: 0 0 8px; }
+  .scope-box ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,37,64,0.65);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .modal-bg.open { display: flex; }
+  .modal {
+    width: min(760px, 100%);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 24px 56px rgba(10,37,64,0.45);
+    overflow: hidden;
+  }
+  .modal-head {
+    background: var(--panel2);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .modal-head h3 { margin: 0; font-size: 15px; }
+  .modal-body { padding: 16px; }
+  .modal-foot {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    background: var(--panel2);
+  }
+  .picker-row {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .picker-row.selected {
+    background: var(--blueBg);
+    border-color: var(--blueBorder);
+  }
+  .drop {
+    border: 2px dashed var(--blueBorder);
+    background: var(--blueBg);
+    color: var(--blueText);
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .hash {
+    background: var(--navy);
+    color: #8cf5d9;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    word-break: break-all;
+  }
+  .signature {
+    height: 120px;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-size: 22px;
+    font-style: italic;
+  }
+  .footnote {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  @media (max-width: 1100px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .roadmap { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">O</div>
+      <div>
+        <div class="name">OVATION</div>
+        <div class="sub">8 WEEK OWNER DEMO</div>
+      </div>
+    </div>
+    <div class="nav-section">Owner Story</div>
+    <div class="nav-item active" data-view="dashboard">Dashboard <span class="nav-pill">overview</span></div>
+    <div class="nav-item" data-view="budget">West Henderson L3 <span class="nav-pill">bid table</span></div>
+    <div class="nav-item" data-view="import">File Import <span class="nav-pill">Excel/CSV</span></div>
+    <div class="nav-item" data-view="approval">Approval & Lock <span class="nav-pill">SHA-256</span></div>
+    <div class="nav-section">Delivery Plan</div>
+    <div class="nav-item" data-view="roadmap">8 Week Roadmap <span class="nav-pill">320h/dev</span></div>
+    <div class="nav-item" data-view="scope">Honest Scope <span class="nav-pill">risk</span></div>
+  </aside>
+
+  <main class="main">
+    <div class="mock-note">Tomorrow meeting mockup: visual prototype only. No backend, no real login, no real file parsing. Scope below is written to avoid over-promising.</div>
+    <div id="content"></div>
+  </main>
+</div>
+<div id="modal-host"></div>
+
+<script>
+const state = { view: "dashboard" };
+
+const project = {
+  name: "West Henderson Apartments",
+  level: "Level 3 - Construction Documents",
+  units: 390,
+  gsf: 423131,
+  l2: 79847908,
+  l3: 79121540,
+  coverage: 42,
+  awarded: 2,
+  proposed: 8,
+  open: 16
+};
+
+const rows = [
+  { div: "03", label: "Slabs", code: "03-3101", l2: 1672098, bid: 1332040, status: "awarded", bidder: "NRC Concrete" },
+  { div: "06", label: "Framing", code: "06-1100", l2: 7607430, bid: 7053263, status: "proposed", bidder: "Empire Framers" },
+  { div: "06", label: "Finish Carpentry - Units", code: "06-2001", l2: 1170454, bid: 1008376, status: "proposed", bidder: "Rystin Construction" },
+  { div: "22", label: "Plumbing", code: "22-1001", l2: 4747534, bid: 4712570, status: "proposed", bidder: "Modern Plumbing of NV" },
+  { div: "23", label: "HVAC", code: "23-3001", l2: 3866250, bid: 3956000, status: "proposed", bidder: "Allstate Service Group" },
+  { div: "26", label: "Electrical", code: "26-1001", l2: 4251708, bid: 4047456, status: "awarded", bidder: "Northstar Electric" },
+  { div: "32", label: "Site Landscaping", code: "32-9001", l2: 3662725, bid: 2571180, status: "proposed", bidder: "Alpha Landscapes" }
+];
+
+const bidders = {
+  "06-1100": [
+    { company: "Empire Framers", amount: 7053263, tag: "selected" },
+    { company: "Silver State Framing", amount: 7325120, tag: "alternate" },
+    { company: "Desert Build Group", amount: 7478900, tag: "alternate" }
+  ],
+  "26-1001": [
+    { company: "Northstar Electric", amount: 4047456, tag: "awarded" },
+    { company: "Valley Electric", amount: 4192200, tag: "alternate" },
+    { company: "Desert Power", amount: 4289100, tag: "alternate" }
+  ]
+};
+
+function money(n) {
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+
+function pill(status) {
+  if (status === "awarded") return '<span class="pill award">Awarded</span>';
+  if (status === "proposed") return '<span class="pill prop">Proposed</span>';
+  if (status === "good") return '<span class="pill good">On track</span>';
+  return '<span class="pill risk">Risk</span>';
+}
+
+function setView(view) {
+  state.view = view;
+  document.querySelectorAll(".nav-item").forEach(item => item.classList.toggle("active", item.dataset.view === view));
+  render();
+}
+
+function header(title, ctx, actions = "") {
+  return `
+    <div class="page-header">
+      <div>
+        <h1>${title}</h1>
+        <div class="ctx">${ctx}</div>
+      </div>
+      <div class="actions">${actions}</div>
+    </div>`;
+}
+
+function renderDashboard() {
+  return `
+    ${header("Owner Demo: Ovation Budget Platform", "An Azure-backed replacement for Excel budget files. The 8-week demo proves the workflow using West Henderson L3 and Robindale L2 seed data.", '<button class="btn btn-primary" onclick="setView(&quot;roadmap&quot;)">View 8 week plan</button>')}
+    <div class="cards">
+      <div class="card hi-blue"><div class="label">Seed Projects</div><div class="value">2</div><div class="sub">West Henderson L3, Robindale L2</div></div>
+      <div class="card hi-green"><div class="label">West Henderson L3</div><div class="value">${money(project.l3)}</div><div class="sub">${money(Math.round(project.l3 / project.units))}/unit</div></div>
+      <div class="card hi-amber"><div class="label">Proposal Coverage</div><div class="value">${project.coverage}%</div><div class="sub">of L2 hard cost covered by bids</div></div>
+      <div class="card hi-red"><div class="label">Delivery Risk</div><div class="value">Medium</div><div class="sub">file import and seed data are highest risk</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>What owners will see in 8 weeks</h3><span class="pill good">Demo scope</span></div>
+        <div class="panel-body">
+          <table>
+            <tbody>
+              <tr><td>Secure app shell</td><td>${pill("good")}</td><td>Azure AD target, local fallback if access delays</td></tr>
+              <tr><td>Project dashboard</td><td>${pill("good")}</td><td>Two seed projects with clear budget levels</td></tr>
+              <tr><td>West Henderson L3 bid leveling</td><td>${pill("good")}</td><td>Selected bids, proposed/awarded status, variance</td></tr>
+              <tr><td>Excel/CSV import</td><td>${pill("risk")}</td><td>Common formats plus manual mapping, not every legacy edge case</td></tr>
+              <tr><td>Approval and lock</td><td>${pill("good")}</td><td>Submit, approve/reject, signature, hash snapshot</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Owner demo flow</h3><span class="pill prop">20 minutes</span></div>
+        <div class="panel-body">
+          <ol>
+            <li>Show the Excel pain point and project dashboard.</li>
+            <li>Open West Henderson L3 and compare L2 baseline vs L3 bids.</li>
+            <li>Open the bid picker on a cost code and select proposed/awarded bidder.</li>
+            <li>Show file import with column mapping.</li>
+            <li>Submit, sign, lock, and export an approval package.</li>
+            <li>Close with 6-month expansion path.</li>
+          </ol>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderBudget() {
+  const tableRows = rows.map(r => {
+    const variance = r.bid - r.l2;
+    return `
+      <tr>
+        <td><strong>${r.label}</strong><div class="ctx">Div ${r.div}</div></td>
+        <td style="font-family:'Courier New',monospace;color:var(--accent)">${r.code}</td>
+        <td class="num">${money(r.l2)}</td>
+        <td class="num"><button class="bid-cell" onclick="openBidPicker('${r.code}', '${r.bidder}')">${money(r.bid)} v</button></td>
+        <td class="num ${variance > 0 ? "over" : "under"}">${variance > 0 ? "+" : ""}${money(variance)}</td>
+        <td>${pill(r.status)} ${r.bidder}</td>
+      </tr>`;
+  }).join("");
+
+  return `
+    ${header("West Henderson L3: Based On Bids / Proposals", "UI pattern follows the manager's West Henderson prototype: KPI cards, panels, selected bid cells, proposal status, and L2 vs L3 variance.", '<button class="btn" onclick="openBidPicker(&quot;06-1100&quot;, &quot;Empire Framers&quot;)">Open bid picker</button>')}
+    <div class="cards">
+      <div class="card hi-blue"><div class="label">Level 2 Budget</div><div class="value">${money(project.l2)}</div><div class="sub">locked baseline</div></div>
+      <div class="card hi-green"><div class="label">Level 3 Budget</div><div class="value">${money(project.l3)}</div><div class="sub">${money(project.l3 / project.units)}/unit</div></div>
+      <div class="card hi-amber"><div class="label">Awarded Trades</div><div class="value">${project.awarded}</div><div class="sub">${project.proposed} proposed, ${project.open} open</div></div>
+      <div class="card hi-red"><div class="label">Variance vs L2</div><div class="value">${money(project.l3 - project.l2)}</div><div class="sub">shown as favorable if under budget</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Divisions & Line Items</h3><span class="ctx">Click a selected bid amount to open the bid picker.</span></div>
+      <div class="panel-body" style="overflow-x:auto;padding:0">
+        <table>
+          <thead>
+            <tr><th>Division / Line Item</th><th>Cost Code</th><th class="num">L2 Budget</th><th class="num">Selected Bid</th><th class="num">Variance</th><th>Status</th></tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </div>
+    </div>
+    <div class="footnote">For the real 8-week demo, this table should be seeded with enough West Henderson divisions to tell the story, not necessarily every historical row.</div>`;
+}
+
+function renderImport() {
+  return `
+    ${header("File Import: Excel / CSV With Mapping", "This is a must-have demo workflow, but it is also one of the largest schedule risks. The honest scope is common file formats first, with manual mapping fallback.")}
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Upload</h3><span class="pill prop">Azure Blob</span></div>
+        <div class="panel-body">
+          <div class="drop">Drop Excel or CSV file here<br><span class="footnote">Mockup only: real app stores raw files in Azure Blob Storage.</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Column Mapping</h3><span class="pill good">Manual fallback</span></div>
+        <div class="panel-body">
+          <table>
+            <thead><tr><th>Incoming Column</th><th>Maps To</th><th>Confidence</th></tr></thead>
+            <tbody>
+              <tr><td>Description</td><td>Line Item Name</td><td>${pill("good")}</td></tr>
+              <tr><td>CSI</td><td>Cost Code</td><td>${pill("good")}</td></tr>
+              <tr><td>Qty</td><td>Quantity</td><td>${pill("good")}</td></tr>
+              <tr><td>Unit $</td><td>Unit Price</td><td>${pill("good")}</td></tr>
+              <tr><td>Total</td><td>Line Total</td><td>${pill("risk")}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>What should be promised</h3></div>
+      <div class="panel-body">
+        <p><strong>Safe promise:</strong> import the most common Ovation budget/proposal file formats, show mapping preview, save parsed rows, and flag files that need manual review.</p>
+        <p><strong>Do not promise:</strong> perfect parsing for every old subcontractor workbook in 8 weeks. That is a production-hardening effort.</p>
+      </div>
+    </div>`;
+}
+
+function renderApproval() {
+  return `
+    ${header("Budget Approval & Lock", "The approval flow gives leadership confidence: a locked snapshot, signature, SHA-256 tamper seal, certificate, and exportable package.")}
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Snapshot Includes</h3><span class="pill prop">6 sections</span></div>
+        <div class="panel-body">
+          <table>
+            <tbody>
+              <tr><td><input type="checkbox" checked> Project details</td><td>${pill("good")}</td></tr>
+              <tr><td><input type="checkbox" checked> L2 locked baseline</td><td>${pill("good")}</td></tr>
+              <tr><td><input type="checkbox" checked> L3 selected bids</td><td>${pill("good")}</td></tr>
+              <tr><td><input type="checkbox" checked> Markup rates</td><td>${pill("good")}</td></tr>
+              <tr><td><input type="checkbox" checked> Significant changes</td><td>${pill("good")}</td></tr>
+              <tr><td><input type="checkbox" checked> Approval signature</td><td>${pill("good")}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Signature & Hash</h3><span class="pill award">Owner-ready</span></div>
+        <div class="panel-body">
+          <div class="signature">signature canvas</div>
+          <div style="height:12px"></div>
+          <div class="hash">b71f3a98d2c9e44014b7f3906f0cc7d901c0a7b5d5e9be5b85f6270b1ef4a203</div>
+          <div style="margin-top:12px" class="actions">
+            <button class="btn btn-primary">Lock budget</button>
+            <button class="btn">Download certificate</button>
+            <button class="btn">Export package</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderRoadmap() {
+  const weeks = [
+    ["Week 1", "Setup", ["Repo scaffold", "Azure SQL schema", "App shell"]],
+    ["Week 2", "Auth + Model", ["Azure AD target", "roles", "seed structure"]],
+    ["Week 3", "Budget Table", ["L2/L3 table", "inline edits", "summary cards"]],
+    ["Week 4", "Bids + Import", ["bid picker", "file upload", "manual mapping"]],
+    ["Week 5", "Formula + Approval", ["server totals", "submit/reject", "audit log"]],
+    ["Week 6", "Export + Notify", ["Excel export", "email/in-app", "variance chart"]],
+    ["Week 7", "Demo Polish", ["West Henderson data", "Robindale data", "bug fixing"]],
+    ["Week 8", "Dry Run", ["owner script", "final QA", "presentation-ready"]]
+  ];
+  return `
+    ${header("8 Week Roadmap: 8 Hours/Day, 5 Days/Week", "One developer equals 320 hours over 8 weeks. Two developers equals 640 hours. The plan below is realistic for a focused demo, not a complete production platform.")}
+    <div class="cards">
+      <div class="card hi-blue"><div class="label">Per Developer</div><div class="value">320h</div><div class="sub">8 weeks x 5 days x 8 hours</div></div>
+      <div class="card hi-green"><div class="label">Best Fit Team</div><div class="value">2 devs</div><div class="sub">frontend/backend split recommended</div></div>
+      <div class="card hi-amber"><div class="label">Demo Confidence</div><div class="value">Medium</div><div class="sub">depends on Azure access + seed data</div></div>
+      <div class="card hi-red"><div class="label">Do Not Promise</div><div class="value">Prod</div><div class="sub">full hardening needs 6 months</div></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Week by week</h3><span class="ctx">Each week includes a review gate to catch discrepancies early.</span></div>
+      <div class="panel-body">
+        <div class="roadmap">
+          ${weeks.map(w => `
+            <div class="week">
+              <div class="w">${w[0]}</div>
+              <h4>${w[1]}</h4>
+              <ul>${w[2].map(x => `<li>${x}</li>`).join("")}</ul>
+            </div>`).join("")}
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Review gates</h3></div>
+      <div class="panel-body">
+        <table>
+          <tbody>
+            <tr><td>Every Friday</td><td>Check docs vs implementation, update discrepancies, review risk.</td></tr>
+            <tr><td>End of Week 2</td><td>Data model review against West Henderson UI.</td></tr>
+            <tr><td>End of Week 4</td><td>File import and bid picker review.</td></tr>
+            <tr><td>End of Week 6</td><td>Approval, formula totals, export review.</td></tr>
+            <tr><td>Week 8</td><td>Full dry run with owner script.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
+function renderScope() {
+  return `
+    ${header("Honest 8 Week Scope", "This is the slide to avoid over-promising. It separates what can be ready for the owner demo from what should stay in the 6-month roadmap.")}
+    <div class="scope-list">
+      <div class="scope-box">
+        <h4>Commit for 8 week demo</h4>
+        <ul>
+          <li>Azure-hosted app shell</li>
+          <li>Azure SQL schema and seed data</li>
+          <li>West Henderson L3 bid table</li>
+          <li>Robindale L2 overview</li>
+          <li>Common Excel/CSV import path</li>
+          <li>Manual mapping fallback</li>
+          <li>Approval and lock workflow</li>
+          <li>Excel export and variance view</li>
+        </ul>
+      </div>
+      <div class="scope-box">
+        <h4>Stretch if time remains</h4>
+        <ul>
+          <li>More West Henderson divisions</li>
+          <li>More polished summary sheets</li>
+          <li>Email templates beyond demo accounts</li>
+          <li>Additional charts</li>
+          <li>Better mobile styling</li>
+        </ul>
+      </div>
+      <div class="scope-box">
+        <h4>Do not promise for 8 weeks</h4>
+        <ul>
+          <li>Full production hardening</li>
+          <li>Perfect parser for every legacy file</li>
+          <li>All historical projects migrated</li>
+          <li>Accounting/GL integration</li>
+          <li>Subcontractor portal</li>
+          <li>Full real-time conflict resolution</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:18px">
+      <div class="panel-head"><h3>Biggest schedule risks</h3></div>
+      <div class="panel-body">
+        <table>
+          <thead><tr><th>Risk</th><th>Why it matters</th><th>Mitigation</th></tr></thead>
+          <tbody>
+            <tr><td>Azure AD access delay</td><td>Can block real login setup</td><td>Use local role switch for demo, replace with AD when ready</td></tr>
+            <tr><td>File import edge cases</td><td>Old workbooks can consume weeks</td><td>Support common formats first, manual mapping fallback</td></tr>
+            <tr><td>Seed data quality</td><td>Bad data makes the demo look weak</td><td>Prep West Henderson and Robindale during Weeks 1-2</td></tr>
+            <tr><td>Scope creep</td><td>Owner demo can slip</td><td>Move non-demo asks to 6-month roadmap</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
+function render() {
+  let html = "";
+  if (state.view === "dashboard") html = renderDashboard();
+  if (state.view === "budget") html = renderBudget();
+  if (state.view === "import") html = renderImport();
+  if (state.view === "approval") html = renderApproval();
+  if (state.view === "roadmap") html = renderRoadmap();
+  if (state.view === "scope") html = renderScope();
+  document.getElementById("content").innerHTML = html;
+}
+
+function openBidPicker(code, selected) {
+  const list = bidders[code] || [
+    { company: selected, amount: rows.find(r => r.code === code)?.bid || 0, tag: "selected" },
+    { company: "Alternate Bidder", amount: (rows.find(r => r.code === code)?.bid || 0) * 1.05, tag: "alternate" }
+  ];
+  document.getElementById("modal-host").innerHTML = `
+    <div class="modal-bg open" onclick="if(event.target.classList.contains('modal-bg')) closeModal()">
+      <div class="modal">
+        <div class="modal-head">
+          <h3>Bid Picker - ${code}</h3>
+          <button class="btn" onclick="closeModal()">Close</button>
+        </div>
+        <div class="modal-body">
+          ${list.map((b, i) => `
+            <div class="picker-row ${i === 0 ? "selected" : ""}">
+              <div><strong>${b.company}</strong><div class="ctx">${b.tag}</div></div>
+              <div class="num"><strong>${money(b.amount)}</strong></div>
+            </div>`).join("")}
+          <div class="footnote">Real build: this persists a group-level selected bidder/status, not just a trade total.</div>
+        </div>
+        <div class="modal-foot">
+          <button class="btn" onclick="closeModal()">Cancel</button>
+          <button class="btn btn-primary" onclick="closeModal()">Apply selected bid</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function closeModal() {
+  document.getElementById("modal-host").innerHTML = "";
+}
+
+document.querySelectorAll(".nav-item").forEach(item => {
+  item.addEventListener("click", () => setView(item.dataset.view));
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+render();
+</script>
+</body>
+</html>

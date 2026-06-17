@@ -11,12 +11,12 @@
 | Resource | Endpoints |
 |----------|-----------|
 | [Projects](./projects.md) | CRUD for project headers, unit mix, parking |
-| [Budget Levels](./budget-levels-api.md) | Create/read budget level snapshots per project |
+| [Budget Levels](./budget-levels.md) | Create/read budget level snapshots per project |
 | [Line Items](./line-items.md) | Read/write line items within a budget level |
 | [Markups](./markups.md) | Read/write markup configuration per budget level |
 | [Trades](./trades.md) | L3 trade packages, bidders, proposals, bid leveling |
 | [Budget Summary](./budget.md) | Computed totals, per-unit/SF metrics |
-| [Takeoffs](./takeoffs.md) | Site work quantity takeoffs (L2 vs L3) |
+| [Takeoffs](./budget.md) | Site work quantity takeoffs (L2 vs L3) |
 | [Approval](./approval.md) | Budget sign-off, SHA-256 fingerprint, locked snapshots |
 | [Reference Data](./reference.md) | Divisions, comparable projects, sub-jobs, sources |
 

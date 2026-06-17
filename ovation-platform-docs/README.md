@@ -11,7 +11,7 @@
 Ovation's internal construction budget management platform replaces manually maintained Excel files with a structured, multi-user web application. It tracks construction budgets across four levels (L0–L3) from pre-schematic concept through final construction documents, with full bid leveling, file parsing, approval workflows, and audit history.
 
 **Current phase:** Foundation build — 8-week demo target, 6-month full production.
-**Active projects:** West Henderson Apartments (L3), Robindale 215 (L2).
+**Phase 1 seed/demo examples:** West Henderson Apartments (L3), Robindale 215 (L2).
 
 ---
 

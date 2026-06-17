@@ -63,7 +63,7 @@ See [user-roles.md](./user-roles.md) for the full permission matrix.
 
 ## Projects in Scope
 
-**Phase 1 (current):** Two active projects
+**Phase 1 seed/demo examples:** Two real Ovation project datasets used to prove the workflow
 - West Henderson Apartments — Level 3 (Construction Documents)
 - Robindale 215 — Level 2 (Design Development)
 

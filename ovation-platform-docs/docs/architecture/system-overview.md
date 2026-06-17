@@ -6,9 +6,9 @@
 |-------|-----------|-------|
 | Frontend | Next.js 14+ (App Router) | TypeScript, Tailwind CSS, shadcn/ui |
 | Backend | .NET 8 Web API | C#, REST, OpenAPI/Swagger |
-| Database | PostgreSQL 15+ | via Entity Framework Core |
+| Database | Azure SQL | Primary relational database via Entity Framework Core |
 | Auth | Azure AD / NextAuth.js | SSO with Ovation M365 tenant |
-| File Storage | Azure Blob Storage | Renderings, approval PDF exports |
+| File Storage | Azure Blob Storage | Uploads, renderings, approval packages, PDF/Excel exports |
 | Cache | Redis | Budget calculation results, session data |
 
 ---
@@ -46,7 +46,7 @@
 └──────────┬────────────────────┬───────────────────── ┘
            │                    │
 ┌──────────▼──────┐   ┌────────▼──────────┐
-│   PostgreSQL    │   │   Redis Cache     │
+│   Azure SQL     │   │   Redis Cache     │
 │   (primary DB)  │   │   (budget calcs)  │
 └─────────────────┘   └───────────────────┘
 ```
@@ -111,3 +111,4 @@ Per-SF Cost    =  total / total_gsf
 3. **Cost codes are reference data** — the master CSI line item list lives in the DB and is seeded; projects copy from it.
 4. **L3 trade mapping** — each line item's `group_key` links it to a trade package for bid leveling. If no trade maps to a group, the line item uses its stored value.
 5. **Approved budgets are immutable** — once approved, a snapshot is SHA-256 hashed and stored. Any subsequent changes start a new version.
+6. **Azure is the system of record** — structured application data lives in Azure SQL; uploaded files, renderings, generated approval packages, and exports live in Azure Blob Storage.
