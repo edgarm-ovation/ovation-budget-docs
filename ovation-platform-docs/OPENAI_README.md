@@ -15,6 +15,8 @@ The first demo uses two real Ovation example datasets:
 
 These are seed/demo examples for proving the workflow. The long-term product is intended to support all active Ovation projects, then historical archive and reporting.
 
+For the current gap review, see [`product/foundation-readiness-review.md`](product/foundation-readiness-review.md). That file tracks missing docs, flexibility requirements, tech-stack assumptions, and weekly review gates for the 8-week build.
+
 ---
 
 ## Core Product Goals

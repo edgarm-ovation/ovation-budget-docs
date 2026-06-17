@@ -127,6 +127,7 @@ ovation-platform-docs/
 | Understand why we made a tech decision | [ADRs](./docs/architecture/decisions/README.md) |
 | See the full API reference | [API Docs](./docs/api/README.md) |
 | Understand the database schema | [Database](./docs/database/schema.md) |
+| Review foundation gaps before the 8-week build | [Foundation Readiness Review](./product/foundation-readiness-review.md) |
 | Know what the frontend stack is | [Frontend Tech Stack](./docs/frontend/tech-stack.md) |
 | Know what the backend stack is | [Backend Tech Stack](./docs/backend/tech-stack.md) |
 | See the current sprint | [Sprint 01](./sprints/sprint-01/README.md) |
