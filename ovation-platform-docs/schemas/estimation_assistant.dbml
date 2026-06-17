@@ -1,0 +1,341 @@
+// ═══════════════════════════════════════════════════════════════════════════
+// OVATION ESTIMATION ASSISTANT — DATABASE MARKUP LANGUAGE (DBML)
+// Paste into https://dbdiagram.io to visualize the full schema
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ── GROUP: Core Entities ────────────────────────────────────────────────────
+
+TableGroup "Core Entities" {
+  Projects
+  Budgets
+  Scenarios
+  ScenarioBudgets
+}
+
+Table Projects {
+  ProjectId       nvarchar(36)  [pk, default: `NEWID()`, note: "GUID primary key"]
+  ProjectName     nvarchar(255) [not null]
+  ProductType     nvarchar(50)  [not null, note: "'Senior' | 'Workforce' | 'Market Rate' | 'Tax Credit'"]
+  Location        nvarchar(255)
+  StartDate       date
+  EstimatedCompletionDate date
+  TimelineMonths  int           [note: "Construction duration in months"]
+  CreatedAt       datetime2     [default: `GETDATE()`]
+  UpdatedAt       datetime2     [default: `GETDATE()`]
+  IsActive        bit           [default: 1, note: "Soft delete flag"]
+  Notes           nvarchar(max)
+}
+
+Table Budgets {
+  BudgetId          nvarchar(36) [pk, default: `NEWID()`]
+  ProjectId         nvarchar(36) [not null, ref: > Projects.ProjectId]
+  BudgetLevel       int          [not null, note: "0=Conceptual | 1=Schematic | 2=Design Dev | 3=Construction Docs"]
+  BudgetVersion     int          [not null, note: "Version within level; starts at 1"]
+  CreatedDate       datetime2    [default: `GETDATE()`]
+  LastModifiedDate  datetime2    [default: `GETDATE()`]
+  SubmittedDate     datetime2
+  IsSubmitted       bit          [default: 0]
+  ApprovedBy        nvarchar(100)
+  ApprovedDate      datetime2
+  Notes             nvarchar(max)
+
+  indexes {
+    (ProjectId, BudgetLevel, BudgetVersion) [unique, name: "uq_Budget_Project_Level_Version"]
+    ProjectId                               [name: "idx_Budgets_ProjectId"]
+    BudgetLevel                             [name: "idx_Budgets_Level"]
+  }
+}
+
+Table Scenarios {
+  ScenarioId          nvarchar(36)  [pk, default: `NEWID()`]
+  ProjectId           nvarchar(36)  [not null, ref: > Projects.ProjectId]
+  ScenarioName        nvarchar(255) [note: "e.g. 'Scenario 1 - Phase 1'"]
+  ScenarioDescription nvarchar(max)
+  IsActive            bit           [default: 1]
+  CreatedDate         datetime2     [default: `GETDATE()`]
+
+  indexes {
+    (ProjectId, ScenarioName) [unique, name: "uq_Scenario_Project_Name"]
+    ProjectId                 [name: "idx_Scenarios_ProjectId"]
+  }
+}
+
+Table ScenarioBudgets {
+  ScenarioBudgetId nvarchar(36) [pk, default: `NEWID()`]
+  ScenarioId       nvarchar(36) [not null, ref: > Scenarios.ScenarioId]
+  BudgetId         nvarchar(36) [not null, ref: > Budgets.BudgetId]
+
+  indexes {
+    (ScenarioId, BudgetId) [unique, name: "uq_ScenarioBudget"]
+  }
+}
+
+
+// ── GROUP: Property & Site ──────────────────────────────────────────────────
+
+TableGroup "Property & Site" {
+  PropertyDetails
+  UnitMix
+  ParkingBreakdown
+  BudgetAssumptions
+}
+
+Table PropertyDetails {
+  PropertyDetailId     nvarchar(36)   [pk, default: `NEWID()`]
+  BudgetId             nvarchar(36)   [not null, ref: - Budgets.BudgetId, note: "1:1 with Budgets"]
+  BuildingGSF          decimal(12,2)  [note: "Gross Square Footage"]
+  AcreageSize          decimal(8,3)
+  SiteSF               decimal(12,2)  [note: "AcreageSize * 43,560"]
+  NumberOfBuildings    int
+  NumberOfFloors       int
+  TotalUnits           int
+  ParkingProvidedCount int
+  ReportsAvailable     nvarchar(max)  [note: "JSON: {geotechnical, environmental, alta_survey, soils, etc}"]
+
+  indexes {
+    BudgetId [unique, name: "uq_PropertyDetails_BudgetId"]
+  }
+}
+
+Table UnitMix {
+  UnitMixId        nvarchar(36)  [pk, default: `NEWID()`]
+  PropertyDetailId nvarchar(36)  [not null, ref: > PropertyDetails.PropertyDetailId]
+  UnitType         nvarchar(50)  [note: "'Studio' | '1BR-1BA' | '2BR-1BA' | '2BR-2BA' | '3BR-2BA'"]
+  NumberOfUnits    int
+  AvgUnitSF        decimal(8,2)
+
+  indexes {
+    PropertyDetailId [name: "idx_UnitMix_PropertyDetailId"]
+  }
+}
+
+Table ParkingBreakdown {
+  ParkingId        nvarchar(36) [pk, default: `NEWID()`]
+  PropertyDetailId nvarchar(36) [not null, ref: > PropertyDetails.PropertyDetailId]
+  ParkingType      nvarchar(50) [note: "'Covered' | 'Open' | 'Accessible' | 'Private Garage' | 'Carport'"]
+  Count            int
+}
+
+Table BudgetAssumptions {
+  AssumptionId       nvarchar(36)  [pk, default: `NEWID()`]
+  BudgetId           nvarchar(36)  [not null, ref: > Budgets.BudgetId]
+  AssumptionCategory nvarchar(100) [note: "'Schedule' | 'Pricing' | 'Market' | 'Scope' | 'Contingency'"]
+  AssumptionName     nvarchar(255)
+  Value              nvarchar(max)
+  UnitOfMeasure      nvarchar(50)
+  IsEditable         bit           [default: 1]
+}
+
+
+// ── GROUP: Cost Structure ───────────────────────────────────────────────────
+
+TableGroup "Cost Structure" {
+  LineItems
+  TakeoffItems
+  Proposals
+}
+
+Table LineItems {
+  LineItemId       nvarchar(36)   [pk, default: `NEWID()`]
+  BudgetId         nvarchar(36)   [not null, ref: > Budgets.BudgetId]
+  LineItemCode     nvarchar(50)   [note: "CSI code e.g. '03 00 00', '05 01 00'"]
+  LineItemName     nvarchar(255)  [not null]
+  LineItemLevel    int            [note: "1=Division | 2=Section | 3=Item"]
+  ParentLineItemId nvarchar(36)   [ref: > LineItems.LineItemId, note: "NULL for Division-level rows"]
+  SequenceOrder    int
+  Description      nvarchar(max)
+  EstimatedAmount  decimal(14,2)
+  Contingency      decimal(14,2)
+  TotalAmount      decimal(14,2)  [note: "EstimatedAmount + Contingency"]
+
+  indexes {
+    BudgetId         [name: "idx_LineItems_BudgetId"]
+    ParentLineItemId [name: "idx_LineItems_ParentId"]
+  }
+}
+
+Table TakeoffItems {
+  TakeoffId           nvarchar(36)   [pk, default: `NEWID()`]
+  LineItemId          nvarchar(36)   [not null, ref: > LineItems.LineItemId]
+  BudgetId            nvarchar(36)   [not null, ref: > Budgets.BudgetId]
+  TakeoffDescription  nvarchar(255)
+  Quantity            decimal(12,3)
+  UnitOfMeasure       nvarchar(20)   [note: "'SF' | 'LF' | 'EA' | 'Count' | 'LS' | 'SQ'"]
+  UnitCost            decimal(12,2)
+  ExtensionAmount     decimal(14,2)  [note: "Qty × UnitCost; denormalized for performance"]
+  Source              nvarchar(100)  [note: "'Proposal' | 'Historical' | 'Estimate' | 'Comparable'"]
+  ProposalRef         nvarchar(100)  [note: "Links to Proposals.ProposalId when Source='Proposal'"]
+  IsProposalBased     bit            [note: "1 = from actual subcontractor proposal"]
+  Notes               nvarchar(max)
+
+  indexes {
+    BudgetId   [name: "idx_TakeoffItems_BudgetId"]
+    LineItemId [name: "idx_TakeoffItems_LineItemId"]
+  }
+}
+
+Table Proposals {
+  ProposalId      nvarchar(36)   [pk, default: `NEWID()`]
+  BudgetId        nvarchar(36)   [not null, ref: > Budgets.BudgetId]
+  VendorId        nvarchar(36)
+  lineItemCode    nvarchar(50)   [note: "CSI code e.g. '03 00 00', '05 01 00'"]
+  VendorName      nvarchar(255)
+  TradeScope      nvarchar(100)  [note: "'Framing' | 'HVAC' | 'Electrical' | 'Drywall' | 'Roofing'"]
+  ProposalAmount  decimal(14,2)
+  ProposalDate    date
+  ExpirationDate  date
+  Status          nvarchar(50)   [note: "'Pending' | 'Accepted' | 'Rejected' | 'Negotiating'"]
+  Notes           nvarchar(max)
+
+  indexes {
+    BudgetId [name: "idx_Proposals_BudgetId"]
+  }
+}
+
+
+// ── GROUP: Reporting & Metrics ──────────────────────────────────────────────
+
+TableGroup "Reporting & Metrics" {
+  BudgetSummary
+  BudgetComparisons
+  UnitCostBenchmarks
+}
+
+Table BudgetSummary {
+  SummaryId           nvarchar(36)  [pk, default: `NEWID()`]
+  BudgetId            nvarchar(36)  [not null, ref: - Budgets.BudgetId, note: "1:1 with Budgets"]
+  TotalHardCost       decimal(14,2)
+  TotalSoftCost       decimal(14,2)
+  TotalContingency    decimal(14,2)
+  TotalProjectCost    decimal(14,2) [note: "Hard + Soft + Contingency"]
+  CostPerUnit         decimal(12,2) [note: "TotalProjectCost / TotalUnits"]
+  CostPerGSF          decimal(12,2) [note: "TotalProjectCost / BuildingGSF"]
+  ContingencyPercent  decimal(5,2)  [note: "(TotalContingency / TotalHardCost) * 100"]
+  LastCalculatedDate  datetime2
+
+  indexes {
+    BudgetId [unique, name: "uq_BudgetSummary_BudgetId"]
+  }
+}
+
+Table BudgetComparisons {
+  ComparisonId             nvarchar(36)  [pk, default: `NEWID()`]
+  ProjectId                nvarchar(36)  [not null, ref: > Projects.ProjectId]
+  Level1BudgetId           nvarchar(36)  [ref: > Budgets.BudgetId]
+  Level2BudgetId           nvarchar(36)  [ref: > Budgets.BudgetId]
+  Level3BudgetId           nvarchar(36)  [ref: > Budgets.BudgetId]
+  Level1Cost               decimal(14,2)
+  Level2Cost               decimal(14,2)
+  Level3Cost               decimal(14,2)
+  Level1To2Change          decimal(14,2)
+  Level2To3Change          decimal(14,2)
+  Level1To2ChangePercent   decimal(5,2)
+  Level2To3ChangePercent   decimal(5,2)
+  ComparisonNotes          nvarchar(max)
+}
+
+Table UnitCostBenchmarks {
+  BenchmarkId   nvarchar(36)   [pk, default: `NEWID()`]
+  BudgetId      nvarchar(36)   [not null, ref: > Budgets.BudgetId]
+  LineItemCode  nvarchar(50)
+  LineItemName  nvarchar(255)
+  TotalCost     decimal(14,2)
+  CostPerUnit   decimal(12,2)
+  CostPerGSF    decimal(12,2)
+  UOM           nvarchar(50)   [note: "'Per Unit' | 'Per SF' | 'Per LF'"]
+}
+
+
+// ── GROUP: Security & Audit ─────────────────────────────────────────────────
+
+TableGroup "Security & Audit" {
+  BudgetAccessControl
+  AuditLog
+}
+
+Table BudgetAccessControl {
+  AccessId    nvarchar(36)  [pk, default: `NEWID()`]
+  BudgetId    nvarchar(36)  [not null, ref: > Budgets.BudgetId]
+  UserId      nvarchar(100) [not null]
+  Role        nvarchar(50)  [note: "'Viewer' | 'Editor' | 'Approver' | 'Admin'"]
+  CanEdit     bit           [default: 0]
+  CanDelete   bit           [default: 0]
+  CanApprove  bit           [default: 0]
+  GrantedDate datetime2     [default: `GETDATE()`]
+
+  indexes {
+    (BudgetId, UserId) [unique, name: "uq_Access_Budget_User"]
+    UserId             [name: "idx_BudgetAccessControl_UserId"]
+  }
+}
+
+Table AuditLog {
+  AuditLogId  nvarchar(36)  [pk, default: `NEWID()`]
+  BudgetId    nvarchar(36)  [ref: > Budgets.BudgetId]
+  LineItemId  nvarchar(36)  [ref: > LineItems.LineItemId]
+  TakeoffId   nvarchar(36)  [ref: > TakeoffItems.TakeoffId]
+  UserId      nvarchar(100)
+  ActionType  nvarchar(50)  [note: "'Create' | 'Update' | 'Delete' | 'Submit' | 'Approve'"]
+  TableName   nvarchar(100)
+  FieldName   nvarchar(100)
+  OldValue    nvarchar(max)
+  NewValue    nvarchar(max)
+  ChangeDate  datetime2     [default: `GETDATE()`]
+  IPAddress   nvarchar(50)
+  Notes       nvarchar(max)
+
+  indexes {
+    BudgetId   [name: "idx_AuditLog_BudgetId"]
+    ChangeDate [name: "idx_AuditLog_ChangeDate"]
+  }
+}
+
+
+// ── GROUP: Historical & Comparable Data ────────────────────────────────────
+
+TableGroup "Historical & Comparable Data" {
+  HistoricalProjects
+  HistoricalCosts
+  ComparableProjects
+}
+
+Table HistoricalProjects {
+  HistoricalProjectId   nvarchar(36)   [pk, default: `NEWID()`]
+  ProjectName           nvarchar(255)
+  ProductType           nvarchar(50)   [note: "'Senior' | 'Workforce' | 'Market Rate' | 'Tax Credit'"]
+  CompletionYear        int
+  Location              nvarchar(255)
+  TotalUnits            int
+  BuildingGSF           decimal(12,2)
+  TotalCost             decimal(14,2)
+  CostPerUnit           decimal(12,2)
+  CostPerGSF            decimal(12,2)
+  ConstructionTimeline  int            [note: "Months"]
+  Notes                 nvarchar(max)
+}
+
+Table HistoricalCosts {
+  HistoricalCostId    nvarchar(36)   [pk, default: `NEWID()`]
+  HistoricalProjectId nvarchar(36)   [not null, ref: > HistoricalProjects.HistoricalProjectId]
+  LineItemCode        nvarchar(50)   [note: "CSI code matching LineItems.LineItemCode"]
+  LineItemName        nvarchar(255)
+  Amount              decimal(14,2)
+  UnitOfMeasure       nvarchar(20)
+  UnitCost            decimal(12,2)
+  ProjectYear         int
+}
+
+Table ComparableProjects {
+  ComparableId           nvarchar(36)  [pk, default: `NEWID()`]
+  ProjectId              nvarchar(36)  [ref: > Projects.ProjectId]
+  ComparableProjectName  nvarchar(255)
+  Relationship           nvarchar(100) [note: "'Senior' | 'Workforce' | 'Market Rate' | 'Affordable'"]
+  Location               nvarchar(255)
+  TotalUnits             int
+  BuildingGSF            decimal(12,2)
+  TotalCost              decimal(14,2)
+  CostPerUnit            decimal(12,2)
+  CostPerGSF             decimal(12,2)
+  ConstructionYear       int
+  Notes                  nvarchar(max)
+}
