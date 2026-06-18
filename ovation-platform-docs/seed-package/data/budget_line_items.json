@@ -3770,7 +3770,7 @@
     "unit_cost": 112000.0,
     "escalation": 0,
     "line_total": 112000.0,
-    "notes": "Per Rich Rial: Las Vegas Blvd. and Welpman.\u00a0 This is roughly 1,400\u2019 away from the project",
+    "notes": "Per Rich Rial: Las Vegas Blvd. and Welpman.  This is roughly 1,400’ away from the project",
     "is_ffe": false
   },
   {
@@ -8326,7 +8326,7 @@
     "unit_cost": 112000.0,
     "escalation": 0,
     "line_total": 112000.0,
-    "notes": "Per Rich Rial: Las Vegas Blvd. and Welpman.\u00a0 This is roughly 1,400\u2019 away from the project",
+    "notes": "Per Rich Rial: Las Vegas Blvd. and Welpman.  This is roughly 1,400’ away from the project",
     "is_ffe": false
   },
   {
@@ -12950,7 +12950,7 @@
     "unit_cost": 112000.0,
     "escalation": 0,
     "line_total": 112000.0,
-    "notes": "Per Rich Rial: Las Vegas Blvd. and Welpman.\u00a0 This is roughly 1,400\u2019 away from the project",
+    "notes": "Per Rich Rial: Las Vegas Blvd. and Welpman.  This is roughly 1,400’ away from the project",
     "is_ffe": false
   },
   {
@@ -17574,7 +17574,7 @@
     "unit_cost": 218.0,
     "escalation": 0,
     "line_total": 305200.0,
-    "notes": "Using what we paint per LF at Bruner. Per Rich Rial: Las Vegas Blvd. and Welpman.\u00a0 This is roughly 1,400\u2019 away from the project.",
+    "notes": "Using what we paint per LF at Bruner. Per Rich Rial: Las Vegas Blvd. and Welpman.  This is roughly 1,400’ away from the project.",
     "is_ffe": false
   },
   {
@@ -18340,7 +18340,8 @@
     "escalation": 0,
     "line_total": 12000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-02-3213"
   },
   {
     "line_item_id": "west-henderson-l3-0002",
@@ -18357,7 +18358,8 @@
     "escalation": 0,
     "line_total": 1381298.57,
     "notes": "Proposal by NRC at $9.16/sf",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3101"
   },
   {
     "line_item_id": "west-henderson-l3-0003",
@@ -18374,7 +18376,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3101"
   },
   {
     "line_item_id": "west-henderson-l3-0004",
@@ -18391,7 +18394,8 @@
     "escalation": 0,
     "line_total": 7500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3101"
   },
   {
     "line_item_id": "west-henderson-l3-0005",
@@ -18408,7 +18412,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3101"
   },
   {
     "line_item_id": "west-henderson-l3-0006",
@@ -18425,7 +18430,8 @@
     "escalation": 0,
     "line_total": 77000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3102"
   },
   {
     "line_item_id": "west-henderson-l3-0007",
@@ -18442,7 +18448,8 @@
     "escalation": 0,
     "line_total": 2500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3105"
   },
   {
     "line_item_id": "west-henderson-l3-0008",
@@ -18459,7 +18466,8 @@
     "escalation": 0,
     "line_total": 35000.0,
     "notes": "Added $15k for sunken seating at pool area courtyard",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3107"
   },
   {
     "line_item_id": "west-henderson-l3-0009",
@@ -18476,7 +18484,8 @@
     "escalation": 0,
     "line_total": 7500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "slabs-03-3108"
   },
   {
     "line_item_id": "west-henderson-l3-0010",
@@ -18493,7 +18502,8 @@
     "escalation": 0,
     "line_total": 679394.69,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "lightweight-concrete-03-3116"
   },
   {
     "line_item_id": "west-henderson-l3-0011",
@@ -18510,7 +18520,8 @@
     "escalation": 0,
     "line_total": 70606.23,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "lightweight-concrete-03-5001"
   },
   {
     "line_item_id": "west-henderson-l3-0012",
@@ -18527,7 +18538,8 @@
     "escalation": 0,
     "line_total": 168000.0,
     "notes": "Elevator shaf plus elevator pits.",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "masonry-04-2201"
   },
   {
     "line_item_id": "west-henderson-l3-0013",
@@ -18544,7 +18556,8 @@
     "escalation": 0,
     "line_total": 91000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "masonry-04-2202"
   },
   {
     "line_item_id": "west-henderson-l3-0014",
@@ -18561,7 +18574,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "masonry-04-4301"
   },
   {
     "line_item_id": "west-henderson-l3-0015",
@@ -18578,7 +18592,8 @@
     "escalation": 0,
     "line_total": 40000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "masonry-04-4305"
   },
   {
     "line_item_id": "west-henderson-l3-0016",
@@ -18595,7 +18610,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "masonry-04-4306"
   },
   {
     "line_item_id": "west-henderson-l3-0017",
@@ -18612,7 +18628,8 @@
     "escalation": 0,
     "line_total": 298082.6,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "structural-steel-05-1201"
   },
   {
     "line_item_id": "west-henderson-l3-0018",
@@ -18629,7 +18646,8 @@
     "escalation": 0,
     "line_total": 16400.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "structural-steel-05-1202"
   },
   {
     "line_item_id": "west-henderson-l3-0019",
@@ -18646,7 +18664,8 @@
     "escalation": 0,
     "line_total": 94000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-5201"
   },
   {
     "line_item_id": "west-henderson-l3-0020",
@@ -18663,7 +18682,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-5201"
   },
   {
     "line_item_id": "west-henderson-l3-0021",
@@ -18680,7 +18700,8 @@
     "escalation": 0,
     "line_total": 6000.0,
     "notes": "ADDED LINE",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-7003"
   },
   {
     "line_item_id": "west-henderson-l3-0022",
@@ -18697,7 +18718,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-7004"
   },
   {
     "line_item_id": "west-henderson-l3-0023",
@@ -18714,7 +18736,8 @@
     "escalation": 0,
     "line_total": 2000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-7005"
   },
   {
     "line_item_id": "west-henderson-l3-0024",
@@ -18731,7 +18754,8 @@
     "escalation": 0,
     "line_total": 300204.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-7300"
   },
   {
     "line_item_id": "west-henderson-l3-0025",
@@ -18748,7 +18772,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "ornamental-iron-05-7316"
   },
   {
     "line_item_id": "west-henderson-l3-0026",
@@ -18765,7 +18790,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0027",
@@ -18782,7 +18808,8 @@
     "escalation": 0,
     "line_total": 7487665.33,
     "notes": "Average of 3 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1100"
   },
   {
     "line_item_id": "west-henderson-l3-0028",
@@ -18799,7 +18826,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1100"
   },
   {
     "line_item_id": "west-henderson-l3-0029",
@@ -18816,7 +18844,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1109"
   },
   {
     "line_item_id": "west-henderson-l3-0030",
@@ -18833,7 +18862,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1110"
   },
   {
     "line_item_id": "west-henderson-l3-0031",
@@ -18850,7 +18880,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1111"
   },
   {
     "line_item_id": "west-henderson-l3-0032",
@@ -18867,7 +18898,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1114"
   },
   {
     "line_item_id": "west-henderson-l3-0033",
@@ -18884,7 +18916,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "framing-06-1114"
   },
   {
     "line_item_id": "west-henderson-l3-0034",
@@ -18901,7 +18934,8 @@
     "escalation": 0,
     "line_total": 1171049.15,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "finish-carpentry-06-2001"
   },
   {
     "line_item_id": "west-henderson-l3-0035",
@@ -18918,7 +18952,8 @@
     "escalation": 0,
     "line_total": 502007.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "finish-carpentry-06-2001"
   },
   {
     "line_item_id": "west-henderson-l3-0036",
@@ -18935,7 +18970,8 @@
     "escalation": 0,
     "line_total": 2500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "finish-carpentry-06-2001S"
   },
   {
     "line_item_id": "west-henderson-l3-0037",
@@ -18952,7 +18988,8 @@
     "escalation": 0,
     "line_total": 9600.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "finish-carpentry-06-2006"
   },
   {
     "line_item_id": "west-henderson-l3-0038",
@@ -18969,7 +19006,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "finish-carpentry-06-4919"
   },
   {
     "line_item_id": "west-henderson-l3-0039",
@@ -18986,7 +19024,8 @@
     "escalation": 0,
     "line_total": 1005655.0,
     "notes": "Average of 3 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "insulation-07-2101"
   },
   {
     "line_item_id": "west-henderson-l3-0040",
@@ -19003,7 +19042,8 @@
     "escalation": 0,
     "line_total": 1070.77,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "insulation-07-2101"
   },
   {
     "line_item_id": "west-henderson-l3-0041",
@@ -19020,7 +19060,8 @@
     "escalation": 0,
     "line_total": 992777.33,
     "notes": "Average of 3 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0042",
@@ -19037,7 +19078,8 @@
     "escalation": 0,
     "line_total": 7500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0043",
@@ -19054,7 +19096,8 @@
     "escalation": 0,
     "line_total": 5500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-3002"
   },
   {
     "line_item_id": "west-henderson-l3-0044",
@@ -19071,7 +19114,8 @@
     "escalation": 0,
     "line_total": 9500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-3002"
   },
   {
     "line_item_id": "west-henderson-l3-0045",
@@ -19088,7 +19132,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-3003"
   },
   {
     "line_item_id": "west-henderson-l3-0046",
@@ -19105,7 +19150,8 @@
     "escalation": 0,
     "line_total": 84000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-6101"
   },
   {
     "line_item_id": "west-henderson-l3-0047",
@@ -19122,7 +19168,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-7001"
   },
   {
     "line_item_id": "west-henderson-l3-0048",
@@ -19139,7 +19186,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-7124"
   },
   {
     "line_item_id": "west-henderson-l3-0049",
@@ -19156,7 +19204,8 @@
     "escalation": 0,
     "line_total": 16000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-7210"
   },
   {
     "line_item_id": "west-henderson-l3-0050",
@@ -19173,7 +19222,8 @@
     "escalation": 0,
     "line_total": 24000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-7233"
   },
   {
     "line_item_id": "west-henderson-l3-0051",
@@ -19190,7 +19240,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "roofing-07-7250"
   },
   {
     "line_item_id": "west-henderson-l3-0052",
@@ -19207,7 +19258,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0053",
@@ -19224,7 +19276,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-1002"
   },
   {
     "line_item_id": "west-henderson-l3-0054",
@@ -19241,7 +19294,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-1002"
   },
   {
     "line_item_id": "west-henderson-l3-0055",
@@ -19258,7 +19312,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-3619"
   },
   {
     "line_item_id": "west-henderson-l3-0056",
@@ -19275,7 +19330,8 @@
     "escalation": 0,
     "line_total": 546000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-5301"
   },
   {
     "line_item_id": "west-henderson-l3-0057",
@@ -19292,7 +19348,8 @@
     "escalation": 0,
     "line_total": 39000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-5301"
   },
   {
     "line_item_id": "west-henderson-l3-0058",
@@ -19309,7 +19366,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-5303"
   },
   {
     "line_item_id": "west-henderson-l3-0059",
@@ -19326,7 +19384,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8001"
   },
   {
     "line_item_id": "west-henderson-l3-0060",
@@ -19343,7 +19402,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8002"
   },
   {
     "line_item_id": "west-henderson-l3-0061",
@@ -19360,7 +19420,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8301"
   },
   {
     "line_item_id": "west-henderson-l3-0062",
@@ -19377,7 +19438,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8302"
   },
   {
     "line_item_id": "west-henderson-l3-0063",
@@ -19394,7 +19456,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8301"
   },
   {
     "line_item_id": "west-henderson-l3-0064",
@@ -19411,7 +19474,8 @@
     "escalation": 0,
     "line_total": 82950.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8301"
   },
   {
     "line_item_id": "west-henderson-l3-0065",
@@ -19428,7 +19492,8 @@
     "escalation": 0,
     "line_total": 2000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "doors-windows-08-8301"
   },
   {
     "line_item_id": "west-henderson-l3-0066",
@@ -19445,7 +19510,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "final-clean-09-0101"
   },
   {
     "line_item_id": "west-henderson-l3-0067",
@@ -19462,7 +19528,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "final-clean-09-0102"
   },
   {
     "line_item_id": "west-henderson-l3-0068",
@@ -19479,7 +19546,8 @@
     "escalation": 0,
     "line_total": 359239.75,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "final-clean-09-0103"
   },
   {
     "line_item_id": "west-henderson-l3-0069",
@@ -19496,7 +19564,8 @@
     "escalation": 0,
     "line_total": 50000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "final-clean-09-0104"
   },
   {
     "line_item_id": "west-henderson-l3-0070",
@@ -19513,7 +19582,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "final-clean-09-0113"
   },
   {
     "line_item_id": "west-henderson-l3-0071",
@@ -19530,7 +19600,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "final-clean-09-0121"
   },
   {
     "line_item_id": "west-henderson-l3-0072",
@@ -19547,7 +19618,8 @@
     "escalation": 0,
     "line_total": 1108030.0,
     "notes": "Average of 2 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2423"
   },
   {
     "line_item_id": "west-henderson-l3-0073",
@@ -19564,7 +19636,8 @@
     "escalation": 0,
     "line_total": 6000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2423"
   },
   {
     "line_item_id": "west-henderson-l3-0074",
@@ -19581,7 +19654,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2424"
   },
   {
     "line_item_id": "west-henderson-l3-0075",
@@ -19598,7 +19672,8 @@
     "escalation": 0,
     "line_total": 60000.0,
     "notes": "Included allowance for courtyard low walls stucco. Decatur was $30k.",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2428"
   },
   {
     "line_item_id": "west-henderson-l3-0076",
@@ -19615,7 +19690,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2429"
   },
   {
     "line_item_id": "west-henderson-l3-0077",
@@ -19632,7 +19708,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2430"
   },
   {
     "line_item_id": "west-henderson-l3-0078",
@@ -19649,7 +19726,8 @@
     "escalation": 0,
     "line_total": 7500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "stucco-09-2423"
   },
   {
     "line_item_id": "west-henderson-l3-0079",
@@ -19666,7 +19744,8 @@
     "escalation": 0,
     "line_total": 3252904.0,
     "notes": "Average of 3 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "drywall-09-2905"
   },
   {
     "line_item_id": "west-henderson-l3-0080",
@@ -19683,7 +19762,8 @@
     "escalation": 0,
     "line_total": 2000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "drywall-09-2905"
   },
   {
     "line_item_id": "west-henderson-l3-0081",
@@ -19700,7 +19780,8 @@
     "escalation": 0,
     "line_total": 33150.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "drywall-09-2905"
   },
   {
     "line_item_id": "west-henderson-l3-0082",
@@ -19717,7 +19798,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "tile-09-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0083",
@@ -19734,7 +19816,8 @@
     "escalation": 0,
     "line_total": 139531.15,
     "notes": "Using Bruner proposal by Seamless / per unit for buildings 1 & 3 unit as unit measurement.",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "tile-09-3002"
   },
   {
     "line_item_id": "west-henderson-l3-0084",
@@ -19751,7 +19834,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "tile-09-3003"
   },
   {
     "line_item_id": "west-henderson-l3-0085",
@@ -19768,7 +19852,8 @@
     "escalation": 0,
     "line_total": 50000.0,
     "notes": "Allowance based on Decatur cost.",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "tile-09-3008"
   },
   {
     "line_item_id": "west-henderson-l3-0086",
@@ -19785,7 +19870,8 @@
     "escalation": 0,
     "line_total": 626758.7,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6001"
   },
   {
     "line_item_id": "west-henderson-l3-0087",
@@ -19802,7 +19888,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6401"
   },
   {
     "line_item_id": "west-henderson-l3-0088",
@@ -19819,7 +19906,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6517"
   },
   {
     "line_item_id": "west-henderson-l3-0089",
@@ -19836,7 +19924,8 @@
     "escalation": 0,
     "line_total": 292500.0,
     "notes": "Hallway flooring within the Common Plank budget.",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6520"
   },
   {
     "line_item_id": "west-henderson-l3-0090",
@@ -19853,7 +19942,8 @@
     "escalation": 0,
     "line_total": 4000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6520"
   },
   {
     "line_item_id": "west-henderson-l3-0091",
@@ -19870,7 +19960,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6521"
   },
   {
     "line_item_id": "west-henderson-l3-0092",
@@ -19887,7 +19978,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6522"
   },
   {
     "line_item_id": "west-henderson-l3-0093",
@@ -19904,7 +19996,8 @@
     "escalation": 0,
     "line_total": 44551.2,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6566"
   },
   {
     "line_item_id": "west-henderson-l3-0094",
@@ -19921,7 +20014,8 @@
     "escalation": 0,
     "line_total": 70500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6802"
   },
   {
     "line_item_id": "west-henderson-l3-0095",
@@ -19938,7 +20032,8 @@
     "escalation": 0,
     "line_total": 19500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6803"
   },
   {
     "line_item_id": "west-henderson-l3-0096",
@@ -19955,7 +20050,8 @@
     "escalation": 0,
     "line_total": 58500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "flooring-09-6804"
   },
   {
     "line_item_id": "west-henderson-l3-0097",
@@ -19972,7 +20068,8 @@
     "escalation": 0,
     "line_total": 33150.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9101"
   },
   {
     "line_item_id": "west-henderson-l3-0098",
@@ -19989,7 +20086,8 @@
     "escalation": 0,
     "line_total": 811459.2,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9101"
   },
   {
     "line_item_id": "west-henderson-l3-0099",
@@ -20006,7 +20104,8 @@
     "escalation": 0,
     "line_total": 2000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9101"
   },
   {
     "line_item_id": "west-henderson-l3-0100",
@@ -20023,7 +20122,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9102"
   },
   {
     "line_item_id": "west-henderson-l3-0101",
@@ -20040,7 +20140,8 @@
     "escalation": 0,
     "line_total": 12000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9106"
   },
   {
     "line_item_id": "west-henderson-l3-0102",
@@ -20057,7 +20158,8 @@
     "escalation": 0,
     "line_total": 53828.16,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9110"
   },
   {
     "line_item_id": "west-henderson-l3-0103",
@@ -20074,7 +20176,8 @@
     "escalation": 0,
     "line_total": 5000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "painting-09-9110"
   },
   {
     "line_item_id": "west-henderson-l3-0104",
@@ -20091,7 +20194,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-1300"
   },
   {
     "line_item_id": "west-henderson-l3-0105",
@@ -20108,7 +20212,8 @@
     "escalation": 0,
     "line_total": 82680.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-1401"
   },
   {
     "line_item_id": "west-henderson-l3-0106",
@@ -20125,7 +20230,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-1404"
   },
   {
     "line_item_id": "west-henderson-l3-0107",
@@ -20142,7 +20248,8 @@
     "escalation": 0,
     "line_total": 5000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-1419"
   },
   {
     "line_item_id": "west-henderson-l3-0108",
@@ -20159,7 +20266,8 @@
     "escalation": 0,
     "line_total": 7000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-1454"
   },
   {
     "line_item_id": "west-henderson-l3-0109",
@@ -20176,7 +20284,8 @@
     "escalation": 0,
     "line_total": 17500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-2816"
   },
   {
     "line_item_id": "west-henderson-l3-0110",
@@ -20193,7 +20302,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-2919"
   },
   {
     "line_item_id": "west-henderson-l3-0111",
@@ -20210,7 +20320,8 @@
     "escalation": 0,
     "line_total": 7000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-3000"
   },
   {
     "line_item_id": "west-henderson-l3-0112",
@@ -20227,7 +20338,8 @@
     "escalation": 0,
     "line_total": 3500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-3200"
   },
   {
     "line_item_id": "west-henderson-l3-0113",
@@ -20244,7 +20356,8 @@
     "escalation": 0,
     "line_total": 26880.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-3355"
   },
   {
     "line_item_id": "west-henderson-l3-0114",
@@ -20261,7 +20374,8 @@
     "escalation": 0,
     "line_total": 6000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-4116"
   },
   {
     "line_item_id": "west-henderson-l3-0115",
@@ -20278,7 +20392,8 @@
     "escalation": 0,
     "line_total": 31200.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-4416"
   },
   {
     "line_item_id": "west-henderson-l3-0116",
@@ -20295,7 +20410,8 @@
     "escalation": 0,
     "line_total": 89810.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-5523"
   },
   {
     "line_item_id": "west-henderson-l3-0117",
@@ -20312,7 +20428,8 @@
     "escalation": 0,
     "line_total": 166000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-5723"
   },
   {
     "line_item_id": "west-henderson-l3-0118",
@@ -20329,7 +20446,8 @@
     "escalation": 0,
     "line_total": 174000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-7313"
   },
   {
     "line_item_id": "west-henderson-l3-0119",
@@ -20346,7 +20464,8 @@
     "escalation": 0,
     "line_total": 93000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "specialties-10-7313"
   },
   {
     "line_item_id": "west-henderson-l3-0120",
@@ -20363,7 +20482,8 @@
     "escalation": 0.05,
     "line_total": 1297993.92,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "appliances-11-3013"
   },
   {
     "line_item_id": "west-henderson-l3-0121",
@@ -20380,7 +20500,8 @@
     "escalation": 0,
     "line_total": 130000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "appliances-11-3013"
   },
   {
     "line_item_id": "west-henderson-l3-0122",
@@ -20397,7 +20518,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "appliances-11-3013"
   },
   {
     "line_item_id": "west-henderson-l3-0123",
@@ -20414,7 +20536,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0124",
@@ -20431,7 +20554,8 @@
     "escalation": 0,
     "line_total": 156000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "window-coverings-12-2100"
   },
   {
     "line_item_id": "west-henderson-l3-0125",
@@ -20448,7 +20572,8 @@
     "escalation": 0,
     "line_total": 1198260.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "cabinets-12-3531"
   },
   {
     "line_item_id": "west-henderson-l3-0126",
@@ -20465,7 +20590,8 @@
     "escalation": 0,
     "line_total": 150000.0,
     "notes": "Unit proposal by Old World was at $95k.",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "cabinets-12-3535"
   },
   {
     "line_item_id": "west-henderson-l3-0127",
@@ -20482,7 +20608,8 @@
     "escalation": 0,
     "line_total": 841253.4,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "countertops-12-3601"
   },
   {
     "line_item_id": "west-henderson-l3-0128",
@@ -20499,7 +20626,8 @@
     "escalation": 0,
     "line_total": 52500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "countertops-12-3605"
   },
   {
     "line_item_id": "west-henderson-l3-0129",
@@ -20516,7 +20644,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "countertops-12-3608"
   },
   {
     "line_item_id": "west-henderson-l3-0130",
@@ -20533,7 +20662,8 @@
     "escalation": 0,
     "line_total": 48000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "countertops-12-3609"
   },
   {
     "line_item_id": "west-henderson-l3-0131",
@@ -20550,7 +20680,8 @@
     "escalation": 0,
     "line_total": 253813.33,
     "notes": "Average of 3 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "pools-spas-13-1113"
   },
   {
     "line_item_id": "west-henderson-l3-0132",
@@ -20567,7 +20698,8 @@
     "escalation": 0,
     "line_total": 843750.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "carports-13-3401"
   },
   {
     "line_item_id": "west-henderson-l3-0133",
@@ -20584,7 +20716,8 @@
     "escalation": 0,
     "line_total": 6000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "pools-spas-13-3402"
   },
   {
     "line_item_id": "west-henderson-l3-0134",
@@ -20601,7 +20734,8 @@
     "escalation": 0,
     "line_total": 495000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "elevator-14-2400"
   },
   {
     "line_item_id": "west-henderson-l3-0135",
@@ -20618,7 +20752,8 @@
     "escalation": 0,
     "line_total": 13000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "elevator-14-4101"
   },
   {
     "line_item_id": "west-henderson-l3-0136",
@@ -20635,7 +20770,8 @@
     "escalation": 0,
     "line_total": 42263.5,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "fire-sprinkler-21-0600"
   },
   {
     "line_item_id": "west-henderson-l3-0137",
@@ -20652,7 +20788,8 @@
     "escalation": 0,
     "line_total": 1119982.75,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "fire-sprinkler-21-1313"
   },
   {
     "line_item_id": "west-henderson-l3-0138",
@@ -20669,7 +20806,8 @@
     "escalation": 0,
     "line_total": 160560.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "fire-sprinkler-21-3000"
   },
   {
     "line_item_id": "west-henderson-l3-0139",
@@ -20686,7 +20824,8 @@
     "escalation": 0,
     "line_total": 2326750.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "plumbing-22-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0140",
@@ -20703,7 +20842,8 @@
     "escalation": 0,
     "line_total": 2542800.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "plumbing-22-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0141",
@@ -20720,7 +20860,8 @@
     "escalation": 0,
     "line_total": 5000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "plumbing-22-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0142",
@@ -20737,7 +20878,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "plumbing-22-1003"
   },
   {
     "line_item_id": "west-henderson-l3-0143",
@@ -20754,7 +20896,8 @@
     "escalation": 0,
     "line_total": 6000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "plumbing-22-1007"
   },
   {
     "line_item_id": "west-henderson-l3-0144",
@@ -20771,7 +20914,8 @@
     "escalation": 0,
     "line_total": 4117739.5,
     "notes": "Average of 2 best proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "hvac-23-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0145",
@@ -20788,7 +20932,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "hvac-23-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0146",
@@ -20805,7 +20950,8 @@
     "escalation": 0,
     "line_total": 4787239.67,
     "notes": "Average of 3 proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0147",
@@ -20822,7 +20968,8 @@
     "escalation": 0,
     "line_total": 234000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5001"
   },
   {
     "line_item_id": "west-henderson-l3-0148",
@@ -20839,7 +20986,8 @@
     "escalation": 0,
     "line_total": 58500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5002"
   },
   {
     "line_item_id": "west-henderson-l3-0149",
@@ -20856,7 +21004,8 @@
     "escalation": 0,
     "line_total": 48750.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5003"
   },
   {
     "line_item_id": "west-henderson-l3-0150",
@@ -20873,7 +21022,8 @@
     "escalation": 0,
     "line_total": 75000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0151",
@@ -20890,7 +21040,8 @@
     "escalation": 0,
     "line_total": 37500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5001"
   },
   {
     "line_item_id": "west-henderson-l3-0152",
@@ -20907,7 +21058,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0153",
@@ -20924,7 +21076,8 @@
     "escalation": 0,
     "line_total": 7500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5004"
   },
   {
     "line_item_id": "west-henderson-l3-0154",
@@ -20941,7 +21094,8 @@
     "escalation": 0,
     "line_total": 315398.25,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5613"
   },
   {
     "line_item_id": "west-henderson-l3-0155",
@@ -20958,7 +21112,8 @@
     "escalation": 0,
     "line_total": 39565.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1005"
   },
   {
     "line_item_id": "west-henderson-l3-0156",
@@ -20975,7 +21130,8 @@
     "escalation": 0,
     "line_total": 39565.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5602"
   },
   {
     "line_item_id": "west-henderson-l3-0157",
@@ -20992,7 +21148,8 @@
     "escalation": 0,
     "line_total": 50000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1004"
   },
   {
     "line_item_id": "west-henderson-l3-0158",
@@ -21009,7 +21166,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5603"
   },
   {
     "line_item_id": "west-henderson-l3-0159",
@@ -21026,7 +21184,8 @@
     "escalation": 0,
     "line_total": 2500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1007"
   },
   {
     "line_item_id": "west-henderson-l3-0160",
@@ -21043,7 +21202,8 @@
     "escalation": 0,
     "line_total": 14250.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0161",
@@ -21060,7 +21220,8 @@
     "escalation": 0,
     "line_total": 1500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "electrical-26-5001"
   },
   {
     "line_item_id": "west-henderson-l3-0162",
@@ -21077,7 +21238,8 @@
     "escalation": 0,
     "line_total": 3600.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "low-voltage-27-2201"
   },
   {
     "line_item_id": "west-henderson-l3-0163",
@@ -21094,7 +21256,8 @@
     "escalation": 0,
     "line_total": 249354.65,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "low-voltage-27-3010"
   },
   {
     "line_item_id": "west-henderson-l3-0164",
@@ -21111,7 +21274,8 @@
     "escalation": 0,
     "line_total": 800.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "low-voltage-27-3201"
   },
   {
     "line_item_id": "west-henderson-l3-0165",
@@ -21128,7 +21292,8 @@
     "escalation": 0,
     "line_total": 226590.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "security-28-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0166",
@@ -21145,7 +21310,8 @@
     "escalation": 0,
     "line_total": 172380.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "security-28-2001"
   },
   {
     "line_item_id": "west-henderson-l3-0167",
@@ -21162,7 +21328,8 @@
     "escalation": 0,
     "line_total": 950928.75,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "fire-alarm-28-4601"
   },
   {
     "line_item_id": "west-henderson-l3-0168",
@@ -21179,7 +21346,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "fire-alarm-28-4601S"
   },
   {
     "line_item_id": "west-henderson-l3-0169",
@@ -21196,7 +21364,8 @@
     "escalation": 0,
     "line_total": 158260.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-0121"
   },
   {
     "line_item_id": "west-henderson-l3-0170",
@@ -21213,7 +21382,8 @@
     "escalation": 0,
     "line_total": 55391.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-0122"
   },
   {
     "line_item_id": "west-henderson-l3-0171",
@@ -21230,7 +21400,8 @@
     "escalation": 0,
     "line_total": 26230.78,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-0505"
   },
   {
     "line_item_id": "west-henderson-l3-0172",
@@ -21247,7 +21418,8 @@
     "escalation": 0,
     "line_total": 75000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-1492"
   },
   {
     "line_item_id": "west-henderson-l3-0173",
@@ -21264,7 +21436,8 @@
     "escalation": 0,
     "line_total": 572075.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-2201"
   },
   {
     "line_item_id": "west-henderson-l3-0174",
@@ -21281,7 +21454,8 @@
     "escalation": 0,
     "line_total": 39022.93,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-2216"
   },
   {
     "line_item_id": "west-henderson-l3-0175",
@@ -21298,7 +21472,8 @@
     "escalation": 0,
     "line_total": 200000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-2319"
   },
   {
     "line_item_id": "west-henderson-l3-0176",
@@ -21315,7 +21490,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-2322"
   },
   {
     "line_item_id": "west-henderson-l3-0177",
@@ -21332,7 +21508,8 @@
     "escalation": 0,
     "line_total": 100000.0,
     "notes": "Original was about $53k. It has been increased to $100k as account for added cost for offsite rock and SWPP measures on the south water connection road appro 90k SF",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-31-2501"
   },
   {
     "line_item_id": "west-henderson-l3-0178",
@@ -21349,7 +21526,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-0100"
   },
   {
     "line_item_id": "west-henderson-l3-0179",
@@ -21366,7 +21544,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-0111"
   },
   {
     "line_item_id": "west-henderson-l3-0180",
@@ -21383,7 +21562,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-0506"
   },
   {
     "line_item_id": "west-henderson-l3-0181",
@@ -21400,7 +21580,8 @@
     "escalation": 0,
     "line_total": 750562.84,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1216"
   },
   {
     "line_item_id": "west-henderson-l3-0182",
@@ -21417,7 +21598,8 @@
     "escalation": 0,
     "line_total": 41413.47,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1236"
   },
   {
     "line_item_id": "west-henderson-l3-0183",
@@ -21434,7 +21616,8 @@
     "escalation": 0,
     "line_total": 83368.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1401"
   },
   {
     "line_item_id": "west-henderson-l3-0184",
@@ -21451,7 +21634,8 @@
     "escalation": 0,
     "line_total": 46380.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1402"
   },
   {
     "line_item_id": "west-henderson-l3-0185",
@@ -21468,7 +21652,8 @@
     "escalation": 0,
     "line_total": 102649.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1613"
   },
   {
     "line_item_id": "west-henderson-l3-0186",
@@ -21485,7 +21670,8 @@
     "escalation": 0,
     "line_total": 203844.06,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1614"
   },
   {
     "line_item_id": "west-henderson-l3-0187",
@@ -21502,7 +21688,8 @@
     "escalation": 0,
     "line_total": 318423.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1623"
   },
   {
     "line_item_id": "west-henderson-l3-0188",
@@ -21519,7 +21706,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1625"
   },
   {
     "line_item_id": "west-henderson-l3-0189",
@@ -21536,7 +21724,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1626"
   },
   {
     "line_item_id": "west-henderson-l3-0190",
@@ -21553,7 +21742,8 @@
     "escalation": 0,
     "line_total": 66141.67,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1700"
   },
   {
     "line_item_id": "west-henderson-l3-0191",
@@ -21570,7 +21760,8 @@
     "escalation": 0,
     "line_total": 146626.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3101"
   },
   {
     "line_item_id": "west-henderson-l3-0192",
@@ -21587,7 +21778,8 @@
     "escalation": 0,
     "line_total": 35000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3103"
   },
   {
     "line_item_id": "west-henderson-l3-0193",
@@ -21604,7 +21796,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3104"
   },
   {
     "line_item_id": "west-henderson-l3-0194",
@@ -21621,7 +21814,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3105"
   },
   {
     "line_item_id": "west-henderson-l3-0195",
@@ -21638,7 +21832,8 @@
     "escalation": 0,
     "line_total": 25500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3106"
   },
   {
     "line_item_id": "west-henderson-l3-0196",
@@ -21655,7 +21850,8 @@
     "escalation": 0,
     "line_total": 3900.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3106"
   },
   {
     "line_item_id": "west-henderson-l3-0197",
@@ -21672,7 +21868,8 @@
     "escalation": 0,
     "line_total": 100000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3111"
   },
   {
     "line_item_id": "west-henderson-l3-0198",
@@ -21689,7 +21886,8 @@
     "escalation": 0,
     "line_total": 9000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3112"
   },
   {
     "line_item_id": "west-henderson-l3-0199",
@@ -21706,7 +21904,8 @@
     "escalation": 0,
     "line_total": 19500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3113"
   },
   {
     "line_item_id": "west-henderson-l3-0200",
@@ -21723,7 +21922,8 @@
     "escalation": 0,
     "line_total": 3900.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3114"
   },
   {
     "line_item_id": "west-henderson-l3-0201",
@@ -21740,7 +21940,8 @@
     "escalation": 0,
     "line_total": 79130.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3120"
   },
   {
     "line_item_id": "west-henderson-l3-0202",
@@ -21757,7 +21958,8 @@
     "escalation": 0,
     "line_total": 296090.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3201"
   },
   {
     "line_item_id": "west-henderson-l3-0203",
@@ -21774,7 +21976,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3202"
   },
   {
     "line_item_id": "west-henderson-l3-0204",
@@ -21791,7 +21994,8 @@
     "escalation": 0,
     "line_total": 100231.34,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3204"
   },
   {
     "line_item_id": "west-henderson-l3-0205",
@@ -21808,7 +22012,8 @@
     "escalation": 0,
     "line_total": 75000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3208"
   },
   {
     "line_item_id": "west-henderson-l3-0206",
@@ -21825,7 +22030,8 @@
     "escalation": 0,
     "line_total": 7000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-walls-iron-32-3343"
   },
   {
     "line_item_id": "west-henderson-l3-0207",
@@ -21842,7 +22048,8 @@
     "escalation": 0,
     "line_total": 2289198.33,
     "notes": "Average of best 3 proposals",
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "landscaping-32-9001"
   },
   {
     "line_item_id": "west-henderson-l3-0208",
@@ -21859,7 +22066,8 @@
     "escalation": 0,
     "line_total": 10000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "landscaping-32-9001"
   },
   {
     "line_item_id": "west-henderson-l3-0209",
@@ -21876,7 +22084,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "landscaping-32-9433"
   },
   {
     "line_item_id": "west-henderson-l3-0210",
@@ -21893,7 +22102,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-0506"
   },
   {
     "line_item_id": "west-henderson-l3-0211",
@@ -21910,7 +22120,8 @@
     "escalation": 0,
     "line_total": 1006389.8,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1216"
   },
   {
     "line_item_id": "west-henderson-l3-0212",
@@ -21927,7 +22138,8 @@
     "escalation": 0,
     "line_total": 135330.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1613"
   },
   {
     "line_item_id": "west-henderson-l3-0213",
@@ -21944,7 +22156,8 @@
     "escalation": 0,
     "line_total": 173092.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "site-flatwork-32-1623"
   },
   {
     "line_item_id": "west-henderson-l3-0214",
@@ -21961,7 +22174,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0215",
@@ -21978,7 +22192,8 @@
     "escalation": 0,
     "line_total": 140445.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-0501"
   },
   {
     "line_item_id": "west-henderson-l3-0216",
@@ -21995,7 +22210,8 @@
     "escalation": 0,
     "line_total": 50000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0217",
@@ -22012,7 +22228,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0218",
@@ -22029,7 +22246,8 @@
     "escalation": 0,
     "line_total": 672740.65,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0219",
@@ -22046,7 +22264,8 @@
     "escalation": 0,
     "line_total": 387072.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0220",
@@ -22063,7 +22282,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-4001"
   },
   {
     "line_item_id": "west-henderson-l3-0221",
@@ -22080,7 +22300,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-4116"
   },
   {
     "line_item_id": "west-henderson-l3-0222",
@@ -22097,7 +22318,8 @@
     "escalation": 0,
     "line_total": 305200.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-5001"
   },
   {
     "line_item_id": "west-henderson-l3-0223",
@@ -22114,7 +22336,8 @@
     "escalation": 0,
     "line_total": 499016.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-7101"
   },
   {
     "line_item_id": "west-henderson-l3-0224",
@@ -22131,7 +22354,8 @@
     "escalation": 0,
     "line_total": 50000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-7102"
   },
   {
     "line_item_id": "west-henderson-l3-0225",
@@ -22148,7 +22372,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-7103"
   },
   {
     "line_item_id": "west-henderson-l3-0226",
@@ -22165,7 +22390,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-8201"
   },
   {
     "line_item_id": "west-henderson-l3-0227",
@@ -22182,7 +22408,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-8202"
   },
   {
     "line_item_id": "west-henderson-l3-0228",
@@ -22199,7 +22426,8 @@
     "escalation": 0,
     "line_total": 1635293.29,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-1001"
   },
   {
     "line_item_id": "west-henderson-l3-0229",
@@ -22216,7 +22444,8 @@
     "escalation": 0,
     "line_total": 436684.18,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-3001"
   },
   {
     "line_item_id": "west-henderson-l3-0230",
@@ -22233,7 +22462,8 @@
     "escalation": 0,
     "line_total": 700949.5,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-4001"
   },
   {
     "line_item_id": "west-henderson-l3-0231",
@@ -22250,7 +22480,8 @@
     "escalation": 0,
     "line_total": 744064.26,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "wet-utilities-33-7101"
   },
   {
     "line_item_id": "west-henderson-l3-0232",
@@ -22267,7 +22498,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "earthwork-34-4116"
   },
   {
     "line_item_id": "west-henderson-l3-0233",
@@ -22284,7 +22516,8 @@
     "escalation": 0,
     "line_total": 1567975.85,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "solar-48-1413"
   },
   {
     "line_item_id": "west-henderson-l3-0234",
@@ -22301,7 +22534,8 @@
     "escalation": 0,
     "line_total": 100000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "solar-48-1414"
   },
   {
     "line_item_id": "west-henderson-l3-0235",
@@ -22318,7 +22552,8 @@
     "escalation": 0,
     "line_total": 50000.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "solar-48-1913"
   },
   {
     "line_item_id": "west-henderson-l3-0236",
@@ -22335,7 +22570,8 @@
     "escalation": 0,
     "line_total": 142434.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0601"
   },
   {
     "line_item_id": "west-henderson-l3-0237",
@@ -22352,7 +22588,8 @@
     "escalation": 0,
     "line_total": 15826.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0602"
   },
   {
     "line_item_id": "west-henderson-l3-0238",
@@ -22369,7 +22606,8 @@
     "escalation": 0,
     "line_total": 7500.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0603"
   },
   {
     "line_item_id": "west-henderson-l3-0239",
@@ -22386,7 +22624,8 @@
     "escalation": 0,
     "line_total": 91395.15,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0801"
   },
   {
     "line_item_id": "west-henderson-l3-0240",
@@ -22403,7 +22642,8 @@
     "escalation": 0,
     "line_total": 79130.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0802"
   },
   {
     "line_item_id": "west-henderson-l3-0241",
@@ -22420,7 +22660,8 @@
     "escalation": 0,
     "line_total": 79130.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0803"
   },
   {
     "line_item_id": "west-henderson-l3-0242",
@@ -22437,7 +22678,8 @@
     "escalation": 0,
     "line_total": 15826.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0807"
   },
   {
     "line_item_id": "west-henderson-l3-0243",
@@ -22454,7 +22696,8 @@
     "escalation": 0,
     "line_total": 15826.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0808"
   },
   {
     "line_item_id": "west-henderson-l3-0244",
@@ -22471,7 +22714,8 @@
     "escalation": 0,
     "line_total": 39565.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": "testing-inspection-49-0950"
   },
   {
     "line_item_id": "west-henderson-l3-0245",
@@ -22488,7 +22732,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": false
+    "is_ffe": false,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0246",
@@ -22505,7 +22750,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0247",
@@ -22522,7 +22768,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0248",
@@ -22539,7 +22786,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0249",
@@ -22556,7 +22804,8 @@
     "escalation": 0,
     "line_total": 20000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0250",
@@ -22573,7 +22822,8 @@
     "escalation": 0,
     "line_total": 94648.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0251",
@@ -22590,7 +22840,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0252",
@@ -22607,7 +22858,8 @@
     "escalation": 0,
     "line_total": 15000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0253",
@@ -22624,7 +22876,8 @@
     "escalation": 0,
     "line_total": 5000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0254",
@@ -22641,7 +22894,8 @@
     "escalation": 0,
     "line_total": 0.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0255",
@@ -22658,7 +22912,8 @@
     "escalation": 0,
     "line_total": 1000000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0256",
@@ -22675,7 +22930,8 @@
     "escalation": 0,
     "line_total": 200000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0257",
@@ -22692,7 +22948,8 @@
     "escalation": 0,
     "line_total": 25000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0258",
@@ -22709,7 +22966,8 @@
     "escalation": 0,
     "line_total": 2500.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   },
   {
     "line_item_id": "west-henderson-l3-0259",
@@ -22726,6 +22984,7 @@
     "escalation": 0,
     "line_total": 3000.0,
     "notes": null,
-    "is_ffe": true
+    "is_ffe": true,
+    "group_key": null
   }
 ]

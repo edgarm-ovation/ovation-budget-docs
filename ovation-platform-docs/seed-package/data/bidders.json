@@ -1,0 +1,1142 @@
+[
+  {
+    "bidder_id": "bidder-earthwork-1",
+    "company_name": "Desert Earthwork & Grading LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-earthwork-2",
+    "company_name": "Mojave Earthwork & Grading Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-earthwork-3",
+    "company_name": "Silver State Earthwork & Grading Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-slabs-1",
+    "company_name": "NRC Concrete",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-slabs-2",
+    "company_name": "Silver State Concrete - Slabs Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-slabs-3",
+    "company_name": "Red Rock Concrete - Slabs Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-lightweight-concrete-1",
+    "company_name": "NV Gypsum",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-lightweight-concrete-2",
+    "company_name": "Red Rock Lightweight Concrete Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-lightweight-concrete-3",
+    "company_name": "Sunrise Lightweight Concrete LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-masonry-1",
+    "company_name": "Red Rock Masonry Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-masonry-2",
+    "company_name": "Sunrise Masonry LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-masonry-3",
+    "company_name": "Valley Masonry Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-structural-steel-1",
+    "company_name": "Sunrise Structural Steel LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-structural-steel-2",
+    "company_name": "Valley Structural Steel Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-structural-steel-3",
+    "company_name": "Desert Structural Steel Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-ornamental-iron-1",
+    "company_name": "Valley Ornamental Iron Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-ornamental-iron-2",
+    "company_name": "Desert Ornamental Iron Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-ornamental-iron-3",
+    "company_name": "Mojave Ornamental Iron Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-framing-1",
+    "company_name": "Gilmore Construction",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-framing-2",
+    "company_name": "Mojave Framing Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-framing-3",
+    "company_name": "Silver State Framing LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-finish-carpentry-1",
+    "company_name": "Mojave Finish Carpentry Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-finish-carpentry-2",
+    "company_name": "Silver State Finish Carpentry LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-finish-carpentry-3",
+    "company_name": "Red Rock Finish Carpentry Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-insulation-1",
+    "company_name": "Silver State Insulation LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-insulation-2",
+    "company_name": "Red Rock Insulation Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-insulation-3",
+    "company_name": "Sunrise Insulation Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-roofing-1",
+    "company_name": "Red Rock Roofing Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-roofing-2",
+    "company_name": "Sunrise Roofing Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-roofing-3",
+    "company_name": "Valley Roofing Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-doors-windows-1",
+    "company_name": "Sunrise Doors, Windows & Glazing Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-doors-windows-2",
+    "company_name": "Valley Doors, Windows & Glazing Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-doors-windows-3",
+    "company_name": "Desert Doors, Windows & Glazing LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-stucco-1",
+    "company_name": "Valley Stucco Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-stucco-2",
+    "company_name": "Desert Stucco LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-stucco-3",
+    "company_name": "Mojave Stucco Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-drywall-1",
+    "company_name": "Desert Drywall LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-drywall-2",
+    "company_name": "Mojave Drywall Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-drywall-3",
+    "company_name": "Silver State Drywall Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-tile-1",
+    "company_name": "Mojave Tile Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-tile-2",
+    "company_name": "Silver State Tile Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-tile-3",
+    "company_name": "Red Rock Tile Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-flooring-1",
+    "company_name": "Silver State Flooring Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-flooring-2",
+    "company_name": "Red Rock Flooring Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-flooring-3",
+    "company_name": "Sunrise Flooring LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-painting-1",
+    "company_name": "Red Rock Painting & Wall Covering Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-painting-2",
+    "company_name": "Sunrise Painting & Wall Covering LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-painting-3",
+    "company_name": "Valley Painting & Wall Covering Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-final-clean-1",
+    "company_name": "Sunrise Final Clean LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-final-clean-2",
+    "company_name": "Valley Final Clean Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-final-clean-3",
+    "company_name": "Desert Final Clean Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-specialties-1",
+    "company_name": "Valley Specialties Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-specialties-2",
+    "company_name": "Desert Specialties Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-specialties-3",
+    "company_name": "Mojave Specialties Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-appliances-1",
+    "company_name": "Desert Appliances Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-appliances-2",
+    "company_name": "Mojave Appliances Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-appliances-3",
+    "company_name": "Silver State Appliances LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-cabinets-1",
+    "company_name": "Mojave Cabinets Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-cabinets-2",
+    "company_name": "Silver State Cabinets LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-cabinets-3",
+    "company_name": "Red Rock Cabinets Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-countertops-1",
+    "company_name": "Silver State Countertops LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-countertops-2",
+    "company_name": "Red Rock Countertops Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-countertops-3",
+    "company_name": "Sunrise Countertops Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-window-coverings-1",
+    "company_name": "Red Rock Window Coverings Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-window-coverings-2",
+    "company_name": "Sunrise Window Coverings Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-window-coverings-3",
+    "company_name": "Valley Window Coverings Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-pools-spas-1",
+    "company_name": "Sunrise Pools & Spas Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-pools-spas-2",
+    "company_name": "Valley Pools & Spas Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-pools-spas-3",
+    "company_name": "Desert Pools & Spas LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-carports-1",
+    "company_name": "Valley Carports Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-carports-2",
+    "company_name": "Desert Carports LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-carports-3",
+    "company_name": "Mojave Carports Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-elevator-1",
+    "company_name": "Otis Elevator",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-elevator-2",
+    "company_name": "Mojave Elevator Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-elevator-3",
+    "company_name": "Silver State Elevator Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-fire-sprinkler-1",
+    "company_name": "Mojave Fire Sprinkler Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-fire-sprinkler-2",
+    "company_name": "Silver State Fire Sprinkler Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-fire-sprinkler-3",
+    "company_name": "Red Rock Fire Sprinkler Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-plumbing-1",
+    "company_name": "Silver State Plumbing Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-plumbing-2",
+    "company_name": "Red Rock Plumbing Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-plumbing-3",
+    "company_name": "Sunrise Plumbing LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-hvac-1",
+    "company_name": "Red Rock HVAC Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-hvac-2",
+    "company_name": "Sunrise HVAC LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-hvac-3",
+    "company_name": "Valley HVAC Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-electrical-1",
+    "company_name": "Sigma Electric",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-electrical-2",
+    "company_name": "Valley Electrical Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-electrical-3",
+    "company_name": "Desert Electrical Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-fire-alarm-1",
+    "company_name": "NFP",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-fire-alarm-2",
+    "company_name": "Desert Fire Alarm Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-fire-alarm-3",
+    "company_name": "Mojave Fire Alarm Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-low-voltage-1",
+    "company_name": "Desert Low Voltage / DAS Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-low-voltage-2",
+    "company_name": "Mojave Low Voltage / DAS Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-low-voltage-3",
+    "company_name": "Silver State Low Voltage / DAS LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-security-1",
+    "company_name": "Mojave Security Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-security-2",
+    "company_name": "Silver State Security LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-security-3",
+    "company_name": "Red Rock Security Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-site-flatwork-1",
+    "company_name": "Silver State Site Concrete & Paving LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-site-flatwork-2",
+    "company_name": "Red Rock Site Concrete & Paving Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-site-flatwork-3",
+    "company_name": "Sunrise Site Concrete & Paving Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-site-walls-iron-1",
+    "company_name": "Red Rock Site Walls & Fencing Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-site-walls-iron-2",
+    "company_name": "Sunrise Site Walls & Fencing Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-site-walls-iron-3",
+    "company_name": "Valley Site Walls & Fencing Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-landscaping-1",
+    "company_name": "Alpha Landscaping",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": false
+  },
+  {
+    "bidder_id": "bidder-landscaping-2",
+    "company_name": "Valley Landscaping Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-landscaping-3",
+    "company_name": "Desert Landscaping LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-wet-utilities-1",
+    "company_name": "Valley Wet Utilities Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-wet-utilities-2",
+    "company_name": "Desert Wet Utilities LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-wet-utilities-3",
+    "company_name": "Mojave Wet Utilities Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-solar-1",
+    "company_name": "Desert Solar PV LLC",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-solar-2",
+    "company_name": "Mojave Solar PV Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-solar-3",
+    "company_name": "Silver State Solar PV Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-testing-inspection-1",
+    "company_name": "Mojave Testing & Inspection Inc.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-testing-inspection-2",
+    "company_name": "Silver State Testing & Inspection Co.",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  },
+  {
+    "bidder_id": "bidder-testing-inspection-3",
+    "company_name": "Red Rock Testing & Inspection Contractors",
+    "contact_name": null,
+    "email": null,
+    "phone": null,
+    "license_number": null,
+    "is_active": true,
+    "is_placeholder": true
+  }
+]

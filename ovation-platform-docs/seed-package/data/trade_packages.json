@@ -1,0 +1,767 @@
+[
+  {
+    "trade_package_id": "tp-wh-earthwork",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "earthwork",
+    "title": "Earthwork & Grading",
+    "estimated_cost_l2": 1252979.71,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-earthwork-1",
+    "awarded_amount": 1202860.52,
+    "group_keys": [
+      "earthwork-02-3213",
+      "earthwork-31-0121",
+      "earthwork-31-0122",
+      "earthwork-31-0505",
+      "earthwork-31-1492",
+      "earthwork-31-2201",
+      "earthwork-31-2216",
+      "earthwork-31-2319",
+      "earthwork-31-2322",
+      "earthwork-31-2501",
+      "earthwork-34-4116"
+    ],
+    "sort_order": 0,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-slabs",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "slabs",
+    "title": "Concrete - Slabs",
+    "estimated_cost_l2": 1520798.57,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-slabs-1",
+    "awarded_amount": 1332040.0,
+    "group_keys": [
+      "slabs-03-3101",
+      "slabs-03-3102",
+      "slabs-03-3105",
+      "slabs-03-3107",
+      "slabs-03-3108"
+    ],
+    "sort_order": 1,
+    "notes": "Awarded to real sub from workbook narrative (NRC Concrete).",
+    "bid_source": "benchmark:Slabs"
+  },
+  {
+    "trade_package_id": "tp-wh-lightweight-concrete",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "lightweight-concrete",
+    "title": "Lightweight Concrete",
+    "estimated_cost_l2": 750000.92,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-lightweight-concrete-1",
+    "awarded_amount": 627820.0,
+    "group_keys": [
+      "lightweight-concrete-03-3116",
+      "lightweight-concrete-03-5001"
+    ],
+    "sort_order": 2,
+    "notes": "Awarded to real sub from workbook narrative (NV Gypsum).",
+    "bid_source": "benchmark:Lightweight Concrete"
+  },
+  {
+    "trade_package_id": "tp-wh-masonry",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "masonry",
+    "title": "Masonry",
+    "estimated_cost_l2": 314000.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-masonry-1",
+    "awarded_amount": 301440.0,
+    "group_keys": [
+      "masonry-04-2201",
+      "masonry-04-2202",
+      "masonry-04-4301",
+      "masonry-04-4305",
+      "masonry-04-4306"
+    ],
+    "sort_order": 3,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-structural-steel",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "structural-steel",
+    "title": "Structural Steel",
+    "estimated_cost_l2": 314482.6,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-structural-steel-1",
+    "awarded_amount": 301903.3,
+    "group_keys": [
+      "structural-steel-05-1201",
+      "structural-steel-05-1202"
+    ],
+    "sort_order": 4,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-ornamental-iron",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "ornamental-iron",
+    "title": "Ornamental Iron",
+    "estimated_cost_l2": 402204.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-ornamental-iron-1",
+    "awarded_amount": 386115.84,
+    "group_keys": [
+      "ornamental-iron-05-5201",
+      "ornamental-iron-05-7003",
+      "ornamental-iron-05-7004",
+      "ornamental-iron-05-7005",
+      "ornamental-iron-05-7300",
+      "ornamental-iron-05-7316"
+    ],
+    "sort_order": 5,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-framing",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "framing",
+    "title": "Framing",
+    "estimated_cost_l2": 7522665.33,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-framing-1",
+    "awarded_amount": 7079693.0,
+    "group_keys": [
+      "framing-06-1100",
+      "framing-06-1109",
+      "framing-06-1110",
+      "framing-06-1111",
+      "framing-06-1114"
+    ],
+    "sort_order": 6,
+    "notes": "Awarded to real sub from workbook narrative (Gilmore Construction).",
+    "bid_source": "benchmark:Framing"
+  },
+  {
+    "trade_package_id": "tp-wh-finish-carpentry",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "finish-carpentry",
+    "title": "Finish Carpentry",
+    "estimated_cost_l2": 1685156.15,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-finish-carpentry-1",
+    "awarded_amount": 1064161.0,
+    "group_keys": [
+      "finish-carpentry-06-2001",
+      "finish-carpentry-06-2001S",
+      "finish-carpentry-06-2006",
+      "finish-carpentry-06-4919"
+    ],
+    "sort_order": 7,
+    "notes": null,
+    "bid_source": "benchmark:Finish Carpentry - Units"
+  },
+  {
+    "trade_package_id": "tp-wh-insulation",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "insulation",
+    "title": "Insulation",
+    "estimated_cost_l2": 1006725.77,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-insulation-1",
+    "awarded_amount": 939882.0,
+    "group_keys": [
+      "insulation-07-2101"
+    ],
+    "sort_order": 8,
+    "notes": null,
+    "bid_source": "benchmark:Insulation"
+  },
+  {
+    "trade_package_id": "tp-wh-roofing",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "roofing",
+    "title": "Roofing",
+    "estimated_cost_l2": 1189277.33,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-roofing-1",
+    "awarded_amount": 898016.0,
+    "group_keys": [
+      "roofing-07-3001",
+      "roofing-07-3002",
+      "roofing-07-3003",
+      "roofing-07-6101",
+      "roofing-07-7001",
+      "roofing-07-7124",
+      "roofing-07-7210",
+      "roofing-07-7233",
+      "roofing-07-7250"
+    ],
+    "sort_order": 9,
+    "notes": null,
+    "bid_source": "benchmark:Roofing"
+  },
+  {
+    "trade_package_id": "tp-wh-doors-windows",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "doors-windows",
+    "title": "Doors, Windows & Glazing",
+    "estimated_cost_l2": 669950.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-doors-windows-1",
+    "awarded_amount": 417162.0,
+    "group_keys": [
+      "doors-windows-08-1001",
+      "doors-windows-08-1002",
+      "doors-windows-08-3619",
+      "doors-windows-08-5301",
+      "doors-windows-08-5303",
+      "doors-windows-08-8001",
+      "doors-windows-08-8002",
+      "doors-windows-08-8301",
+      "doors-windows-08-8302"
+    ],
+    "sort_order": 10,
+    "notes": null,
+    "bid_source": "benchmark:Windows and Sliding Glass Doors"
+  },
+  {
+    "trade_package_id": "tp-wh-stucco",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "stucco",
+    "title": "Stucco",
+    "estimated_cost_l2": 1191530.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-stucco-1",
+    "awarded_amount": 1093950.0,
+    "group_keys": [
+      "stucco-09-2423",
+      "stucco-09-2424",
+      "stucco-09-2428",
+      "stucco-09-2429",
+      "stucco-09-2430"
+    ],
+    "sort_order": 11,
+    "notes": null,
+    "bid_source": "benchmark:Stucco"
+  },
+  {
+    "trade_package_id": "tp-wh-drywall",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "drywall",
+    "title": "Drywall",
+    "estimated_cost_l2": 3288054.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-drywall-1",
+    "awarded_amount": 2957435.0,
+    "group_keys": [
+      "drywall-09-2905"
+    ],
+    "sort_order": 12,
+    "notes": null,
+    "bid_source": "benchmark:Drywall"
+  },
+  {
+    "trade_package_id": "tp-wh-tile",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "tile",
+    "title": "Tile",
+    "estimated_cost_l2": 189531.15,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-tile-1",
+    "awarded_amount": 181949.9,
+    "group_keys": [
+      "tile-09-3001",
+      "tile-09-3002",
+      "tile-09-3003",
+      "tile-09-3008"
+    ],
+    "sort_order": 13,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-flooring",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "flooring",
+    "title": "Flooring",
+    "estimated_cost_l2": 1116309.9,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-flooring-1",
+    "awarded_amount": 1071657.5,
+    "group_keys": [
+      "flooring-09-6001",
+      "flooring-09-6401",
+      "flooring-09-6517",
+      "flooring-09-6520",
+      "flooring-09-6521",
+      "flooring-09-6522",
+      "flooring-09-6566",
+      "flooring-09-6802",
+      "flooring-09-6803",
+      "flooring-09-6804"
+    ],
+    "sort_order": 14,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-painting",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "painting",
+    "title": "Painting & Wall Covering",
+    "estimated_cost_l2": 917437.36,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-painting-1",
+    "awarded_amount": 686035.0,
+    "group_keys": [
+      "painting-09-9101",
+      "painting-09-9102",
+      "painting-09-9106",
+      "painting-09-9110"
+    ],
+    "sort_order": 15,
+    "notes": null,
+    "bid_source": "benchmark:Painting"
+  },
+  {
+    "trade_package_id": "tp-wh-final-clean",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "final-clean",
+    "title": "Final Clean",
+    "estimated_cost_l2": 464239.75,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-final-clean-1",
+    "awarded_amount": 445670.16,
+    "group_keys": [
+      "final-clean-09-0101",
+      "final-clean-09-0102",
+      "final-clean-09-0103",
+      "final-clean-09-0104",
+      "final-clean-09-0113",
+      "final-clean-09-0121"
+    ],
+    "sort_order": 16,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-specialties",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "specialties",
+    "title": "Specialties",
+    "estimated_cost_l2": 729570.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-specialties-1",
+    "awarded_amount": 700387.2,
+    "group_keys": [
+      "specialties-10-1300",
+      "specialties-10-1401",
+      "specialties-10-1404",
+      "specialties-10-1419",
+      "specialties-10-1454",
+      "specialties-10-2816",
+      "specialties-10-2919",
+      "specialties-10-3000",
+      "specialties-10-3200",
+      "specialties-10-3355",
+      "specialties-10-4116",
+      "specialties-10-4416",
+      "specialties-10-5523",
+      "specialties-10-5723",
+      "specialties-10-7313"
+    ],
+    "sort_order": 17,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-appliances",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "appliances",
+    "title": "Appliances",
+    "estimated_cost_l2": 1442993.92,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-appliances-1",
+    "awarded_amount": 1385274.16,
+    "group_keys": [
+      "appliances-11-3013"
+    ],
+    "sort_order": 18,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-cabinets",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "cabinets",
+    "title": "Cabinets",
+    "estimated_cost_l2": 1348260.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-cabinets-1",
+    "awarded_amount": 1294329.6,
+    "group_keys": [
+      "cabinets-12-3531",
+      "cabinets-12-3535"
+    ],
+    "sort_order": 19,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-countertops",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "countertops",
+    "title": "Countertops",
+    "estimated_cost_l2": 956753.4,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-countertops-1",
+    "awarded_amount": 918483.26,
+    "group_keys": [
+      "countertops-12-3601",
+      "countertops-12-3605",
+      "countertops-12-3608",
+      "countertops-12-3609"
+    ],
+    "sort_order": 20,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-window-coverings",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "window-coverings",
+    "title": "Window Coverings",
+    "estimated_cost_l2": 156000.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-window-coverings-1",
+    "awarded_amount": 149760.0,
+    "group_keys": [
+      "window-coverings-12-2100"
+    ],
+    "sort_order": 21,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-pools-spas",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "pools-spas",
+    "title": "Pools & Spas",
+    "estimated_cost_l2": 259813.33,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-pools-spas-1",
+    "awarded_amount": 238500.0,
+    "group_keys": [
+      "pools-spas-13-1113",
+      "pools-spas-13-3402"
+    ],
+    "sort_order": 22,
+    "notes": null,
+    "bid_source": "benchmark:Pools and Spas"
+  },
+  {
+    "trade_package_id": "tp-wh-carports",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "carports",
+    "title": "Carports",
+    "estimated_cost_l2": 843750.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-carports-1",
+    "awarded_amount": 810000.0,
+    "group_keys": [
+      "carports-13-3401"
+    ],
+    "sort_order": 23,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-elevator",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "elevator",
+    "title": "Elevator",
+    "estimated_cost_l2": 508000.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-elevator-1",
+    "awarded_amount": 487680.0,
+    "group_keys": [
+      "elevator-14-2400",
+      "elevator-14-4101"
+    ],
+    "sort_order": 24,
+    "notes": "Awarded to real sub from workbook narrative (Otis Elevator).",
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-fire-sprinkler",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "fire-sprinkler",
+    "title": "Fire Sprinkler",
+    "estimated_cost_l2": 1322806.25,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-fire-sprinkler-1",
+    "awarded_amount": 1010197.0,
+    "group_keys": [
+      "fire-sprinkler-21-0600",
+      "fire-sprinkler-21-1313",
+      "fire-sprinkler-21-3000"
+    ],
+    "sort_order": 25,
+    "notes": null,
+    "bid_source": "benchmark:Sprinkler System"
+  },
+  {
+    "trade_package_id": "tp-wh-plumbing",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "plumbing",
+    "title": "Plumbing",
+    "estimated_cost_l2": 4900550.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-plumbing-1",
+    "awarded_amount": 4712570.0,
+    "group_keys": [
+      "plumbing-22-1001",
+      "plumbing-22-1003",
+      "plumbing-22-1007"
+    ],
+    "sort_order": 26,
+    "notes": null,
+    "bid_source": "benchmark:Plumbing"
+  },
+  {
+    "trade_package_id": "tp-wh-hvac",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "hvac",
+    "title": "HVAC",
+    "estimated_cost_l2": 4132739.5,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-hvac-1",
+    "awarded_amount": 3956000.0,
+    "group_keys": [
+      "hvac-23-3001"
+    ],
+    "sort_order": 27,
+    "notes": null,
+    "bid_source": "benchmark:HVAC Standard"
+  },
+  {
+    "trade_package_id": "tp-wh-electrical",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "electrical",
+    "title": "Electrical",
+    "estimated_cost_l2": 5741267.92,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-electrical-1",
+    "awarded_amount": 4522456.0,
+    "group_keys": [
+      "electrical-26-1001",
+      "electrical-26-1004",
+      "electrical-26-1005",
+      "electrical-26-1007",
+      "electrical-26-5001",
+      "electrical-26-5002",
+      "electrical-26-5003",
+      "electrical-26-5004",
+      "electrical-26-5602",
+      "electrical-26-5603",
+      "electrical-26-5613"
+    ],
+    "sort_order": 28,
+    "notes": "Awarded to real sub from workbook narrative (Sigma Electric).",
+    "bid_source": "benchmark:Electrical"
+  },
+  {
+    "trade_package_id": "tp-wh-fire-alarm",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "fire-alarm",
+    "title": "Fire Alarm",
+    "estimated_cost_l2": 960928.75,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-fire-alarm-1",
+    "awarded_amount": 839780.0,
+    "group_keys": [
+      "fire-alarm-28-4601",
+      "fire-alarm-28-4601S"
+    ],
+    "sort_order": 29,
+    "notes": "Awarded to real sub from workbook narrative (NFP).",
+    "bid_source": "benchmark:Fire Alarm / Two Way Comm AOR"
+  },
+  {
+    "trade_package_id": "tp-wh-low-voltage",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "low-voltage",
+    "title": "Low Voltage / DAS",
+    "estimated_cost_l2": 253754.65,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-low-voltage-1",
+    "awarded_amount": 243604.46,
+    "group_keys": [
+      "low-voltage-27-2201",
+      "low-voltage-27-3010",
+      "low-voltage-27-3201"
+    ],
+    "sort_order": 30,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-security",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "security",
+    "title": "Security",
+    "estimated_cost_l2": 398970.0,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-security-1",
+    "awarded_amount": 383011.2,
+    "group_keys": [
+      "security-28-1001",
+      "security-28-2001"
+    ],
+    "sort_order": 31,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-site-flatwork",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "site-flatwork",
+    "title": "Site Concrete & Paving",
+    "estimated_cost_l2": 3012593.84,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-site-flatwork-1",
+    "awarded_amount": 2892090.09,
+    "group_keys": [
+      "site-flatwork-32-0100",
+      "site-flatwork-32-0111",
+      "site-flatwork-32-0506",
+      "site-flatwork-32-1216",
+      "site-flatwork-32-1236",
+      "site-flatwork-32-1401",
+      "site-flatwork-32-1402",
+      "site-flatwork-32-1613",
+      "site-flatwork-32-1614",
+      "site-flatwork-32-1623",
+      "site-flatwork-32-1625",
+      "site-flatwork-32-1626",
+      "site-flatwork-32-1700"
+    ],
+    "sort_order": 32,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-site-walls-iron",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "site-walls-iron",
+    "title": "Site Walls & Fencing",
+    "estimated_cost_l2": 935877.34,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-site-walls-iron-1",
+    "awarded_amount": 898442.25,
+    "group_keys": [
+      "site-walls-iron-32-3101",
+      "site-walls-iron-32-3103",
+      "site-walls-iron-32-3104",
+      "site-walls-iron-32-3105",
+      "site-walls-iron-32-3106",
+      "site-walls-iron-32-3111",
+      "site-walls-iron-32-3112",
+      "site-walls-iron-32-3113",
+      "site-walls-iron-32-3114",
+      "site-walls-iron-32-3120",
+      "site-walls-iron-32-3201",
+      "site-walls-iron-32-3202",
+      "site-walls-iron-32-3204",
+      "site-walls-iron-32-3208",
+      "site-walls-iron-32-3343"
+    ],
+    "sort_order": 33,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-landscaping",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "landscaping",
+    "title": "Landscaping",
+    "estimated_cost_l2": 2299198.33,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-landscaping-1",
+    "awarded_amount": 2066905.0,
+    "group_keys": [
+      "landscaping-32-9001",
+      "landscaping-32-9433"
+    ],
+    "sort_order": 34,
+    "notes": "Awarded to real sub from workbook narrative (Alpha Landscaping).",
+    "bid_source": "benchmark:Site Landscaping"
+  },
+  {
+    "trade_package_id": "tp-wh-wet-utilities",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "wet-utilities",
+    "title": "Wet Utilities",
+    "estimated_cost_l2": 5611464.88,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-wet-utilities-1",
+    "awarded_amount": 5387006.28,
+    "group_keys": [
+      "wet-utilities-33-0501",
+      "wet-utilities-33-1001",
+      "wet-utilities-33-3001",
+      "wet-utilities-33-4001",
+      "wet-utilities-33-4116",
+      "wet-utilities-33-5001",
+      "wet-utilities-33-7101",
+      "wet-utilities-33-7102",
+      "wet-utilities-33-7103",
+      "wet-utilities-33-8201",
+      "wet-utilities-33-8202"
+    ],
+    "sort_order": 35,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-solar",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "solar",
+    "title": "Solar PV",
+    "estimated_cost_l2": 1717975.85,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-solar-1",
+    "awarded_amount": 1649256.82,
+    "group_keys": [
+      "solar-48-1413",
+      "solar-48-1414",
+      "solar-48-1913"
+    ],
+    "sort_order": 36,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  },
+  {
+    "trade_package_id": "tp-wh-testing-inspection",
+    "budget_level_id": "west-henderson-l3",
+    "trade_key": "testing-inspection",
+    "title": "Testing & Inspection",
+    "estimated_cost_l2": 486632.15,
+    "status": "Awarded",
+    "awarded_bidder_id": "bidder-testing-inspection-1",
+    "awarded_amount": 467166.86,
+    "group_keys": [
+      "testing-inspection-49-0601",
+      "testing-inspection-49-0602",
+      "testing-inspection-49-0603",
+      "testing-inspection-49-0801",
+      "testing-inspection-49-0802",
+      "testing-inspection-49-0803",
+      "testing-inspection-49-0807",
+      "testing-inspection-49-0808",
+      "testing-inspection-49-0950"
+    ],
+    "sort_order": 37,
+    "notes": null,
+    "bid_source": "derived-from-budget"
+  }
+]

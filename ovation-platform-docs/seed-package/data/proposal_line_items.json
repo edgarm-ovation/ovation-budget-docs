@@ -1,0 +1,2402 @@
+[
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-001",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Potholing",
+    "section": "LINE ITEMS",
+    "amount": 11520.0,
+    "group_key": "earthwork-02-3213",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-002",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Construction Water",
+    "section": "LINE ITEMS",
+    "amount": 151929.6,
+    "group_key": "earthwork-31-0121",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-003",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Dust Control",
+    "section": "LINE ITEMS",
+    "amount": 53175.36,
+    "group_key": "earthwork-31-0122",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-004",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Demolition",
+    "section": "LINE ITEMS",
+    "amount": 25181.55,
+    "group_key": "earthwork-31-0505",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-005",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Rock Dirt Haul Off",
+    "section": "LINE ITEMS",
+    "amount": 72000.0,
+    "group_key": "earthwork-31-1492",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-006",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Mass Grading",
+    "section": "LINE ITEMS",
+    "amount": 549192.0,
+    "group_key": "earthwork-31-2201",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-007",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Fine Grade",
+    "section": "LINE ITEMS",
+    "amount": 37462.01,
+    "group_key": "earthwork-31-2216",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-008",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Hard Dig",
+    "section": "LINE ITEMS",
+    "amount": 192000.0,
+    "group_key": "earthwork-31-2319",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-009",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Dewatering",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "earthwork-31-2322",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-010",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Storm Water Prevention",
+    "section": "LINE ITEMS",
+    "amount": 96000.0,
+    "group_key": "earthwork-31-2501",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-earthwork-1-011",
+    "proposal_id": "prop-wh-earthwork-1",
+    "label": "Traffic Control",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "earthwork-34-4116",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-001",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Slabs",
+    "section": "LINE ITEMS",
+    "amount": 1209854.47,
+    "group_key": "slabs-03-3101",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-002",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Deepened Footings",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "slabs-03-3101",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-003",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Concrete Slab Repairs",
+    "section": "LINE ITEMS",
+    "amount": 6569.11,
+    "group_key": "slabs-03-3101",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-004",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Pump House Concrete",
+    "section": "LINE ITEMS",
+    "amount": 8758.82,
+    "group_key": "slabs-03-3101",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-005",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Trash Enclosure Concrete",
+    "section": "LINE ITEMS",
+    "amount": 67442.91,
+    "group_key": "slabs-03-3102",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-006",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Pool Area Shower Concrete",
+    "section": "LINE ITEMS",
+    "amount": 2189.7,
+    "group_key": "slabs-03-3105",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-007",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Cabana Concrete",
+    "section": "LINE ITEMS",
+    "amount": 30655.87,
+    "group_key": "slabs-03-3107",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-slabs-1-008",
+    "proposal_id": "prop-wh-slabs-1",
+    "label": "Pool Equipment Foundation",
+    "section": "LINE ITEMS",
+    "amount": 6569.12,
+    "group_key": "slabs-03-3108",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-lightweight-concrete-1-001",
+    "proposal_id": "prop-wh-lightweight-concrete-1",
+    "label": "Lightweight Concrete",
+    "section": "LINE ITEMS",
+    "amount": 568716.07,
+    "group_key": "lightweight-concrete-03-3116",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-lightweight-concrete-1-002",
+    "proposal_id": "prop-wh-lightweight-concrete-1",
+    "label": "Deck Concrete",
+    "section": "LINE ITEMS",
+    "amount": 59103.93,
+    "group_key": "lightweight-concrete-03-5001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-masonry-1-001",
+    "proposal_id": "prop-wh-masonry-1",
+    "label": "Elevator Shaft",
+    "section": "LINE ITEMS",
+    "amount": 161280.0,
+    "group_key": "masonry-04-2201",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-masonry-1-002",
+    "proposal_id": "prop-wh-masonry-1",
+    "label": "Trash Enclosure",
+    "section": "LINE ITEMS",
+    "amount": 87360.0,
+    "group_key": "masonry-04-2202",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-masonry-1-003",
+    "proposal_id": "prop-wh-masonry-1",
+    "label": "Masonry Veneer",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "masonry-04-4301",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-masonry-1-004",
+    "proposal_id": "prop-wh-masonry-1",
+    "label": "Masonry Veneer Pool Area",
+    "section": "LINE ITEMS",
+    "amount": 38400.0,
+    "group_key": "masonry-04-4305",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-masonry-1-005",
+    "proposal_id": "prop-wh-masonry-1",
+    "label": "Pool Eq. Shower Stone",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "masonry-04-4306",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-structural-steel-1-001",
+    "proposal_id": "prop-wh-structural-steel-1",
+    "label": "Structural Steel",
+    "section": "LINE ITEMS",
+    "amount": 286159.3,
+    "group_key": "structural-steel-05-1201",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-structural-steel-1-002",
+    "proposal_id": "prop-wh-structural-steel-1",
+    "label": "Elevator Shaft Iron",
+    "section": "LINE ITEMS",
+    "amount": 15744.0,
+    "group_key": "structural-steel-05-1202",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-001",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Stair Handrails",
+    "section": "LINE ITEMS",
+    "amount": 90240.0,
+    "group_key": "ornamental-iron-05-5201",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-002",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Garage Stair Railings",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "ornamental-iron-05-5201",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-003",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Shower Cover",
+    "section": "LINE ITEMS",
+    "amount": 5760.0,
+    "group_key": "ornamental-iron-05-7003",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-004",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Cabana Iron",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "ornamental-iron-05-7004",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-005",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Pool Equipment Gate",
+    "section": "LINE ITEMS",
+    "amount": 1920.0,
+    "group_key": "ornamental-iron-05-7005",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-006",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Iron Railings",
+    "section": "LINE ITEMS",
+    "amount": 288195.84,
+    "group_key": "ornamental-iron-05-7300",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-ornamental-iron-1-007",
+    "proposal_id": "prop-wh-ornamental-iron-1",
+    "label": "Cable Railings",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "ornamental-iron-05-7316",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-001",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "Framing",
+    "section": "LINE ITEMS",
+    "amount": 7046753.98,
+    "group_key": "framing-06-1100",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-002",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "Framing - Crane",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "framing-06-1100",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-003",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "Cabana Framing",
+    "section": "LINE ITEMS",
+    "amount": 14116.72,
+    "group_key": "framing-06-1109",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-004",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "BBQ Framing",
+    "section": "LINE ITEMS",
+    "amount": 18822.3,
+    "group_key": "framing-06-1110",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-005",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "Fireplace Framing",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "framing-06-1111",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-006",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "Trellis",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "framing-06-1114",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-framing-1-007",
+    "proposal_id": "prop-wh-framing-1",
+    "label": "Pool Equipment Framing",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "framing-06-1114",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-finish-carpentry-1-001",
+    "proposal_id": "prop-wh-finish-carpentry-1",
+    "label": "Finish Carpentry - Units",
+    "section": "LINE ITEMS",
+    "amount": 739507.04,
+    "group_key": "finish-carpentry-06-2001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-finish-carpentry-1-002",
+    "proposal_id": "prop-wh-finish-carpentry-1",
+    "label": "Finish Carpentry - Common",
+    "section": "LINE ITEMS",
+    "amount": 317012.92,
+    "group_key": "finish-carpentry-06-2001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-finish-carpentry-1-003",
+    "proposal_id": "prop-wh-finish-carpentry-1",
+    "label": "Finish Carpentry - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 1578.73,
+    "group_key": "finish-carpentry-06-2001S",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-finish-carpentry-1-004",
+    "proposal_id": "prop-wh-finish-carpentry-1",
+    "label": "BBQ Trim",
+    "section": "LINE ITEMS",
+    "amount": 6062.31,
+    "group_key": "finish-carpentry-06-2006",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-finish-carpentry-1-005",
+    "proposal_id": "prop-wh-finish-carpentry-1",
+    "label": "Shutters",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "finish-carpentry-06-4919",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-insulation-1-001",
+    "proposal_id": "prop-wh-insulation-1",
+    "label": "Insulation",
+    "section": "LINE ITEMS",
+    "amount": 938882.33,
+    "group_key": "insulation-07-2101",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-insulation-1-002",
+    "proposal_id": "prop-wh-insulation-1",
+    "label": "Insulation - PH",
+    "section": "LINE ITEMS",
+    "amount": 999.67,
+    "group_key": "insulation-07-2101",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-001",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Roofing",
+    "section": "LINE ITEMS",
+    "amount": 749640.06,
+    "group_key": "roofing-07-3001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-002",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Roofing - PH",
+    "section": "LINE ITEMS",
+    "amount": 5663.2,
+    "group_key": "roofing-07-3001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-003",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Cabana Roofing",
+    "section": "LINE ITEMS",
+    "amount": 4153.02,
+    "group_key": "roofing-07-3002",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-004",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Pump House Roofing",
+    "section": "LINE ITEMS",
+    "amount": 7173.39,
+    "group_key": "roofing-07-3002",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-005",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Pool Equipment Roofing",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "roofing-07-3003",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-006",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Trash Enclosure Cover",
+    "section": "LINE ITEMS",
+    "amount": 63427.88,
+    "group_key": "roofing-07-6101",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-007",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Pigeon Proofing",
+    "section": "LINE ITEMS",
+    "amount": 18877.35,
+    "group_key": "roofing-07-7001",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-008",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Gutters and Downspouts",
+    "section": "LINE ITEMS",
+    "amount": 18877.35,
+    "group_key": "roofing-07-7124",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-009",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Roof Ladders",
+    "section": "LINE ITEMS",
+    "amount": 12081.5,
+    "group_key": "roofing-07-7210",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-010",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Roof Access Doors",
+    "section": "LINE ITEMS",
+    "amount": 18122.25,
+    "group_key": "roofing-07-7233",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-roofing-1-011",
+    "proposal_id": "prop-wh-roofing-1",
+    "label": "Roof Winch",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "roofing-07-7250",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-001",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Entry Doors",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-1001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-002",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Common Doors",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-1002",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-003",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Pocket Doors - 3 Panel",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-1002",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-004",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Garage Doors",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-3619",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-005",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Windows and Sliding Glass Doors",
+    "section": "LINE ITEMS",
+    "amount": 339981.27,
+    "group_key": "doors-windows-08-5301",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-006",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Windows Repair and Replacement",
+    "section": "LINE ITEMS",
+    "amount": 24284.38,
+    "group_key": "doors-windows-08-5301",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-007",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Pool Equipment Windows",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-5303",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-008",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Pool Glass Walls",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-8001",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-009",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Fixed Glass",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-8002",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-010",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Mirrors - LED",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-8301",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-011",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Mirrors - LED Install",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-8302",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-012",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Mirrors - Framed",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "doors-windows-08-8301",
+    "sort_order": 11,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-013",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Mirrors - Polished Edges (Units)",
+    "section": "LINE ITEMS",
+    "amount": 51651.0,
+    "group_key": "doors-windows-08-8301",
+    "sort_order": 12,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-doors-windows-1-014",
+    "proposal_id": "prop-wh-doors-windows-1",
+    "label": "Mirrors - Polished Edges (Restrooms)",
+    "section": "LINE ITEMS",
+    "amount": 1245.35,
+    "group_key": "doors-windows-08-8301",
+    "sort_order": 13,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-001",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco",
+    "section": "LINE ITEMS",
+    "amount": 1017288.21,
+    "group_key": "stucco-09-2423",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-002",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 5508.63,
+    "group_key": "stucco-09-2423",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-003",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco - Walls",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "stucco-09-2424",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-004",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco - Pool Area",
+    "section": "LINE ITEMS",
+    "amount": 55086.32,
+    "group_key": "stucco-09-2428",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-005",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco - Cabana",
+    "section": "LINE ITEMS",
+    "amount": 9181.05,
+    "group_key": "stucco-09-2429",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-006",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco - Pool Equipment",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "stucco-09-2430",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-stucco-1-007",
+    "proposal_id": "prop-wh-stucco-1",
+    "label": "Stucco - Repairs",
+    "section": "LINE ITEMS",
+    "amount": 6885.79,
+    "group_key": "stucco-09-2423",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-drywall-1-001",
+    "proposal_id": "prop-wh-drywall-1",
+    "label": "Drywall",
+    "section": "LINE ITEMS",
+    "amount": 2925819.39,
+    "group_key": "drywall-09-2905",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-drywall-1-002",
+    "proposal_id": "prop-wh-drywall-1",
+    "label": "Drywall - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 1798.9,
+    "group_key": "drywall-09-2905",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-drywall-1-003",
+    "proposal_id": "prop-wh-drywall-1",
+    "label": "Drywall - Repairs",
+    "section": "LINE ITEMS",
+    "amount": 29816.71,
+    "group_key": "drywall-09-2905",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-tile-1-001",
+    "proposal_id": "prop-wh-tile-1",
+    "label": "Tile Tubs and Showers",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "tile-09-3001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-tile-1-002",
+    "proposal_id": "prop-wh-tile-1",
+    "label": "Common Tile",
+    "section": "LINE ITEMS",
+    "amount": 133949.9,
+    "group_key": "tile-09-3002",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-tile-1-003",
+    "proposal_id": "prop-wh-tile-1",
+    "label": "Kitchen Backsplash",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "tile-09-3003",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-tile-1-004",
+    "proposal_id": "prop-wh-tile-1",
+    "label": "Cabana Tile",
+    "section": "LINE ITEMS",
+    "amount": 48000.0,
+    "group_key": "tile-09-3008",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-001",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Flooring - Units",
+    "section": "LINE ITEMS",
+    "amount": 601688.35,
+    "group_key": "flooring-09-6001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-002",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Common Wood",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "flooring-09-6401",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-003",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Common Vinyl",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "flooring-09-6517",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-004",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Hall Flooring",
+    "section": "LINE ITEMS",
+    "amount": 280800.0,
+    "group_key": "flooring-09-6520",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-005",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Hall Flooring - Elevators",
+    "section": "LINE ITEMS",
+    "amount": 3840.0,
+    "group_key": "flooring-09-6520",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-006",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Common - Plank",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "flooring-09-6521",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-007",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Common - VCT",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "flooring-09-6522",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-008",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Common - Rubber Floor (Ecore)",
+    "section": "LINE ITEMS",
+    "amount": 42769.15,
+    "group_key": "flooring-09-6566",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-009",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Common - Carpet Stairs",
+    "section": "LINE ITEMS",
+    "amount": 67680.0,
+    "group_key": "flooring-09-6802",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-010",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Hall Runner Install",
+    "section": "LINE ITEMS",
+    "amount": 18720.0,
+    "group_key": "flooring-09-6803",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-flooring-1-011",
+    "proposal_id": "prop-wh-flooring-1",
+    "label": "Hall Runner Materials",
+    "section": "LINE ITEMS",
+    "amount": 56160.0,
+    "group_key": "flooring-09-6804",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-001",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Painting - Repairs",
+    "section": "LINE ITEMS",
+    "amount": 24788.68,
+    "group_key": "painting-09-9101",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-002",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Painting",
+    "section": "LINE ITEMS",
+    "amount": 606787.38,
+    "group_key": "painting-09-9101",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-003",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Painting - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 1495.55,
+    "group_key": "painting-09-9101",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-004",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Painting - Walls",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "painting-09-9102",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-005",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Painting - Pool Area",
+    "section": "LINE ITEMS",
+    "amount": 8973.28,
+    "group_key": "painting-09-9106",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-006",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Wall Covering",
+    "section": "LINE ITEMS",
+    "amount": 40251.25,
+    "group_key": "painting-09-9110",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-painting-1-007",
+    "proposal_id": "prop-wh-painting-1",
+    "label": "Walls - Specialty",
+    "section": "LINE ITEMS",
+    "amount": 3738.86,
+    "group_key": "painting-09-9110",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-final-clean-1-001",
+    "proposal_id": "prop-wh-final-clean-1",
+    "label": "Cost Prep Labor",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "final-clean-09-0101",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-final-clean-1-002",
+    "proposal_id": "prop-wh-final-clean-1",
+    "label": "Cost Prep Mat",
+    "section": "LINE ITEMS",
+    "amount": 24000.0,
+    "group_key": "final-clean-09-0102",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-final-clean-1-003",
+    "proposal_id": "prop-wh-final-clean-1",
+    "label": "Clean Up - Final",
+    "section": "LINE ITEMS",
+    "amount": 344870.16,
+    "group_key": "final-clean-09-0103",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-final-clean-1-004",
+    "proposal_id": "prop-wh-final-clean-1",
+    "label": "Clean Up - During Construction",
+    "section": "LINE ITEMS",
+    "amount": 48000.0,
+    "group_key": "final-clean-09-0104",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-final-clean-1-005",
+    "proposal_id": "prop-wh-final-clean-1",
+    "label": "Dumpsters",
+    "section": "LINE ITEMS",
+    "amount": 19200.0,
+    "group_key": "final-clean-09-0113",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-final-clean-1-006",
+    "proposal_id": "prop-wh-final-clean-1",
+    "label": "Clean Up - Hauling Exterior",
+    "section": "LINE ITEMS",
+    "amount": 9600.0,
+    "group_key": "final-clean-09-0121",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-001",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Entry Directory",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "specialties-10-1300",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-002",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Unit Carport Signs",
+    "section": "LINE ITEMS",
+    "amount": 79372.8,
+    "group_key": "specialties-10-1401",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-003",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Site Signage",
+    "section": "LINE ITEMS",
+    "amount": 19200.0,
+    "group_key": "specialties-10-1404",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-004",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Entry Sign Letters",
+    "section": "LINE ITEMS",
+    "amount": 4800.0,
+    "group_key": "specialties-10-1419",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-005",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Offsite Street Signs",
+    "section": "LINE ITEMS",
+    "amount": 6720.0,
+    "group_key": "specialties-10-1454",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-006",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Bath Accessories",
+    "section": "LINE ITEMS",
+    "amount": 16800.0,
+    "group_key": "specialties-10-2816",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-007",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Shower Doors",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "specialties-10-2919",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-008",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Fire Places",
+    "section": "LINE ITEMS",
+    "amount": 6720.0,
+    "group_key": "specialties-10-3000",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-009",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Fire Places - Pool Area",
+    "section": "LINE ITEMS",
+    "amount": 3360.0,
+    "group_key": "specialties-10-3200",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-010",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "BBQ Units",
+    "section": "LINE ITEMS",
+    "amount": 25804.8,
+    "group_key": "specialties-10-3355",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-011",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Lock Boxes",
+    "section": "LINE ITEMS",
+    "amount": 5760.0,
+    "group_key": "specialties-10-4116",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-012",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Fire Extinguishers",
+    "section": "LINE ITEMS",
+    "amount": 29952.0,
+    "group_key": "specialties-10-4416",
+    "sort_order": 11,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-013",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Mail Boxes",
+    "section": "LINE ITEMS",
+    "amount": 86217.6,
+    "group_key": "specialties-10-5523",
+    "sort_order": 12,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-014",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Closet Shelving",
+    "section": "LINE ITEMS",
+    "amount": 159360.0,
+    "group_key": "specialties-10-5723",
+    "sort_order": 13,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-015",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Window Awnings Small",
+    "section": "LINE ITEMS",
+    "amount": 167040.0,
+    "group_key": "specialties-10-7313",
+    "sort_order": 14,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-specialties-1-016",
+    "proposal_id": "prop-wh-specialties-1",
+    "label": "Window Awnings Large",
+    "section": "LINE ITEMS",
+    "amount": 89280.0,
+    "group_key": "specialties-10-7313",
+    "sort_order": 15,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-appliances-1-001",
+    "proposal_id": "prop-wh-appliances-1",
+    "label": "Appliances",
+    "section": "LINE ITEMS",
+    "amount": 1246074.16,
+    "group_key": "appliances-11-3013",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-appliances-1-002",
+    "proposal_id": "prop-wh-appliances-1",
+    "label": "Appliances - Laundry Room",
+    "section": "LINE ITEMS",
+    "amount": 124800.0,
+    "group_key": "appliances-11-3013",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-appliances-1-003",
+    "proposal_id": "prop-wh-appliances-1",
+    "label": "Appliances - Common",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "appliances-11-3013",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-cabinets-1-001",
+    "proposal_id": "prop-wh-cabinets-1",
+    "label": "Cabinets Units",
+    "section": "LINE ITEMS",
+    "amount": 1150329.6,
+    "group_key": "cabinets-12-3531",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-cabinets-1-002",
+    "proposal_id": "prop-wh-cabinets-1",
+    "label": "Cabinet Common Areas",
+    "section": "LINE ITEMS",
+    "amount": 144000.0,
+    "group_key": "cabinets-12-3535",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-countertops-1-001",
+    "proposal_id": "prop-wh-countertops-1",
+    "label": "Counter Tops Units",
+    "section": "LINE ITEMS",
+    "amount": 807603.26,
+    "group_key": "countertops-12-3601",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-countertops-1-002",
+    "proposal_id": "prop-wh-countertops-1",
+    "label": "Counter Tops Common Areas",
+    "section": "LINE ITEMS",
+    "amount": 50400.0,
+    "group_key": "countertops-12-3605",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-countertops-1-003",
+    "proposal_id": "prop-wh-countertops-1",
+    "label": "Counter Tops Pool Area",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "countertops-12-3608",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-countertops-1-004",
+    "proposal_id": "prop-wh-countertops-1",
+    "label": "BBQ Top",
+    "section": "LINE ITEMS",
+    "amount": 46080.0,
+    "group_key": "countertops-12-3609",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-window-coverings-1-001",
+    "proposal_id": "prop-wh-window-coverings-1",
+    "label": "Blinds",
+    "section": "LINE ITEMS",
+    "amount": 149760.0,
+    "group_key": "window-coverings-12-2100",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-pools-spas-1-001",
+    "proposal_id": "prop-wh-pools-spas-1",
+    "label": "Pools and Spas",
+    "section": "LINE ITEMS",
+    "amount": 232992.2,
+    "group_key": "pools-spas-13-1113",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-pools-spas-1-002",
+    "proposal_id": "prop-wh-pools-spas-1",
+    "label": "Pool Equipment Cover",
+    "section": "LINE ITEMS",
+    "amount": 5507.8,
+    "group_key": "pools-spas-13-3402",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-carports-1-001",
+    "proposal_id": "prop-wh-carports-1",
+    "label": "Carports",
+    "section": "LINE ITEMS",
+    "amount": 810000.0,
+    "group_key": "carports-13-3401",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-elevator-1-001",
+    "proposal_id": "prop-wh-elevator-1",
+    "label": "Elevator",
+    "section": "LINE ITEMS",
+    "amount": 475200.0,
+    "group_key": "elevator-14-2400",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-elevator-1-002",
+    "proposal_id": "prop-wh-elevator-1",
+    "label": "Pool and Spa Lifts",
+    "section": "LINE ITEMS",
+    "amount": 12480.0,
+    "group_key": "elevator-14-4101",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-fire-sprinkler-1-001",
+    "proposal_id": "prop-wh-fire-sprinkler-1",
+    "label": "Sprinkler Design",
+    "section": "LINE ITEMS",
+    "amount": 32275.67,
+    "group_key": "fire-sprinkler-21-0600",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-fire-sprinkler-1-002",
+    "proposal_id": "prop-wh-fire-sprinkler-1",
+    "label": "Sprinkler System",
+    "section": "LINE ITEMS",
+    "amount": 855305.31,
+    "group_key": "fire-sprinkler-21-1313",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-fire-sprinkler-1-003",
+    "proposal_id": "prop-wh-fire-sprinkler-1",
+    "label": "Fire Pump",
+    "section": "LINE ITEMS",
+    "amount": 122616.02,
+    "group_key": "fire-sprinkler-21-3000",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-plumbing-1-001",
+    "proposal_id": "prop-wh-plumbing-1",
+    "label": "1 Bathroom Unit",
+    "section": "LINE ITEMS",
+    "amount": 2237498.29,
+    "group_key": "plumbing-22-1001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-plumbing-1-002",
+    "proposal_id": "prop-wh-plumbing-1",
+    "label": "2 Bathroom Unit",
+    "section": "LINE ITEMS",
+    "amount": 2445260.84,
+    "group_key": "plumbing-22-1001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-plumbing-1-003",
+    "proposal_id": "prop-wh-plumbing-1",
+    "label": "Plumbing - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 4808.21,
+    "group_key": "plumbing-22-1001",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-plumbing-1-004",
+    "proposal_id": "prop-wh-plumbing-1",
+    "label": "Pool Area",
+    "section": "LINE ITEMS",
+    "amount": 19232.82,
+    "group_key": "plumbing-22-1003",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-plumbing-1-005",
+    "proposal_id": "prop-wh-plumbing-1",
+    "label": "Pool Equipment",
+    "section": "LINE ITEMS",
+    "amount": 5769.84,
+    "group_key": "plumbing-22-1007",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-hvac-1-001",
+    "proposal_id": "prop-wh-hvac-1",
+    "label": "HVAC Standard",
+    "section": "LINE ITEMS",
+    "amount": 3941641.49,
+    "group_key": "hvac-23-3001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-hvac-1-002",
+    "proposal_id": "prop-wh-hvac-1",
+    "label": "HVAC Standard - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 14358.51,
+    "group_key": "hvac-23-3001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-001",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Electrical",
+    "section": "LINE ITEMS",
+    "amount": 3770958.1,
+    "group_key": "electrical-26-1001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-002",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Electrical Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 184324.22,
+    "group_key": "electrical-26-5001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-003",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Building Electrical Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 46081.05,
+    "group_key": "electrical-26-5002",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-004",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Hall Lighting Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 38400.88,
+    "group_key": "electrical-26-5003",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-005",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Carports Electrical",
+    "section": "LINE ITEMS",
+    "amount": 59078.27,
+    "group_key": "electrical-26-1001",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-006",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Carport Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 29539.14,
+    "group_key": "electrical-26-5001",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-007",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Cabana Electrical",
+    "section": "LINE ITEMS",
+    "amount": 7877.1,
+    "group_key": "electrical-26-1001",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-008",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Cabana Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 5907.83,
+    "group_key": "electrical-26-5004",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-009",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Street Lights",
+    "section": "LINE ITEMS",
+    "amount": 248442.46,
+    "group_key": "electrical-26-5613",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-010",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Site Lighting Electrical",
+    "section": "LINE ITEMS",
+    "amount": 31165.76,
+    "group_key": "electrical-26-1005",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-011",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Site Lighting Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 31165.76,
+    "group_key": "electrical-26-5602",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-012",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Pool Lighting Electrical",
+    "section": "LINE ITEMS",
+    "amount": 39385.52,
+    "group_key": "electrical-26-1004",
+    "sort_order": 11,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-013",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Pool Lighting Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 15754.21,
+    "group_key": "electrical-26-5603",
+    "sort_order": 12,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-014",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Pool Equipment Electrical",
+    "section": "LINE ITEMS",
+    "amount": 1969.28,
+    "group_key": "electrical-26-1007",
+    "sort_order": 13,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-015",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Pump House Electrical",
+    "section": "LINE ITEMS",
+    "amount": 11224.87,
+    "group_key": "electrical-26-1001",
+    "sort_order": 14,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-electrical-1-016",
+    "proposal_id": "prop-wh-electrical-1",
+    "label": "Pump House Fixtures",
+    "section": "LINE ITEMS",
+    "amount": 1181.55,
+    "group_key": "electrical-26-5001",
+    "sort_order": 15,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-fire-alarm-1-001",
+    "proposal_id": "prop-wh-fire-alarm-1",
+    "label": "Fire Alarm / Two Way Comm AOR",
+    "section": "LINE ITEMS",
+    "amount": 831040.75,
+    "group_key": "fire-alarm-28-4601",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-fire-alarm-1-002",
+    "proposal_id": "prop-wh-fire-alarm-1",
+    "label": "Fire Alarm - Pump House",
+    "section": "LINE ITEMS",
+    "amount": 8739.25,
+    "group_key": "fire-alarm-28-4601S",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-low-voltage-1-001",
+    "proposal_id": "prop-wh-low-voltage-1",
+    "label": "TV and Media",
+    "section": "LINE ITEMS",
+    "amount": 3456.0,
+    "group_key": "low-voltage-27-2201",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-low-voltage-1-002",
+    "proposal_id": "prop-wh-low-voltage-1",
+    "label": "DAS System",
+    "section": "LINE ITEMS",
+    "amount": 239380.46,
+    "group_key": "low-voltage-27-3010",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-low-voltage-1-003",
+    "proposal_id": "prop-wh-low-voltage-1",
+    "label": "Pool ADA Phone",
+    "section": "LINE ITEMS",
+    "amount": 768.0,
+    "group_key": "low-voltage-27-3201",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-security-1-001",
+    "proposal_id": "prop-wh-security-1",
+    "label": "Security System",
+    "section": "LINE ITEMS",
+    "amount": 217526.4,
+    "group_key": "security-28-1001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-security-1-002",
+    "proposal_id": "prop-wh-security-1",
+    "label": "Site Security System",
+    "section": "LINE ITEMS",
+    "amount": 165484.8,
+    "group_key": "security-28-2001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-001",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Bond Repair",
+    "section": "LINE ITEMS",
+    "amount": 9600.0,
+    "group_key": "site-flatwork-32-0100",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-002",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Street Cleaning",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "site-flatwork-32-0111",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-003",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Asphalt Sawcut and Removal",
+    "section": "LINE ITEMS",
+    "amount": 24000.0,
+    "group_key": "site-flatwork-32-0506",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-004",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Paving",
+    "section": "LINE ITEMS",
+    "amount": 720540.33,
+    "group_key": "site-flatwork-32-1216",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-005",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Seal Coat",
+    "section": "LINE ITEMS",
+    "amount": 39756.93,
+    "group_key": "site-flatwork-32-1236",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-006",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Pavers",
+    "section": "LINE ITEMS",
+    "amount": 80033.28,
+    "group_key": "site-flatwork-32-1401",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-007",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Pool Decks",
+    "section": "LINE ITEMS",
+    "amount": 44524.8,
+    "group_key": "site-flatwork-32-1402",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-008",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Curbs and Gutters",
+    "section": "LINE ITEMS",
+    "amount": 98543.04,
+    "group_key": "site-flatwork-32-1613",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-009",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Tack On Curb",
+    "section": "LINE ITEMS",
+    "amount": 195690.3,
+    "group_key": "site-flatwork-32-1614",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-010",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Concrete Flatwork",
+    "section": "LINE ITEMS",
+    "amount": 305686.08,
+    "group_key": "site-flatwork-32-1623",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-011",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Bus Pad",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "site-flatwork-32-1625",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-012",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Pool Hardscape",
+    "section": "LINE ITEMS",
+    "amount": 9600.0,
+    "group_key": "site-flatwork-32-1626",
+    "sort_order": 11,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-013",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Street Signs / Striping",
+    "section": "LINE ITEMS",
+    "amount": 63496.0,
+    "group_key": "site-flatwork-32-1700",
+    "sort_order": 12,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-014",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Offsite Asphalt Sawcut and Removal",
+    "section": "LINE ITEMS",
+    "amount": 24000.0,
+    "group_key": "site-flatwork-32-0506",
+    "sort_order": 13,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-015",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Offsite Paving",
+    "section": "LINE ITEMS",
+    "amount": 966134.21,
+    "group_key": "site-flatwork-32-1216",
+    "sort_order": 14,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-016",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Offsite Curbs and Gutters",
+    "section": "LINE ITEMS",
+    "amount": 129916.8,
+    "group_key": "site-flatwork-32-1613",
+    "sort_order": 15,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-flatwork-1-017",
+    "proposal_id": "prop-wh-site-flatwork-1",
+    "label": "Offsite Concrete Flatwork",
+    "section": "LINE ITEMS",
+    "amount": 166168.32,
+    "group_key": "site-flatwork-32-1623",
+    "sort_order": 16,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-001",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Walls Iron",
+    "section": "LINE ITEMS",
+    "amount": 140760.96,
+    "group_key": "site-walls-iron-32-3101",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-002",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Trash Enclosure Iron Gates",
+    "section": "LINE ITEMS",
+    "amount": 33600.0,
+    "group_key": "site-walls-iron-32-3103",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-003",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Site Railings",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "site-walls-iron-32-3104",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-004",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Dog Run Fence",
+    "section": "LINE ITEMS",
+    "amount": 19200.0,
+    "group_key": "site-walls-iron-32-3105",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-005",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Pool Fence",
+    "section": "LINE ITEMS",
+    "amount": 24480.0,
+    "group_key": "site-walls-iron-32-3106",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-006",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Pool Fence Gates",
+    "section": "LINE ITEMS",
+    "amount": 3744.0,
+    "group_key": "site-walls-iron-32-3106",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-007",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Entry Security Gates",
+    "section": "LINE ITEMS",
+    "amount": 96000.0,
+    "group_key": "site-walls-iron-32-3111",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-008",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Entry Security Gates Electrical",
+    "section": "LINE ITEMS",
+    "amount": 8640.0,
+    "group_key": "site-walls-iron-32-3112",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-009",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Entry Gate Transmitters",
+    "section": "LINE ITEMS",
+    "amount": 18720.0,
+    "group_key": "site-walls-iron-32-3113",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-010",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Entry Gates",
+    "section": "LINE ITEMS",
+    "amount": 3744.0,
+    "group_key": "site-walls-iron-32-3114",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-011",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Temp Fencing",
+    "section": "LINE ITEMS",
+    "amount": 75964.8,
+    "group_key": "site-walls-iron-32-3120",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-012",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Walls Masonry",
+    "section": "LINE ITEMS",
+    "amount": 284246.4,
+    "group_key": "site-walls-iron-32-3201",
+    "sort_order": 11,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-013",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Walls Pilaster Caps",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "site-walls-iron-32-3202",
+    "sort_order": 12,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-014",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Retaining Walls",
+    "section": "LINE ITEMS",
+    "amount": 96222.09,
+    "group_key": "site-walls-iron-32-3204",
+    "sort_order": 13,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-015",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Pool Walls",
+    "section": "LINE ITEMS",
+    "amount": 72000.0,
+    "group_key": "site-walls-iron-32-3208",
+    "sort_order": 14,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-site-walls-iron-1-016",
+    "proposal_id": "prop-wh-site-walls-iron-1",
+    "label": "Site Furniture Permanent",
+    "section": "LINE ITEMS",
+    "amount": 6720.0,
+    "group_key": "site-walls-iron-32-3343",
+    "sort_order": 15,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-landscaping-1-001",
+    "proposal_id": "prop-wh-landscaping-1",
+    "label": "Site Landscaping",
+    "section": "LINE ITEMS",
+    "amount": 2057915.32,
+    "group_key": "landscaping-32-9001",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-landscaping-1-002",
+    "proposal_id": "prop-wh-landscaping-1",
+    "label": "Site Landscaping Lighting",
+    "section": "LINE ITEMS",
+    "amount": 8989.68,
+    "group_key": "landscaping-32-9001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-landscaping-1-003",
+    "proposal_id": "prop-wh-landscaping-1",
+    "label": "Site Landscaping Planter Pots",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "landscaping-32-9433",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-001",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Temp Power",
+    "section": "LINE ITEMS",
+    "amount": 134827.2,
+    "group_key": "wet-utilities-33-0501",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-002",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Traffic Control, AC Removal and Patch",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "wet-utilities-33-1001",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-003",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Water",
+    "section": "LINE ITEMS",
+    "amount": 645831.02,
+    "group_key": "wet-utilities-33-1001",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-004",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Sewer",
+    "section": "LINE ITEMS",
+    "amount": 371589.12,
+    "group_key": "wet-utilities-33-3001",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-005",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Storm Drain",
+    "section": "LINE ITEMS",
+    "amount": 24000.0,
+    "group_key": "wet-utilities-33-4001",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-006",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Sub Drains",
+    "section": "LINE ITEMS",
+    "amount": 14400.0,
+    "group_key": "wet-utilities-33-4116",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-007",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Gas",
+    "section": "LINE ITEMS",
+    "amount": 292992.0,
+    "group_key": "wet-utilities-33-5001",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-008",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Electric",
+    "section": "LINE ITEMS",
+    "amount": 479055.36,
+    "group_key": "wet-utilities-33-7101",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-009",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Secondary Conduit",
+    "section": "LINE ITEMS",
+    "amount": 48000.0,
+    "group_key": "wet-utilities-33-7102",
+    "sort_order": 8,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-010",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Bollards",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "wet-utilities-33-7103",
+    "sort_order": 9,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-011",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Cable TV",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "wet-utilities-33-8201",
+    "sort_order": 10,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-012",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Phone",
+    "section": "LINE ITEMS",
+    "amount": 0.0,
+    "group_key": "wet-utilities-33-8202",
+    "sort_order": 11,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-013",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Off Site Water",
+    "section": "LINE ITEMS",
+    "amount": 1569881.56,
+    "group_key": "wet-utilities-33-1001",
+    "sort_order": 12,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-014",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Off Site Sewer",
+    "section": "LINE ITEMS",
+    "amount": 419216.81,
+    "group_key": "wet-utilities-33-3001",
+    "sort_order": 13,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-015",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Off Site Storm Drain",
+    "section": "LINE ITEMS",
+    "amount": 672911.52,
+    "group_key": "wet-utilities-33-4001",
+    "sort_order": 14,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-wet-utilities-1-016",
+    "proposal_id": "prop-wh-wet-utilities-1",
+    "label": "Off Site Electric",
+    "section": "LINE ITEMS",
+    "amount": 714301.69,
+    "group_key": "wet-utilities-33-7101",
+    "sort_order": 15,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-solar-1-001",
+    "proposal_id": "prop-wh-solar-1",
+    "label": "Solar PV System",
+    "section": "LINE ITEMS",
+    "amount": 1505256.82,
+    "group_key": "solar-48-1413",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-solar-1-002",
+    "proposal_id": "prop-wh-solar-1",
+    "label": "Solar PV Conduit",
+    "section": "LINE ITEMS",
+    "amount": 96000.0,
+    "group_key": "solar-48-1414",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-solar-1-003",
+    "proposal_id": "prop-wh-solar-1",
+    "label": "Car Charging Stations",
+    "section": "LINE ITEMS",
+    "amount": 48000.0,
+    "group_key": "solar-48-1913",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-001",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Staking",
+    "section": "LINE ITEMS",
+    "amount": 136736.64,
+    "group_key": "testing-inspection-49-0601",
+    "sort_order": 0,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-002",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Re Staking",
+    "section": "LINE ITEMS",
+    "amount": 15192.96,
+    "group_key": "testing-inspection-49-0602",
+    "sort_order": 1,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-003",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Certs and Verifications",
+    "section": "LINE ITEMS",
+    "amount": 7200.0,
+    "group_key": "testing-inspection-49-0603",
+    "sort_order": 2,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-004",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Slab Testing",
+    "section": "LINE ITEMS",
+    "amount": 87739.34,
+    "group_key": "testing-inspection-49-0801",
+    "sort_order": 3,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-005",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Grading Testing",
+    "section": "LINE ITEMS",
+    "amount": 75964.8,
+    "group_key": "testing-inspection-49-0802",
+    "sort_order": 4,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-006",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Other Testing",
+    "section": "LINE ITEMS",
+    "amount": 75964.8,
+    "group_key": "testing-inspection-49-0803",
+    "sort_order": 5,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-007",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Masonry Testing",
+    "section": "LINE ITEMS",
+    "amount": 15192.96,
+    "group_key": "testing-inspection-49-0807",
+    "sort_order": 6,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-008",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Pavement Testing",
+    "section": "LINE ITEMS",
+    "amount": 15192.96,
+    "group_key": "testing-inspection-49-0808",
+    "sort_order": 7,
+    "notes": null
+  },
+  {
+    "proposal_line_item_id": "pli-prop-wh-testing-inspection-1-009",
+    "proposal_id": "prop-wh-testing-inspection-1",
+    "label": "Third Party Inspections",
+    "section": "LINE ITEMS",
+    "amount": 37982.4,
+    "group_key": "testing-inspection-49-0950",
+    "sort_order": 8,
+    "notes": null
+  }
+]

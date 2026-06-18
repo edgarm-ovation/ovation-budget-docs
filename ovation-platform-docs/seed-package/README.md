@@ -30,6 +30,7 @@ seed-package/
 ├── README.md            ← you are here
 ├── relationships.md     ← FK graph, load order, Excel→schema transform rules
 ├── extract_full.py      ← re-runnable multi-sheet extractor (canonical)
+├── extract_bids.py      ← authors the bid-leveling seed (group_key + bidders/proposals/packages)
 ├── extract.py           ← original single-sheet extractor (Level 3 only, kept for reference)
 ├── schema/
 │   └── seed-tables.sql  ← DDL for just the tables this seed populates
@@ -49,8 +50,18 @@ seed-package/
     ├── menu_pricing.json              (5)    alternate / upgrade tier pricing
     ├── risk_items.json                (9)    risk register (#REF! preserved as null)
     ├── value_engineering.json         (7)    VE / savings recommendations
-    └── parking_options.json           (4)    parking / landscape option scenarios
+    ├── parking_options.json           (4)    parking / landscape option scenarios
+    │
+    │   ── bid-leveling seed (authored by extract_bids.py, see note below) ──
+    ├── trade_packages.json            (38)   L3 trade scopes; GroupKeys array = the join glue
+    ├── bidders.json                   (114)  subcontractors (7 real from workbook, 107 placeholder)
+    └── proposals.json                 (114)  3 bids per trade (Low/2nd/3rd); low = awarded
+    │   proposal_line_items.json       (240)  awarded-bid allocation across each trade's lines
 ```
+
+> **`budget_line_items.json` is also updated by `extract_bids.py`:** the 240
+> biddable L3 lines now carry a `group_key` (was null). FFE and no-cost-code GC
+> soft-cost lines stay ungrouped on purpose.
 
 ## Validation (proves the extraction is faithful)
 
@@ -93,17 +104,38 @@ python extract_full.py
 Excel→schema transform decision (markup splits, real rates, preserved cost-code
 anomalies).
 
-## Known gaps (read before building bid features)
+## Bid-leveling seed (authored, not extracted — read this)
 
-This is the **budget**, not the bid leveling. Still not included, needs a separate
-source: **Bidders / Proposals / TradePackages** (and the critical
-`TradePackages.GroupKeys` join glue) and **Robindale 215 (L2)**, the second seed
-project. The `Risk` sheet hints at bidders (Northstar, JMAC, NRC, Gilmore…) but
-carries no structured multi-bidder leveling.
+The workbook contains **no structured bid data** — only anonymous Low/2nd/3rd
+benchmark pricing (`Comparison to Other`) and a few sub names in narrative
+(`What changed`, `Risk`). So the Bidders / Proposals / TradePackages seed is
+**authored by `extract_bids.py`**, anchored to that real material:
 
-**Now closed:** ComparableProjects benchmark costs (were flagged as missing) are
-extracted from the `Normalize` + `Offsite Comp` sheets. See `relationships.md` →
-*What is NOT in this package* for the full status.
+- **Trade packages** — 38 trades derived from the L3 cost-code structure. Each
+  carries a `GroupKeys` array (the join glue) listing the `group_key`s it covers.
+- **`group_key` tagging** — written back onto 240 L3 line items as
+  `{trade-slug}-{cost_code}`. This is the side the original gap note assumed
+  existed but didn't (every line was `null`).
+- **Bidders** — 7 **real** subs lifted from the workbook (NRC, Gilmore, NV Gypsum,
+  Otis, Sigma, NFP, Alpha) + 107 clearly-flagged placeholders (`is_placeholder:true`).
+- **Proposals** — 3 per trade. Where a benchmark exists, bids = real Low/2nd/3rd
+  $/UOM × quantity; otherwise derived from the trade's budgeted total ±spread. The
+  low bid is marked `is_selected` / awarded.
+- **Proposal line items** — the awarded bid allocated across the trade's budget
+  lines (sums to the bid ±$0.02).
+
+`extract_bids.py` self-validates the join **both directions** (no orphan package
+keys, no orphan line keys) and that every awarded allocation reconciles to its bid.
+
+> ⚠️ **Placeholder bidder names need a once-over from estimating/construction-ops
+> (Lloyd's side) before this is shown to anyone who'd recognize real Vegas subs.**
+> The 7 real names are safe; the 107 generated ones are demo filler.
+
+**Still genuinely missing:** **Robindale 215 (L2)**, the second seed project.
+
+**Now closed:** ComparableProjects benchmark costs and the **bid-leveling seed**
+(`TradePackages.GroupKeys` join glue) — both were flagged as missing. See
+`relationships.md` → *What is NOT in this package* for the full status.
 
 ## Regenerating / extending
 
